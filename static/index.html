@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IVD Comparator Finder</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue:   #2563eb;
+    --blue-l: #eff6ff;
+    --blue-d: #1d4ed8;
+    --green:  #16a34a;
+    --amber:  #d97706;
+    --red:    #dc2626;
+    --gray-1: #f9fafb;
+    --gray-2: #f3f4f6;
+    --gray-3: #e5e7eb;
+    --gray-5: #6b7280;
+    --gray-7: #374151;
+    --gray-9: #111827;
+    --radius: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,.10), 0 1px 2px rgba(0,0,0,.06);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,.10), 0 2px 4px -1px rgba(0,0,0,.06);
+  }
+
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         background: var(--gray-1); color: var(--gray-9); min-height: 100vh; }
+
+  /* ── Header ── */
+  header { background: var(--blue); color: #fff; padding: 20px 24px; }
+  header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; }
+  header p  { font-size: .85rem; opacity: .85; margin-top: 4px; }
+
+  /* ── Search bar ── */
+  .search-wrap { background: #fff; border-bottom: 1px solid var(--gray-3);
+                 padding: 16px 24px; display: flex; gap: 10px; }
+  .search-wrap input  { flex: 1; padding: 10px 14px; border: 1px solid var(--gray-3);
+                        border-radius: var(--radius); font-size: 1rem;
+                        outline: none; transition: border-color .15s; }
+  .search-wrap input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-l); }
+  .search-wrap button { padding: 10px 22px; background: var(--blue); color: #fff;
+                        border: none; border-radius: var(--radius); font-size: .95rem;
+                        font-weight: 600; cursor: pointer; transition: background .15s; }
+  .search-wrap button:hover { background: var(--blue-d); }
+
+  /* ── Layout ── */
+  .layout { display: grid; grid-template-columns: 320px 1fr; height: calc(100vh - 130px); }
+
+  /* ── Device list panel ── */
+  .panel-left { border-right: 1px solid var(--gray-3); overflow-y: auto; background: #fff; }
+  .panel-left-hdr { padding: 12px 16px; background: var(--gray-2);
+                    border-bottom: 1px solid var(--gray-3);
+                    font-size: .8rem; font-weight: 600; color: var(--gray-5);
+                    text-transform: uppercase; letter-spacing: .05em; }
+  .device-item { padding: 12px 16px; border-bottom: 1px solid var(--gray-3);
+                 cursor: pointer; transition: background .1s; }
+  .device-item:hover    { background: var(--gray-1); }
+  .device-item.active   { background: var(--blue-l); border-left: 3px solid var(--blue);
+                           padding-left: 13px; }
+  .device-item .k       { font-size: .75rem; font-weight: 700; color: var(--blue);
+                           font-family: monospace; }
+  .device-item .name    { font-size: .88rem; font-weight: 500; margin-top: 2px;
+                          line-height: 1.35; color: var(--gray-9); }
+  .device-item .meta    { font-size: .75rem; color: var(--gray-5); margin-top: 3px; }
+  .badge { display: inline-block; padding: 1px 7px; border-radius: 9999px;
+           font-size: .7rem; font-weight: 600; margin-top: 4px; }
+  .badge-blue  { background: var(--blue-l);  color: var(--blue); }
+  .badge-gray  { background: var(--gray-2);  color: var(--gray-7); }
+
+  /* ── Right panel / tabs ── */
+  .panel-right { display: flex; flex-direction: column; overflow: hidden; }
+  .tabs        { display: flex; border-bottom: 1px solid var(--gray-3); background: #fff; }
+  .tab         { padding: 12px 20px; font-size: .88rem; font-weight: 500; cursor: pointer;
+                 color: var(--gray-5); border-bottom: 2px solid transparent;
+                 transition: color .15s, border-color .15s; }
+  .tab:hover   { color: var(--gray-9); }
+  .tab.active  { color: var(--blue); border-bottom-color: var(--blue); }
+  .tab-content { flex: 1; overflow-y: auto; padding: 20px 24px; }
+
+  /* ── Empty / loading states ── */
+  .empty { text-align: center; padding: 60px 20px; color: var(--gray-5); }
+  .empty svg { width: 48px; height: 48px; opacity: .3; margin-bottom: 12px; }
+  .empty h3  { font-size: 1rem; font-weight: 600; color: var(--gray-7); }
+  .empty p   { font-size: .85rem; margin-top: 6px; }
+  .spinner   { display: inline-block; width: 18px; height: 18px;
+               border: 2px solid var(--gray-3); border-top-color: var(--blue);
+               border-radius: 50%; animation: spin .6s linear infinite; vertical-align: middle; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Device detail ── */
+  .section-hdr { font-size: .75rem; font-weight: 700; color: var(--gray-5);
+                 text-transform: uppercase; letter-spacing: .06em;
+                 margin: 20px 0 8px; }
+  .section-hdr:first-child { margin-top: 0; }
+  .kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 6px 12px;
+             font-size: .88rem; }
+  .kv-label { color: var(--gray-5); font-weight: 500; }
+  .kv-val   { color: var(--gray-9); word-break: break-word; }
+  a.link    { color: var(--blue); text-decoration: none; }
+  a.link:hover { text-decoration: underline; }
+
+  /* ── Performance table ── */
+  .perf-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  .perf-table th { background: var(--gray-2); padding: 8px 12px; text-align: left;
+                   font-size: .75rem; font-weight: 700; color: var(--gray-5);
+                   text-transform: uppercase; letter-spacing: .05em;
+                   border: 1px solid var(--gray-3); }
+  .perf-table td { padding: 10px 12px; border: 1px solid var(--gray-3);
+                   vertical-align: top; }
+  .perf-table tr:nth-child(even) td { background: var(--gray-1); }
+  .citation  { font-size: .72rem; color: var(--gray-5); margin-top: 4px; }
+  .citation a { color: var(--blue); }
+  .not-found { color: var(--gray-5); font-style: italic; font-size: .8rem; }
+  .note-box  { background: var(--blue-l); border: 1px solid #bfdbfe;
+               border-radius: var(--radius); padding: 10px 14px;
+               font-size: .8rem; color: var(--blue-d); margin-bottom: 16px; }
+  .warn-box  { background: #fffbeb; border: 1px solid #fde68a;
+               border-radius: var(--radius); padding: 10px 14px;
+               font-size: .8rem; color: #92400e; margin-bottom: 16px; }
+
+  /* ── Q&A ── */
+  .qa-form   { display: flex; gap: 8px; margin-bottom: 20px; }
+  .qa-form input  { flex: 1; padding: 9px 13px; border: 1px solid var(--gray-3);
+                    border-radius: var(--radius); font-size: .9rem; outline: none; }
+  .qa-form input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-l); }
+  .qa-form button { padding: 9px 18px; background: var(--blue); color: #fff;
+                    border: none; border-radius: var(--radius); font-weight: 600;
+                    cursor: pointer; font-size: .9rem; }
+  .qa-form button:hover { background: var(--blue-d); }
+  .answer-box { background: #fff; border: 1px solid var(--gray-3);
+                border-radius: var(--radius); padding: 16px;
+                white-space: pre-wrap; font-size: .88rem; line-height: 1.65;
+                box-shadow: var(--shadow); }
+  .answer-cite { margin-top: 14px; padding-top: 12px;
+                 border-top: 1px solid var(--gray-3); }
+  .answer-cite h4 { font-size: .75rem; font-weight: 700; color: var(--gray-5);
+                    text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+  .cite-chip { display: inline-block; background: var(--gray-2); border-radius: 4px;
+               padding: 3px 8px; font-size: .75rem; margin: 2px; }
+
+  /* ── Labs ── */
+  .lab-card  { background: #fff; border: 1px solid var(--gray-3);
+               border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px;
+               box-shadow: var(--shadow); }
+  .lab-name  { font-size: .75rem; font-weight: 700; color: var(--gray-5);
+               text-transform: uppercase; letter-spacing: .05em; }
+  .lab-test  { font-size: .95rem; font-weight: 600; color: var(--gray-9); margin-top: 3px; }
+  .lab-meta  { font-size: .8rem; color: var(--gray-5); margin-top: 6px; }
+
+  /* ── Ingest button ── */
+  .ingest-btn { display: inline-block; padding: 6px 14px; background: var(--gray-2);
+                border: 1px solid var(--gray-3); border-radius: 6px;
+                font-size: .8rem; font-weight: 600; cursor: pointer;
+                color: var(--gray-7); margin-top: 8px; }
+  .ingest-btn:hover { background: var(--gray-3); }
+  .ingest-btn.running { color: var(--blue); cursor: default; }
+
+  /* ── Responsive ── */
+  @media (max-width: 700px) {
+    .layout { grid-template-columns: 1fr; grid-template-rows: 240px 1fr; }
+    .panel-left { border-right: none; border-bottom: 1px solid var(--gray-3); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>IVD Comparator Finder</h1>
+  <p>FDA 510(k) device lookup · 510(k) Summary PDF parsing · Grounded performance Q&amp;A</p>
+</header>
+
+<div class="search-wrap">
+  <input id="analyte-input" type="text" placeholder="Enter analyte or assay (e.g. Group A Strep, RSV, SARS-CoV-2)"
+         value="Group A Strep" />
+  <button onclick="search()">Search</button>
+</div>
+
+<div class="layout">
+  <!-- Left: device list -->
+  <div class="panel-left">
+    <div class="panel-left-hdr">Devices <span id="device-count"></span></div>
+    <div id="device-list">
+      <div class="empty">
+        <p>Search for an analyte to see cleared devices</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: detail tabs -->
+  <div class="panel-right">
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('overview')">Overview</div>
+      <div class="tab" onclick="switchTab('performance')">Performance</div>
+      <div class="tab" onclick="switchTab('ask')">Ask</div>
+      <div class="tab" onclick="switchTab('labs')">Reference Labs</div>
+    </div>
+    <div class="tab-content" id="tab-content">
+      <div class="empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        <h3>Select a device</h3>
+        <p>Search for an analyte, then click a device to explore</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── State ──
+let devices = [];
+let selectedDevice = null;
+let activeTab = 'overview';
+let compareKNumbers = [];
+
+// ── Search ──
+async function search() {
+  const analyte = document.getElementById('analyte-input').value.trim();
+  if (!analyte) return;
+
+  document.getElementById('device-list').innerHTML =
+    '<div class="empty"><div class="spinner"></div><p style="margin-top:12px">Searching openFDA…</p></div>';
+  document.getElementById('device-count').textContent = '';
+
+  try {
+    const res = await fetch(`/api/find?analyte=${encodeURIComponent(analyte)}`);
+    const data = await res.json();
+    devices = data.devices || [];
+    renderDeviceList(devices, data);
+  } catch (e) {
+    document.getElementById('device-list').innerHTML =
+      `<div class="empty" style="color:var(--red)">Error: ${e.message}</div>`;
+  }
+}
+
+function renderDeviceList(devices, meta) {
+  const count = devices.length;
+  document.getElementById('device-count').textContent = `(${count})`;
+  if (!count) {
+    document.getElementById('device-list').innerHTML =
+      '<div class="empty"><p>No devices found</p></div>';
+    return;
+  }
+  document.getElementById('device-list').innerHTML = devices.map((d, i) => `
+    <div class="device-item" id="dev-${i}" onclick="selectDevice(${i})">
+      <div class="k">${d.k_number}</div>
+      <div class="name">${esc(d.device_name)}</div>
+      <div class="meta">${esc(d.applicant_name)} · ${d.decision_date || '—'}</div>
+      <span class="badge badge-blue">${d.product_code}</span>
+      <span class="badge badge-gray">${d.regulation_number || '—'}</span>
+    </div>
+  `).join('');
+}
+
+// ── Device selection ──
+async function selectDevice(i) {
+  if (selectedDevice !== null) {
+    document.getElementById(`dev-${selectedDevice}`)?.classList.remove('active');
+  }
+  selectedDevice = i;
+  document.getElementById(`dev-${i}`)?.classList.add('active');
+  const d = devices[i];
+  compareKNumbers = [d.k_number];
+
+  if (activeTab === 'overview')   await renderOverview(d.k_number);
+  if (activeTab === 'performance') await renderPerformance([d.k_number]);
+  if (activeTab === 'ask')        renderAsk(d.k_number);
+  if (activeTab === 'labs')       await renderLabs();
+}
+
+// ── Tab switching ──
+function switchTab(name) {
+  activeTab = name;
+  document.querySelectorAll('.tab').forEach((t, i) => {
+    const names = ['overview','performance','ask','labs'];
+    t.classList.toggle('active', names[i] === name);
+  });
+  if (!selectedDevice && selectedDevice !== 0) {
+    if (name === 'labs') renderLabs();
+    return;
+  }
+  const k = devices[selectedDevice]?.k_number;
+  if (name === 'overview')    renderOverview(k);
+  if (name === 'performance') renderPerformance([k]);
+  if (name === 'ask')         renderAsk(k);
+  if (name === 'labs')        renderLabs();
+}
+
+// ── Overview tab ──
+async function renderOverview(k) {
+  setContent('<div class="empty"><div class="spinner"></div></div>');
+  try {
+    const res  = await fetch(`/api/clearance/${k}`);
+    const data = await res.json();
+    if (data.error) { setContent(`<div class="empty" style="color:var(--red)">${data.error}</div>`); return; }
+
+    const indexed = data.index_status === 'ok';
+    const ingestLabel = indexed
+      ? `✓ Summary indexed (${data.indexed_chunk_count} chunks)`
+      : data.index_status === 'no_summary'
+        ? '⚠ No public Summary PDF'
+        : 'Fetch &amp; parse Summary PDF';
+
+    setContent(`
+      <div class="section-hdr">Clearance</div>
+      <div class="kv-grid">
+        <span class="kv-label">K-Number</span>    <span class="kv-val"><strong>${data.k_number}</strong></span>
+        <span class="kv-label">Device</span>       <span class="kv-val">${esc(data.device_name)}</span>
+        <span class="kv-label">Applicant</span>    <span class="kv-val">${esc(data.applicant_name)}</span>
+        <span class="kv-label">Decision date</span><span class="kv-val">${data.decision_date || '—'}</span>
+        <span class="kv-label">Product code</span> <span class="kv-val">${data.product_code || '—'}</span>
+        <span class="kv-label">Device class</span> <span class="kv-val">${data.device_class || '—'}</span>
+        <span class="kv-label">Decision</span>     <span class="kv-val">${data.decision_code || '—'}</span>
+        <span class="kv-label">Has summary</span>  <span class="kv-val">${data.statement_or_summary || '—'}</span>
+      </div>
+
+      ${data.summary_url ? `
+      <div class="section-hdr">510(k) Summary PDF</div>
+      <a class="link" href="${data.summary_url}" target="_blank">↗ ${data.summary_url}</a>
+      ` : ''}
+
+      <div class="section-hdr">Index status</div>
+      <div style="font-size:.88rem;color:${indexed ? 'var(--green)' : 'var(--gray-5)'}">
+        ${indexed ? '✓' : '○'} ${data.index_status}
+      </div>
+      ${!indexed && data.index_status !== 'no_summary' ? `
+        <button class="ingest-btn" id="ingest-btn-${k}" onclick="ingest('${k}')">
+          ${ingestLabel}
+        </button>` : `<div style="font-size:.8rem;color:var(--gray-5);margin-top:6px">${ingestLabel}</div>`}
+
+      <div class="section-hdr" style="margin-top:24px">Quick actions</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="ingest-btn" onclick="switchTab('performance')">→ Performance</button>
+        <button class="ingest-btn" onclick="switchTab('ask')">→ Ask a question</button>
+      </div>
+    `);
+  } catch(e) {
+    setContent(`<div class="empty" style="color:var(--red)">Error: ${e.message}</div>`);
+  }
+}
+
+async function ingest(k) {
+  const btn = document.getElementById(`ingest-btn-${k}`);
+  if (btn) { btn.textContent = 'Fetching…'; btn.classList.add('running'); }
+  try {
+    await fetch('/api/ingest', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify([k]),
+    });
+    pollIngest(k);
+  } catch(e) { if (btn) btn.textContent = 'Error'; }
+}
+
+async function pollIngest(k) {
+  const btn = document.getElementById(`ingest-btn-${k}`);
+  for (let i = 0; i < 60; i++) {
+    await new Promise(r => setTimeout(r, 2000));
+    const res  = await fetch('/api/status');
+    const data = await res.json();
+    const prog = data.ingest_progress?.[k] || '';
+    if (btn) btn.textContent = prog || 'Processing…';
+    const status = data.indexed?.[k]?.status;
+    if (status === 'ok' || status === 'no_summary' || status === 'image_only' || status === 'error') {
+      await renderOverview(k);
+      return;
+    }
+  }
+}
+
+// ── Performance tab ──
+async function renderPerformance(kNumbers) {
+  setContent('<div class="empty"><div class="spinner"></div></div>');
+  try {
+    const res  = await fetch(`/api/compare?k_numbers=${kNumbers.join(',')}`);
+    const data = await res.json();
+    if (!data.rows?.length) { setContent('<div class="empty"><p>No data</p></div>'); return; }
+
+    const FIELDS = [
+      ['ppa',              'PPA (Sensitivity)'],
+      ['npa',              'NPA (Specificity)'],
+      ['lod',              'LoD'],
+      ['comparator_method','Comparator / Ref Method'],
+      ['predicate_device', 'Predicate Device (SE)'],
+    ];
+
+    const tableRows = FIELDS.map(([key, label]) => `
+      <tr>
+        <td style="font-weight:600;font-size:.8rem;background:var(--gray-2)">${label}</td>
+        ${data.rows.map(row => {
+          const pv = row[key];
+          if (!pv) return `<td><span class="not-found">Not found in summary</span></td>`;
+          const cit = pv.citation;
+          const pageStr = cit.page ? ` p.${cit.page}` : '';
+          const url = cit.source_url ? `<a class="link" href="${cit.source_url}" target="_blank">${cit.k_number}${pageStr}</a>` : `${cit.k_number}${pageStr}`;
+          return `<td>${esc(pv.value)}<div class="citation">↳ ${url} [${esc(cit.section)}]</div></td>`;
+        }).join('')}
+      </tr>
+    `).join('');
+
+    setContent(`
+      <div class="note-box">${esc(data.scope_note)}</div>
+      <div class="warn-box">⚠ ${esc(data.predicate_note)}</div>
+      <table class="perf-table">
+        <thead><tr>
+          <th style="width:180px">Metric</th>
+          ${data.rows.map(r => `<th>${esc(r.k_number)}<br><span style="font-weight:400;text-transform:none;font-size:.72rem">${esc(r.device_name).slice(0,40)}</span></th>`).join('')}
+        </tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+      ${data.rows.some(r => r.extraction_notes?.length) ? `
+        <div class="section-hdr" style="margin-top:20px">Extraction notes</div>
+        ${data.rows.filter(r => r.extraction_notes?.length).map(r =>
+          `<div style="font-size:.8rem;color:var(--gray-5);margin-bottom:4px"><strong>${r.k_number}</strong>: ${r.extraction_notes.join('; ')}</div>`
+        ).join('')}
+        <div class="note-box" style="margin-top:10px">
+          To fill missing cells, go to the Overview tab and click "Fetch &amp; parse Summary PDF" for that device.
+        </div>
+      ` : ''}
+    `);
+  } catch(e) {
+    setContent(`<div class="empty" style="color:var(--red)">Error: ${e.message}</div>`);
+  }
+}
+
+// ── Ask tab ──
+function renderAsk(k) {
+  setContent(`
+    <div class="section-hdr">Ask about ${k}</div>
+    <p style="font-size:.85rem;color:var(--gray-5);margin-bottom:14px">
+      Answers come from indexed 510(k) Summary text. You must fetch the PDF first (Overview tab).
+    </p>
+    <div class="qa-form">
+      <input id="qa-input" type="text" placeholder="e.g. What LoD was reported? What was the comparator method?"
+             onkeydown="if(event.key==='Enter') askQuestion('${k}')" />
+      <button onclick="askQuestion('${k}')">Ask</button>
+    </div>
+    <div id="qa-result"></div>
+
+    <div class="section-hdr" style="margin-top:24px">Example questions</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">
+      ${[
+        'What LoD was reported?',
+        'What was the comparator/reference method?',
+        'What reactivity strains were tested?',
+        'What were the PPA and NPA?',
+        'Were there any cross-reactivity concerns?',
+        'What specimen types were evaluated?',
+      ].map(q => `<button class="ingest-btn" onclick="fillAsk('${k}','${q.replace(/'/g,"\\'")}')">
+        ${esc(q)}</button>`).join('')}
+    </div>
+  `);
+}
+
+function fillAsk(k, q) {
+  document.getElementById('qa-input').value = q;
+  askQuestion(k);
+}
+
+async function askQuestion(k) {
+  const q = document.getElementById('qa-input')?.value?.trim();
+  if (!q) return;
+  document.getElementById('qa-result').innerHTML = '<div class="spinner"></div>';
+  try {
+    const res  = await fetch(`/api/ask?q=${encodeURIComponent(q)}&k_numbers=${k}`);
+    const data = await res.json();
+    if (data.not_found_reason) {
+      document.getElementById('qa-result').innerHTML =
+        `<div class="warn-box">Not found: ${esc(data.not_found_reason)}</div>`;
+      return;
+    }
+    const cites = (data.citations || []).map(c => {
+      const page = c.page ? ` p.${c.page}` : '';
+      const url  = c.source_url
+        ? `<a class="link" href="${c.source_url}" target="_blank">${c.k_number}${page}</a>`
+        : `${c.k_number}${page}`;
+      return `<span class="cite-chip">${url} [${esc(c.section)}]</span>`;
+    }).join('');
+    document.getElementById('qa-result').innerHTML = `
+      <div class="answer-box">
+        ${esc(data.answer || '')}
+        ${cites ? `<div class="answer-cite"><h4>Sources</h4>${cites}</div>` : ''}
+      </div>`;
+  } catch(e) {
+    document.getElementById('qa-result').innerHTML =
+      `<div style="color:var(--red)">Error: ${e.message}</div>`;
+  }
+}
+
+// ── Labs tab ──
+async function renderLabs() {
+  const analyte = document.getElementById('analyte-input').value.trim() || 'Group A Strep';
+  setContent(`<div class="empty"><div class="spinner"></div><p style="margin-top:12px">Searching lab directories…</p></div>`);
+  try {
+    const res  = await fetch(`/api/labs?analyte=${encodeURIComponent(analyte)}`);
+    const data = await res.json();
+    if (!data.results?.length) {
+      setContent(`<div class="empty"><p>No reference lab tests found for <strong>${esc(analyte)}</strong></p></div>`);
+      return;
+    }
+    setContent(`
+      <div class="warn-box">⚠ ${esc(data.directory_lookup_note)}</div>
+      ${data.results.map(t => `
+        <div class="lab-card">
+          <div class="lab-name">${esc(t.lab_name)}</div>
+          <div class="lab-test">${esc(t.test_name)}</div>
+          <div class="lab-meta">
+            ${t.test_code ? `Code: <strong>${esc(t.test_code)}</strong> · ` : ''}
+            ${t.methodology ? `Method: ${esc(t.methodology)} · ` : ''}
+            ${t.specimen_type ? `Specimen: ${esc(t.specimen_type)} · ` : ''}
+            Snapshot: ${esc(t.snapshot_date)}
+          </div>
+          ${t.url ? `<div style="margin-top:6px"><a class="link" href="${t.url}" target="_blank">↗ View test</a></div>` : ''}
+        </div>
+      `).join('')}
+    `);
+  } catch(e) {
+    setContent(`<div class="empty" style="color:var(--red)">Error: ${e.message}</div>`);
+  }
+}
+
+// ── Utilities ──
+function setContent(html) {
+  document.getElementById('tab-content').innerHTML = html;
+}
+function esc(s) {
+  if (s == null) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Auto-load on page open ──
+window.addEventListener('load', () => search());
+</script>
+</body>
+</html>

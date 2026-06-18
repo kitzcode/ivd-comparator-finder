@@ -2,5 +2,6 @@ pydantic>=2.0
 httpx>=0.27
 pdfplumber>=0.11
 mcp[cli]>=1.0
-pytest>=8.0
+fastapi>=0.111
+uvicorn[standard]>=0.30
 # Optional: anthropic>=0.40  — needed only for --model flag in ask/compare commands
