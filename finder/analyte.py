@@ -56,6 +56,20 @@ BUILTIN_SYNONYMS: dict[str, list[str]] = {
         "Streptococcus agalactiae",
         "GBS",
     ],
+    "flu": [
+        "Influenza",
+        "Influenza A",
+        "Influenza B",
+        "Flu A",
+        "Flu B",
+    ],
+    "influenza": [
+        "Influenza",
+        "Influenza A",
+        "Influenza B",
+        "Flu A",
+        "Flu B",
+    ],
     "influenza a": [
         "Influenza A",
         "Flu A",
@@ -131,8 +145,10 @@ def resolve_analyte(
     # Step 2: classification text search.
     # Skip very short synonyms (< 6 chars) in broad classification search to
     # avoid matching unrelated devices (e.g. "GAS" matches many device names).
+    # Exception: always include the original user term regardless of length.
+    original_term = analyte_term.strip()
     for syn in synonyms:
-        if len(syn) < 6:
+        if len(syn) < 6 and syn != original_term:
             continue
         for rec in search_classification_by_term(syn):
             # Optionally filter by medical specialty (e.g. "MN" for microbiology)
@@ -145,7 +161,7 @@ def resolve_analyte(
     # Step 3: 510(k) text search to catch additional product codes.
     # Require longer synonyms here too to limit false positives.
     for syn in synonyms:
-        if len(syn) < 6:
+        if len(syn) < 6 and syn != original_term:
             continue
         for rec in search_510k_by_term(syn):
             pc = rec.get("product_code")
