@@ -1,0 +1,366 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 9
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Mchenry",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "803 N. Front St. Suite 3",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "GWC",
+      "openfda": {
+        "registration_number": [
+          "3003750284",
+          "9611882"
+        ],
+        "fei_number": [
+          "3003750284",
+          "3002808078"
+        ],
+        "device_name": "Antisera, All Types, Streptococcus Pneumoniae",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1"
+      },
+      "zip_code": "60050",
+      "applicant": "Armkel, LLC",
+      "decision_date": "1983-09-26",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "BACTIGEN S. PNEUMONIAE",
+      "advisory_committee": "MI",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K831887",
+      "state": "IL",
+      "date_received": "1983-06-13",
+      "review_advisory_committee": "MI",
+      "postal_code": "60050",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Cranbury",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "Half Acre Rd.",
+      "address_2": "P.O. Box 1001",
+      "statement_or_summary": "",
+      "product_code": "GWC",
+      "openfda": {
+        "registration_number": [
+          "3003750284",
+          "9611882"
+        ],
+        "fei_number": [
+          "3003750284",
+          "3002808078"
+        ],
+        "device_name": "Antisera, All Types, Streptococcus Pneumoniae",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1"
+      },
+      "zip_code": "08512",
+      "applicant": "Armkel, LLC",
+      "decision_date": "1989-02-07",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "BACTIGEN(R) S. PNEUMONIAE",
+      "advisory_committee": "MI",
+      "contact": "ANN  MACLEARIE",
+      "expedited_review_flag": "",
+      "k_number": "K884966",
+      "state": "NJ",
+      "date_received": "1988-11-30",
+      "review_advisory_committee": "MI",
+      "postal_code": "08512",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Cranbury",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "Half Acre Rd.",
+      "address_2": "P.O. Box 1001",
+      "statement_or_summary": "",
+      "product_code": "GWC",
+      "openfda": {
+        "registration_number": [
+          "3003750284",
+          "9611882"
+        ],
+        "fei_number": [
+          "3003750284",
+          "3002808078"
+        ],
+        "device_name": "Antisera, All Types, Streptococcus Pneumoniae",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1"
+      },
+      "zip_code": "08512",
+      "applicant": "Armkel, LLC",
+      "decision_date": "1989-02-07",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "BACTIGEN(R) MENINGITIDIS PANEL",
+      "advisory_committee": "MI",
+      "contact": "ANN  MACLEARIE",
+      "expedited_review_flag": "",
+      "k_number": "K884965",
+      "state": "NJ",
+      "date_received": "1988-11-30",
+      "review_advisory_committee": "MI",
+      "postal_code": "08512",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Mchenry",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "803 N. Front St. Suite 3",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "GWC",
+      "openfda": {
+        "registration_number": [
+          "3003750284",
+          "9611882"
+        ],
+        "fei_number": [
+          "3003750284",
+          "3002808078"
+        ],
+        "device_name": "Antisera, All Types, Streptococcus Pneumoniae",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1"
+      },
+      "zip_code": "60050",
+      "applicant": "Pharmacia, Inc.",
+      "decision_date": "1980-10-31",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "PHADEBACT PNEUMOCOCCUS TEST",
+      "advisory_committee": "MI",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K802337",
+      "state": "IL",
+      "date_received": "1980-09-26",
+      "review_advisory_committee": "MI",
+      "postal_code": "60050",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Walker",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "4221 Richmond Rd., NW",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "GWC",
+      "openfda": {
+        "registration_number": [
+          "3003750284",
+          "9611882"
+        ],
+        "fei_number": [
+          "3003750284",
+          "3002808078"
+        ],
+        "device_name": "Antisera, All Types, Streptococcus Pneumoniae",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1"
+      },
+      "zip_code": "49534",
+      "applicant": "Wellcome Diagnostics",
+      "decision_date": "1984-05-02",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "WELLCOGEN S. PNEUMONIAE",
+      "advisory_committee": "MI",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K841376",
+      "state": "MI",
+      "date_received": "1984-04-03",
+      "review_advisory_committee": "MI",
+      "postal_code": "49534",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "West Sacramento",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1584 Enterprise Blvd.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "GWC",
+      "openfda": {
+        "registration_number": [
+          "3003750284",
+          "9611882"
+        ],
+        "fei_number": [
+          "3003750284",
+          "3002808078"
+        ],
+        "device_name": "Antisera, All Types, Streptococcus Pneumoniae",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1"
+      },
+      "zip_code": "95691",
+      "applicant": "American Micro Scan",
+      "decision_date": "1987-03-25",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "IMMUNOSCAN(TM) DIRECT STREPTOCOCCUS PNEUMONIAE",
+      "advisory_committee": "MI",
+      "contact": "LORRAINE  WEAVER",
+      "expedited_review_flag": "",
+      "k_number": "K870029",
+      "state": "CA",
+      "date_received": "1987-01-05",
+      "review_advisory_committee": "MI",
+      "postal_code": "95691",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Walker",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "4221 Richmond Rd., NW",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "GWC",
+      "openfda": {
+        "registration_number": [
+          "3003750284",
+          "9611882"
+        ],
+        "fei_number": [
+          "3003750284",
+          "3002808078"
+        ],
+        "device_name": "Antisera, All Types, Streptococcus Pneumoniae",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1"
+      },
+      "zip_code": "49534",
+      "applicant": "Ventrex Laboratories, Inc.",
+      "decision_date": "1984-07-02",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "VENTRESCREEN STREP A TEST",
+      "advisory_committee": "MI",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K842239",
+      "state": "MI",
+      "date_received": "1984-06-05",
+      "review_advisory_committee": "MI",
+      "postal_code": "49534",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Washington",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1875 Eye St. NW Suite 625",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "GWC",
+      "openfda": {
+        "registration_number": [
+          "3003750284",
+          "9611882"
+        ],
+        "fei_number": [
+          "3003750284",
+          "3002808078"
+        ],
+        "device_name": "Antisera, All Types, Streptococcus Pneumoniae",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1"
+      },
+      "zip_code": "20006",
+      "applicant": "Bd Becton Dickinson Vacutainer Systems Preanalytic",
+      "decision_date": "1982-07-30",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "BBL PNEUMOSLIDE TEST",
+      "advisory_committee": "MI",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K821960",
+      "state": "DC",
+      "date_received": "1982-07-01",
+      "review_advisory_committee": "MI",
+      "postal_code": "20006",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Gaithersburg",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "9319 Gaither Rd.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "GWC",
+      "openfda": {
+        "registration_number": [
+          "3003750284",
+          "9611882"
+        ],
+        "fei_number": [
+          "3003750284",
+          "3002808078"
+        ],
+        "device_name": "Antisera, All Types, Streptococcus Pneumoniae",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1"
+      },
+      "zip_code": "20877",
+      "applicant": "Lkb Instruments, Inc.",
+      "decision_date": "1986-12-18",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "LKB ULTROBACT (TM) PNEUMOCOCCUS KIT; 2321-110",
+      "advisory_committee": "MI",
+      "contact": "ED  ZIOR",
+      "expedited_review_flag": "",
+      "k_number": "K862848",
+      "state": "MD",
+      "date_received": "1986-07-29",
+      "review_advisory_committee": "MI",
+      "postal_code": "20877",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

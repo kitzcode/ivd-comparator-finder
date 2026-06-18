@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "MDK",
+      "openfda": {
+        "k_number": [
+          "K904268",
+          "K924715",
+          "K974572",
+          "K915852"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Dna-Probe, Reagents, Streptococcal",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3740",
+      "implant_flag": "N",
+      "submission_type_id": "4"
+    }
+  ]
+}

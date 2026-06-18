@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "PEN",
+      "openfda": {
+        "k_number": [
+          "K193519",
+          "K243759",
+          "K190341",
+          "K182619",
+          "K143171",
+          "K130914",
+          "K243013",
+          "K181493",
+          "K213236",
+          "K160457",
+          "K132843"
+        ],
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "2",
+      "definition": "A qualitative multiplexed in vitro diagnostic device to detect and identify gram-negative bacteria and resistance markers in positive blood cultures.",
+      "regulation_number": "866.3365",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    }
+  ]
+}

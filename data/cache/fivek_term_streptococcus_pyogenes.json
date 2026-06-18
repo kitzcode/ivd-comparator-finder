@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "San Diego",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "9880 Campus Pt. Dr.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "MDK",
+      "openfda": {
+        "device_name": "Dna-Probe, Reagents, Streptococcal",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1"
+      },
+      "zip_code": "92121",
+      "applicant": "Gen-Probe, Inc.",
+      "decision_date": "1990-11-13",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "ACCUPROBE STREPTOCOCCUS PYOGENES CULTURE CONFIRM.",
+      "advisory_committee": "MI",
+      "contact": "CONNIE  KIRBY",
+      "expedited_review_flag": "",
+      "k_number": "K904268",
+      "state": "CA",
+      "date_received": "1990-09-18",
+      "review_advisory_committee": "MI",
+      "postal_code": "92121",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

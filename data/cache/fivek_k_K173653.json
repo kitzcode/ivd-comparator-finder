@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Scarborough",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "10 Southgate Rd.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PGX",
+      "openfda": {
+        "registration_number": [
+          "2243471",
+          "3004141078",
+          "9610126",
+          "3005360469",
+          "3012494290",
+          "3012918440",
+          "3019946577",
+          "3003018722",
+          "3002773840",
+          "3009613136",
+          "1524213",
+          "3016838963",
+          "1221359",
+          "1528450",
+          "2023365",
+          "3004530258",
+          "3003795116"
+        ],
+        "fei_number": [
+          "1000122536",
+          "2243471",
+          "3004141078",
+          "3012494290",
+          "3012918440",
+          "3005670738",
+          "3003018722",
+          "3002773840",
+          "3009613136",
+          "3002806559",
+          "3019946577",
+          "3016838963",
+          "1524213",
+          "1221359",
+          "2023365",
+          "3004530258",
+          "3003795116"
+        ],
+        "device_name": "Groups A, C And G Beta-Hemolytic Streptococcus Nucleic Acid Amplification System",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.2680",
+        "device_class": "2"
+      },
+      "zip_code": "04074",
+      "applicant": "Alere Scarborough, Inc.",
+      "decision_date": "2018-05-02",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "Alere i Strep A 2, Alere i instrument, Alere i Strep A 2 Control Swab Kit",
+      "advisory_committee": "MI",
+      "contact": "Danielle A. Briggeman",
+      "expedited_review_flag": "",
+      "k_number": "K173653",
+      "state": "ME",
+      "date_received": "2017-11-28",
+      "review_advisory_committee": "MI",
+      "postal_code": "04074",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Dual Track"
+    }
+  ]
+}

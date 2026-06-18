@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "PGX",
+      "openfda": {
+        "k_number": [
+          "K141173",
+          "K143651",
+          "K150868",
+          "DEN140005",
+          "K173398",
+          "K201269",
+          "K141338",
+          "K141757",
+          "K183366",
+          "K172402",
+          "K173653",
+          "K172126",
+          "K162274"
+        ],
+        "registration_number": [
+          "2243471",
+          "3004141078",
+          "9610126",
+          "3005360469",
+          "3012494290",
+          "3012918440",
+          "3019946577",
+          "3003018722",
+          "3002773840",
+          "3009613136",
+          "1524213",
+          "3016838963",
+          "1221359",
+          "1528450",
+          "2023365",
+          "3004530258",
+          "3003795116"
+        ],
+        "fei_number": [
+          "1000122536",
+          "2243471",
+          "3004141078",
+          "3012494290",
+          "3012918440",
+          "3005670738",
+          "3003018722",
+          "3002773840",
+          "3009613136",
+          "3002806559",
+          "3019946577",
+          "3016838963",
+          "1524213",
+          "1221359",
+          "2023365",
+          "3004530258",
+          "3003795116"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Groups A, C And G Beta-Hemolytic Streptococcus Nucleic Acid Amplification System",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "2",
+      "definition": "An in vitro diagnostic test for the detection of Group A, C and G beta hemolytic Streptococcus in throat swab specimens from symptomatic patients.",
+      "regulation_number": "866.2680",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    }
+  ]
+}

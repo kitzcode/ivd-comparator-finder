@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 3
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "San Ramon",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "12945 Alcosta Blvd.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "MJZ",
+      "openfda": {
+        "device_name": "Kit, Direct Antigen, Positive Control",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1660",
+        "device_class": "1",
+        "registration_number": [
+          "3023322455",
+          "3014150341",
+          "3004635103",
+          "3007606081",
+          "3004146366",
+          "1221359",
+          "3017662853",
+          "3016252795"
+        ],
+        "fei_number": [
+          "3023322455",
+          "3014150341",
+          "3004635103",
+          "3007606081",
+          "3004146366",
+          "1221359",
+          "3017662853",
+          "3016252795"
+        ]
+      },
+      "zip_code": "94583",
+      "applicant": "Blackhawk Biosystems, Inc.",
+      "decision_date": "1997-08-12",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "CHLAMYDIATROL AG",
+      "advisory_committee": "CH",
+      "contact": "CAROLE  POLITO",
+      "expedited_review_flag": "",
+      "k_number": "K972129",
+      "state": "CA",
+      "date_received": "1997-06-06",
+      "review_advisory_committee": "MI",
+      "postal_code": "94583",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Scarborough",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "10 Southgate Rd.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "MJZ",
+      "openfda": {
+        "device_name": "Kit, Direct Antigen, Positive Control",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1660",
+        "device_class": "1",
+        "registration_number": [
+          "3023322455",
+          "3014150341",
+          "3004635103",
+          "3007606081",
+          "3004146366",
+          "1221359",
+          "3017662853",
+          "3016252795"
+        ],
+        "fei_number": [
+          "3023322455",
+          "3014150341",
+          "3004635103",
+          "3007606081",
+          "3004146366",
+          "1221359",
+          "3017662853",
+          "3016252795"
+        ]
+      },
+      "zip_code": "04074",
+      "applicant": "Binax, Inc.",
+      "decision_date": "2009-09-01",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "BINAXNOW MALARIA POSITIVE CONTROL KIT, MODEL 665-010",
+      "advisory_committee": "CH",
+      "contact": "Anne  Jepson",
+      "expedited_review_flag": "",
+      "k_number": "K083744",
+      "state": "ME",
+      "date_received": "2008-12-16",
+      "review_advisory_committee": "MI",
+      "postal_code": "04074",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Abbott Park",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "200 Abbott Park Rd.",
+      "address_2": "Dept. 9v6, Bldg. Ap31",
+      "statement_or_summary": "Summary",
+      "product_code": "MJZ",
+      "openfda": {
+        "device_name": "Kit, Direct Antigen, Positive Control",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1660",
+        "device_class": "1",
+        "registration_number": [
+          "3023322455",
+          "3014150341",
+          "3004635103",
+          "3007606081",
+          "3004146366",
+          "1221359",
+          "3017662853",
+          "3016252795"
+        ],
+        "fei_number": [
+          "3023322455",
+          "3014150341",
+          "3004635103",
+          "3007606081",
+          "3004146366",
+          "1221359",
+          "3017662853",
+          "3016252795"
+        ]
+      },
+      "zip_code": "60064",
+      "applicant": "Abbott Diagnostics",
+      "decision_date": "1997-08-13",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "ABBOTT STREP A CONTROLS",
+      "advisory_committee": "CH",
+      "contact": "GRACE  LEMIEUX",
+      "expedited_review_flag": "",
+      "k_number": "K972182",
+      "state": "IL",
+      "date_received": "1997-05-29",
+      "review_advisory_committee": "MI",
+      "postal_code": "60064",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

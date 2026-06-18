@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.env
+
+# PDF cache — potentially large; not committed
+data/cache/pdf/
+
+# Chunk + lab caches — derived from PDFs; not committed
+data/cache/chunks/
+data/cache/labs/
+
+# openFDA JSON cache IS committed (small; used for deterministic test replay)
+# Exception: do not commit snapshot files that may be large
+data/cache/snapshot_*.json
+
+.DS_Store

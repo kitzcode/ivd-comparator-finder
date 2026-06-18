@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 1,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Scarborough",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "10 Southgate Rd.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OZE",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3010770794",
+          "3004141078",
+          "3038610665",
+          "3023372670",
+          "3003795116",
+          "3012494290",
+          "3019946577",
+          "3003018722",
+          "3002773840",
+          "3006028115",
+          "3007799234",
+          "3013019728",
+          "3029059580",
+          "2243471",
+          "9610126",
+          "1650733",
+          "3005360469",
+          "1221359",
+          "1528450",
+          "1050190"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3010770794",
+          "3004141078",
+          "3038610665",
+          "3005670738",
+          "3023372670",
+          "3003795116",
+          "3012494290",
+          "3019946577",
+          "3002524000",
+          "3003018722",
+          "3002773840",
+          "3006028115",
+          "3007799234",
+          "3013019728",
+          "3029059580",
+          "2243471",
+          "1000122536",
+          "1221359",
+          "3002806559",
+          "1050190"
+        ],
+        "device_name": "Influenza A And Influenza B Multiplex Nucleic Acid Assay",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3980",
+        "device_class": "2"
+      },
+      "zip_code": "04074",
+      "applicant": "Abbott Diagnostics Scarborough, Inc.",
+      "decision_date": "2022-06-24",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "ID Now Instrument, ID Now Influenza A & B 2, ID NOW Strep A 2",
+      "advisory_committee": "MI",
+      "contact": "Jessica  Stahle",
+      "expedited_review_flag": "",
+      "k_number": "K220801",
+      "state": "ME",
+      "date_received": "2022-03-18",
+      "review_advisory_committee": "MI",
+      "postal_code": "04074",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Special"
+    }
+  ]
+}

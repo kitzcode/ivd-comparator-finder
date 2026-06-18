@@ -1,0 +1,488 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 11
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Salt Lake City",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "515 Colorow Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "84108",
+      "applicant": "Biofire Diagnostics, LLC",
+      "decision_date": "2018-07-05",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "FilmArray Blood Culture Identification (BCID) Panel",
+      "advisory_committee": "MI",
+      "contact": "Kristen J. Kanack",
+      "expedited_review_flag": "",
+      "k_number": "K181493",
+      "state": "UT",
+      "date_received": "2018-06-06",
+      "review_advisory_committee": "MI",
+      "postal_code": "84108",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Special"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Salt Lake City",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "390 Wakara Way",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "84108",
+      "applicant": "Biofire Diagnostics, LLC",
+      "decision_date": "2015-01-30",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "FilmArray Blood Culture Identification (BCID) Panel for use with the FilmArray 2.0",
+      "advisory_committee": "MI",
+      "contact": "Kristen  Kanack, PhD",
+      "expedited_review_flag": "",
+      "k_number": "K143171",
+      "state": "UT",
+      "date_received": "2014-11-04",
+      "review_advisory_committee": "MI",
+      "postal_code": "84108",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Northbrook",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "4088 Commercial Ave.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "60062",
+      "applicant": "Luminex Corporation",
+      "decision_date": "2025-04-18",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "LIAISON PLEX Gram-Negative Blood Culture Assay",
+      "advisory_committee": "MI",
+      "contact": "Sheri  Calderon",
+      "expedited_review_flag": "",
+      "k_number": "K243013",
+      "state": "IL",
+      "date_received": "2024-09-27",
+      "review_advisory_committee": "MI",
+      "postal_code": "60062",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Huntsville",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "601 Genome Way",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "35806",
+      "applicant": "Icubate, Inc.",
+      "decision_date": "2019-06-28",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "iC-GN iC-Cassette for use on the iC-System",
+      "advisory_committee": "MI",
+      "contact": "Carter  Wells",
+      "expedited_review_flag": "",
+      "k_number": "K190341",
+      "state": "AL",
+      "date_received": "2019-02-14",
+      "review_advisory_committee": "MI",
+      "postal_code": "35806",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Northbrook",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "4088 Commercial Ave.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "60062",
+      "applicant": "Nanosphere, Inc.",
+      "decision_date": "2014-01-08",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "VERIGENE GRAM NEGATIVE BLOOD CULTURE NUCLEIC ACID TEST (BC-GN)",
+      "advisory_committee": "MI",
+      "contact": "MARK  DEL VECCHIO",
+      "expedited_review_flag": "",
+      "k_number": "K132843",
+      "state": "IL",
+      "date_received": "2013-09-10",
+      "review_advisory_committee": "MI",
+      "postal_code": "60062",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Salt Lake City",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "515 Colorow Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "84108",
+      "applicant": "Biofire Diagnostics, LLC",
+      "decision_date": "2020-03-18",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "BioFire Blood Culture Identification 2 (BCID2) Panel",
+      "advisory_committee": "MI",
+      "contact": "Kristen  Kanack",
+      "expedited_review_flag": "",
+      "k_number": "K193519",
+      "state": "UT",
+      "date_received": "2019-12-19",
+      "review_advisory_committee": "MI",
+      "postal_code": "84108",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Salt Lake City",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "515 Colorow Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "84108",
+      "applicant": "Biofire Diagnostics, LLC",
+      "decision_date": "2024-12-20",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "BIOFIRE Blood Culture Identification 2 (BCID2) Panel (RFIT-ASY-0147 (30 pack) RFIT-ASY-0148 (6 pack))",
+      "advisory_committee": "MI",
+      "contact": "Karli  Plenert",
+      "expedited_review_flag": "",
+      "k_number": "K243759",
+      "state": "UT",
+      "date_received": "2024-12-06",
+      "review_advisory_committee": "MI",
+      "postal_code": "84108",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Special"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Salt Lake City",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "390 Wakara Way",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "84108",
+      "applicant": "Biofire Diagnostics, Inc.",
+      "decision_date": "2013-06-21",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "FILMARRAY BLOOD CULTURE IDENTIFICATION (BCID) PANEL",
+      "advisory_committee": "MI",
+      "contact": "BETH  LINGENFELTER",
+      "expedited_review_flag": "",
+      "k_number": "K130914",
+      "state": "UT",
+      "date_received": "2013-04-02",
+      "review_advisory_committee": "MI",
+      "postal_code": "84108",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Salt Lake City",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "390 Wakara Way",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "84108",
+      "applicant": "Biofire Diagnostics, LLC",
+      "decision_date": "2016-03-15",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "FilmArray Blood Culture Identification (BCID) panel for use with FilmArray Torch",
+      "advisory_committee": "MI",
+      "contact": "Kristen J. Kanack",
+      "expedited_review_flag": "",
+      "k_number": "K160457",
+      "state": "UT",
+      "date_received": "2016-02-19",
+      "review_advisory_committee": "MI",
+      "postal_code": "84108",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Special"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Carlsbad",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "5964 La Pl. Ct.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "92008",
+      "applicant": "Genmark Diagnostics, Incorporated",
+      "decision_date": "2022-04-27",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "ePlex Blood Culture Identification Gram Negative (BCID-GN) Panel",
+      "advisory_committee": "MI",
+      "contact": "Alan  Maderazo",
+      "expedited_review_flag": "",
+      "k_number": "K213236",
+      "state": "CA",
+      "date_received": "2021-09-30",
+      "review_advisory_committee": "MI",
+      "postal_code": "92008",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Carlsbad",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "5964 La Pl. Ct.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PEN",
+      "openfda": {
+        "device_name": "Gram-Negative Bacteria And Associated Resistance Markers",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3365",
+        "device_class": "2",
+        "registration_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3006028115",
+          "3010749841",
+          "3002773840"
+        ]
+      },
+      "zip_code": "92008",
+      "applicant": "Genmark Diagnostics, Incorporated",
+      "decision_date": "2019-04-12",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "ePlex Blood Culture Identification Gram Negative (BCID-GN) Panel",
+      "advisory_committee": "MI",
+      "contact": "Alan  Maderazo",
+      "expedited_review_flag": "",
+      "k_number": "K182619",
+      "state": "CA",
+      "date_received": "2018-09-24",
+      "review_advisory_committee": "MI",
+      "postal_code": "92008",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}
