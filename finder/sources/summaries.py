@@ -82,7 +82,10 @@ def resolve_summary_url(k_number: str) -> Optional[str]:
             except httpx.RequestError:
                 continue
 
-    url_file.write_text(found or "NONE")
+    try:
+        url_file.write_text(found or "NONE")
+    except OSError:
+        pass  # read-only filesystem — skip caching
     return found
 
 

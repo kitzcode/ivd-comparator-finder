@@ -79,7 +79,10 @@ def _load_cache(key: str) -> Optional[list[dict]]:
 
 
 def _save_cache(key: str, data: list[dict]) -> None:
-    (CACHE_DIR / f"{key}.json").write_text(json.dumps(data, indent=2))
+    try:
+        (CACHE_DIR / f"{key}.json").write_text(json.dumps(data, indent=2))
+    except OSError:
+        pass  # read-only filesystem — skip caching
 
 
 # ---------------------------------------------------------------------------

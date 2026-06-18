@@ -32,7 +32,10 @@ def _load_manifest() -> dict:
 
 
 def _save_manifest(m: dict) -> None:
-    MANIFEST_PATH.write_text(json.dumps(m, indent=2))
+    try:
+        MANIFEST_PATH.write_text(json.dumps(m, indent=2))
+    except OSError:
+        pass  # read-only filesystem — skip persisting manifest
 
 
 def _chunk_path(k_number: str) -> Path:
@@ -50,9 +53,12 @@ def get_index_status(k_number: str) -> Optional[str]:
 
 def store_chunks(k_number: str, chunks: list[SummaryChunk], status: str = "ok") -> None:
     """Persist chunks and record status in the manifest."""
-    _chunk_path(k_number).write_text(
-        json.dumps([c.model_dump(mode="json") for c in chunks], indent=2)
-    )
+    try:
+        _chunk_path(k_number).write_text(
+            json.dumps([c.model_dump(mode="json") for c in chunks], indent=2)
+        )
+    except OSError:
+        pass  # read-only filesystem — skip persisting chunks
     m = _load_manifest()
     m[k_number] = status
     _save_manifest(m)

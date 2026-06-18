@@ -55,7 +55,10 @@ def _load_cache(name: str) -> Optional[dict]:
 
 
 def _save_cache(name: str, data: dict) -> None:
-    _cache_path(name).write_text(json.dumps(data, indent=2))
+    try:
+        _cache_path(name).write_text(json.dumps(data, indent=2))
+    except OSError:
+        pass  # read-only filesystem (e.g. Vercel) — skip caching, still return data
 
 
 def _get(url: str, params: dict[str, Any], cache_key: str) -> dict:
