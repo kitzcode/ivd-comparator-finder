@@ -14,8 +14,13 @@ from typing import Optional
 
 from ..models import SummaryChunk
 
-CHUNK_DIR = Path(__file__).parent.parent.parent / "data" / "cache" / "chunks"
-CHUNK_DIR.mkdir(parents=True, exist_ok=True)
+_DEFAULT_CHUNK_DIR = Path(__file__).parent.parent.parent / "data" / "cache" / "chunks"
+try:
+    _DEFAULT_CHUNK_DIR.mkdir(parents=True, exist_ok=True)
+    CHUNK_DIR = _DEFAULT_CHUNK_DIR
+except OSError:
+    CHUNK_DIR = Path("/tmp") / "ivd_chunks"
+    CHUNK_DIR.mkdir(parents=True, exist_ok=True)
 
 MANIFEST_PATH = CHUNK_DIR / "_manifest.json"
 

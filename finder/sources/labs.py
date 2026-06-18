@@ -31,8 +31,13 @@ from typing import Optional
 import httpx
 from pydantic import BaseModel
 
-CACHE_DIR = Path(__file__).parent.parent.parent / "data" / "cache" / "labs"
-CACHE_DIR.mkdir(parents=True, exist_ok=True)
+_DEFAULT_LABS_CACHE = Path(__file__).parent.parent.parent / "data" / "cache" / "labs"
+try:
+    _DEFAULT_LABS_CACHE.mkdir(parents=True, exist_ok=True)
+    CACHE_DIR = _DEFAULT_LABS_CACHE
+except OSError:
+    CACHE_DIR = Path("/tmp") / "ivd_labs_cache"
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 SNAPSHOT_DATE = date.today().isoformat()
 _HEADERS = {

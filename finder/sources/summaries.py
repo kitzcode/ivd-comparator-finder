@@ -16,8 +16,14 @@ from typing import Optional
 
 import httpx
 
-CACHE_DIR = Path(__file__).parent.parent.parent / "data" / "cache" / "pdf"
-CACHE_DIR.mkdir(parents=True, exist_ok=True)
+_DEFAULT_CACHE = Path(__file__).parent.parent.parent / "data" / "cache" / "pdf"
+try:
+    _DEFAULT_CACHE.mkdir(parents=True, exist_ok=True)
+    CACHE_DIR = _DEFAULT_CACHE
+except OSError:
+    # Read-only filesystem (e.g. Vercel serverless) — fall back to /tmp
+    CACHE_DIR = Path("/tmp") / "ivd_pdf_cache"
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 # Probe order matters: more-specific patterns first.
 # {yy} = two-digit year extracted from the K-number.

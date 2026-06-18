@@ -27,8 +27,13 @@ BASE = "https://api.fda.gov"
 CLASSIFICATION_EP = f"{BASE}/device/classification.json"
 FIVEK_EP = f"{BASE}/device/510k.json"
 
-CACHE_DIR = Path(__file__).parent.parent.parent / "data" / "cache"
-CACHE_DIR.mkdir(parents=True, exist_ok=True)
+_DEFAULT_CACHE = Path(__file__).parent.parent.parent / "data" / "cache"
+try:
+    _DEFAULT_CACHE.mkdir(parents=True, exist_ok=True)
+    CACHE_DIR = _DEFAULT_CACHE
+except OSError:
+    CACHE_DIR = Path("/tmp") / "ivd_openfda_cache"
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 API_KEY = os.environ.get("OPENFDA_API_KEY", "")
 REQUEST_DELAY = 0.3  # seconds between requests when not using an API key
