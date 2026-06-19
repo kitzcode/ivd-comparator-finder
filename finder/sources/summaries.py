@@ -116,19 +116,37 @@ def resolve_summary_url(k_number: str) -> Optional[str]:
     return found
 
 
+_TMP_PDF_DIR = Path("/tmp") / "ivd_pdf_cache"
+
+
+def _writable_pdf_path(k_number: str) -> Path:
+    """Return a writable path for the PDF, falling back to /tmp on read-only FS."""
+    primary = _cache_pdf_path(k_number)
+    try:
+        primary.parent.mkdir(parents=True, exist_ok=True)
+        # Probe writability with a quick open
+        primary.open("ab").close()
+        return primary
+    except OSError:
+        _TMP_PDF_DIR.mkdir(parents=True, exist_ok=True)
+        return _TMP_PDF_DIR / f"{k_number}.pdf"
+
+
 def fetch_summary_pdf(k_number: str) -> Optional[Path]:
     """
-    Download the 510(k) Summary PDF for k_number to the cache dir.
+    Download the 510(k) Summary PDF for k_number to a writable cache dir.
     Returns the local path, or None if no public Summary exists.
     """
-    local = _cache_pdf_path(k_number)
-    if local.exists() and local.stat().st_size > 0:
-        return local
+    # Check both primary and tmp paths for an existing download
+    for candidate in [_cache_pdf_path(k_number), _TMP_PDF_DIR / f"{k_number}.pdf"]:
+        if candidate.exists() and candidate.stat().st_size > 0:
+            return candidate
 
     url = resolve_summary_url(k_number)
     if url is None:
         return None
 
+    local = _writable_pdf_path(k_number)
     with httpx.Client(timeout=60, follow_redirects=True) as client:
         try:
             resp = client.get(url, headers=_HEADERS)
