@@ -150,6 +150,14 @@
   .lab-meta  { font-size: .8rem; color: var(--gray-5); margin-top: 6px; }
 
   /* ── Ingest button ── */
+  .progress-wrap { margin: 10px 0 4px; }
+  .progress-bar-bg { height: 6px; background: var(--gray-2); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+  .progress-bar-fill { height: 100%; background: var(--blue); border-radius: 3px; transition: width .4s ease; }
+  .progress-steps { display: flex; gap: 0; margin-bottom: 8px; }
+  .progress-step { flex: 1; font-size: .72rem; text-align: center; padding: 4px 2px; color: var(--gray-5); border-bottom: 2px solid var(--gray-2); transition: color .3s, border-color .3s; }
+  .progress-step.active { color: var(--blue); border-color: var(--blue); font-weight: 600; }
+  .progress-step.done { color: var(--green); border-color: var(--green); }
+  .progress-msg { font-size: .78rem; color: var(--gray-5); min-height: 1.2em; }
   .ingest-btn { display: inline-block; padding: 6px 14px; background: var(--gray-2);
                 border: 1px solid var(--gray-3); border-radius: 6px;
                 font-size: .8rem; font-weight: 600; cursor: pointer;
@@ -322,13 +330,26 @@ async function renderOverview(k) {
       ` : ''}
 
       <div class="section-hdr">Index status</div>
-      <div style="font-size:.88rem;color:${indexed ? 'var(--green)' : 'var(--gray-5)'}">
-        ${indexed ? '✓' : '○'} ${data.index_status}
-      </div>
-      ${!indexed && data.index_status !== 'no_summary' ? `
+      ${indexed ? `
+        <div style="font-size:.88rem;color:var(--green)">✓ ${ingestLabel}</div>
+        <div style="font-size:.8rem;color:var(--gray-5);margin-top:4px">Performance &amp; Ask tabs are ready.</div>
+      ` : data.index_status === 'no_summary' ? `
+        <div style="font-size:.88rem;color:var(--gray-5)">⚠ No public Summary PDF found for this device.</div>
+      ` : `
         <button class="ingest-btn" id="ingest-btn-${k}" onclick="ingest('${k}')">
-          ${ingestLabel}
-        </button>` : `<div style="font-size:.8rem;color:var(--gray-5);margin-top:6px">${ingestLabel}</div>`}
+          ↓ Fetch &amp; parse Summary PDF
+        </button>
+        <div id="ingest-progress-${k}" style="display:none" class="progress-wrap">
+          <div class="progress-steps">
+            <div class="progress-step" id="ps-${k}-0">Queued</div>
+            <div class="progress-step" id="ps-${k}-1">Downloading</div>
+            <div class="progress-step" id="ps-${k}-2">Parsing</div>
+            <div class="progress-step" id="ps-${k}-3">Indexing</div>
+          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" id="pb-${k}" style="width:0%"></div></div>
+          <div class="progress-msg" id="pm-${k}">Starting…</div>
+        </div>
+      `}
 
       <div class="section-hdr" style="margin-top:24px">Quick actions</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -341,32 +362,70 @@ async function renderOverview(k) {
   }
 }
 
+function _ingestStep(k, stepIdx, pct, msg) {
+  [0,1,2,3].forEach(i => {
+    const el = document.getElementById(`ps-${k}-${i}`);
+    if (!el) return;
+    el.className = 'progress-step' + (i < stepIdx ? ' done' : i === stepIdx ? ' active' : '');
+  });
+  const bar = document.getElementById(`pb-${k}`);
+  if (bar) bar.style.width = pct + '%';
+  const msg_el = document.getElementById(`pm-${k}`);
+  if (msg_el) msg_el.textContent = msg;
+}
+
+function _ingestStepFromMsg(k, prog) {
+  if (!prog || prog === 'queued') { _ingestStep(k, 0, 5,  'Queued…'); return; }
+  if (prog.includes('fetching PDF') || prog.includes('Fetching'))
+                                    { _ingestStep(k, 1, 25, 'Downloading PDF…'); return; }
+  if (prog.includes('extraction error'))
+                                    { _ingestStep(k, 2, 60, 'Parse error — see console'); return; }
+  if (prog.includes('image-only'))  { _ingestStep(k, 2, 60, 'Image-only PDF (OCR not supported)'); return; }
+  if (prog.includes('ingested'))    { _ingestStep(k, 3, 95, prog.split(': ')[1] || 'Indexing…'); return; }
+  if (prog.includes('no public'))   { _ingestStep(k, 1, 30, 'No public Summary PDF'); return; }
+  _ingestStep(k, 2, 55, prog);
+}
+
 async function ingest(k) {
-  const btn = document.getElementById(`ingest-btn-${k}`);
-  if (btn) { btn.textContent = 'Fetching…'; btn.classList.add('running'); }
+  const btn  = document.getElementById(`ingest-btn-${k}`);
+  const wrap = document.getElementById(`ingest-progress-${k}`);
+  if (btn)  { btn.style.display = 'none'; }
+  if (wrap) { wrap.style.display = 'block'; }
+  _ingestStep(k, 0, 5, 'Queued…');
   try {
     await fetch('/api/ingest', {
       method: 'POST', headers: {'Content-Type':'application/json'},
       body: JSON.stringify([k]),
     });
-    pollIngest(k);
-  } catch(e) { if (btn) btn.textContent = 'Error'; }
+    await pollIngest(k);
+  } catch(e) {
+    _ingestStep(k, 0, 0, 'Network error: ' + e.message);
+  }
 }
 
 async function pollIngest(k) {
-  const btn = document.getElementById(`ingest-btn-${k}`);
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 90; i++) {
     await new Promise(r => setTimeout(r, 2000));
-    const res  = await fetch('/api/status');
-    const data = await res.json();
-    const prog = data.ingest_progress?.[k] || '';
-    if (btn) btn.textContent = prog || 'Processing…';
+    let data;
+    try {
+      const res = await fetch('/api/status');
+      data = await res.json();
+    } catch(e) { continue; }
+    const prog   = data.ingest_progress?.[k] || '';
     const status = data.indexed?.[k]?.status;
-    if (status === 'ok' || status === 'no_summary' || status === 'image_only' || status === 'error') {
+    _ingestStepFromMsg(k, prog);
+    if (status === 'ok') {
+      _ingestStep(k, 3, 100, `Done — ${data.indexed[k].chunk_count} sections indexed`);
+      await new Promise(r => setTimeout(r, 800));
+      await renderOverview(k);
+      return;
+    }
+    if (status === 'no_summary' || status === 'image_only' || status === 'error') {
       await renderOverview(k);
       return;
     }
   }
+  _ingestStep(k, 2, 70, 'Timed out — server may still be processing');
 }
 
 // ── Performance tab ──
