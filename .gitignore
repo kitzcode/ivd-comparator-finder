@@ -22,3 +22,4 @@ data/cache/snapshot_*.json
 
 .DS_Store
 .vercel
+.claude/

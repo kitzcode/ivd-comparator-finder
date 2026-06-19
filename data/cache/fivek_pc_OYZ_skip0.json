@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Cincinnati",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "3471 River Hills Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OYZ",
+      "openfda": {
+        "device_name": "Group A Streptococcus Nucleic Acid Amplification Assay System",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3740",
+        "device_class": "1",
+        "registration_number": [
+          "1524213",
+          "3010749841"
+        ],
+        "fei_number": [
+          "1524213",
+          "3010749841"
+        ]
+      },
+      "zip_code": "45244",
+      "applicant": "Meridian Bioscience, Inc.",
+      "decision_date": "2012-09-13",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "STREPTOCOCCUS APP. SEROLOGICAL REAGENTS",
+      "advisory_committee": "MI",
+      "contact": "Michelle L Smith",
+      "expedited_review_flag": "",
+      "k_number": "K122019",
+      "state": "OH",
+      "date_received": "2012-07-10",
+      "review_advisory_committee": "MI",
+      "postal_code": "45244",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

@@ -68,9 +68,51 @@ Answer (cite K-number and page for every figure):
 # Keyword-only fallback (no LLM)
 # ---------------------------------------------------------------------------
 
+def _best_snippet(question: str, text: str, window: int = 600) -> str:
+    """
+    Extract the most relevant passage from a chunk for a keyword query.
+
+    Splits the chunk into sentences/lines, scores each by how many query terms
+    it contains, and returns a window centered on the best-scoring line — so the
+    user sees the relevant fragment, not a wall of text.
+    """
+    from .index.retrieve import _query_terms, _tokenize
+
+    terms = set(_query_terms(question))
+    if not terms:
+        return text[:window].strip()
+
+    # Split on sentence boundaries and newlines, keeping non-trivial fragments.
+    fragments = [f.strip() for f in re.split(r"(?<=[.;:])\s+|\n+", text) if f.strip()]
+    if not fragments:
+        return text[:window].strip()
+
+    best_idx, best_score = 0, -1
+    for i, frag in enumerate(fragments):
+        ftokens = set(_tokenize(frag))
+        score = len(terms & ftokens)
+        if score > best_score:
+            best_idx, best_score = i, score
+
+    if best_score <= 0:
+        return text[:window].strip()
+
+    # Grow a window around the best fragment until we hit the char budget.
+    chosen = [fragments[best_idx]]
+    lo, hi = best_idx - 1, best_idx + 1
+    total = len(fragments[best_idx])
+    while total < window and (lo >= 0 or hi < len(fragments)):
+        if lo >= 0:
+            chosen.insert(0, fragments[lo]); total += len(fragments[lo]); lo -= 1
+        if hi < len(fragments) and total < window:
+            chosen.append(fragments[hi]); total += len(fragments[hi]); hi += 1
+    snippet = " ".join(chosen).strip()
+    return (snippet[:window] + "…") if len(snippet) > window else snippet
+
+
 def _keyword_answer(question: str, chunks: list[SummaryChunk]) -> Answer:
     """
-    Return the top chunk's text verbatim with a citation.
+    Return the most relevant passage from the top chunk with a citation.
     No generation — fully grounded, no hallucination risk.
     """
     if not chunks:
@@ -83,7 +125,7 @@ def _keyword_answer(question: str, chunks: list[SummaryChunk]) -> Answer:
     top = chunks[0]
     return Answer(
         question=question,
-        answer=top.text,
+        answer=_best_snippet(question, top.text),
         citations=[Citation(
             k_number=top.k_number,
             source_url=top.source_url,
