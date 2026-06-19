@@ -249,8 +249,7 @@ let lastCompare = null;               // cache of last /api/compare response for
 // ── Config (AI mode indicator) ──
 async function loadConfig() {
   try {
-    const r = await fetch('/api/config');
-    const d = await r.json();
+    const d = await fetchJSON('/api/config');
     aiEnabled = !!d.ai_enabled;
     const pill = document.getElementById('ai-pill');
     pill.textContent = aiEnabled ? 'AI extraction: on' : 'extraction: regex';
@@ -267,8 +266,7 @@ async function search() {
     '<div class="empty"><div class="spinner"></div><p style="margin-top:12px">Searching openFDA…</p></div>';
   document.getElementById('device-count').textContent = '';
   try {
-    const res = await fetch(`/api/find?analyte=${encodeURIComponent(analyte)}`);
-    const data = await res.json();
+    const data = await fetchJSON(`/api/find?analyte=${encodeURIComponent(analyte)}`);
     devices = data.devices || [];
     renderDeviceList(devices);
   } catch (e) {
@@ -368,8 +366,7 @@ function switchTab(name) {
 async function renderOverview(k) {
   setContent('<div class="empty"><div class="spinner"></div></div>');
   try {
-    const res  = await fetch(`/api/clearance/${k}`);
-    const data = await res.json();
+    const data = await fetchJSON(`/api/clearance/${k}`);
     if (data.error) { setContent(`<div class="empty" style="color:var(--red)">${data.error}</div>`); return; }
     const indexed = data.index_status === 'ok';
     setContent(`
@@ -473,8 +470,7 @@ async function renderPerformance(kNumbers) {
   if (!kNumbers || !kNumbers.length) { setContent('<div class="empty"><p>Select a device first.</p></div>'); return; }
   setContent('<div class="empty"><div class="spinner"></div><p style="margin-top:12px">Extracting performance metrics…</p></div>');
   try {
-    const res  = await fetch(`/api/compare?k_numbers=${kNumbers.join(',')}`);
-    const data = await res.json();
+    const data = await fetchJSON(`/api/compare?k_numbers=${kNumbers.join(',')}`);
     lastCompare = data;
     if (!data.rows?.length) { setContent('<div class="empty"><p>No data</p></div>'); return; }
 
@@ -612,8 +608,7 @@ async function askQuestion(k) {
   if (!q) return;
   document.getElementById('qa-result').innerHTML = '<div class="spinner"></div>';
   try {
-    const res  = await fetch(`/api/ask?q=${encodeURIComponent(q)}&k_numbers=${k}`);
-    const data = await res.json();
+    const data = await fetchJSON(`/api/ask?q=${encodeURIComponent(q)}&k_numbers=${k}`);
     if (data.not_found_reason) {
       document.getElementById('qa-result').innerHTML = `<div class="warn-box">Not found: ${esc(data.not_found_reason)}</div>`;
       return;
@@ -633,6 +628,33 @@ async function askQuestion(k) {
 }
 
 // ── Utilities ──
+// Robust fetch: surfaces a readable message when the server returns a non-JSON
+// error (e.g. a 500 "Internal Server Error" on a cold-start timeout) instead of
+// throwing "Unexpected token 'I' ... is not valid JSON".
+async function fetchJSON(url, opts) {
+  let res;
+  try { res = await fetch(url, opts); }
+  catch (e) { throw new Error('Network error — check your connection'); }
+  const ct = res.headers.get('content-type') || '';
+  if (!res.ok) {
+    let detail = `Server error (${res.status})`;
+    try {
+      if (ct.includes('application/json')) {
+        const j = await res.json();
+        if (j && j.detail) detail = typeof j.detail === 'string' ? j.detail : JSON.stringify(j.detail);
+      } else {
+        const t = (await res.text()).trim();
+        if (t) detail = `${detail}: ${t.slice(0, 140)}`;
+      }
+    } catch (e) {}
+    throw new Error(detail);
+  }
+  if (!ct.includes('application/json')) {
+    throw new Error('Unexpected response from server — please retry');
+  }
+  return res.json();
+}
+
 function setContent(html) { document.getElementById('tab-content').innerHTML = html; }
 function esc(s) {
   if (s == null) return '';
