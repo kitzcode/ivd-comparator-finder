@@ -25,8 +25,9 @@ TARGET_K = "K173653"  # Alere i Strep A 2 — known to have a public Summary PDF
 def test_resolve_summary_url_caches_result(tmp_path, monkeypatch):
     """resolve_summary_url() writes a .url sidecar; second call reads from it."""
     from finder.sources import summaries
-    # Patch the cache dir to tmp_path so we don't pollute real cache
+    # Patch both cache dirs so committed sidecars don't shadow the fake URL
     monkeypatch.setattr(summaries, "CACHE_DIR", tmp_path)
+    monkeypatch.setattr(summaries, "_COMMITTED_URL_DIR", tmp_path)
     url_file = tmp_path / f"{TARGET_K}.url"
     url_file.write_text("https://fake.example.com/K173653.pdf")
     result = summaries.resolve_summary_url(TARGET_K)
@@ -36,6 +37,7 @@ def test_resolve_summary_url_caches_result(tmp_path, monkeypatch):
 def test_resolve_summary_url_none_when_cached_as_missing(tmp_path, monkeypatch):
     from finder.sources import summaries
     monkeypatch.setattr(summaries, "CACHE_DIR", tmp_path)
+    monkeypatch.setattr(summaries, "_COMMITTED_URL_DIR", tmp_path)
     url_file = tmp_path / f"{TARGET_K}.url"
     url_file.write_text("NONE")
     result = summaries.resolve_summary_url(TARGET_K)
