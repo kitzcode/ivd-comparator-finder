@@ -15,6 +15,17 @@ CHUNK_CACHE = Path(__file__).parent.parent / "data" / "cache" / "chunks"
 TARGET_K = "K173653"
 
 
+@pytest.fixture
+def isolated_store(tmp_path, monkeypatch):
+    """Patch the chunk store so tests write/read from tmp_path only."""
+    from finder.index import store as s
+    monkeypatch.setattr(s, "CHUNK_DIR", tmp_path)
+    monkeypatch.setattr(s, "MANIFEST_PATH", tmp_path / "_manifest.json")
+    monkeypatch.setattr(s, "_COMMITTED_MANIFEST", tmp_path / "_manifest.json")
+    monkeypatch.setattr(s, "_READ_DIRS", [tmp_path])
+    return s
+
+
 def _k173653_indexed() -> bool:
     return (CHUNK_CACHE / f"{TARGET_K}.json").exists()
 
@@ -38,11 +49,9 @@ def test_ask_empty_scope_returns_not_found():
     assert result.answer == ""
 
 
-def test_ask_keyword_mode_returns_top_chunk_text(tmp_path, monkeypatch):
+def test_ask_keyword_mode_returns_top_chunk_text(isolated_store):
     """Keyword mode must return the chunk text verbatim — no generation."""
-    from finder.index import store as s
-    monkeypatch.setattr(s, "CHUNK_DIR", tmp_path)
-    monkeypatch.setattr(s, "MANIFEST_PATH", tmp_path / "_manifest.json")
+    s = isolated_store
     from finder.models import SummaryChunk
     chunk = SummaryChunk(
         k_number="K888888",
@@ -62,10 +71,8 @@ def test_ask_keyword_mode_returns_top_chunk_text(tmp_path, monkeypatch):
     assert result.not_found_reason is None
 
 
-def test_ask_citation_carries_source_url(tmp_path, monkeypatch):
-    from finder.index import store as s
-    monkeypatch.setattr(s, "CHUNK_DIR", tmp_path)
-    monkeypatch.setattr(s, "MANIFEST_PATH", tmp_path / "_manifest.json")
+def test_ask_citation_carries_source_url(isolated_store):
+    s = isolated_store
     from finder.models import SummaryChunk
     chunk = SummaryChunk(
         k_number="K777777",
@@ -91,10 +98,8 @@ def _stub_llm_returning(text: str):
     return _llm
 
 
-def test_llm_mode_extracts_cited_k_numbers(tmp_path, monkeypatch):
-    from finder.index import store as s
-    monkeypatch.setattr(s, "CHUNK_DIR", tmp_path)
-    monkeypatch.setattr(s, "MANIFEST_PATH", tmp_path / "_manifest.json")
+def test_llm_mode_extracts_cited_k_numbers(isolated_store):
+    s = isolated_store
     from finder.models import SummaryChunk
     chunk = SummaryChunk(
         k_number="K555555",
@@ -113,10 +118,8 @@ def test_llm_mode_extracts_cited_k_numbers(tmp_path, monkeypatch):
     assert any(c.k_number == "K555555" for c in result.citations)
 
 
-def test_llm_mode_not_found_when_llm_says_so(tmp_path, monkeypatch):
-    from finder.index import store as s
-    monkeypatch.setattr(s, "CHUNK_DIR", tmp_path)
-    monkeypatch.setattr(s, "MANIFEST_PATH", tmp_path / "_manifest.json")
+def test_llm_mode_not_found_when_llm_says_so(isolated_store):
+    s = isolated_store
     from finder.models import SummaryChunk
     chunk = SummaryChunk(
         k_number="K444444",

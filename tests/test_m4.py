@@ -135,6 +135,8 @@ def test_llm_fill_uses_stub(tmp_path, monkeypatch):
     from finder.index import store as s
     monkeypatch.setattr(s, "CHUNK_DIR", tmp_path)
     monkeypatch.setattr(s, "MANIFEST_PATH", tmp_path / "_manifest.json")
+    monkeypatch.setattr(s, "_COMMITTED_MANIFEST", tmp_path / "_manifest.json")
+    monkeypatch.setattr(s, "_READ_DIRS", [tmp_path])
     from finder.models import SummaryChunk
     chunk = SummaryChunk(
         k_number="K111111", product_code="TST", section="Performance Testing",

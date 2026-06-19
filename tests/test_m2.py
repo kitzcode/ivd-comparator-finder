@@ -138,6 +138,8 @@ def test_store_and_load_roundtrip(tmp_path, monkeypatch):
     from finder.index import store as s
     monkeypatch.setattr(s, "CHUNK_DIR", tmp_path)
     monkeypatch.setattr(s, "MANIFEST_PATH", tmp_path / "_manifest.json")
+    monkeypatch.setattr(s, "_COMMITTED_MANIFEST", tmp_path / "_manifest.json")
+    monkeypatch.setattr(s, "_READ_DIRS", [tmp_path])
     from finder.models import SummaryChunk
     chunks = [
         SummaryChunk(
@@ -166,6 +168,8 @@ def test_retrieve_scores_performance_section_higher(tmp_path, monkeypatch):
     from finder.index import store as s
     monkeypatch.setattr(s, "CHUNK_DIR", tmp_path)
     monkeypatch.setattr(s, "MANIFEST_PATH", tmp_path / "_manifest.json")
+    monkeypatch.setattr(s, "_COMMITTED_MANIFEST", tmp_path / "_manifest.json")
+    monkeypatch.setattr(s, "_READ_DIRS", [tmp_path])
     from finder.models import SummaryChunk
 
     perf_chunk = SummaryChunk(

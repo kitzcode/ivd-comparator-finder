@@ -15,20 +15,39 @@ from typing import Optional
 from ..models import SummaryChunk
 
 _DEFAULT_CHUNK_DIR = Path(__file__).parent.parent.parent / "data" / "cache" / "chunks"
-try:
+_TMP_CHUNK_DIR = Path("/tmp") / "ivd_chunks"
+
+def _pick_writable_dir() -> Path:
+    """Return the first chunk dir that is actually writable (not just mkdir-able)."""
     _DEFAULT_CHUNK_DIR.mkdir(parents=True, exist_ok=True)
-    CHUNK_DIR = _DEFAULT_CHUNK_DIR
-except OSError:
-    CHUNK_DIR = Path("/tmp") / "ivd_chunks"
-    CHUNK_DIR.mkdir(parents=True, exist_ok=True)
+    probe = _DEFAULT_CHUNK_DIR / ".write_probe"
+    try:
+        probe.write_text("x")
+        probe.unlink()
+        return _DEFAULT_CHUNK_DIR
+    except OSError:
+        _TMP_CHUNK_DIR.mkdir(parents=True, exist_ok=True)
+        return _TMP_CHUNK_DIR
+
+CHUNK_DIR = _pick_writable_dir()
+# Committed chunks live in the project tree even on read-only FS; always check both.
+_READ_DIRS = list({_DEFAULT_CHUNK_DIR, CHUNK_DIR})
 
 MANIFEST_PATH = CHUNK_DIR / "_manifest.json"
+# Committed manifest is always readable; merge both for status queries.
+_COMMITTED_MANIFEST = _DEFAULT_CHUNK_DIR / "_manifest.json"
 
 
 def _load_manifest() -> dict:
-    if MANIFEST_PATH.exists():
-        return json.loads(MANIFEST_PATH.read_text())
-    return {}
+    """Merge committed manifest + writable manifest so all indexed devices are visible."""
+    m: dict = {}
+    for path in [_COMMITTED_MANIFEST, MANIFEST_PATH]:
+        if path.exists():
+            try:
+                m.update(json.loads(path.read_text()))
+            except Exception:
+                pass
+    return m
 
 
 def _save_manifest(m: dict) -> None:
@@ -65,20 +84,24 @@ def store_chunks(k_number: str, chunks: list[SummaryChunk], status: str = "ok") 
 
 
 def load_chunks(k_number: str) -> list[SummaryChunk]:
-    """Load stored chunks for a K-number. Returns [] if not indexed."""
-    p = _chunk_path(k_number)
-    if not p.exists():
-        return []
-    raw = json.loads(p.read_text())
-    return [SummaryChunk(**r) for r in raw]
+    """Load stored chunks for a K-number, checking all read dirs. Returns [] if not indexed."""
+    for d in _READ_DIRS:
+        p = d / f"{k_number}.json"
+        if p.exists():
+            raw = json.loads(p.read_text())
+            return [SummaryChunk(**r) for r in raw]
+    return []
 
 
 def load_chunks_for_product_code(product_code: str) -> list[SummaryChunk]:
     """Load all chunks that belong to a given product code."""
     result: list[SummaryChunk] = []
-    for p in CHUNK_DIR.glob("*.json"):
-        if p.name.startswith("_"):
+    seen: set[str] = set()
+    for d in _READ_DIRS:
+      for p in d.glob("*.json"):
+        if p.name.startswith("_") or p.name in seen:
             continue
+        seen.add(p.name)
         try:
             for rec in json.loads(p.read_text()):
                 if rec.get("product_code") == product_code:
