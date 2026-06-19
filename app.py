@@ -7,7 +7,6 @@ Endpoints:
   GET  /api/clearance     single K-number -> openFDA record + index status
   GET  /api/ask           grounded Q&A (keyword mode)
   GET  /api/compare       structured performance extraction table
-  GET  /api/labs          reference-lab directory lookup
   GET  /api/status        index manifest
 
 The frontend is served from static/index.html.
@@ -215,9 +214,10 @@ def api_ask(
     top_k: int = Query(5, ge=1, le=20),
 ):
     from finder.qa import ask
+    from finder.llm import make_llm
 
     kn = [k.strip().upper() for k in k_numbers.split(",") if k.strip()] or None
-    answer = ask(q, k_numbers=kn, top_k=top_k)
+    answer = ask(q, k_numbers=kn, top_k=top_k, llm=make_llm())
     return {
         "question": answer.question,
         "answer": answer.answer or None,
@@ -240,6 +240,7 @@ def api_compare(
 ):
     from finder.extract import extract_performance
     from finder.sources.openfda import get_510k_by_knumber
+    from finder.llm import make_llm
 
     kn = [k.strip().upper() for k in k_numbers.split(",") if k.strip()]
     if not kn:
@@ -253,7 +254,7 @@ def api_compare(
             device_names[k] = rec.get("device_name", "")
             product_codes_map[k] = rec.get("product_code", "")
 
-    table = extract_performance(kn, device_names=device_names, product_codes=product_codes_map)
+    table = extract_performance(kn, device_names=device_names, product_codes=product_codes_map, llm=make_llm())
 
     def _pv(val):
         if val is None:
@@ -289,36 +290,11 @@ def api_compare(
     }
 
 
-@app.get("/api/labs")
-def api_labs(
-    analyte: str = Query(..., description="Analyte name"),
-    labs: str = Query("", description="Comma-separated: arup,mayo (default: both)"),
-):
-    from finder.sources.labs import find_reference_labs, ALLOWED_LABS
-
-    labs_list = [l.strip().lower() for l in labs.split(",") if l.strip()] or None
-    try:
-        results = find_reference_labs(analyte, labs=labs_list)
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-
-    return {
-        "analyte": analyte,
-        "directory_lookup_note": "Directory listings only — not FDA determinations.",
-        "results": [
-            {
-                "lab_name": t.lab_name,
-                "test_name": t.test_name,
-                "test_code": t.test_code,
-                "methodology": t.methodology,
-                "specimen_type": t.specimen_type,
-                "url": t.url,
-                "snapshot_date": t.snapshot_date,
-            }
-            for t in results
-        ],
-        "total": len(results),
-    }
+@app.get("/api/config")
+def api_config():
+    """Report runtime capabilities to the frontend (e.g. whether AI mode is on)."""
+    from finder.llm import llm_enabled
+    return {"ai_enabled": llm_enabled()}
 
 
 @app.get("/api/status")

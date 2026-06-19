@@ -4,4 +4,4 @@ pdfplumber>=0.11
 mcp[cli]>=1.0
 fastapi>=0.111
 uvicorn[standard]>=0.30
-# Optional: anthropic>=0.40  — needed only for --model flag in ask/compare commands
+anthropic>=0.40  # enables LLM-backed Q&A / extraction when ANTHROPIC_API_KEY is set

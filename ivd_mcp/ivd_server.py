@@ -6,7 +6,6 @@ Tools (all readOnlyHint=True, destructiveHint=False):
   get_clearance         single K-number -> full clearance record + index status
   ask_summary           grounded Q&A over indexed 510(k) Summary chunks (keyword mode; no LLM)
   compare_performance   structured performance extraction table for a list of K-numbers
-  find_reference_labs   lab test directory lookup (ARUP / Mayo; labeled as directory lookup)
 
 Run:
   python -m mcp.server   (from repo root, via __main__.py)
@@ -33,7 +32,6 @@ mcp = FastMCP(
         "IVD Predicate / Comparator Finder. "
         "All device data comes from openFDA. "
         "Performance data is extracted from 510(k) Summary PDFs with citations. "
-        "Reference-lab results are directory lookups, not FDA determinations. "
         "Predicate device (substantial equivalence) ≠ comparator/reference method (performance study)."
     ),
 )
@@ -263,55 +261,6 @@ def compare_performance(k_numbers: list[str]) -> dict:
             }
             for row in table.rows
         ],
-    }
-
-
-# ---------------------------------------------------------------------------
-# Tool: find_reference_labs
-# ---------------------------------------------------------------------------
-
-@mcp.tool(
-    annotations=_READ_ONLY,
-    description=(
-        "Search public lab test directories for tests matching an analyte. "
-        "Searches ARUP Laboratories and Mayo Clinic Laboratories (both confirmed "
-        "allowable per robots.txt). "
-        "Results are directory listings only — NOT FDA determinations. "
-        "The data_source field on every result confirms this."
-    ),
-)
-def find_reference_labs(
-    analyte: str,
-    labs: list[str] | None = None,
-) -> dict:
-    """
-    analyte: analyte name to search (e.g. 'Group A Strep')
-    labs: subset of ['arup', 'mayo'] to query (default: both)
-    """
-    from finder.sources.labs import find_reference_labs as _find_labs, ALLOWED_LABS
-
-    try:
-        results = _find_labs(analyte, labs=labs)
-    except ValueError as e:
-        return {"error": str(e), "allowed_labs": list(ALLOWED_LABS)}
-
-    return {
-        "analyte": analyte,
-        "directory_lookup_note": "These are lab test directory listings, not FDA determinations.",
-        "results": [
-            {
-                "lab_name": t.lab_name,
-                "test_name": t.test_name,
-                "test_code": t.test_code,
-                "methodology": t.methodology,
-                "specimen_type": t.specimen_type,
-                "url": t.url,
-                "snapshot_date": t.snapshot_date,
-                "data_source": t.data_source,
-            }
-            for t in results
-        ],
-        "total": len(results),
     }
 
 

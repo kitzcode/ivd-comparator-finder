@@ -28,7 +28,7 @@ def test_server_imports_cleanly():
     assert hasattr(s, "mcp")
 
 
-def test_all_five_tools_registered():
+def test_all_four_tools_registered():
     import ivd_mcp.ivd_server as s
     tool_names = {t.name for t in s.mcp._tool_manager.list_tools()}
     expected = {
@@ -36,7 +36,6 @@ def test_all_five_tools_registered():
         "get_clearance",
         "ask_summary",
         "compare_performance",
-        "find_reference_labs",
     }
     assert expected == tool_names, f"Registered tools: {tool_names}"
 
@@ -175,15 +174,6 @@ def test_eval_q9_compare_performance_predicate_note_present():
     result = compare_performance(["K173653"])
     assert "PREDICATE" in result["predicate_note"] or "predicate" in result["predicate_note"]
     assert "COMPARATOR" in result["predicate_note"] or "comparator" in result["predicate_note"]
-
-
-# Q10
-def test_eval_q10_find_reference_labs_invalid_lab_returns_error():
-    """find_reference_labs with an unlisted lab must return an error, not raise."""
-    from ivd_mcp.ivd_server import find_reference_labs
-    result = find_reference_labs("Group A Strep", labs=["labcorp"])
-    assert "error" in result
-    assert "allowed_labs" in result
 
 
 # Bonus: grounding contract check — no hallucinated K-numbers

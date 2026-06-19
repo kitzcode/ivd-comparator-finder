@@ -16,11 +16,10 @@ A tool that maps an IVD assay / analyte to FDA-cleared devices via openFDA, fetc
 - `finder/index/retrieve.py` — keyword retrieval with section-boost scoring. Done.
 - `finder/qa.py` — grounded Q&A: keyword-only mode (no LLM) or LLM-backed with Anthropic SDK. Done.
 - `finder/extract.py` — M4 structured performance extraction (PPA, NPA, LoD, reactivity, comparator, predicate) via regex + optional LLM fill. Every value carries a Citation. Done.
-- `finder/sources/labs.py` — M5 reference-lab directory lookup: ARUP + Mayo Clinic Laboratories (allowlisted; robots.txt confirmed). Mocked in tests; `--run-live` flag gates real HTTP. Done.
 - `finder/pipeline.py` — v1 find_devices() + v2 ingest_summaries(). Done.
 - `ivd_mcp/ivd_server.py` — M6 FastMCP server: 5 read-only tools, `readOnlyHint=True`. Note: the package is `ivd_mcp/` (not `mcp/`) to avoid shadowing the installed `mcp` package. Done.
-- `cli.py` — `find`, `ingest`, `ask`, `compare`, `labs`, `status` commands. Done.
-- `tests/` — 84 tests (M0–M6), all passing (2 skipped: live lab tests). Done.
+- `cli.py` — `find`, `ingest`, `ask`, `compare`, `status` commands. Done.
+- `tests/` — 71 tests (M0–M6), all passing. Done.
 
 ## Invariants
 
@@ -53,12 +52,10 @@ Set `OPENFDA_API_KEY` env var to raise rate limits (240/min → 240k/day).
 
 ## Open milestones
 - **M4**: Structured performance extraction (PPA/NPA/LoD/reactivity) into comparison table.
-- **M5**: Reference-lab enrichment (ToS-gated, labeled separately from FDA data).
-- **M6**: MCP server (`find_devices`, `get_clearance`, `ask_summary`, `compare_performance`, `find_reference_labs`). 10 eval questions against cached snapshot.
+- **M6**: MCP server (`find_devices`, `get_clearance`, `ask_summary`, `compare_performance`). 10 eval questions against cached snapshot.
 
 ## Verify-before-asserting
 
 - openFDA field names and query syntax: confirm against current openFDA docs.
 - accessdata PDF URL patterns: probe per record; handle missing Summaries.
 - PDF table extraction: verify fidelity; detect scanned/image-only PDFs before trusting numbers.
-- Lab directory access: check robots.txt/terms; do not scrape where prohibited.

@@ -8,11 +8,13 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --blue:   #2563eb;
-    --blue-l: #eff6ff;
-    --blue-d: #1d4ed8;
+    /* Golden amber primary palette */
+    --amber:    #F5B800;   /* primary */
+    --amber-d:  #B8860B;   /* darker — links / hover / text on white */
+    --amber-dd: #8a6200;   /* deep amber — text on light amber */
+    --amber-l:  #FFF8E6;   /* light tint background */
+    --ink:      #1a1a1a;   /* dark text used on amber surfaces */
     --green:  #16a34a;
-    --amber:  #d97706;
     --red:    #dc2626;
     --gray-1: #f9fafb;
     --gray-2: #f3f4f6;
@@ -29,9 +31,13 @@
          background: var(--gray-1); color: var(--gray-9); min-height: 100vh; }
 
   /* ── Header ── */
-  header { background: var(--blue); color: #fff; padding: 20px 24px; }
-  header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; }
-  header p  { font-size: .85rem; opacity: .85; margin-top: 4px; }
+  header { background: var(--amber); color: var(--ink); padding: 20px 24px;
+           display: flex; justify-content: space-between; align-items: center; }
+  header h1 { font-size: 1.35rem; font-weight: 800; letter-spacing: -.01em; }
+  header p  { font-size: .85rem; opacity: .8; margin-top: 4px; }
+  .ai-pill { font-size: .72rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px;
+             background: rgba(0,0,0,.12); color: var(--ink); white-space: nowrap; }
+  .ai-pill.on { background: var(--ink); color: var(--amber); }
 
   /* ── Search bar ── */
   .search-wrap { background: #fff; border-bottom: 1px solid var(--gray-3);
@@ -39,35 +45,55 @@
   .search-wrap input  { flex: 1; padding: 10px 14px; border: 1px solid var(--gray-3);
                         border-radius: var(--radius); font-size: 1rem;
                         outline: none; transition: border-color .15s; }
-  .search-wrap input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-l); }
-  .search-wrap button { padding: 10px 22px; background: var(--blue); color: #fff;
-                        border: none; border-radius: var(--radius); font-size: .95rem;
-                        font-weight: 600; cursor: pointer; transition: background .15s; }
-  .search-wrap button:hover { background: var(--blue-d); }
+  .search-wrap input:focus { border-color: var(--amber); box-shadow: 0 0 0 3px var(--amber-l); }
+  .btn-primary { padding: 10px 22px; background: var(--amber); color: var(--ink);
+                 border: none; border-radius: var(--radius); font-size: .95rem;
+                 font-weight: 700; cursor: pointer; transition: background .15s; }
+  .btn-primary:hover { background: #e0a800; }
+  .btn-primary:disabled { background: var(--gray-3); color: var(--gray-5); cursor: not-allowed; }
 
   /* ── Layout ── */
-  .layout { display: grid; grid-template-columns: 320px 1fr; height: calc(100vh - 130px); }
+  .layout { display: grid; grid-template-columns: 340px 1fr; height: calc(100vh - 130px); }
 
   /* ── Device list panel ── */
-  .panel-left { border-right: 1px solid var(--gray-3); overflow-y: auto; background: #fff; }
-  .panel-left-hdr { padding: 12px 16px; background: var(--gray-2);
+  .panel-left { border-right: 1px solid var(--gray-3); overflow-y: auto; background: #fff;
+                display: flex; flex-direction: column; }
+  .panel-left-hdr { padding: 10px 14px; background: var(--gray-2);
                     border-bottom: 1px solid var(--gray-3);
-                    font-size: .8rem; font-weight: 600; color: var(--gray-5);
-                    text-transform: uppercase; letter-spacing: .05em; }
-  .device-item { padding: 12px 16px; border-bottom: 1px solid var(--gray-3);
-                 cursor: pointer; transition: background .1s; }
+                    font-size: .78rem; font-weight: 600; color: var(--gray-5);
+                    display: flex; align-items: center; justify-content: space-between;
+                    position: sticky; top: 0; z-index: 2; }
+  .panel-left-hdr .title { text-transform: uppercase; letter-spacing: .05em; }
+  .select-all { display: flex; align-items: center; gap: 5px; cursor: pointer;
+                font-size: .74rem; color: var(--gray-7); text-transform: none; letter-spacing: 0; }
+  .batch-bar { padding: 8px 12px; background: var(--amber-l); border-bottom: 1px solid #f3e3b0;
+               display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--amber-dd); }
+  .batch-bar.hidden { display: none; }
+  .batch-bar .btn-mini { margin-left: auto; }
+  .btn-mini { padding: 5px 12px; background: var(--amber); color: var(--ink); border: none;
+              border-radius: 6px; font-size: .76rem; font-weight: 700; cursor: pointer; }
+  .btn-mini:hover { background: #e0a800; }
+  .btn-mini.ghost { background: #fff; border: 1px solid var(--gray-3); color: var(--gray-7); }
+  .btn-mini.ghost:hover { background: var(--gray-1); }
+
+  .device-item { padding: 10px 14px; border-bottom: 1px solid var(--gray-3);
+                 cursor: pointer; transition: background .1s; display: flex; gap: 10px; }
   .device-item:hover    { background: var(--gray-1); }
-  .device-item.active   { background: var(--blue-l); border-left: 3px solid var(--blue);
-                           padding-left: 13px; }
-  .device-item .k       { font-size: .75rem; font-weight: 700; color: var(--blue);
+  .device-item.active   { background: var(--amber-l); border-left: 3px solid var(--amber);
+                           padding-left: 11px; }
+  .device-item input[type=checkbox] { margin-top: 3px; width: 15px; height: 15px;
+                                       accent-color: var(--amber-d); cursor: pointer; flex-shrink: 0; }
+  .device-body { flex: 1; min-width: 0; }
+  .device-item .k       { font-size: .75rem; font-weight: 700; color: var(--amber-d);
                            font-family: monospace; }
-  .device-item .name    { font-size: .88rem; font-weight: 500; margin-top: 2px;
+  .device-item .name    { font-size: .87rem; font-weight: 500; margin-top: 2px;
                           line-height: 1.35; color: var(--gray-9); }
-  .device-item .meta    { font-size: .75rem; color: var(--gray-5); margin-top: 3px; }
+  .device-item .meta    { font-size: .74rem; color: var(--gray-5); margin-top: 3px; }
   .badge { display: inline-block; padding: 1px 7px; border-radius: 9999px;
            font-size: .7rem; font-weight: 600; margin-top: 4px; }
-  .badge-blue  { background: var(--blue-l);  color: var(--blue); }
+  .badge-amber { background: var(--amber-l); color: var(--amber-dd); }
   .badge-gray  { background: var(--gray-2);  color: var(--gray-7); }
+  .badge-idx   { background: #dcfce7; color: #166534; }
 
   /* ── Right panel / tabs ── */
   .panel-right { display: flex; flex-direction: column; overflow: hidden; }
@@ -76,7 +102,7 @@
                  color: var(--gray-5); border-bottom: 2px solid transparent;
                  transition: color .15s, border-color .15s; }
   .tab:hover   { color: var(--gray-9); }
-  .tab.active  { color: var(--blue); border-bottom-color: var(--blue); }
+  .tab.active  { color: var(--amber-d); border-bottom-color: var(--amber); font-weight: 700; }
   .tab-content { flex: 1; overflow-y: auto; padding: 20px 24px; }
 
   /* ── Empty / loading states ── */
@@ -85,7 +111,7 @@
   .empty h3  { font-size: 1rem; font-weight: 600; color: var(--gray-7); }
   .empty p   { font-size: .85rem; margin-top: 6px; }
   .spinner   { display: inline-block; width: 18px; height: 18px;
-               border: 2px solid var(--gray-3); border-top-color: var(--blue);
+               border: 2px solid var(--gray-3); border-top-color: var(--amber);
                border-radius: 50%; animation: spin .6s linear infinite; vertical-align: middle; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -94,28 +120,28 @@
                  text-transform: uppercase; letter-spacing: .06em;
                  margin: 20px 0 8px; }
   .section-hdr:first-child { margin-top: 0; }
-  .kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 6px 12px;
-             font-size: .88rem; }
+  .kv-grid { display: grid; grid-template-columns: 160px 1fr; gap: 6px 12px; font-size: .88rem; }
   .kv-label { color: var(--gray-5); font-weight: 500; }
   .kv-val   { color: var(--gray-9); word-break: break-word; }
-  a.link    { color: var(--blue); text-decoration: none; }
+  a.link    { color: var(--amber-d); text-decoration: none; }
   a.link:hover { text-decoration: underline; }
 
   /* ── Performance table ── */
+  .perf-toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .perf-toolbar .grow { flex: 1; }
   .perf-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
   .perf-table th { background: var(--gray-2); padding: 8px 12px; text-align: left;
-                   font-size: .75rem; font-weight: 700; color: var(--gray-5);
-                   text-transform: uppercase; letter-spacing: .05em;
+                   font-size: .75rem; font-weight: 700; color: var(--gray-7);
                    border: 1px solid var(--gray-3); }
-  .perf-table td { padding: 10px 12px; border: 1px solid var(--gray-3);
-                   vertical-align: top; }
+  .perf-table td { padding: 10px 12px; border: 1px solid var(--gray-3); vertical-align: top; }
   .perf-table tr:nth-child(even) td { background: var(--gray-1); }
+  .perf-table .metric-cell { font-weight: 600; font-size: .8rem; background: var(--amber-l) !important; }
   .citation  { font-size: .72rem; color: var(--gray-5); margin-top: 4px; }
-  .citation a { color: var(--blue); }
+  .citation a { color: var(--amber-d); }
   .not-found { color: var(--gray-5); font-style: italic; font-size: .8rem; }
-  .note-box  { background: var(--blue-l); border: 1px solid #bfdbfe;
+  .note-box  { background: var(--amber-l); border: 1px solid #f3e3b0;
                border-radius: var(--radius); padding: 10px 14px;
-               font-size: .8rem; color: var(--blue-d); margin-bottom: 16px; }
+               font-size: .8rem; color: var(--amber-dd); margin-bottom: 16px; }
   .warn-box  { background: #fffbeb; border: 1px solid #fde68a;
                border-radius: var(--radius); padding: 10px 14px;
                font-size: .8rem; color: #92400e; margin-bottom: 16px; }
@@ -124,38 +150,24 @@
   .qa-form   { display: flex; gap: 8px; margin-bottom: 20px; }
   .qa-form input  { flex: 1; padding: 9px 13px; border: 1px solid var(--gray-3);
                     border-radius: var(--radius); font-size: .9rem; outline: none; }
-  .qa-form input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-l); }
-  .qa-form button { padding: 9px 18px; background: var(--blue); color: #fff;
-                    border: none; border-radius: var(--radius); font-weight: 600;
-                    cursor: pointer; font-size: .9rem; }
-  .qa-form button:hover { background: var(--blue-d); }
+  .qa-form input:focus { border-color: var(--amber); box-shadow: 0 0 0 3px var(--amber-l); }
   .answer-box { background: #fff; border: 1px solid var(--gray-3);
                 border-radius: var(--radius); padding: 16px;
                 white-space: pre-wrap; font-size: .88rem; line-height: 1.65;
                 box-shadow: var(--shadow); }
-  .answer-cite { margin-top: 14px; padding-top: 12px;
-                 border-top: 1px solid var(--gray-3); }
+  .answer-cite { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--gray-3); }
   .answer-cite h4 { font-size: .75rem; font-weight: 700; color: var(--gray-5);
                     text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
-  .cite-chip { display: inline-block; background: var(--gray-2); border-radius: 4px;
-               padding: 3px 8px; font-size: .75rem; margin: 2px; }
+  .cite-chip { display: inline-block; background: var(--amber-l); border-radius: 4px;
+               padding: 3px 8px; font-size: .75rem; margin: 2px; color: var(--amber-dd); }
 
-  /* ── Labs ── */
-  .lab-card  { background: #fff; border: 1px solid var(--gray-3);
-               border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px;
-               box-shadow: var(--shadow); }
-  .lab-name  { font-size: .75rem; font-weight: 700; color: var(--gray-5);
-               text-transform: uppercase; letter-spacing: .05em; }
-  .lab-test  { font-size: .95rem; font-weight: 600; color: var(--gray-9); margin-top: 3px; }
-  .lab-meta  { font-size: .8rem; color: var(--gray-5); margin-top: 6px; }
-
-  /* ── Ingest button ── */
+  /* ── Ingest progress ── */
   .progress-wrap { margin: 10px 0 4px; }
   .progress-bar-bg { height: 6px; background: var(--gray-2); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
-  .progress-bar-fill { height: 100%; background: var(--blue); border-radius: 3px; transition: width .4s ease; }
+  .progress-bar-fill { height: 100%; background: var(--amber); border-radius: 3px; transition: width .4s ease; }
   .progress-steps { display: flex; gap: 0; margin-bottom: 8px; }
   .progress-step { flex: 1; font-size: .72rem; text-align: center; padding: 4px 2px; color: var(--gray-5); border-bottom: 2px solid var(--gray-2); transition: color .3s, border-color .3s; }
-  .progress-step.active { color: var(--blue); border-color: var(--blue); font-weight: 600; }
+  .progress-step.active { color: var(--amber-d); border-color: var(--amber); font-weight: 600; }
   .progress-step.done { color: var(--green); border-color: var(--green); }
   .progress-msg { font-size: .78rem; color: var(--gray-5); min-height: 1.2em; }
   .ingest-btn { display: inline-block; padding: 6px 14px; background: var(--gray-2);
@@ -163,11 +175,10 @@
                 font-size: .8rem; font-weight: 600; cursor: pointer;
                 color: var(--gray-7); margin-top: 8px; }
   .ingest-btn:hover { background: var(--gray-3); }
-  .ingest-btn.running { color: var(--blue); cursor: default; }
 
   /* ── Responsive ── */
   @media (max-width: 700px) {
-    .layout { grid-template-columns: 1fr; grid-template-rows: 240px 1fr; }
+    .layout { grid-template-columns: 1fr; grid-template-rows: 260px 1fr; }
     .panel-left { border-right: none; border-bottom: 1px solid var(--gray-3); }
   }
 </style>
@@ -175,24 +186,35 @@
 <body>
 
 <header>
-  <h1>IVD Comparator Finder</h1>
-  <p>FDA 510(k) device lookup · 510(k) Summary PDF parsing · Grounded performance Q&amp;A</p>
+  <div>
+    <h1>IVD Comparator Finder</h1>
+    <p>FDA 510(k) device lookup · Summary PDF parsing · Grounded performance Q&amp;A</p>
+  </div>
+  <span class="ai-pill" id="ai-pill">extraction: regex</span>
 </header>
 
 <div class="search-wrap">
   <input id="analyte-input" type="text" placeholder="Enter analyte or assay (e.g. Group A Strep, RSV, SARS-CoV-2)"
          value="Group A Strep" />
-  <button onclick="search()">Search</button>
+  <button class="btn-primary" onclick="search()">Search</button>
 </div>
 
 <div class="layout">
   <!-- Left: device list -->
   <div class="panel-left">
-    <div class="panel-left-hdr">Devices <span id="device-count"></span></div>
-    <div id="device-list">
-      <div class="empty">
-        <p>Search for an analyte to see cleared devices</p>
-      </div>
+    <div class="panel-left-hdr">
+      <span class="title">Devices <span id="device-count"></span></span>
+      <label class="select-all" id="select-all-wrap" style="display:none">
+        <input type="checkbox" id="select-all" onclick="toggleSelectAll()"> Select all
+      </label>
+    </div>
+    <div class="batch-bar hidden" id="batch-bar">
+      <span id="batch-count">0 selected</span>
+      <button class="btn-mini ghost" onclick="clearSelection()">Clear</button>
+      <button class="btn-mini" onclick="compareSelected()">Compare &amp; export →</button>
+    </div>
+    <div id="device-list" style="flex:1">
+      <div class="empty"><p>Search for an analyte to see cleared devices</p></div>
     </div>
   </div>
 
@@ -202,7 +224,6 @@
       <div class="tab active" onclick="switchTab('overview')">Overview</div>
       <div class="tab" onclick="switchTab('performance')">Performance</div>
       <div class="tab" onclick="switchTab('ask')">Ask</div>
-      <div class="tab" onclick="switchTab('labs')">Reference Labs</div>
     </div>
     <div class="tab-content" id="tab-content">
       <div class="empty">
@@ -210,7 +231,7 @@
           <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
         <h3>Select a device</h3>
-        <p>Search for an analyte, then click a device to explore</p>
+        <p>Search for an analyte, then click a device — or check several and Compare.</p>
       </div>
     </div>
   </div>
@@ -219,81 +240,128 @@
 <script>
 // ── State ──
 let devices = [];
-let selectedDevice = null;
+let selectedDevice = null;            // index into devices[] for single detail view
 let activeTab = 'overview';
-let compareKNumbers = [];
+let selectedKeys = new Set();         // K-numbers checked for batch compare
+let aiEnabled = false;
+let lastCompare = null;               // cache of last /api/compare response for export
+
+// ── Config (AI mode indicator) ──
+async function loadConfig() {
+  try {
+    const r = await fetch('/api/config');
+    const d = await r.json();
+    aiEnabled = !!d.ai_enabled;
+    const pill = document.getElementById('ai-pill');
+    pill.textContent = aiEnabled ? 'AI extraction: on' : 'extraction: regex';
+    pill.classList.toggle('on', aiEnabled);
+  } catch(e) {}
+}
 
 // ── Search ──
 async function search() {
   const analyte = document.getElementById('analyte-input').value.trim();
   if (!analyte) return;
-
+  clearSelection();
   document.getElementById('device-list').innerHTML =
     '<div class="empty"><div class="spinner"></div><p style="margin-top:12px">Searching openFDA…</p></div>';
   document.getElementById('device-count').textContent = '';
-
   try {
     const res = await fetch(`/api/find?analyte=${encodeURIComponent(analyte)}`);
     const data = await res.json();
     devices = data.devices || [];
-    renderDeviceList(devices, data);
+    renderDeviceList(devices);
   } catch (e) {
     document.getElementById('device-list').innerHTML =
       `<div class="empty" style="color:var(--red)">Error: ${e.message}</div>`;
   }
 }
 
-function renderDeviceList(devices, meta) {
+function renderDeviceList(devices) {
   const count = devices.length;
   document.getElementById('device-count').textContent = `(${count})`;
+  document.getElementById('select-all-wrap').style.display = count ? 'flex' : 'none';
   if (!count) {
-    document.getElementById('device-list').innerHTML =
-      '<div class="empty"><p>No devices found</p></div>';
+    document.getElementById('device-list').innerHTML = '<div class="empty"><p>No devices found</p></div>';
     return;
   }
   document.getElementById('device-list').innerHTML = devices.map((d, i) => `
-    <div class="device-item" id="dev-${i}" onclick="selectDevice(${i})">
-      <div class="k">${d.k_number}</div>
-      <div class="name">${esc(d.device_name)}</div>
-      <div class="meta">${esc(d.applicant_name)} · ${d.decision_date || '—'}</div>
-      <span class="badge badge-blue">${d.product_code}</span>
-      <span class="badge badge-gray">${d.regulation_number || '—'}</span>
+    <div class="device-item" id="dev-${i}">
+      <input type="checkbox" id="chk-${i}" onclick="event.stopPropagation();toggleSelect(${i})">
+      <div class="device-body" onclick="selectDevice(${i})">
+        <div class="k">${d.k_number}</div>
+        <div class="name">${esc(d.device_name)}</div>
+        <div class="meta">${esc(d.applicant_name)} · ${d.decision_date || '—'}</div>
+        <span class="badge badge-amber">${d.product_code}</span>
+        <span class="badge badge-gray">${d.regulation_number || '—'}</span>
+      </div>
     </div>
   `).join('');
 }
 
-// ── Device selection ──
+// ── Batch selection ──
+function toggleSelect(i) {
+  const k = devices[i].k_number;
+  if (selectedKeys.has(k)) selectedKeys.delete(k);
+  else selectedKeys.add(k);
+  document.getElementById(`chk-${i}`).checked = selectedKeys.has(k);
+  updateBatchBar();
+}
+
+function toggleSelectAll() {
+  const on = document.getElementById('select-all').checked;
+  selectedKeys = on ? new Set(devices.map(d => d.k_number)) : new Set();
+  devices.forEach((d, i) => { const c = document.getElementById(`chk-${i}`); if (c) c.checked = on; });
+  updateBatchBar();
+}
+
+function clearSelection() {
+  selectedKeys = new Set();
+  devices.forEach((d, i) => { const c = document.getElementById(`chk-${i}`); if (c) c.checked = false; });
+  const sa = document.getElementById('select-all'); if (sa) sa.checked = false;
+  updateBatchBar();
+}
+
+function updateBatchBar() {
+  const n = selectedKeys.size;
+  const bar = document.getElementById('batch-bar');
+  bar.classList.toggle('hidden', n === 0);
+  document.getElementById('batch-count').textContent = `${n} selected`;
+  const sa = document.getElementById('select-all');
+  if (sa) sa.checked = n > 0 && n === devices.length;
+}
+
+function compareSelected() {
+  if (!selectedKeys.size) return;
+  switchTab('performance');
+  renderPerformance([...selectedKeys]);
+}
+
+// ── Single device selection ──
 async function selectDevice(i) {
-  if (selectedDevice !== null) {
-    document.getElementById(`dev-${selectedDevice}`)?.classList.remove('active');
-  }
+  if (selectedDevice !== null) document.getElementById(`dev-${selectedDevice}`)?.classList.remove('active');
   selectedDevice = i;
   document.getElementById(`dev-${i}`)?.classList.add('active');
   const d = devices[i];
-  compareKNumbers = [d.k_number];
-
-  if (activeTab === 'overview')   await renderOverview(d.k_number);
+  if (activeTab === 'overview')    await renderOverview(d.k_number);
   if (activeTab === 'performance') await renderPerformance([d.k_number]);
-  if (activeTab === 'ask')        renderAsk(d.k_number);
-  if (activeTab === 'labs')       await renderLabs();
+  if (activeTab === 'ask')         renderAsk(d.k_number);
 }
 
 // ── Tab switching ──
 function switchTab(name) {
   activeTab = name;
   document.querySelectorAll('.tab').forEach((t, i) => {
-    const names = ['overview','performance','ask','labs'];
-    t.classList.toggle('active', names[i] === name);
+    t.classList.toggle('active', ['overview','performance','ask'][i] === name);
   });
-  if (!selectedDevice && selectedDevice !== 0) {
-    if (name === 'labs') renderLabs();
+  if (selectedDevice === null) {
+    if (name === 'performance' && selectedKeys.size) renderPerformance([...selectedKeys]);
     return;
   }
   const k = devices[selectedDevice]?.k_number;
   if (name === 'overview')    renderOverview(k);
-  if (name === 'performance') renderPerformance([k]);
+  if (name === 'performance') renderPerformance(selectedKeys.size ? [...selectedKeys] : [k]);
   if (name === 'ask')         renderAsk(k);
-  if (name === 'labs')        renderLabs();
 }
 
 // ── Overview tab ──
@@ -303,14 +371,7 @@ async function renderOverview(k) {
     const res  = await fetch(`/api/clearance/${k}`);
     const data = await res.json();
     if (data.error) { setContent(`<div class="empty" style="color:var(--red)">${data.error}</div>`); return; }
-
     const indexed = data.index_status === 'ok';
-    const ingestLabel = indexed
-      ? `✓ Summary indexed (${data.indexed_chunk_count} chunks)`
-      : data.index_status === 'no_summary'
-        ? '⚠ No public Summary PDF'
-        : 'Fetch &amp; parse Summary PDF';
-
     setContent(`
       <div class="section-hdr">Clearance</div>
       <div class="kv-grid">
@@ -323,22 +384,18 @@ async function renderOverview(k) {
         <span class="kv-label">Decision</span>     <span class="kv-val">${data.decision_code || '—'}</span>
         <span class="kv-label">Has summary</span>  <span class="kv-val">${data.statement_or_summary || '—'}</span>
       </div>
-
       ${data.summary_url ? `
       <div class="section-hdr">510(k) Summary PDF</div>
-      <a class="link" href="${data.summary_url}" target="_blank">↗ ${data.summary_url}</a>
-      ` : ''}
+      <a class="link" href="${data.summary_url}" target="_blank">↗ ${data.summary_url}</a>` : ''}
 
       <div class="section-hdr">Index status</div>
       ${indexed ? `
-        <div style="font-size:.88rem;color:var(--green)">✓ ${ingestLabel}</div>
+        <div style="font-size:.88rem;color:var(--green)">✓ Summary indexed (${data.indexed_chunk_count} chunks)</div>
         <div style="font-size:.8rem;color:var(--gray-5);margin-top:4px">Performance &amp; Ask tabs are ready.</div>
       ` : data.index_status === 'no_summary' ? `
         <div style="font-size:.88rem;color:var(--gray-5)">⚠ No public Summary PDF found for this device.</div>
       ` : `
-        <button class="ingest-btn" id="ingest-btn-${k}" onclick="ingest('${k}')">
-          ↓ Fetch &amp; parse Summary PDF
-        </button>
+        <button class="ingest-btn" id="ingest-btn-${k}" onclick="ingest('${k}')">↓ Fetch &amp; parse Summary PDF</button>
         <div id="ingest-progress-${k}" style="display:none" class="progress-wrap">
           <div class="progress-steps">
             <div class="progress-step" id="ps-${k}-0">Queued</div>
@@ -365,25 +422,10 @@ async function renderOverview(k) {
 function _ingestStep(k, stepIdx, pct, msg) {
   [0,1,2,3].forEach(i => {
     const el = document.getElementById(`ps-${k}-${i}`);
-    if (!el) return;
-    el.className = 'progress-step' + (i < stepIdx ? ' done' : i === stepIdx ? ' active' : '');
+    if (el) el.className = 'progress-step' + (i < stepIdx ? ' done' : i === stepIdx ? ' active' : '');
   });
-  const bar = document.getElementById(`pb-${k}`);
-  if (bar) bar.style.width = pct + '%';
-  const msg_el = document.getElementById(`pm-${k}`);
-  if (msg_el) msg_el.textContent = msg;
-}
-
-function _ingestStepFromMsg(k, prog) {
-  if (!prog || prog === 'queued') { _ingestStep(k, 0, 5,  'Queued…'); return; }
-  if (prog.includes('fetching PDF') || prog.includes('Fetching'))
-                                    { _ingestStep(k, 1, 25, 'Downloading PDF…'); return; }
-  if (prog.includes('extraction error'))
-                                    { _ingestStep(k, 2, 60, 'Parse error — see console'); return; }
-  if (prog.includes('image-only'))  { _ingestStep(k, 2, 60, 'Image-only PDF (OCR not supported)'); return; }
-  if (prog.includes('ingested'))    { _ingestStep(k, 3, 95, prog.split(': ')[1] || 'Indexing…'); return; }
-  if (prog.includes('no public'))   { _ingestStep(k, 1, 30, 'No public Summary PDF'); return; }
-  _ingestStep(k, 2, 55, prog);
+  const bar = document.getElementById(`pb-${k}`); if (bar) bar.style.width = pct + '%';
+  const m = document.getElementById(`pm-${k}`);  if (m) m.textContent = msg;
 }
 
 function ingest(k) {
@@ -392,92 +434,86 @@ function ingest(k) {
   if (btn)  btn.style.display = 'none';
   if (wrap) wrap.style.display = 'block';
   _ingestStep(k, 0, 5, 'Connecting…');
-
   const es = new EventSource(`/api/ingest-stream?k_numbers=${k}`);
   let finished = false;
-
   es.addEventListener('progress', e => {
     const d = JSON.parse(e.data);
     const stageMap = {queued:0, downloading:1, parsing:2, indexing:3, done:3, no_summary:1, image_only:2, error:2};
     _ingestStep(k, stageMap[d.stage] ?? 2, d.pct, d.msg);
   });
-
   es.addEventListener('done', e => {
     const d = JSON.parse(e.data);
-    if (d.status === 'ok') {
-      _ingestStep(k, 3, 100, `Done — ${d.chunk_count} sections indexed`);
-    } else if (d.status === 'no_summary') {
-      _ingestStep(k, 1, 100, 'No public Summary PDF for this device');
-    } else if (d.status === 'image_only') {
-      _ingestStep(k, 2, 100, 'PDF is image-only (scanned) — OCR not supported');
-    } else {
-      _ingestStep(k, 2, 100, d.note || 'Error during processing');
-    }
+    if (d.status === 'ok')              _ingestStep(k, 3, 100, `Done — ${d.chunk_count} sections indexed`);
+    else if (d.status === 'no_summary') _ingestStep(k, 1, 100, 'No public Summary PDF for this device');
+    else if (d.status === 'image_only') _ingestStep(k, 2, 100, 'PDF is image-only (scanned) — OCR not supported');
+    else                                _ingestStep(k, 2, 100, d.note || 'Error during processing');
   });
-
   es.addEventListener('complete', async () => {
-    finished = true;
-    es.close();
+    finished = true; es.close();
     await new Promise(r => setTimeout(r, 900));
     await renderOverview(k);
   });
-
   es.addEventListener('error', () => {
     es.close();
-    // EventSource fires 'error' on any close, including a clean server-side close.
-    // Only show the message if we never received the 'complete' event.
     if (!finished) _ingestStep(k, 2, 0, 'Connection lost — check your network');
   });
 }
 
 // ── Performance tab ──
+const PERF_FIELDS = [
+  ['ppa',              'PPA (Sensitivity)'],
+  ['npa',              'NPA (Specificity)'],
+  ['lod',              'LoD'],
+  ['comparator_method','Comparator / Ref Method'],
+  ['predicate_device', 'Predicate Device (SE)'],
+  ['reactivity_strains','Reactivity Strains'],
+];
+
 async function renderPerformance(kNumbers) {
-  setContent('<div class="empty"><div class="spinner"></div></div>');
+  if (!kNumbers || !kNumbers.length) { setContent('<div class="empty"><p>Select a device first.</p></div>'); return; }
+  setContent('<div class="empty"><div class="spinner"></div><p style="margin-top:12px">Extracting performance metrics…</p></div>');
   try {
     const res  = await fetch(`/api/compare?k_numbers=${kNumbers.join(',')}`);
     const data = await res.json();
+    lastCompare = data;
     if (!data.rows?.length) { setContent('<div class="empty"><p>No data</p></div>'); return; }
 
-    const FIELDS = [
-      ['ppa',              'PPA (Sensitivity)'],
-      ['npa',              'NPA (Specificity)'],
-      ['lod',              'LoD'],
-      ['comparator_method','Comparator / Ref Method'],
-      ['predicate_device', 'Predicate Device (SE)'],
-    ];
-
-    const tableRows = FIELDS.map(([key, label]) => `
+    const tableRows = PERF_FIELDS.map(([key, label]) => `
       <tr>
-        <td style="font-weight:600;font-size:.8rem;background:var(--gray-2)">${label}</td>
+        <td class="metric-cell">${label}</td>
         ${data.rows.map(row => {
           const pv = row[key];
-          if (!pv) return `<td><span class="not-found">Not found in summary</span></td>`;
+          if (!pv) return `<td><span class="not-found">Not found</span></td>`;
           const cit = pv.citation;
           const pageStr = cit.page ? ` p.${cit.page}` : '';
           const url = cit.source_url ? `<a class="link" href="${cit.source_url}" target="_blank">${cit.k_number}${pageStr}</a>` : `${cit.k_number}${pageStr}`;
           return `<td>${esc(pv.value)}<div class="citation">↳ ${url} [${esc(cit.section)}]</div></td>`;
         }).join('')}
-      </tr>
-    `).join('');
+      </tr>`).join('');
 
     setContent(`
-      <div class="note-box">${esc(data.scope_note)}</div>
+      <div class="perf-toolbar">
+        <strong style="font-size:.95rem">Comparing ${data.rows.length} device${data.rows.length>1?'s':''}</strong>
+        <span class="grow"></span>
+        <button class="btn-mini ghost" onclick="batchIngestFromCompare()">↓ Fetch &amp; parse all</button>
+        <button class="btn-mini" onclick="exportCSV()">⤓ Export CSV</button>
+        <button class="btn-mini ghost" onclick="exportJSON()">⤓ Export JSON</button>
+      </div>
+      <div class="note-box">${esc(data.scope_note)}${aiEnabled ? ' · AI extraction is ON.' : ' · Regex extraction (set ANTHROPIC_API_KEY for AI).'}</div>
       <div class="warn-box">⚠ ${esc(data.predicate_note)}</div>
-      <table class="perf-table">
-        <thead><tr>
-          <th style="width:180px">Metric</th>
-          ${data.rows.map(r => `<th>${esc(r.k_number)}<br><span style="font-weight:400;text-transform:none;font-size:.72rem">${esc(r.device_name).slice(0,40)}</span></th>`).join('')}
-        </tr></thead>
-        <tbody>${tableRows}</tbody>
-      </table>
+      <div style="overflow-x:auto">
+        <table class="perf-table">
+          <thead><tr>
+            <th style="width:180px">Metric</th>
+            ${data.rows.map(r => `<th>${esc(r.k_number)}<br><span style="font-weight:400;font-size:.72rem">${esc(r.device_name).slice(0,40)}</span></th>`).join('')}
+          </tr></thead>
+          <tbody>${tableRows}</tbody>
+        </table>
+      </div>
       ${data.rows.some(r => r.extraction_notes?.length) ? `
         <div class="section-hdr" style="margin-top:20px">Extraction notes</div>
         ${data.rows.filter(r => r.extraction_notes?.length).map(r =>
-          `<div style="font-size:.8rem;color:var(--gray-5);margin-bottom:4px"><strong>${r.k_number}</strong>: ${r.extraction_notes.join('; ')}</div>`
-        ).join('')}
-        <div class="note-box" style="margin-top:10px">
-          To fill missing cells, go to the Overview tab and click "Fetch &amp; parse Summary PDF" for that device.
-        </div>
+          `<div style="font-size:.8rem;color:var(--gray-5);margin-bottom:4px"><strong>${r.k_number}</strong>: ${r.extraction_notes.join('; ')}</div>`).join('')}
       ` : ''}
     `);
   } catch(e) {
@@ -485,39 +521,91 @@ async function renderPerformance(kNumbers) {
   }
 }
 
+// Batch-ingest every device currently in the comparison, then refresh.
+function batchIngestFromCompare() {
+  if (!lastCompare?.rows?.length) return;
+  const ks = lastCompare.rows.map(r => r.k_number);
+  const note = document.querySelector('.perf-toolbar');
+  if (note) note.insertAdjacentHTML('afterend',
+    `<div id="batch-ingest-status" class="note-box">Fetching &amp; parsing ${ks.length} summaries… <span class="spinner"></span></div>`);
+  const es = new EventSource(`/api/ingest-stream?k_numbers=${ks.join(',')}`);
+  let finished = false, done = 0;
+  es.addEventListener('done', () => {
+    done++;
+    const s = document.getElementById('batch-ingest-status');
+    if (s) s.innerHTML = `Parsed ${done}/${ks.length} summaries… <span class="spinner"></span>`;
+  });
+  es.addEventListener('complete', async () => {
+    finished = true; es.close();
+    await renderPerformance(ks);
+  });
+  es.addEventListener('error', () => { es.close(); if (!finished) {
+    const s = document.getElementById('batch-ingest-status'); if (s) s.textContent = 'Some summaries failed to parse.';
+  }});
+}
+
+// ── Export ──
+function _csvCell(s) {
+  if (s == null) return '';
+  s = String(s).replace(/\n/g, ' ');
+  return /[",]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+
+function exportCSV() {
+  if (!lastCompare?.rows?.length) return;
+  const rows = lastCompare.rows;
+  const header = ['Metric', ...rows.map(r => `${r.k_number} (${r.device_name})`)];
+  const lines = [header.map(_csvCell).join(',')];
+  for (const [key, label] of PERF_FIELDS) {
+    const valCells = rows.map(r => {
+      const pv = r[key];
+      if (!pv) return '';
+      const cit = pv.citation || {};
+      const cite = `${cit.k_number || ''}${cit.page ? ' p.'+cit.page : ''}${cit.section ? ' ['+cit.section+']' : ''}`;
+      return `${pv.value} — ${cite}`;
+    });
+    lines.push([label, ...valCells].map(_csvCell).join(','));
+  }
+  _download(lines.join('\n'), 'text/csv', 'ivd-performance.csv');
+}
+
+function exportJSON() {
+  if (!lastCompare) return;
+  _download(JSON.stringify(lastCompare, null, 2), 'application/json', 'ivd-performance.json');
+}
+
+function _download(content, mime, filename) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
 // ── Ask tab ──
 function renderAsk(k) {
   setContent(`
     <div class="section-hdr">Ask about ${k}</div>
     <p style="font-size:.85rem;color:var(--gray-5);margin-bottom:14px">
-      Answers come from indexed 510(k) Summary text. You must fetch the PDF first (Overview tab).
+      Answers come from indexed 510(k) Summary text${aiEnabled ? ', synthesized by AI with citations' : ' (keyword mode — set ANTHROPIC_API_KEY for AI answers)'}. Fetch the PDF first (Overview tab).
     </p>
     <div class="qa-form">
       <input id="qa-input" type="text" placeholder="e.g. What LoD was reported? What was the comparator method?"
              onkeydown="if(event.key==='Enter') askQuestion('${k}')" />
-      <button onclick="askQuestion('${k}')">Ask</button>
+      <button class="btn-primary" onclick="askQuestion('${k}')">Ask</button>
     </div>
     <div id="qa-result"></div>
-
     <div class="section-hdr" style="margin-top:24px">Example questions</div>
     <div style="display:flex;flex-wrap:wrap;gap:6px">
-      ${[
-        'What LoD was reported?',
-        'What was the comparator/reference method?',
-        'What reactivity strains were tested?',
-        'What were the PPA and NPA?',
-        'Were there any cross-reactivity concerns?',
-        'What specimen types were evaluated?',
-      ].map(q => `<button class="ingest-btn" onclick="fillAsk('${k}','${q.replace(/'/g,"\\'")}')">
-        ${esc(q)}</button>`).join('')}
+      ${['What LoD was reported?','What was the comparator/reference method?','What reactivity strains were tested?',
+         'What were the PPA and NPA?','Were there any cross-reactivity concerns?','What specimen types were evaluated?']
+        .map(q => `<button class="ingest-btn" onclick="fillAsk('${k}','${q.replace(/'/g,"\\'")}')">${esc(q)}</button>`).join('')}
     </div>
   `);
 }
 
-function fillAsk(k, q) {
-  document.getElementById('qa-input').value = q;
-  askQuestion(k);
-}
+function fillAsk(k, q) { document.getElementById('qa-input').value = q; askQuestion(k); }
 
 async function askQuestion(k) {
   const q = document.getElementById('qa-input')?.value?.trim();
@@ -527,71 +615,32 @@ async function askQuestion(k) {
     const res  = await fetch(`/api/ask?q=${encodeURIComponent(q)}&k_numbers=${k}`);
     const data = await res.json();
     if (data.not_found_reason) {
-      document.getElementById('qa-result').innerHTML =
-        `<div class="warn-box">Not found: ${esc(data.not_found_reason)}</div>`;
+      document.getElementById('qa-result').innerHTML = `<div class="warn-box">Not found: ${esc(data.not_found_reason)}</div>`;
       return;
     }
     const cites = (data.citations || []).map(c => {
       const page = c.page ? ` p.${c.page}` : '';
-      const url  = c.source_url
-        ? `<a class="link" href="${c.source_url}" target="_blank">${c.k_number}${page}</a>`
-        : `${c.k_number}${page}`;
+      const url  = c.source_url ? `<a class="link" href="${c.source_url}" target="_blank">${c.k_number}${page}</a>` : `${c.k_number}${page}`;
       return `<span class="cite-chip">${url} [${esc(c.section)}]</span>`;
     }).join('');
     document.getElementById('qa-result').innerHTML = `
-      <div class="answer-box">
-        ${esc(data.answer || '')}
+      <div class="answer-box">${esc(data.answer || '')}
         ${cites ? `<div class="answer-cite"><h4>Sources</h4>${cites}</div>` : ''}
       </div>`;
   } catch(e) {
-    document.getElementById('qa-result').innerHTML =
-      `<div style="color:var(--red)">Error: ${e.message}</div>`;
-  }
-}
-
-// ── Labs tab ──
-async function renderLabs() {
-  const analyte = document.getElementById('analyte-input').value.trim() || 'Group A Strep';
-  setContent(`<div class="empty"><div class="spinner"></div><p style="margin-top:12px">Searching lab directories…</p></div>`);
-  try {
-    const res  = await fetch(`/api/labs?analyte=${encodeURIComponent(analyte)}`);
-    const data = await res.json();
-    if (!data.results?.length) {
-      setContent(`<div class="empty"><p>No reference lab tests found for <strong>${esc(analyte)}</strong></p></div>`);
-      return;
-    }
-    setContent(`
-      <div class="warn-box">⚠ ${esc(data.directory_lookup_note)}</div>
-      ${data.results.map(t => `
-        <div class="lab-card">
-          <div class="lab-name">${esc(t.lab_name)}</div>
-          <div class="lab-test">${esc(t.test_name)}</div>
-          <div class="lab-meta">
-            ${t.test_code ? `Code: <strong>${esc(t.test_code)}</strong> · ` : ''}
-            ${t.methodology ? `Method: ${esc(t.methodology)} · ` : ''}
-            ${t.specimen_type ? `Specimen: ${esc(t.specimen_type)} · ` : ''}
-            Snapshot: ${esc(t.snapshot_date)}
-          </div>
-          ${t.url ? `<div style="margin-top:6px"><a class="link" href="${t.url}" target="_blank">↗ View test</a></div>` : ''}
-        </div>
-      `).join('')}
-    `);
-  } catch(e) {
-    setContent(`<div class="empty" style="color:var(--red)">Error: ${e.message}</div>`);
+    document.getElementById('qa-result').innerHTML = `<div style="color:var(--red)">Error: ${e.message}</div>`;
   }
 }
 
 // ── Utilities ──
-function setContent(html) {
-  document.getElementById('tab-content').innerHTML = html;
-}
+function setContent(html) { document.getElementById('tab-content').innerHTML = html; }
 function esc(s) {
   if (s == null) return '';
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-// ── Auto-load on page open ──
-window.addEventListener('load', () => search());
+// ── Init ──
+window.addEventListener('load', () => { loadConfig(); search(); });
 </script>
 </body>
 </html>

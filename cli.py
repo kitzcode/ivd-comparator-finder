@@ -7,7 +7,6 @@ Commands:
   ingest   Fetch + parse 510(k) Summary PDFs for devices (v2)
   ask      Grounded Q&A over indexed summaries (v2)
   compare  Structured performance extraction table (v3)
-  labs     Reference-lab directory lookup (v3)
   status   Show what has been indexed
 
 Examples:
@@ -17,8 +16,6 @@ Examples:
   python cli.py ask "What LoD did K173653 report?" --knumbers K173653
   python cli.py compare --knumbers K173653 K141757 K201269
   python cli.py compare --analyte "Group A Strep" --limit 5
-  python cli.py labs "Group A Strep"
-  python cli.py labs "Group A Strep" --labs arup mayo
   python cli.py status
 """
 
@@ -196,13 +193,6 @@ def cmd_compare(args: argparse.Namespace) -> None:
     print(format_performance_table(table, verbose=args.verbose))
 
 
-def cmd_labs(args: argparse.Namespace) -> None:
-    from finder.sources.labs import find_reference_labs, format_lab_results
-    labs_filter = args.labs or None
-    tests = find_reference_labs(args.analyte, labs=labs_filter)
-    print(format_lab_results(tests))
-
-
 def cmd_ask(args: argparse.Namespace) -> None:
     from finder.qa import ask, format_answer
 
@@ -289,11 +279,6 @@ def build_parser() -> argparse.ArgumentParser:
     p_compare.add_argument("--model", default="", help="Anthropic model for LLM-assisted extraction")
     p_compare.add_argument("--verbose", action="store_true", help="Show source URLs in output")
 
-    # labs
-    p_labs = sub.add_parser("labs", help="Reference-lab directory lookup")
-    p_labs.add_argument("analyte", help="Analyte name to search for")
-    p_labs.add_argument("--labs", nargs="+", choices=["arup", "mayo"], help="Which labs to query")
-
     # ask
     p_ask = sub.add_parser("ask", help="Grounded Q&A over indexed summaries")
     p_ask.add_argument("question", help="Question to answer")
@@ -328,8 +313,6 @@ def main() -> None:
 
     if args.command == "compare":
         cmd_compare(args)
-    elif args.command == "labs":
-        cmd_labs(args)
     elif args.command == "ask":
         cmd_ask(args)
     elif args.command == "find":

@@ -14,7 +14,6 @@ Everything it touches is public FDA data — clean from an IP standpoint and ful
 | `ingest` | Fetch and parse 510(k) Summary PDFs into indexed chunks |
 | `ask` | Grounded Q&A over indexed summaries (keyword-only or LLM-backed) |
 | `compare` | Structured performance extraction table (PPA, NPA, LoD, comparator, predicate) |
-| `labs` | Reference-lab directory lookup (ARUP, Mayo Clinic Laboratories) |
 | `status` | Show index status |
 
 ## Quick start
@@ -31,10 +30,19 @@ python cli.py ask "What LoD did K173653 report?" --knumbers K173653
 
 # v3: performance comparison table
 python cli.py compare --knumbers K173653 K141757 K201269
-
-# v3: reference lab lookup
-python cli.py labs "Group A Strep"
 ```
+
+## Web app
+
+```bash
+pip install -r requirements.txt
+uvicorn app:app --reload      # then open http://localhost:8000
+```
+
+Batch-select devices in the left panel to compare them side by side, then
+export the metrics table as CSV or JSON. Set `ANTHROPIC_API_KEY` (and optionally
+`ANTHROPIC_MODEL`, default `claude-sonnet-4-6`) to enable AI-backed extraction
+and Q&A; without it, the app falls back to regex/keyword mode.
 
 ## Demo output
 
@@ -62,7 +70,7 @@ python -m ivd_mcp          # stdio transport
 mcp dev ivd_mcp/ivd_server.py  # interactive inspector
 ```
 
-Tools: `find_devices`, `get_clearance`, `ask_summary`, `compare_performance`, `find_reference_labs`.
+Tools: `find_devices`, `get_clearance`, `ask_summary`, `compare_performance`.
 
 All tools are annotated `readOnlyHint=True, destructiveHint=False`.
 
@@ -101,7 +109,6 @@ finder/
   sources/
     openfda.py       openFDA client + on-disk cache
     summaries.py     510(k) Summary PDF fetch + URL resolution
-    labs.py          reference-lab directory lookups (M5)
   parse/
     pdf.py           pdfplumber extraction
     sections.py      section splitter → SummaryChunk list
