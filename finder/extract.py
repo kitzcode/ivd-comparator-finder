@@ -206,6 +206,11 @@ def _extract_from_chunks(
     se_chunks = [c for c in chunks if "substantial" in c.section.lower()]
     all_chunks = chunks
 
+    # Prose fields (free-text method / device names) where regex produces noisy,
+    # mid-sentence matches. When an LLM is available, let it own these instead of
+    # trusting the regex; the regex remains the fallback when no LLM is supplied.
+    have_llm = llm is not None
+
     # --- Regex extraction pass ---
     for chunk in perf_chunks + all_chunks:
         text = chunk.text
@@ -225,27 +230,32 @@ def _extract_from_chunks(
             if val:
                 results["lod"] = _make_perf_value(val, chunk)
 
-        if results["comparator_method"] is None:
+        if not have_llm and results["comparator_method"] is None:
             val = _try_patterns(_COMPARATOR_PATTERNS, text)
             if val:
                 results["comparator_method"] = _make_perf_value(val, chunk)
 
-        if results["reactivity_strains"] is None:
+        if not have_llm and results["reactivity_strains"] is None:
             m = _REACTIVITY_PATTERN.search(text)
             if m:
                 results["reactivity_strains"] = _make_perf_value(m.group(1).strip()[:300], chunk)
 
-    for chunk in se_chunks + all_chunks:
-        if results["predicate_device"] is None:
-            val = _try_patterns(_PREDICATE_PATTERNS, chunk.text)
-            if val:
-                results["predicate_device"] = _make_perf_value(val, chunk)
+    if not have_llm:
+        for chunk in se_chunks + all_chunks:
+            if results["predicate_device"] is None:
+                val = _try_patterns(_PREDICATE_PATTERNS, chunk.text)
+                if val:
+                    results["predicate_device"] = _make_perf_value(val, chunk)
 
-    # --- LLM extraction pass for anything still missing ---
-    if llm is not None:
+    # --- LLM extraction pass: fill prose fields + any numeric field still missing ---
+    if have_llm:
         missing = [k for k, v in results.items() if v is None]
-        if missing and (perf_chunks or all_chunks):
-            results = _llm_fill_missing(results, missing, perf_chunks or all_chunks[:4], llm)
+        if missing:
+            # Include performance, SE and intended-use chunks so the model can
+            # find predicate/comparator that live outside the perf sections.
+            iu_chunks = [c for c in chunks if "intended" in c.section.lower()]
+            context = (perf_chunks[:4] + se_chunks[:2] + iu_chunks[:1]) or all_chunks[:4]
+            results = _llm_fill_missing(results, missing, context, llm)
 
     return results
 
@@ -281,7 +291,7 @@ def _llm_fill_missing(
 ) -> dict:
     import json as _json
 
-    combined_text = "\n\n".join(c.text[:600] for c in chunks[:4])
+    combined_text = "\n\n".join(c.text[:900] for c in chunks[:6])
     prompt = (
         f"Extract the following fields from this 510(k) Summary text "
         f"(return null for any not present): {missing}\n\n"
