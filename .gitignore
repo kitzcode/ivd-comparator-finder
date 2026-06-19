@@ -7,11 +7,13 @@ dist/
 build/
 .env
 
-# PDF cache — potentially large; not committed
-data/cache/pdf/
+# PDF binaries are large — ignore them; but commit URL sidecars (tiny text files)
+data/cache/pdf/*.pdf
+data/cache/pdf/*.pdf.part
 
-# Chunk + lab caches — derived from PDFs; not committed
-data/cache/chunks/
+# Chunk JSON files — commit pre-indexed devices so Vercel can serve them
+# without needing a writable filesystem.
+data/cache/labs/
 data/cache/labs/
 
 # openFDA JSON cache IS committed (small; used for deterministic test replay)
@@ -19,3 +21,4 @@ data/cache/labs/
 data/cache/snapshot_*.json
 
 .DS_Store
+.vercel

@@ -11,6 +11,7 @@ PDFs are cached to data/cache/pdf/<K-number>.pdf.
 from __future__ import annotations
 
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Optional
 
@@ -25,13 +26,18 @@ except OSError:
     CACHE_DIR = Path("/tmp") / "ivd_pdf_cache"
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-# Probe order matters: more-specific patterns first.
-# {yy} = two-digit year extracted from the K-number.
+# Also check for committed URL sidecar files in the project tree (readable even
+# on read-only filesystems like Vercel where CACHE_DIR may point to /tmp).
+_COMMITTED_URL_DIR = Path(__file__).parent.parent.parent / "data" / "cache" / "pdf"
+
 _URL_PATTERNS = [
     "https://www.accessdata.fda.gov/cdrh_docs/pdf{yy}/{k}.pdf",
     "https://www.accessdata.fda.gov/cdrh_docs/reviews/{k}.pdf",
     "https://www.accessdata.fda.gov/cdrh_docs/pdf/{k}.pdf",
 ]
+
+_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; IVDFinder/1.0)"}
+_PROBE_TIMEOUT = 6  # seconds per URL probe; 3 probes in parallel so wall-clock ≈ 6s max
 
 
 def _year2(k_number: str) -> str:
@@ -44,17 +50,29 @@ def _cache_pdf_path(k_number: str) -> Path:
 
 
 def _cache_url_path(k_number: str) -> Path:
-    """Tiny sidecar that stores the resolved URL so we don't re-probe."""
     return CACHE_DIR / f"{k_number}.url"
+
+
+def _committed_url_path(k_number: str) -> Path:
+    """Sidecar committed to git — readable on Vercel even when CACHE_DIR is /tmp."""
+    return _COMMITTED_URL_DIR / f"{k_number}.url"
 
 
 def resolve_summary_url(k_number: str) -> Optional[str]:
     """
-    Probe known URL patterns and return the first that serves a PDF,
+    Probe known URL patterns in parallel and return the first that serves a PDF,
     or None if no public Summary is found.
 
-    Results are cached in a small sidecar file so repeated calls are free.
+    Checks committed sidecar files first (fast, no network), then /tmp cache,
+    then probes all candidates concurrently (wall-clock = single slowest probe).
     """
+    # 1. Check committed sidecar (readable on Vercel)
+    committed = _committed_url_path(k_number)
+    if committed.exists():
+        val = committed.read_text().strip()
+        return val if val != "NONE" else None
+
+    # 2. Check writable cache sidecar
     url_file = _cache_url_path(k_number)
     if url_file.exists():
         val = url_file.read_text().strip()
@@ -63,29 +81,38 @@ def resolve_summary_url(k_number: str) -> Optional[str]:
     yy = _year2(k_number)
     candidates = [p.format(k=k_number, yy=yy) for p in _URL_PATTERNS]
 
-    found: Optional[str] = None
-    headers = {"User-Agent": "Mozilla/5.0 (compatible; IVDFinder/1.0)"}
-    with httpx.Client(timeout=20, follow_redirects=True) as client:
-        for url in candidates:
-            try:
-                # accessdata.fda.gov returns 404 on HEAD; use GET with Range
-                # to avoid downloading the entire PDF just to probe existence.
-                resp = client.get(url, headers={**headers, "Range": "bytes=0-3"})
+    def _probe(url: str) -> Optional[str]:
+        try:
+            with httpx.Client(timeout=_PROBE_TIMEOUT, follow_redirects=True) as client:
+                resp = client.get(url, headers={**_HEADERS, "Range": "bytes=0-3"})
                 ct = resp.headers.get("content-type", "")
                 if resp.status_code in (200, 206) and "pdf" in ct.lower():
-                    found = url
-                    break
-                # Some servers ignore Range and return 200 with content anyway
+                    return url
                 if resp.status_code == 200 and resp.content[:4] == b"%PDF":
-                    found = url
-                    break
-            except httpx.RequestError:
-                continue
+                    return url
+        except httpx.RequestError:
+            pass
+        return None
+
+    # Probe all candidates in parallel — wall-clock limited to slowest single probe.
+    found: Optional[str] = None
+    with ThreadPoolExecutor(max_workers=len(candidates)) as pool:
+        futures = {pool.submit(_probe, url): url for url in candidates}
+        # Honour URL_PATTERNS priority: prefer earlier patterns when multiple hit.
+        results: dict[str, Optional[str]] = {}
+        for future in as_completed(futures):
+            url = futures[future]
+            results[url] = future.result()
+        for url in candidates:
+            if results.get(url):
+                found = url
+                break
 
     try:
         url_file.write_text(found or "NONE")
     except OSError:
         pass  # read-only filesystem — skip caching
+
     return found
 
 
@@ -93,8 +120,6 @@ def fetch_summary_pdf(k_number: str) -> Optional[Path]:
     """
     Download the 510(k) Summary PDF for k_number to the cache dir.
     Returns the local path, or None if no public Summary exists.
-
-    Uses the on-disk cache; will not re-download an already-cached PDF.
     """
     local = _cache_pdf_path(k_number)
     if local.exists() and local.stat().st_size > 0:
@@ -106,7 +131,7 @@ def fetch_summary_pdf(k_number: str) -> Optional[Path]:
 
     with httpx.Client(timeout=60, follow_redirects=True) as client:
         try:
-            resp = client.get(url, headers={"User-Agent": "Mozilla/5.0 (compatible; IVDFinder/1.0)"})
+            resp = client.get(url, headers=_HEADERS)
             if resp.status_code != 200:
                 return None
             local.write_bytes(resp.content)
@@ -116,17 +141,11 @@ def fetch_summary_pdf(k_number: str) -> Optional[Path]:
 
 
 def is_image_only_pdf(pdf_path: Path, sample_pages: int = 3) -> bool:
-    """
-    Heuristic: if the first few pages extract < 20 chars of text each,
-    the PDF is likely a scanned image and needs OCR.
-    """
     try:
         import pdfplumber
         with pdfplumber.open(pdf_path) as pdf:
-            pages = pdf.pages[:sample_pages]
-            for page in pages:
-                text = page.extract_text() or ""
-                if len(text.strip()) > 20:
+            for page in pdf.pages[:sample_pages]:
+                if len((page.extract_text() or "").strip()) > 20:
                     return False
         return True
     except Exception:
