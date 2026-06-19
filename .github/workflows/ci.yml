@@ -24,16 +24,4 @@ jobs:
       - name: Run tests
         run: pytest tests/ -x -q --ignore=tests/test_m5.py
         # test_m5 has live-HTTP tests gated behind --run-live; skip in CI
-
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Deploy to Railway
-        uses: berviantoleo/railway-deploy@main
-        with:
-          railway_token: ${{ secrets.RAILWAY_TOKEN }}
-          service: ivd-comparator-finder
+        # Deployment is handled by Vercel's GitHub integration on push to main.
