@@ -16,11 +16,12 @@ The frontend is served from static/index.html.
 from __future__ import annotations
 
 import asyncio
+import json
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException, BackgroundTasks, Query
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 
 app = FastAPI(
     title="IVD Comparator Finder",
@@ -100,42 +101,111 @@ def api_clearance(k_number: str):
     }
 
 
-# Ingest runs in background so the HTTP response returns immediately
-_ingest_progress: dict[str, str] = {}
-
-
-def _run_ingest(k_numbers: list[str]) -> None:
+@app.get("/api/ingest-stream")
+def api_ingest_stream(k_numbers: str = Query(..., description="Comma-separated K-numbers")):
+    """
+    SSE endpoint — runs ingest in a thread and streams progress events in real
+    time. Keeps the HTTP connection alive so Vercel doesn't terminate the
+    function before the work completes.
+    """
+    import queue
+    import threading
     from finder.models import Device
     from finder.sources.openfda import get_510k_by_knumber
     from finder.pipeline import ingest_summaries
 
-    devices = []
-    for k in k_numbers:
-        rec = get_510k_by_knumber(k)
-        if rec:
-            devices.append(Device(
-                k_number=k,
-                device_name=rec.get("device_name", ""),
-                applicant_name=rec.get("applicant_name", ""),
-                product_code=rec.get("product_code", ""),
-            ))
-        else:
-            _ingest_progress[k] = "not_found"
+    ks = [k.strip().upper() for k in k_numbers.split(",") if k.strip()]
+    q: queue.Queue = queue.Queue()
+    _DONE = object()
 
-    def progress(msg: str) -> None:
-        k = msg.split(":")[0].strip()
-        _ingest_progress[k] = msg
+    def _sse(event: str, data: dict) -> str:
+        return f"event: {event}\ndata: {json.dumps(data)}\n\n"
 
-    ingest_summaries(devices, progress_cb=progress, skip_already_indexed=True)
+    def _stage(msg: str):
+        lower = msg.lower()
+        if "fetching" in lower:   return "downloading", 25
+        if "no public" in lower:  return "no_summary",  30
+        if "image-only" in lower: return "image_only",  60
+        if "error" in lower:      return "error",        60
+        if "ingested" in lower:   return "indexing",     95
+        if "skipped" in lower:    return "done",        100
+        return "parsing", 55
 
+    def _worker():
+        try:
+            devices = []
+            for k in ks:
+                q.put(_sse("progress", {"k": k, "stage": "queued", "pct": 5, "msg": "Looking up device…"}))
+                rec = get_510k_by_knumber(k)
+                if not rec:
+                    q.put(_sse("progress", {"k": k, "stage": "error", "pct": 0, "msg": f"{k} not found"}))
+                    q.put(_sse("done", {"k": k, "status": "error"}))
+                    continue
+                devices.append(Device(
+                    k_number=k,
+                    device_name=rec.get("device_name", ""),
+                    applicant_name=rec.get("applicant_name", ""),
+                    product_code=rec.get("product_code", ""),
+                ))
+
+            def progress_cb(msg: str):
+                parts = msg.split(":", 1)
+                k = parts[0].strip()
+                text = parts[1].strip() if len(parts) > 1 else msg
+                stage, pct = _stage(text)
+                q.put(_sse("progress", {"k": k, "stage": stage, "pct": pct, "msg": text}))
+
+            results = ingest_summaries(devices, progress_cb=progress_cb, skip_already_indexed=True)
+            for r in results:
+                q.put(_sse("done", {"k": r.k_number, "status": r.status,
+                                    "chunk_count": r.chunk_count, "note": r.note}))
+            q.put(_sse("complete", {"ks": ks}))
+        except Exception as exc:
+            q.put(_sse("error", {"msg": str(exc)}))
+        finally:
+            q.put(_DONE)
+
+    threading.Thread(target=_worker, daemon=True).start()
+
+    def generate():
+        while True:
+            item = q.get()
+            if item is _DONE:
+                break
+            yield item
+
+    return StreamingResponse(
+        generate(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
+
+
+# Keep the POST endpoint for backwards compat (used by old clients / CLI)
+_ingest_progress: dict[str, str] = {}
 
 @app.post("/api/ingest")
 def api_ingest(k_numbers: list[str], background_tasks: BackgroundTasks):
     k_numbers = [k.upper() for k in k_numbers]
     for k in k_numbers:
         _ingest_progress[k] = "queued"
-    background_tasks.add_task(_run_ingest, k_numbers)
-    return {"queued": k_numbers, "message": "Ingestion started in background. Poll /api/status for progress."}
+
+    def _run():
+        from finder.models import Device
+        from finder.sources.openfda import get_510k_by_knumber
+        from finder.pipeline import ingest_summaries
+        devices = []
+        for k in k_numbers:
+            rec = get_510k_by_knumber(k)
+            if rec:
+                devices.append(Device(k_number=k, device_name=rec.get("device_name",""),
+                    applicant_name=rec.get("applicant_name",""), product_code=rec.get("product_code","")))
+        def _cb(msg):
+            _ingest_progress[msg.split(":")[0].strip()] = msg
+        ingest_summaries(devices, progress_cb=_cb, skip_already_indexed=True)
+
+    background_tasks.add_task(_run)
+    return {"queued": k_numbers}
 
 
 @app.get("/api/ask")
