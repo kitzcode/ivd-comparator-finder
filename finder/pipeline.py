@@ -67,7 +67,7 @@ def find_devices(
     # Fetch 510(k) device lists for all product codes in parallel to reduce
     # wall-clock time when the cache is cold (e.g. first search of a new analyte).
     def _fetch(pc_info):
-        return pc_info, get_510k_by_product_code(pc_info.product_code)
+        return pc_info, get_510k_by_product_code(pc_info.product_code, max_results=200)
 
     max_workers = min(16, len(resolution.product_codes) or 1)
     with ThreadPoolExecutor(max_workers=max_workers) as pool:

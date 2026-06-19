@@ -3,7 +3,9 @@
     {
       "src": "app.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "50mb" }
+      "config": {
+        "maxDuration": 60
+      }
     }
   ],
   "routes": [
