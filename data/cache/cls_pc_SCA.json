@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "SCA",
+      "openfda": {
+        "k_number": [
+          "K243262",
+          "K251085",
+          "K251563",
+          "K251749",
+          "K251092",
+          "K250377",
+          "K251538",
+          "K251604",
+          "K243561",
+          "K243256",
+          "DEN240029"
+        ],
+        "registration_number": [
+          "3023372670",
+          "2531491",
+          "3016609999",
+          "3016252795",
+          "3004635103",
+          "3004146366",
+          "3009238284",
+          "3028107593",
+          "3017550662",
+          "3005174594",
+          "3008517993",
+          "3016850770",
+          "3008573045",
+          "3006048451",
+          "3020885868",
+          "1524213",
+          "1221359",
+          "3003917514",
+          "2246703",
+          "3024756665",
+          "3017662853"
+        ],
+        "fei_number": [
+          "3023372670",
+          "3016609999",
+          "3016252795",
+          "3004635103",
+          "3004146366",
+          "3009238284",
+          "3028107593",
+          "3017550662",
+          "3005174594",
+          "3008517993",
+          "3016850770",
+          "3003516723",
+          "3008573045",
+          "3006048451",
+          "3020885868",
+          "1524213",
+          "1221359",
+          "3003917514",
+          "2246703",
+          "3024756665",
+          "3017662853"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Multi-Analyte Respiratory Virus Antigen Detection Test",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "2",
+      "definition": "A multi-analyte respiratory virus antigen detection test is an in vitro diagnostic device intended for the detection and/or differentiation of respiratory viruses directly from respiratory clinical specimens. The device is intended to be performed at the site of sample collection, does not involve sample storage and/or transport.",
+      "regulation_number": "866.3987",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    }
+  ]
+}

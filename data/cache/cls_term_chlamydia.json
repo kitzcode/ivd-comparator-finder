@@ -1,0 +1,366 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 8
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "Y",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "LKH",
+      "openfda": {
+        "k_number": [
+          "K842151",
+          "K901975",
+          "K852869",
+          "K893669",
+          "K820390",
+          "K910644",
+          "K830688",
+          "K882674"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Antisera, Immunoperoxidase, Chlamydia Spp.",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3120",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "Y",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "GPT",
+      "openfda": {
+        "k_number": [
+          "K810856"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Antiserum, Cf, Psittacosis (Chlamydia Group)",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3120",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "Y",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "GPW",
+      "openfda": {
+        "k_number": [
+          "K811570",
+          "K872700",
+          "K844868",
+          "K843654"
+        ],
+        "registration_number": [
+          "2032682",
+          "1181055",
+          "3043196750"
+        ],
+        "fei_number": [
+          "1181055",
+          "3043196750",
+          "3003952975"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Antigen, Cf, Psittacosis (Chlamydia Group)",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3120",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "Y",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "LJP",
+      "openfda": {
+        "k_number": [
+          "K881500",
+          "K872744",
+          "K842623",
+          "K864888",
+          "K883352",
+          "K844582",
+          "K864539",
+          "K860179",
+          "K862354",
+          "K842658",
+          "K880031",
+          "K864663",
+          "K852779",
+          "K850158",
+          "K941714",
+          "K842525",
+          "K864389",
+          "K063675",
+          "K832078",
+          "K832077",
+          "K895839",
+          "K871278",
+          "K872903",
+          "K864128",
+          "K823010",
+          "K901243",
+          "K853738",
+          "K853401",
+          "K863681",
+          "K851033",
+          "K870946",
+          "K864662",
+          "K900870",
+          "K834242",
+          "K862320"
+        ],
+        "registration_number": [
+          "8010096",
+          "3003750284",
+          "1528450"
+        ],
+        "fei_number": [
+          "1000122536",
+          "3006224287",
+          "3003750284"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Antiserum, Fluorescent, Chlamydia Trachomatis",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3120",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "Y",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "MKZ",
+      "openfda": {
+        "k_number": [
+          "K063451",
+          "K080739",
+          "K090824",
+          "K091724",
+          "K043072",
+          "K964507",
+          "K081824",
+          "K962217",
+          "K140446",
+          "K934622",
+          "K070174",
+          "K922906",
+          "K053446",
+          "K053287",
+          "K973707",
+          "K110923",
+          "K973718",
+          "K061413",
+          "K230451"
+        ],
+        "registration_number": [
+          "3004141078",
+          "3038610665",
+          "3017907743",
+          "3025663244",
+          "3016838963",
+          "3016608638",
+          "3003795116",
+          "2436875",
+          "3002444944",
+          "3013019728",
+          "2243471",
+          "9610126",
+          "3007420875",
+          "3026940910",
+          "3005248192",
+          "3012598266",
+          "3004530258",
+          "2024800",
+          "3019837962",
+          "3009613136",
+          "1119779",
+          "3006198300"
+        ],
+        "fei_number": [
+          "3004141078",
+          "3038610665",
+          "3017907743",
+          "3025663244",
+          "3016838963",
+          "3016608638",
+          "3003795116",
+          "3002444944",
+          "3013019728",
+          "2243471",
+          "1000521444",
+          "3007420875",
+          "3026940910",
+          "3005248192",
+          "3012598266",
+          "3004530258",
+          "2024800",
+          "3019837962",
+          "3009613136",
+          "3002806559",
+          "1119779",
+          "3006198300"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Dna Probe, Nucleic Acid Amplification, Chlamydia",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3120",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "Y",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "LKI",
+      "openfda": {
+        "registration_number": [
+          "1419968",
+          "1524213",
+          "3004973408",
+          "2023365",
+          "2242436"
+        ],
+        "fei_number": [
+          "1419968",
+          "1524213",
+          "3004973408",
+          "2023365",
+          "2242436"
+        ],
+        "k_number": [
+          "K894625",
+          "K883776",
+          "K905531",
+          "K854615",
+          "K914953",
+          "K830342"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Antisera, Fluorescent, Chlamydia Spp.",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3120",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "Y",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "MGM",
+      "openfda": {
+        "registration_number": [
+          "2023365",
+          "2029372"
+        ],
+        "fei_number": [
+          "1000306617",
+          "2023365"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "C. Trachomatis (Chlamydia Group)",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3120",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "Y",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "LSK",
+      "openfda": {
+        "k_number": [
+          "K871878",
+          "K010891",
+          "K874878",
+          "K920302",
+          "K092704",
+          "K920378",
+          "K990023",
+          "K010892"
+        ],
+        "registration_number": [
+          "1122376"
+        ],
+        "fei_number": [
+          "3003572099"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Dna-Reagents, Chlamydia",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3120",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    }
+  ]
+}

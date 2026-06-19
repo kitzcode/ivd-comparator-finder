@@ -134,15 +134,25 @@ def get_classification_by_product_code(product_code: str) -> list[dict]:
 
 def search_classification_by_term(term: str, limit: int = 100) -> list[dict]:
     """
-    Text-search device_name and definition fields for term (OR across both fields).
-    Returns raw classification records.
+    Text-search device_name and definition fields for term.
+    Runs two separate queries (device_name + definition) and unions results.
+    The +OR+ combined query breaks when httpx URL-encodes the + signs.
     """
     safe_term = term.replace('"', '\\"')
-    # Use explicit OR; openFDA treats space-separated terms as OR within a field
-    search = f'(device_name:"{safe_term}"+OR+definition:"{safe_term}")'
-    cache_key = f"cls_term_{term.lower().replace(' ', '_')[:60]}"
-    data = _get(CLASSIFICATION_EP, {"search": search, "limit": limit}, cache_key)
-    return data.get("results", [])
+    slug = term.lower().replace(' ', '_')[:60]
+
+    seen: set[str] = set()
+    results: list[dict] = []
+
+    for field, ck in [("device_name", f"cls_term_{slug}"), ("definition", f"cls_def_{slug}")]:
+        data = _get(CLASSIFICATION_EP, {"search": f'{field}:"{safe_term}"', "limit": limit}, ck)
+        for rec in data.get("results", []):
+            pc = rec.get("product_code", "")
+            if pc not in seen:
+                seen.add(pc)
+                results.append(rec)
+
+    return results
 
 
 # ---------------------------------------------------------------------------

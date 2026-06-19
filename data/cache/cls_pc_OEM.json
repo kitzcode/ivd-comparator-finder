@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "OEM",
+      "openfda": {
+        "k_number": [
+          "K132200",
+          "K122189",
+          "K112490",
+          "K123838",
+          "K082688",
+          "K230349"
+        ],
+        "registration_number": [
+          "3008632402",
+          "3003030793",
+          "3010770794",
+          "1650733",
+          "2024800",
+          "3038610665",
+          "3019946577",
+          "3002773840",
+          "3006028115",
+          "3007799234",
+          "1221359",
+          "1528450",
+          "3002777243",
+          "3013019728",
+          "3006198300"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3003030793",
+          "3010770794",
+          "1000122536",
+          "2024800",
+          "3038610665",
+          "3019946577",
+          "3002524000",
+          "3002773840",
+          "3006028115",
+          "3007799234",
+          "1221359",
+          "3002777243",
+          "3013019728",
+          "3006198300"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Human Metapneumovirus (Hmpv) Rna Assay System",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "2",
+      "definition": "A qualitative in vitro diagnostic assay intended to detect human metapneumovirus (hmpv) rna extracted from human respiratory specimens or viral cultures. Detection of hmpv rna aids in the diagnosis of respiratory hmpv infection in conjunction with other clinical and laboratory testing in patients exhibiting signs and symptoms of upper respiratory tract infections.",
+      "regulation_number": "866.3980",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    }
+  ]
+}

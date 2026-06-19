@@ -6,39 +6,38 @@
     "last_updated": "2026-06-08",
     "results": {
       "skip": 0,
-      "limit": 100,
+      "limit": 10,
       "total": 1
     }
   },
   "results": [
     {
-      "third_party_flag": "N",
+      "third_party_flag": "Y",
       "life_sustain_support_flag": "N",
       "gmp_exempt_flag": "N",
       "summary_malfunction_reporting": "Eligible",
-      "product_code": "OYZ",
+      "product_code": "LKH",
       "openfda": {
         "k_number": [
-          "K122019"
-        ],
-        "registration_number": [
-          "1524213",
-          "3010749841"
-        ],
-        "fei_number": [
-          "1524213",
-          "3010749841"
+          "K842151",
+          "K901975",
+          "K852869",
+          "K893669",
+          "K820390",
+          "K910644",
+          "K830688",
+          "K882674"
         ]
       },
       "review_panel": "MI",
       "medical_specialty": "MI",
-      "device_name": "Group A Streptococcus Nucleic Acid Amplification Assay System",
+      "device_name": "Antisera, Immunoperoxidase, Chlamydia Spp.",
       "review_code": "",
       "unclassified_reason": "",
       "medical_specialty_description": "Microbiology",
       "device_class": "1",
-      "definition": "An in vitro diagnostic test for the detection of Streptococcuc pyogenes (Group A beta hemolytic Streptococcus) in throat swab specimens from symptomatic patients.",
-      "regulation_number": "866.3740",
+      "definition": "",
+      "regulation_number": "866.3120",
       "implant_flag": "N",
       "submission_type_id": "1"
     }

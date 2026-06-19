@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 9
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "OJO",
+      "openfda": {},
+      "review_panel": "MI",
+      "medical_specialty": "",
+      "device_name": "Enzyme Linked Immunosorbent Assay For The Detection Of Lipoarabinomannan Antigen Of Mycobacteria",
+      "review_code": "",
+      "unclassified_reason": "3",
+      "medical_specialty_description": "Unknown",
+      "device_class": "N",
+      "definition": "Enzyme linked immunosorbent assay (elisa) system intended for in vitro diagnostic use to qualitatively detect the presence of lipoarabinomannan (lam) antigen of mycobacteria in human urine as an aid in the diagnosis of current mycobacterial infection in hiv positive patients with systems of tuberculosis.",
+      "regulation_number": "",
+      "implant_flag": "N",
+      "submission_type_id": "3"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QUM",
+      "openfda": {
+        "registration_number": [
+          "2243471",
+          "3004141078",
+          "2024800",
+          "3005248192",
+          "3019837962",
+          "3025663244"
+        ],
+        "fei_number": [
+          "2243471",
+          "3004141078",
+          "2024800",
+          "3005248192",
+          "3019837962",
+          "3025663244"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "MI",
+      "device_name": "Human Immunodeficiency Virus (Hiv) Viral Load Monitoring Test",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "2",
+      "definition": "A human immunodeficiency virus (HIV) viral load monitoring test is an in vitro diagnostic prescription device for the quantitation of the amount of HIV ribonucleic acid (RNA) in human body fluids",
+      "regulation_number": "866.3958",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QSU",
+      "openfda": {
+        "registration_number": [
+          "3022474803",
+          "3004142665",
+          "3003297763",
+          "3012494290",
+          "1221359",
+          "8023060",
+          "3017662853",
+          "3035708936"
+        ],
+        "fei_number": [
+          "3022474803",
+          "3004142665",
+          "3003297763",
+          "3012494290",
+          "1221359",
+          "3017662853",
+          "3035708936",
+          "3003992026"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Point Of Care Hiv Serology Diagnostic And/Or Supplemental Test",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "2",
+      "definition": "Human immunodeficiency virus (HIV) Point of Care serological diagnostic and supplemental tests are prescription devices for the qualitative detection of HIV antigen(s) and/or detection of antibodies against HIV in human body fluids or tissues.",
+      "regulation_number": "866.3956",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "NHS",
+      "openfda": {},
+      "review_panel": "IM",
+      "medical_specialty": "IM",
+      "device_name": "Assay, Genotype, Hiv Drug Resistance, In Vitro",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Immunology",
+      "device_class": "2",
+      "definition": "Hiv-1 drug resistance genotyping",
+      "regulation_number": "866.3950",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QSS",
+      "openfda": {
+        "registration_number": [
+          "3022474803",
+          "3004142665",
+          "3003871407",
+          "3003297763"
+        ],
+        "fei_number": [
+          "3022474803",
+          "3004142665",
+          "3003871407",
+          "3003297763"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "",
+      "device_name": "Hiv Self-Tests",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "Human immunodeficiency virus (HIV) self-tests are intended for use by an individual to test themselves for the presence of HIV in body fluids.",
+      "regulation_number": "",
+      "implant_flag": "N",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QIC",
+      "openfda": {
+        "registration_number": [
+          "3009875001"
+        ],
+        "fei_number": [
+          "3009875001"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MG",
+      "device_name": "Hiv-1 Genotyping Assay Using Ngs Technology",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Medical Genetics",
+      "device_class": "2",
+      "definition": "The human immunodeficiency virus (HIV) drug resistance genotyping assay using next generation sequencing (NGS) technology is a prescription in vitro diagnostic device intended for use in detecting HIV genomic mutations that confer resistance to specific anti-retroviral drugs.  The device is intended to be used as an aid in monitoring and treating HIV infection.",
+      "regulation_number": "866.3955",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QST",
+      "openfda": {
+        "registration_number": [
+          "2029372",
+          "2243471",
+          "3004141078"
+        ],
+        "fei_number": [
+          "1000306617",
+          "2243471",
+          "3004141078"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Lab-Based Hiv Nat Diagnostic And/Or Supplemental Test",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "2",
+      "definition": "Human immunodeficiency virus (HIV) lab-based nucleic acid diagnostic and supplemental tests are prescription devices for the qualitative detection of HIV nucleic acid in human body fluids or tissues.",
+      "regulation_number": "866.3957",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QSV",
+      "openfda": {},
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Point Of Care Hiv Nat Diagnostic And/Or Supplemental Test",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "2",
+      "definition": "Human immunodeficiency virus (HIV) Point of Care nucleic acid diagnostic and supplemental tests are prescription devices for the qualitative detection of HIV nucleic acid in human body fluids or tissues.",
+      "regulation_number": "866.3957",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "Y",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "NWO",
+      "openfda": {
+        "k_number": [
+          "K071496"
+        ]
+      },
+      "review_panel": "GU",
+      "medical_specialty": "GU",
+      "device_name": "Kit, Catheter, Urinary (Exludes Hiv Testing)",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Gastroenterology, Urology",
+      "device_class": "2",
+      "definition": "Urinary Catheterization Kit (Excludes HIV Testing)",
+      "regulation_number": "876.5130",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "Y",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "LJP",
+      "openfda": {
+        "k_number": [
+          "K881500",
+          "K872744",
+          "K842623",
+          "K864888",
+          "K883352",
+          "K844582",
+          "K864539",
+          "K860179",
+          "K862354",
+          "K842658",
+          "K880031",
+          "K864663",
+          "K852779",
+          "K850158",
+          "K941714",
+          "K842525",
+          "K864389",
+          "K063675",
+          "K832078",
+          "K832077",
+          "K895839",
+          "K871278",
+          "K872903",
+          "K864128",
+          "K823010",
+          "K901243",
+          "K853738",
+          "K853401",
+          "K863681",
+          "K851033",
+          "K870946",
+          "K864662",
+          "K900870",
+          "K834242",
+          "K862320"
+        ],
+        "registration_number": [
+          "8010096",
+          "3003750284",
+          "1528450"
+        ],
+        "fei_number": [
+          "1000122536",
+          "3006224287",
+          "3003750284"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Antiserum, Fluorescent, Chlamydia Trachomatis",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3120",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    }
+  ]
+}

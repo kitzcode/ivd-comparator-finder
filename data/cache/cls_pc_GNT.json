@@ -6,7 +6,7 @@
     "last_updated": "2026-06-08",
     "results": {
       "skip": 0,
-      "limit": 100,
+      "limit": 10,
       "total": 1
     }
   },
@@ -16,31 +16,33 @@
       "life_sustain_support_flag": "N",
       "gmp_exempt_flag": "N",
       "summary_malfunction_reporting": "Eligible",
-      "product_code": "OYZ",
+      "product_code": "GNT",
       "openfda": {
         "k_number": [
-          "K122019"
+          "K780275",
+          "K780272",
+          "K913828",
+          "K902609",
+          "K950838"
         ],
         "registration_number": [
-          "1524213",
-          "3010749841"
+          "3013530901"
         ],
         "fei_number": [
-          "1524213",
-          "3010749841"
+          "3013530901"
         ]
       },
       "review_panel": "MI",
       "medical_specialty": "MI",
-      "device_name": "Group A Streptococcus Nucleic Acid Amplification Assay System",
+      "device_name": "Antigens, Ha (Including Ha Control), Influenza Virus A, B, C",
       "review_code": "",
       "unclassified_reason": "",
       "medical_specialty_description": "Microbiology",
       "device_class": "1",
-      "definition": "An in vitro diagnostic test for the detection of Streptococcuc pyogenes (Group A beta hemolytic Streptococcus) in throat swab specimens from symptomatic patients.",
-      "regulation_number": "866.3740",
+      "definition": "",
+      "regulation_number": "866.3330",
       "implant_flag": "N",
-      "submission_type_id": "1"
+      "submission_type_id": "4"
     }
   ]
 }

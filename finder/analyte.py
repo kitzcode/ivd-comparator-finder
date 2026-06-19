@@ -14,6 +14,7 @@ the user what synonyms were used.
 from __future__ import annotations
 
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Optional
 
 from .models import AnalyteResolution, ProductCodeInfo
@@ -142,42 +143,58 @@ def resolve_analyte(
     # Collect product codes -> best classification record seen
     pc_map: dict[str, ProductCodeInfo] = {}
 
-    # Step 2: classification text search.
-    # Skip very short synonyms (< 6 chars) in broad classification search to
-    # avoid matching unrelated devices (e.g. "GAS" matches many device names).
-    # Exception: always include the original user term regardless of length.
     original_term = analyte_term.strip()
-    for syn in synonyms:
-        if len(syn) < 6 and syn != original_term:
-            continue
-        for rec in search_classification_by_term(syn):
-            # Optionally filter by medical specialty (e.g. "MN" for microbiology)
-            if medical_specialty and rec.get("medical_specialty_description", "").upper() != medical_specialty.upper():
-                continue
-            info = _extract_product_code_info(rec)
-            if info and info.product_code not in pc_map:
-                pc_map[info.product_code] = info
+    active_syns = [s for s in synonyms if len(s) >= 6 or s == original_term]
 
-    # Step 3: 510(k) text search to catch additional product codes.
-    # Require longer synonyms here too to limit false positives.
-    for syn in synonyms:
-        if len(syn) < 6 and syn != original_term:
-            continue
-        for rec in search_510k_by_term(syn):
-            pc = rec.get("product_code")
-            if pc and pc not in pc_map:
-                # Fetch classification metadata for this product code
-                cls_records = get_classification_by_product_code(pc)
+    # Steps 2+3: run all synonym searches in parallel (classification + 510k).
+    def _search_cls(syn):
+        return ("cls", syn, search_classification_by_term(syn))
+
+    def _search_5k(syn):
+        return ("5k", syn, search_510k_by_term(syn))
+
+    tasks = [_search_cls, _search_5k]
+    new_pcs_needing_cls: list[tuple[str, str]] = []  # (product_code, device_name)
+
+    with ThreadPoolExecutor(max_workers=min(16, len(active_syns) * 2 or 1)) as pool:
+        futures = [pool.submit(fn, syn) for syn in active_syns for fn in tasks]
+        for future in as_completed(futures):
+            try:
+                kind, syn, records = future.result()
+            except Exception:
+                continue
+            for rec in records:
+                if kind == "cls":
+                    if medical_specialty and rec.get("medical_specialty_description", "").upper() != medical_specialty.upper():
+                        continue
+                    info = _extract_product_code_info(rec)
+                    if info and info.product_code not in pc_map:
+                        pc_map[info.product_code] = info
+                else:  # "5k"
+                    pc = rec.get("product_code")
+                    if pc and pc not in pc_map:
+                        new_pcs_needing_cls.append((pc, rec.get("device_name", "")))
+
+    # Fetch classification metadata for product codes found only via 510k search.
+    unique_new = {pc: name for pc, name in new_pcs_needing_cls if pc not in pc_map}
+    if unique_new:
+        with ThreadPoolExecutor(max_workers=min(16, len(unique_new))) as pool:
+            futures2 = {pool.submit(get_classification_by_product_code, pc): (pc, name)
+                        for pc, name in unique_new.items()}
+            for future in as_completed(futures2):
+                pc, name = futures2[future]
+                try:
+                    cls_records = future.result()
+                except Exception:
+                    cls_records = []
+                if pc in pc_map:
+                    continue
                 if cls_records:
                     info = _extract_product_code_info(cls_records[0])
                     if info:
                         pc_map[pc] = info
                 else:
-                    # Use a stub if classification lookup returns nothing
-                    pc_map[pc] = ProductCodeInfo(
-                        product_code=pc,
-                        device_name=rec.get("device_name", ""),
-                    )
+                    pc_map[pc] = ProductCodeInfo(product_code=pc, device_name=name)
 
     # Step 4: add curated supplemental product codes (panels whose device names
     # don't mention the analyte, so synonym search can't find them).

@@ -8,6 +8,7 @@ v2: ingest_summaries() -> fetch + parse + chunk + store 510(k) Summary PDFs.
 from __future__ import annotations
 
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from pathlib import Path
 from typing import Callable, Optional
@@ -63,17 +64,28 @@ def find_devices(
     devices: list[Device] = []
     seen_k: set[str] = set()
 
-    for pc_info in resolution.product_codes:
-        records = get_510k_by_product_code(pc_info.product_code)
-        for rec in records:
-            k = rec.get("k_number", "")
-            if k in seen_k:
+    # Fetch 510(k) device lists for all product codes in parallel to reduce
+    # wall-clock time when the cache is cold (e.g. first search of a new analyte).
+    def _fetch(pc_info):
+        return pc_info, get_510k_by_product_code(pc_info.product_code)
+
+    max_workers = min(16, len(resolution.product_codes) or 1)
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        futures = {pool.submit(_fetch, pc): pc for pc in resolution.product_codes}
+        for future in as_completed(futures):
+            try:
+                pc_info, records = future.result()
+            except Exception:
                 continue
-            seen_k.add(k)
-            dev = _normalize_device(rec, pc_info.product_code, pc_info.regulation_number)
-            if resolve_urls and dev.k_number:
-                dev = dev.model_copy(update={"summary_url": resolve_summary_url(dev.k_number)})
-            devices.append(dev)
+            for rec in records:
+                k = rec.get("k_number", "")
+                if k in seen_k:
+                    continue
+                seen_k.add(k)
+                dev = _normalize_device(rec, pc_info.product_code, pc_info.regulation_number)
+                if resolve_urls and dev.k_number:
+                    dev = dev.model_copy(update={"summary_url": resolve_summary_url(dev.k_number)})
+                devices.append(dev)
 
     devices.sort(key=lambda d: d.decision_date or date.min, reverse=True)
     return resolution, devices

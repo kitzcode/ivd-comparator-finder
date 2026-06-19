@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 10,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "GNX",
+      "openfda": {
+        "k_number": [
+          "K123182",
+          "K871231",
+          "K871233",
+          "K893579",
+          "K131619",
+          "K924006",
+          "K802931",
+          "K133411",
+          "K901493",
+          "K131606",
+          "K872958",
+          "K131599",
+          "K971494",
+          "K131804",
+          "K884191",
+          "K132352",
+          "K843660",
+          "K843659"
+        ],
+        "registration_number": [
+          "3033507883",
+          "3013530901",
+          "3014150341",
+          "3023228837",
+          "3003750284",
+          "8010096",
+          "3026664926",
+          "3012494290",
+          "2030538",
+          "3043226252",
+          "9615056",
+          "3002792284"
+        ],
+        "fei_number": [
+          "3033507883",
+          "3013530901",
+          "3014150341",
+          "3023228837",
+          "3003750284",
+          "3026664926",
+          "3012494290",
+          "1000520007",
+          "3006224287",
+          "3043226252",
+          "1000186023",
+          "3002792284"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Antigens, Cf (Including Cf Control), Influenza Virus A, B, C",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "1",
+      "definition": "",
+      "regulation_number": "866.3330",
+      "implant_flag": "N",
+      "submission_type_id": "4"
+    }
+  ]
+}
