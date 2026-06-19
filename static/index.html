@@ -394,6 +394,7 @@ function ingest(k) {
   _ingestStep(k, 0, 5, 'Connecting…');
 
   const es = new EventSource(`/api/ingest-stream?k_numbers=${k}`);
+  let finished = false;
 
   es.addEventListener('progress', e => {
     const d = JSON.parse(e.data);
@@ -415,14 +416,17 @@ function ingest(k) {
   });
 
   es.addEventListener('complete', async () => {
+    finished = true;
     es.close();
     await new Promise(r => setTimeout(r, 900));
     await renderOverview(k);
   });
 
-  es.addEventListener('error', e => {
+  es.addEventListener('error', () => {
     es.close();
-    _ingestStep(k, 2, 0, 'Connection lost — check your network');
+    // EventSource fires 'error' on any close, including a clean server-side close.
+    // Only show the message if we never received the 'complete' event.
+    if (!finished) _ingestStep(k, 2, 0, 'Connection lost — check your network');
   });
 }
 
