@@ -255,7 +255,8 @@ def _extract_from_chunks(
             # find predicate/comparator that live outside the perf sections.
             iu_chunks = [c for c in chunks if "intended" in c.section.lower()]
             context = (perf_chunks[:4] + se_chunks[:2] + iu_chunks[:1]) or all_chunks[:4]
-            results = _llm_fill_missing(results, missing, context, llm)
+            if context:  # nothing to extract from when the device isn't indexed
+                results = _llm_fill_missing(results, missing, context, llm)
 
     return results
 
@@ -290,6 +291,9 @@ def _llm_fill_missing(
     llm: Callable[[str, str], str],
 ) -> dict:
     import json as _json
+
+    if not chunks:
+        return results  # nothing to extract from
 
     combined_text = "\n\n".join(c.text[:900] for c in chunks[:6])
     prompt = (
