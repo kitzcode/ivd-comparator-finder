@@ -50,6 +50,22 @@ Set `OPENFDA_API_KEY` env var to raise rate limits (240/min → 240k/day).
 
 `accessdata.fda.gov` returns 404 for HEAD requests but 200 for GET. The prober uses `GET` with `Range: bytes=0-3` to avoid downloading the full PDF. The resolved URL is cached in a `.url` sidecar file per K-number.
 
+## Regulatory pathways covered
+
+openFDA's `/device/510k.json` is CDRH-only. Coverage now spans three pathways,
+each tagged on `Device.submission_type`:
+- **510(k)** — `/device/510k.json` (K-numbers). Full pipeline: list, parse Summary PDF, Q&A, performance.
+- **De Novo** — same dataset, DEN-numbered grants (`decision_code` DENG). Detected and labeled; same pipeline.
+- **PMA** — `/device/pma.json` (P-numbers). Listed per product code (supplements deduped to one row).
+  SSED documents parse through the SAME pipeline: `resolve_summary_url` returns the SSED ("B" doc) URL
+  for P-numbers (`cdrh_docs/pdf{yy}/{P}B.pdf`, older `cdrh_docs/pdf/{p}b.pdf`). SSEDs are longer/less
+  standardized than 510(k) Summaries, so extraction is best-effort.
+
+**Not covered: CBER 510(k)s (BK-numbers) and BLA biologics.** Many HIV/HCV/HBV blood tests are CBER
+products. They are absent from openFDA (any endpoint) AND the CDRH bulk download files. The only source
+is the FDA web cfPMN database, which is behind bot-detection ("Challenge Validation") — do NOT attempt to
+bypass it. CBER discovery-by-analyte is therefore not automatable here.
+
 ## Open milestones
 - **M4**: Structured performance extraction (PPA/NPA/LoD/reactivity) into comparison table.
 - **M6**: MCP server (`find_devices`, `get_clearance`, `ask_summary`, `compare_performance`). 10 eval questions against cached snapshot.
@@ -57,5 +73,5 @@ Set `OPENFDA_API_KEY` env var to raise rate limits (240/min → 240k/day).
 ## Verify-before-asserting
 
 - openFDA field names and query syntax: confirm against current openFDA docs.
-- accessdata PDF URL patterns: probe per record; handle missing Summaries.
+- accessdata PDF URL patterns: probe per record; handle missing Summaries/SSEDs.
 - PDF table extraction: verify fidelity; detect scanned/image-only PDFs before trusting numbers.

@@ -98,12 +98,15 @@ def api_clearance(k_number: str):
 
     kid = k_number.upper()
 
-    # P-numbers are PMA approvals — a different dataset with different fields,
-    # and they have SSED documents rather than 510(k) Summary PDFs (no parsing yet).
+    # P-numbers are PMA approvals — a different dataset, with SSED documents
+    # instead of 510(k) Summary PDFs. The SSED parses through the same pipeline.
     if kid.startswith("P"):
         rec = get_pma_by_number(kid)
         if not rec:
             raise HTTPException(status_code=404, detail=f"{k_number} not found in openFDA PMA")
+        status = get_index_status(kid)
+        chunk_count = len(load_chunks(kid)) if status == "ok" else 0
+        summary_url = resolve_summary_url(kid)
         return {
             "k_number": rec.get("pma_number"),
             "device_name": rec.get("trade_name") or rec.get("generic_name"),
@@ -111,12 +114,12 @@ def api_clearance(k_number: str):
             "decision_date": rec.get("decision_date"),
             "product_code": rec.get("product_code"),
             "device_class": "3",
-            "statement_or_summary": "PMA (SSED)",
+            "statement_or_summary": "PMA SSED",
             "decision_code": rec.get("decision_code"),
             "submission_type": "PMA",
-            "summary_url": None,
-            "index_status": "pma_unsupported",
-            "indexed_chunk_count": 0,
+            "summary_url": summary_url,
+            "index_status": status or ("not_indexed" if summary_url else "no_summary"),
+            "indexed_chunk_count": chunk_count,
         }
 
     rec = get_510k_by_knumber(kid)
@@ -154,7 +157,7 @@ def api_ingest_stream(k_numbers: str = Query(..., description="Comma-separated K
     import queue
     import threading
     from finder.models import Device
-    from finder.sources.openfda import get_510k_by_knumber
+    from finder.sources.openfda import get_510k_by_knumber, get_pma_by_number
     from finder.pipeline import ingest_summaries
 
     ks = [k.strip().upper() for k in k_numbers.split(",") if k.strip()]
@@ -179,17 +182,29 @@ def api_ingest_stream(k_numbers: str = Query(..., description="Comma-separated K
             devices = []
             for k in ks:
                 q.put(_sse("progress", {"k": k, "stage": "queued", "pct": 5, "msg": "Looking up device…"}))
-                rec = get_510k_by_knumber(k)
-                if not rec:
-                    q.put(_sse("progress", {"k": k, "stage": "error", "pct": 0, "msg": f"{k} not found"}))
-                    q.put(_sse("done", {"k": k, "status": "error"}))
-                    continue
-                devices.append(Device(
-                    k_number=k,
-                    device_name=rec.get("device_name", ""),
-                    applicant_name=rec.get("applicant_name", ""),
-                    product_code=rec.get("product_code", ""),
-                ))
+                if k.startswith("P"):  # PMA — SSED document
+                    rec = get_pma_by_number(k)
+                    if rec:
+                        devices.append(Device(
+                            k_number=k,
+                            device_name=rec.get("trade_name") or rec.get("generic_name", ""),
+                            applicant_name=rec.get("applicant", ""),
+                            product_code=rec.get("product_code", ""),
+                            submission_type="PMA",
+                        ))
+                        continue
+                else:
+                    rec = get_510k_by_knumber(k)
+                    if rec:
+                        devices.append(Device(
+                            k_number=k,
+                            device_name=rec.get("device_name", ""),
+                            applicant_name=rec.get("applicant_name", ""),
+                            product_code=rec.get("product_code", ""),
+                        ))
+                        continue
+                q.put(_sse("progress", {"k": k, "stage": "error", "pct": 0, "msg": f"{k} not found"}))
+                q.put(_sse("done", {"k": k, "status": "error"}))
 
             def progress_cb(msg: str):
                 parts = msg.split(":", 1)

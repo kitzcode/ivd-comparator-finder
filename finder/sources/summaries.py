@@ -30,11 +30,25 @@ except OSError:
 # on read-only filesystems like Vercel where CACHE_DIR may point to /tmp).
 _COMMITTED_URL_DIR = Path(__file__).parent.parent.parent / "data" / "cache" / "pdf"
 
+# 510(k) Summary PDFs (K-numbers / DEN-numbers).
 _URL_PATTERNS = [
     "https://www.accessdata.fda.gov/cdrh_docs/pdf{yy}/{k}.pdf",
     "https://www.accessdata.fda.gov/cdrh_docs/reviews/{k}.pdf",
     "https://www.accessdata.fda.gov/cdrh_docs/pdf/{k}.pdf",
 ]
+
+# PMA SSED documents (P-numbers). The SSED is the "B" document; older PMAs use a
+# lowercase, year-less path.
+_PMA_URL_PATTERNS = [
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf{yy}/{k}B.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf/{kl}b.pdf",
+    "https://www.accessdata.fda.gov/cdrh_docs/pdf{yy}/{k}b.pdf",
+]
+
+
+def _patterns_for(k_number: str) -> list[str]:
+    """Return the right URL patterns for the submission type (PMA vs 510(k))."""
+    return _PMA_URL_PATTERNS if k_number.upper().startswith("P") and k_number[1:2].isdigit() else _URL_PATTERNS
 
 _HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; IVDFinder/1.0)"}
 _PROBE_TIMEOUT = 6  # seconds per URL probe; 3 probes in parallel so wall-clock ≈ 6s max
@@ -79,7 +93,7 @@ def resolve_summary_url(k_number: str) -> Optional[str]:
         return val if val != "NONE" else None
 
     yy = _year2(k_number)
-    candidates = [p.format(k=k_number, yy=yy) for p in _URL_PATTERNS]
+    candidates = [p.format(k=k_number, kl=k_number.lower(), yy=yy) for p in _patterns_for(k_number)]
 
     def _probe(url: str) -> Optional[str]:
         try:

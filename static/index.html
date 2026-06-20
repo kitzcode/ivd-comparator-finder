@@ -376,7 +376,8 @@ async function renderOverview(k) {
     const data = await fetchJSON(`/api/clearance/${k}`);
     if (data.error) { setContent(`<div class="empty" style="color:var(--red)">${data.error}</div>`); return; }
     const indexed = data.index_status === 'ok';
-    const isPMA = data.submission_type === 'PMA' || data.index_status === 'pma_unsupported';
+    const isPMA = data.submission_type === 'PMA';
+    const docLabel = isPMA ? 'PMA SSED' : '510(k) Summary';
     setContent(`
       <div class="section-hdr">Clearance ${typeBadge(data.submission_type)}</div>
       <div class="kv-grid">
@@ -390,21 +391,20 @@ async function renderOverview(k) {
         <span class="kv-label">Decision</span>     <span class="kv-val">${data.decision_code || '—'}</span>
       </div>
       ${data.summary_url ? `
-      <div class="section-hdr">510(k) Summary PDF</div>
+      <div class="section-hdr">${docLabel} PDF</div>
       <a class="link" href="${data.summary_url}" target="_blank">↗ ${data.summary_url}</a>` : ''}
+      ${isPMA ? `<div class="note-box" style="margin-top:10px">PMA (Class III) — parsing the <strong>SSED</strong>
+        (Summary of Safety &amp; Effectiveness Data). SSEDs are longer and less standardized than 510(k) Summaries,
+        so extraction is best-effort.</div>` : ''}
 
       <div class="section-hdr">Index status</div>
-      ${isPMA ? `
-        <div class="warn-box" style="margin:0">This is a <strong>PMA (Class III)</strong> approval. PMA devices have an SSED
-        (Summary of Safety &amp; Effectiveness Data) document with a different structure than a 510(k) Summary —
-        automated parsing &amp; performance extraction aren't available for PMAs yet. Clearance metadata above is from openFDA.</div>
-      ` : indexed ? `
-        <div style="font-size:.88rem;color:var(--green)">✓ Summary indexed (${data.indexed_chunk_count} chunks)</div>
+      ${indexed ? `
+        <div style="font-size:.88rem;color:var(--green)">✓ ${docLabel} indexed (${data.indexed_chunk_count} chunks)</div>
         <div style="font-size:.8rem;color:var(--gray-5);margin-top:4px">Performance &amp; Ask tabs are ready.</div>
       ` : data.index_status === 'no_summary' ? `
-        <div style="font-size:.88rem;color:var(--gray-5)">⚠ No public Summary PDF found for this device.</div>
+        <div style="font-size:.88rem;color:var(--gray-5)">⚠ No public ${docLabel} document found for this device.</div>
       ` : `
-        <button class="ingest-btn" id="ingest-btn-${k}" onclick="ingest('${k}')">↓ Fetch &amp; parse Summary PDF</button>
+        <button class="ingest-btn" id="ingest-btn-${k}" onclick="ingest('${k}')">↓ Fetch &amp; parse ${docLabel}</button>
         <div id="ingest-progress-${k}" style="display:none" class="progress-wrap">
           <div class="progress-steps">
             <div class="progress-step" id="ps-${k}-0">Queued</div>
