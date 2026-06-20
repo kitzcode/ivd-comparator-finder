@@ -99,6 +99,8 @@
   .type-510k  { background: var(--gray-2); color: var(--gray-7); }
   .type-denovo{ background: #ede9fe; color: #6d28d9; }
   .type-pma   { background: #fee2e2; color: #b91c1c; }
+  .cber-note  { padding: 12px 14px; font-size: .72rem; line-height: 1.45; color: var(--gray-5);
+                border-top: 1px solid var(--gray-3); background: var(--gray-1); }
 
   /* ── Right panel / tabs ── */
   .panel-right { display: flex; flex-direction: column; overflow: hidden; }
@@ -200,7 +202,7 @@
 
 <div class="search-wrap">
   <input id="analyte-input" type="text" placeholder="Enter analyte or assay (e.g. Group A Strep, RSV, SARS-CoV-2)"
-         value="Group A Strep" onkeydown="if(event.key==='Enter'){event.preventDefault();search();}" />
+         autofocus onkeydown="if(event.key==='Enter'){event.preventDefault();search();}" />
   <button class="btn-primary" onclick="search()">Search</button>
 </div>
 
@@ -235,8 +237,14 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
-        <h3>Select a device</h3>
-        <p>Search for an analyte, then click a device — or check several and Compare.</p>
+        <h3>Find FDA-cleared IVD devices</h3>
+        <p>Search an analyte above to list 510(k), De Novo, and PMA devices.<br>Then explore clearances, parse summaries, and compare performance.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:16px">
+          <button class="ingest-btn" onclick="quickSearch('Group A Strep')">Group A Strep</button>
+          <button class="ingest-btn" onclick="quickSearch('RSV')">RSV</button>
+          <button class="ingest-btn" onclick="quickSearch('SARS-CoV-2')">SARS-CoV-2</button>
+          <button class="ingest-btn" onclick="quickSearch('Influenza')">Influenza</button>
+        </div>
       </div>
     </div>
   </div>
@@ -263,6 +271,11 @@ async function loadConfig() {
 }
 
 // ── Search ──
+function quickSearch(term) {
+  document.getElementById('analyte-input').value = term;
+  search();
+}
+
 async function search() {
   const analyte = document.getElementById('analyte-input').value.trim();
   if (!analyte) return;
@@ -290,6 +303,8 @@ function renderDeviceList(devices, resultNote) {
       noteHtml || '<div class="empty"><p>No devices found</p></div>';
     return;
   }
+  const cberNote = `<div class="cber-note">Note: assays listed under CBER (e.g. many HIV, HCV,
+    HBV blood/biologic tests) can't be displayed — openFDA indexes only CDRH 510(k), De Novo, and PMA devices.</div>`;
   document.getElementById('device-list').innerHTML = noteHtml + devices.map((d, i) => `
     <div class="device-item" id="dev-${i}">
       <input type="checkbox" id="chk-${i}" onclick="event.stopPropagation();toggleSelect(${i})">
@@ -301,7 +316,7 @@ function renderDeviceList(devices, resultNote) {
         <span class="badge badge-gray">${d.regulation_number || '—'}</span>
       </div>
     </div>
-  `).join('');
+  `).join('') + cberNote;
 }
 
 // ── Batch selection ──
@@ -680,7 +695,8 @@ function esc(s) {
 }
 
 // ── Init ──
-window.addEventListener('load', () => { loadConfig(); search(); });
+// Clean slate: load capability flags only; wait for the user to search.
+window.addEventListener('load', () => { loadConfig(); document.getElementById('analyte-input').focus(); });
 </script>
 </body>
 </html>

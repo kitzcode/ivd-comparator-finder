@@ -48,14 +48,15 @@ def api_find(
     result_note = None
     if len(devices) == 0:
         result_note = (
-            f"No 510(k) clearances found for '{resolution.analyte_term}'. This usually means the "
-            "analyte is regulated via PMA (Class III) or BLA, which openFDA's 510(k) endpoint "
-            "does not include — not that the search missed them. Try a synonym or a related analyte."
+            f"No CDRH devices found for '{resolution.analyte_term}'. Many tests for this analyte are "
+            "regulated by CBER (e.g. HIV, HCV, HBV blood/biologic tests) or via BLA, and assays listed "
+            "under CBER can't be displayed — openFDA does not index them. Try a synonym or related analyte."
         )
     elif len(devices) < 3:
         result_note = (
-            f"Only {len(devices)} 510(k) clearance(s) found. Many tests for this analyte may be "
-            "PMA/BLA-regulated (e.g. HIV, HCV, blood screening), which the 510(k) endpoint does not cover."
+            f"Only {len(devices)} device(s) found. Many tests for this analyte are CBER-regulated "
+            "(e.g. HIV, HCV, blood screening); assays listed under CBER can't be displayed because "
+            "openFDA does not index them."
         )
 
     return {
