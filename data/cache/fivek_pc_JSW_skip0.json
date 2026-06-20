@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 6
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Mchenry",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "803 N. Front St. Suite 3",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "JSW",
+      "openfda": {
+        "device_name": "Kit, Identification, Glucose Nonfermenter",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.2660",
+        "device_class": "1",
+        "registration_number": [
+          "",
+          "3003750284",
+          "9615754",
+          "1924669"
+        ],
+        "fei_number": [
+          "",
+          "3008237827",
+          "3003750284",
+          "1924669"
+        ]
+      },
+      "zip_code": "60050",
+      "applicant": "Micro-Media Systems, Inc.",
+      "decision_date": "1977-06-23",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "PANEL, GNF, MICRO-ID",
+      "advisory_committee": "MI",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K770745",
+      "state": "IL",
+      "date_received": "1977-04-22",
+      "review_advisory_committee": "MI",
+      "postal_code": "60050",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Hazelwood",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "595 Anglum Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "JSW",
+      "openfda": {
+        "device_name": "Kit, Identification, Glucose Nonfermenter",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.2660",
+        "device_class": "1",
+        "registration_number": [
+          "",
+          "3003750284",
+          "9615754",
+          "1924669"
+        ],
+        "fei_number": [
+          "",
+          "3008237827",
+          "3003750284",
+          "1924669"
+        ]
+      },
+      "zip_code": "63042",
+      "applicant": "Biomerieux Vitek, Inc.",
+      "decision_date": "1992-10-14",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "RAPID NFT, MODIFICATION",
+      "advisory_committee": "MI",
+      "contact": "DAVID K BROADWAY",
+      "expedited_review_flag": "",
+      "k_number": "K922768",
+      "state": "MO",
+      "date_received": "1992-06-08",
+      "review_advisory_committee": "MI",
+      "postal_code": "63042",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Austin",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "6620-A Manor Rd.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "JSW",
+      "openfda": {
+        "device_name": "Kit, Identification, Glucose Nonfermenter",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.2660",
+        "device_class": "1",
+        "registration_number": [
+          "",
+          "3003750284",
+          "9615754",
+          "1924669"
+        ],
+        "fei_number": [
+          "",
+          "3008237827",
+          "3003750284",
+          "1924669"
+        ]
+      },
+      "zip_code": "78723",
+      "applicant": "Austin Biological Laboratories",
+      "decision_date": "1987-04-03",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "AUSTIN NONFERMENTER KIT",
+      "advisory_committee": "MI",
+      "contact": "DENNIS  SCHNEIDER,PHD",
+      "expedited_review_flag": "",
+      "k_number": "K870769",
+      "state": "TX",
+      "date_received": "1987-02-26",
+      "review_advisory_committee": "MI",
+      "postal_code": "78723",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Atlanta",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "3404 Oakcliff Rd. #C-1",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "JSW",
+      "openfda": {
+        "device_name": "Kit, Identification, Glucose Nonfermenter",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.2660",
+        "device_class": "1",
+        "registration_number": [
+          "",
+          "3003750284",
+          "9615754",
+          "1924669"
+        ],
+        "fei_number": [
+          "",
+          "3008237827",
+          "3003750284",
+          "1924669"
+        ]
+      },
+      "zip_code": "30340",
+      "applicant": "Innovative Diagnostic Systems, Inc.",
+      "decision_date": "1990-03-13",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "RAPID NF SYSTEM",
+      "advisory_committee": "MI",
+      "contact": "LOUIS A ERIQUEZ,PHD",
+      "expedited_review_flag": "",
+      "k_number": "K900517",
+      "state": "GA",
+      "date_received": "1990-02-02",
+      "review_advisory_committee": "MI",
+      "postal_code": "30340",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Mchenry",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "803 N. Front St. Suite 3",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "JSW",
+      "openfda": {
+        "device_name": "Kit, Identification, Glucose Nonfermenter",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.2660",
+        "device_class": "1",
+        "registration_number": [
+          "",
+          "3003750284",
+          "9615754",
+          "1924669"
+        ],
+        "fei_number": [
+          "",
+          "3008237827",
+          "3003750284",
+          "1924669"
+        ]
+      },
+      "zip_code": "60050",
+      "applicant": "Micro-Palettes, Inc.",
+      "decision_date": "1979-06-22",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "PSEUDO-PALETTE TM",
+      "advisory_committee": "MI",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K790992",
+      "state": "IL",
+      "date_received": "1979-05-29",
+      "review_advisory_committee": "MI",
+      "postal_code": "60050",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Mchenry",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "803 N. Front St. Suite 3",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "JSW",
+      "openfda": {
+        "device_name": "Kit, Identification, Glucose Nonfermenter",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.2660",
+        "device_class": "1",
+        "registration_number": [
+          "",
+          "3003750284",
+          "9615754",
+          "1924669"
+        ],
+        "fei_number": [
+          "",
+          "3008237827",
+          "3003750284",
+          "1924669"
+        ]
+      },
+      "zip_code": "60050",
+      "applicant": "Corning Medical & Scientific",
+      "decision_date": "1977-11-17",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "NON-FERMENTER SYSTEM",
+      "advisory_committee": "MI",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K772112",
+      "state": "IL",
+      "date_received": "1977-11-07",
+      "review_advisory_committee": "MI",
+      "postal_code": "60050",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

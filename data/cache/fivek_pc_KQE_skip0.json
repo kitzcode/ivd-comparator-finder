@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Mchenry",
+      "advisory_committee_description": "Hematology",
+      "address_1": "803 N. Front St. Suite 3",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "KQE",
+      "openfda": {
+        "device_name": "Assay, Erythrocytic Glucose-6-Phosphate Dehydrogenase",
+        "medical_specialty_description": "Hematology",
+        "regulation_number": "864.7360",
+        "device_class": "2"
+      },
+      "zip_code": "60050",
+      "applicant": "Alladin Diagnostic, Inc.",
+      "decision_date": "1983-02-07",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "GLUCOSE-6-PHOSPHATE DEHYDROGENASE",
+      "advisory_committee": "HE",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K823900",
+      "state": "IL",
+      "date_received": "1982-12-30",
+      "review_advisory_committee": "TX",
+      "postal_code": "60050",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

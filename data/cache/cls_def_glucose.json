@@ -1,0 +1,1340 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 29
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "OZQ",
+      "openfda": {},
+      "review_panel": "CH",
+      "medical_specialty": "",
+      "device_name": "Automated Insulin Dosing  Device System, Bihormonal Control",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "A bihormonal automated insulin dosing system that achieves a target glucose level by automatically adjusting two glucose modulating therapies from an infusion pump. Hormone adjustments are based upon specified thresholds of measured glucose levels.",
+      "regulation_number": "",
+      "implant_flag": "N",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "PYV",
+      "openfda": {},
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Hospital Continuous Glucose Monitoring System",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "Intended for the continuous, quantitative measurement of glucose in whole blood in a hospital setting.",
+      "regulation_number": "862.1345",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QJI",
+      "openfda": {
+        "k_number": [
+          "K220916",
+          "K203774",
+          "K232741",
+          "K253585",
+          "K251779",
+          "K253701",
+          "K243823",
+          "K232224",
+          "K260429",
+          "K203689",
+          "K232603",
+          "K250798",
+          "K241777",
+          "DEN190034",
+          "K220394",
+          "K251152",
+          "K251217",
+          "K232382",
+          "K234055",
+          "K200467"
+        ],
+        "registration_number": [
+          "3014585508",
+          "3015192982",
+          "3016798778",
+          "3008824097",
+          "1220477",
+          "3026266833",
+          "2246552",
+          "3013756811",
+          "2032227",
+          "1220973",
+          "3016540876",
+          "3007981285",
+          "3019004087"
+        ],
+        "fei_number": [
+          "3014585508",
+          "3015192982",
+          "3016798778",
+          "3008824097",
+          "1220477",
+          "3026266833",
+          "3003166194",
+          "2246552",
+          "3013756811",
+          "1220973",
+          "3016540876",
+          "3007981285",
+          "3019004087"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Interoperable Automated Glycemic Controller",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An interoperable automated glycemic controller is a device intended to automatically calculate drug doses based on inputs such as glucose and other relevant physiological parameters, and to command the delivery of such drug doses from a connected infusion pump. Interoperable automated glycemic controllers are designed to reliably and securely communicate with digitally connected devices to allow drug delivery commands to be sent, received, executed, and confirmed. Interoperable automated glycemic controllers are intended to be used in conjunction with digitally connected devices for the purpose of maintaining glycemic control.",
+      "regulation_number": "862.1356",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "SFU",
+      "openfda": {
+        "k_number": [
+          "DEN240080"
+        ],
+        "registration_number": [
+          "3025798257"
+        ],
+        "fei_number": [
+          "3025798257"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Glucose Range Monitoring System",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "A glucose range monitoring system (GRM) is intended to automatically measure glucose in the body and provide qualitative or semi-quantitative information about glucose levels or trends continuously or frequently.  GRM systems are intended to support general user awareness of glucose ranges related to glycemic control.  Outputs from GRM systems do not represent quantitative glucose concentration values and GRM systems are not intended to be used for acute medical decision-making, such as insulin dosing or medication adjustment.",
+      "regulation_number": "862.1359",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QHJ",
+      "openfda": {
+        "pma_number": [
+          "P160048"
+        ],
+        "registration_number": [
+          "3006371704",
+          "3003335547",
+          "9614698",
+          "2133810",
+          "3004530184",
+          "3009810261",
+          "2183744"
+        ],
+        "fei_number": [
+          "3006371704",
+          "3000203066",
+          "3003335547",
+          "3004530184",
+          "3002808382",
+          "3009810261",
+          "2183744"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "",
+      "device_name": "Sensor, Glucose, Implanted, Non-Adjunctive Use",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "A non-adjunctive implanted glucose sensor is intended to determine glucose   levels, and the direction and rate of change of glucose levels in people with   diabetes. The device is indicated to replace information obtained from standard   blood glucose monitoring devices to make diabetes-related treatment decisions. The device also provides historical glucose information, facilitating long-term therapy adjustments.",
+      "regulation_number": "",
+      "implant_flag": "Y",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "SBA",
+      "openfda": {
+        "k_number": [
+          "DEN230052",
+          "K241335"
+        ],
+        "registration_number": [
+          "3006371704",
+          "2183744",
+          "3009862700",
+          "3004530184"
+        ],
+        "fei_number": [
+          "3006371704",
+          "2183744",
+          "3009862700",
+          "3004530184"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Integrated Continuous Glucose Monitoring System With Sensor Containing Dexamethasone Acetate",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An integrated continuous glucose monitoring system (iCGM) with sensor containing dexamethasone acetate is intended to automatically measure glucose in bodily fluids continuously or frequently for a specified period of time. iCGM systems are designed to reliably and securely transmit glucose measurement data to digitally connected devices, including automated insulin dosing systems, and are intended to be used alone or in conjunction with these digitally connected medical devices for the purpose of managing a disease or condition related to glycemic control.  The dexamethasone acetate coating is intended to reduce inflammation at the sensor insertion site.",
+      "regulation_number": "862.1357",
+      "implant_flag": "Y",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QLG",
+      "openfda": {
+        "k_number": [
+          "K201761",
+          "K222280",
+          "K210943",
+          "K212132",
+          "K223537",
+          "K202145",
+          "K213996",
+          "K211102",
+          "K193371"
+        ],
+        "registration_number": [
+          "3009171251",
+          "3006371704",
+          "3016525500",
+          "3008606429",
+          "3010893867",
+          "1450743",
+          "3007421145",
+          "3003600763",
+          "3004139819",
+          "9710492",
+          "3011536730",
+          "2954323",
+          "3006537560",
+          "3033394445",
+          "3002807314"
+        ],
+        "fei_number": [
+          "3016525500",
+          "3006371704",
+          "3002803444",
+          "3006759904",
+          "3008606429",
+          "3010893867",
+          "1450743",
+          "3003600763",
+          "3003500908",
+          "3004139819",
+          "3011536730",
+          "3004173703",
+          "3006537560",
+          "3033394445",
+          "3002807314"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Integrated Continuous Glucose Monitoring System, Factory Calibrated, Not For Use With Automated Insulin Delivery Systems",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An integrated continuous glucose monitoring system for replacement of finger stick blood glucose testing for diabetes treatment decisions in persons with diabetes, unless otherwise indicated. The system automatically measures glucose in bodily fluids continuously or frequently for a specified period of time. The system is also designed to reliably and securely transmit glucose measurement data to digitally connected devices and are intended to be used alone or in conjunction with these digitally connected devices where the user manually controls actions for therapy decisions. The system is not intended to be used with automated insulin dosing (AID) systems.",
+      "regulation_number": "862.1355",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "PJT",
+      "openfda": {
+        "k_number": [
+          "DEN140038",
+          "K151236"
+        ],
+        "registration_number": [
+          "3028013069",
+          "3009862700",
+          "2954323",
+          "3017181032",
+          "3004753838",
+          "3031700059",
+          "3014700242",
+          "2134850",
+          "3008770957",
+          "3007981285",
+          "2032227"
+        ],
+        "fei_number": [
+          "3028013069",
+          "3002803444",
+          "3009862700",
+          "3017181032",
+          "3004753838",
+          "3031700059",
+          "3014700242",
+          "3003166194",
+          "3003007876",
+          "3008770957",
+          "3007981285"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Continuous Glucose Monitor Secondary Display",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "The purpose of the continuous glucose monitor secondary display is to notify another person, the follower, of the patient's continuous glucose monitoring system sensor glucose information in real time. The secondary display is intended for providing secondary notification of a continuous glucose monitoring system and does not replace primary real time continuous glucose monitoring or standard home blood glucose monitoring",
+      "regulation_number": "862.1350",
+      "implant_flag": "N",
+      "submission_type_id": "4"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QBJ",
+      "openfda": {
+        "k_number": [
+          "K234133",
+          "K231081",
+          "K240902",
+          "K183206",
+          "K201328",
+          "K223435",
+          "K222447",
+          "K223931",
+          "K200876",
+          "K243214",
+          "K221259",
+          "K253737",
+          "K253710",
+          "K233537",
+          "K191450",
+          "DEN170088",
+          "K213919"
+        ],
+        "registration_number": [
+          "3027503105",
+          "3007421145",
+          "3038285067",
+          "3008717264",
+          "3037326582",
+          "2954323",
+          "3002807314",
+          "1450743",
+          "3016904853",
+          "3019807891",
+          "3009888344",
+          "3011120183",
+          "3013435121",
+          "3006537560",
+          "3004753838",
+          "3003600763",
+          "3011536730",
+          "3004105270",
+          "2030598",
+          "3009901017",
+          "3021611414",
+          "3033394445",
+          "3012302888",
+          "3006371704",
+          "2024024",
+          "3013820501",
+          "9710492",
+          "3010220595",
+          "3012448339",
+          "2032098",
+          "2029015"
+        ],
+        "fei_number": [
+          "3027503105",
+          "3038285067",
+          "3008717264",
+          "1000518731",
+          "3037326582",
+          "3002807314",
+          "1450743",
+          "3016904853",
+          "3019807891",
+          "3004173703",
+          "3009888344",
+          "3011120183",
+          "3013435121",
+          "3006537560",
+          "3004753838",
+          "3003600763",
+          "3011536730",
+          "3004105270",
+          "3009901017",
+          "3021611414",
+          "3033394445",
+          "3012302888",
+          "3006371704",
+          "1000160458",
+          "3002803444",
+          "2024024",
+          "3013820501",
+          "3003500908",
+          "3010220595",
+          "3012448339",
+          "3003058448"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Integrated Continuous Glucose Monitoring System, Factory Calibrated",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An integrated continuous glucose monitoring system (iCGM) is intended to automatically measure glucose in bodily fluids continuously or frequently for a specified period of time. iCGM systems are designed to reliably and securely transmit glucose measurement data to digitally connected devices, including automated insulin dosing systems, and are intended to be used alone or in conjunction with these digitally connected medical devices for the purpose of managing a disease or condition related to glycemic control.",
+      "regulation_number": "862.1355",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "PQF",
+      "openfda": {
+        "pma_number": [
+          "P160007",
+          "P120005"
+        ],
+        "registration_number": [
+          "3042027705",
+          "3009882464",
+          "3010291427",
+          "3013756811",
+          "3012102437",
+          "3016540876",
+          "3007981285",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194",
+          "3009882464",
+          "3010291427",
+          "3013756811",
+          "3012102437",
+          "3016540876",
+          "3007981285"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "",
+      "device_name": "Sensor, Glucose, Invasive, Non-Adjunctive",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "A non-adjunctive invasive glucose sensor is intended to determine glucose levels, and the direction and rate of change of glucose levels in people with diabetes. The device is indicated to replace information obtained from standard blood glucose monitoring devices to make diabetes-related treatment decisions. The device also provides historical glucose information, facilitating long-term therapy adjustments.",
+      "regulation_number": "",
+      "implant_flag": "N",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "PHV",
+      "openfda": {
+        "k_number": [
+          "DEN140016"
+        ],
+        "registration_number": [
+          "3009137498",
+          "3016525500",
+          "3028170577",
+          "3021611414",
+          "3009862700",
+          "3013922904",
+          "2954323",
+          "3004753838",
+          "3012128418",
+          "3014642500",
+          "3014585508",
+          "3008770957",
+          "3024580094",
+          "3007981285",
+          "2032227"
+        ],
+        "fei_number": [
+          "3009137498",
+          "3016525500",
+          "3002803444",
+          "3028170577",
+          "3009862700",
+          "3013922904",
+          "3021611414",
+          "3004753838",
+          "3012128418",
+          "3003166194",
+          "3014642500",
+          "3014585508",
+          "3008770957",
+          "3024580094",
+          "3007981285"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Continuous Glucose Monitor Retrospective Data Analysis Software",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "1",
+      "definition": "Continuous glucose monitor retrospective data analysis software is intended to analyze and correlate retrospective data from a continuous glucose monitoring device.",
+      "regulation_number": "862.2120",
+      "implant_flag": "N",
+      "submission_type_id": "4"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QDL",
+      "openfda": {
+        "k_number": [
+          "K182405"
+        ],
+        "registration_number": [
+          "2024024"
+        ],
+        "fei_number": [
+          "2024024"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Integrated Continuous Glucose Monitoring System For Professional Retrospective Use",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An integrated continuous glucose monitoring system for professional retrospective use is a continuous glucose recording device indicated for the retrospective discovery, analysis, and interpretation of glycemic variability in persons age 2 and older for use by healthcare professionals to guide appropriate patient management.  The system is also intended to interface with digitally connected devices.",
+      "regulation_number": "862.1355",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QRX",
+      "openfda": {
+        "k_number": [
+          "K231824",
+          "K222888",
+          "K203772",
+          "K252818",
+          "K222239"
+        ],
+        "registration_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "fei_number": [
+          "3014585508",
+          "3004753838"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Continuous Glucose Monitor Informed Insulin Dose Calculator",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "A continuous glucose monitor (CGM)-informed insulin dose calculator is a software device that calculates suggested insulin doses based on CGM values and/or other relevant information.",
+      "regulation_number": "862.1358",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "PKU",
+      "openfda": {
+        "registration_number": [
+          "3016798778",
+          "3016245399",
+          "2032227",
+          "1220973",
+          "2134850",
+          "3007981285",
+          "3019004087"
+        ],
+        "fei_number": [
+          "3016798778",
+          "3003166194",
+          "3003007876",
+          "3016245399",
+          "1220973",
+          "3007981285",
+          "3019004087"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Insulin Pump Secondary Display",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "The purpose of the insulin pump secondary display is to notify another person of the patient's insulin pump usage information in real time. The secondary display is intended for providing secondary notification of insulin pump usage and does not replace primary real time insulin pump monitoring or standard home blood glucose monitoring.",
+      "regulation_number": "862.1350",
+      "implant_flag": "N",
+      "submission_type_id": "4"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "PZE",
+      "openfda": {
+        "pma_number": [
+          "P160030"
+        ],
+        "registration_number": [
+          "3009171251",
+          "3006371704",
+          "3008606429",
+          "3010893867",
+          "3007421145",
+          "3003600763",
+          "9710492",
+          "3011536730",
+          "2954323",
+          "3004139819",
+          "3002807314"
+        ],
+        "fei_number": [
+          "3006371704",
+          "3002803444",
+          "3006759904",
+          "3008606429",
+          "3010893867",
+          "3003600763",
+          "3003500908",
+          "3004173703",
+          "3011536730",
+          "3004139819",
+          "3002807314"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "",
+      "device_name": "Sensor, Glucose, Invasive, Non-Adjunctive, Factory-Calibrated, User-Initiated",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "A subcutaneous factory calibrated, non-adjunctive, invasive, passive monitoring glucose sensor is intended to determine glucose levels and the direction and rate of change of glucose levels in people with diabetes. Calibrated at the point of manufacture and  does not require or accept any user-entered calibration. Monitors glucose levels passively and only provides information, including alarms and alerts, in response to a user initiated action. The device is indicated to replace information obtained from standard blood glucose monitoring devices to make diabetes-related treatment decisions and also provides historical glucose information, facilitating long-term therapy adjustments.",
+      "regulation_number": "",
+      "implant_flag": "N",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "NTZ",
+      "openfda": {
+        "k_number": [
+          "K043031"
+        ]
+      },
+      "review_panel": "GU",
+      "medical_specialty": "GU",
+      "device_name": "Strip, Dialysate, Ph, Bicarbonate, Glucose, Acid, Indicator",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Gastroenterology, Urology",
+      "device_class": "2",
+      "definition": "Device provides semiquantitative indications of ph, bicarbonate ions, and glucose in the final bicarbonate dialysate.",
+      "regulation_number": "876.5820",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "SAF",
+      "openfda": {
+        "k_number": [
+          "K250106",
+          "K234070",
+          "K233655",
+          "K261359"
+        ],
+        "registration_number": [
+          "3006371704",
+          "3027503105",
+          "3038285067",
+          "3004753838",
+          "3019807891",
+          "9710492",
+          "3011536730",
+          "3010220595",
+          "3009888344",
+          "3041000794",
+          "3037326582",
+          "3013435121",
+          "2954323",
+          "3009901017",
+          "2029015"
+        ],
+        "fei_number": [
+          "3006371704",
+          "1000160458",
+          "3002803444",
+          "3027503105",
+          "3038285067",
+          "3004753838",
+          "3003500908",
+          "3019807891",
+          "3011536730",
+          "3010220595",
+          "3009888344",
+          "3041000794",
+          "3037326582",
+          "3013435121",
+          "3009901017"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Integrated Continuous Glucose Monitor For Non-Intensive Glucose Monitoring, Over-The-Counter",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An integrated continuous glucose monitoring system (iCGM) for non-intensive glucose monitoring is intended to automatically measure glucose in bodily fluids continuously or frequently for a specified period of time to detect euglycemic and dysglycemic glucose levels in persons who are not on insulin and do not have a significant risk of problematic hypoglycemia. iCGM systems for non-intensive glucose monitoring are designed to reliably and securely transmit glucose measurement data to digitally connected devices, excluding devices intended to control the delivery of insulin, and are intended to be used alone or in conjunction with these digitally connected medical devices. Device output should not be used to make treatment decisions without consulting with a qualified healthcare professional.",
+      "regulation_number": "862.1355",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "OYC",
+      "openfda": {
+        "pma_number": [
+          "P140015",
+          "P130007"
+        ],
+        "registration_number": [
+          "3042027705",
+          "2030598",
+          "3013756811",
+          "2134850",
+          "3007981285",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194",
+          "3003007876",
+          "3013756811",
+          "1000518731",
+          "3007981285"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "",
+      "device_name": "Pump, Infusion, Insulin, To Be Used With Invasive Glucose Sensor",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "The insulin pump is intended to be used as a component of an invasive glucose device.  The pump is designed to pump fluid (insulin) into a patient in a controlled manner as an aid in the mangement of diabetes mellitus in persons requiring insulin. It is intended to accept and display data from the glucose sensor.",
+      "regulation_number": "",
+      "implant_flag": "N",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "OZP",
+      "openfda": {
+        "pma_number": [
+          "P160017"
+        ],
+        "registration_number": [
+          "3009171251",
+          "3004167884",
+          "3006371704",
+          "3038419886",
+          "3011393376",
+          "1000134386",
+          "3042027705",
+          "1037998",
+          "1810909",
+          "3009882464",
+          "3012118659",
+          "3014353045",
+          "3011121740",
+          "2134850",
+          "3014498598",
+          "2032227"
+        ],
+        "fei_number": [
+          "3004167884",
+          "3006371704",
+          "3006759904",
+          "3038419886",
+          "3014498598",
+          "3011393376",
+          "1000134386",
+          "3042027705",
+          "3003166194",
+          "1037998",
+          "1810909",
+          "3003007876",
+          "3009882464",
+          "3012118659",
+          "3014353045",
+          "3010700165"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "",
+      "device_name": "Automated Insulin Dosing Device System, Single Hormonal Control",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "An insulin-only automated insulin dosing system that achieves a target glucose level by automatically increasing or reducing insulin infusion from an insulin pump. Insulin adjustments are based upon specified thresholds of measured glucose levels.",
+      "regulation_number": "",
+      "implant_flag": "N",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "SBH",
+      "openfda": {
+        "k_number": [
+          "K233861"
+        ],
+        "registration_number": [
+          "3011536730"
+        ],
+        "fei_number": [
+          "3011536730"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Integrated Continuous Glucose Monitor For Non-Intensive Glucose Management, Over-The-Counter",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An integrated continuous glucose monitoring system (iCGM) for non-intensive glucose management is intended to automatically measure glucose in bodily fluids continuously or frequently for a specified period of time to detect euglycemic and dysglycemic glucose levels across the range spanning clinically significant hypoglycemia and hyperglycemia levels in persons who are not on insulin and who do not have a significant risk of problematic hypoglycemia. iCGM systems for non-intensive glucose management are designed to reliably and securely transmit glucose measurement data to digitally connected devices, excluding devices intended to control the delivery of insulin, and are intended to be used alone or in conjunction with these digitally connected medical devices.",
+      "regulation_number": "862.1355",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QII",
+      "openfda": {
+        "k_number": [
+          "K191833"
+        ],
+        "registration_number": [
+          "2024024",
+          "3004753838",
+          "3026032436",
+          "3026572570",
+          "3013435121",
+          "2032098",
+          "3009901017"
+        ],
+        "fei_number": [
+          "2024024",
+          "3004753838",
+          "3026032436",
+          "3026572570",
+          "3003058448",
+          "3013435121",
+          "3009901017"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Integrated Continuous Glucose Monitoring System For Professional Directed Retrospective Or Real-Time Use",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An integrated continuous glucose monitoring system for professional directed retrospective or real-time use is a continuous glucose recording device indicated for use as directed by a physician either for the real-time management of diabetes at home or for the retrospective discovery, analysis, and interpretation of glycemic variability in persons age 2 and older by healthcare professionals to guide appropriate patient management. The system is also intended to interface with digitally connected devices.",
+      "regulation_number": "862.1355",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "SFI",
+      "openfda": {
+        "pma_number": [
+          "P250012"
+        ],
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "",
+      "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "The device is intended to measure glucose in interstitial fluid. It is intended to provide those measurements as inputs to appropriately qualified digitally connected devices, including automated insulin dosing systems, as determined by FDA.",
+      "regulation_number": "",
+      "implant_flag": "N",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "MDS",
+      "openfda": {
+        "pma_number": [
+          "P140015",
+          "P120010",
+          "P120005",
+          "P160007",
+          "P050020",
+          "P150021",
+          "P150019",
+          "P150029",
+          "P980022",
+          "P050012",
+          "P130007"
+        ],
+        "registration_number": [
+          "3007421145",
+          "2954323",
+          "3002807314",
+          "3013756811",
+          "3012102437",
+          "2134850",
+          "2030598",
+          "3004139819",
+          "3007981285",
+          "3009171251",
+          "3006371704",
+          "3007939342",
+          "2024024",
+          "3007527549",
+          "3010893867",
+          "3042027705",
+          "9710492",
+          "3009882464",
+          "3014498598",
+          "2032227"
+        ],
+        "fei_number": [
+          "1000518731",
+          "3002807314",
+          "3003166194",
+          "3004173703",
+          "3013756811",
+          "3012102437",
+          "3003007876",
+          "3004139819",
+          "3007981285",
+          "3006371704",
+          "3002803444",
+          "3006759904",
+          "3007939342",
+          "2024024",
+          "3007527549",
+          "3010893867",
+          "3042027705",
+          "3003500908",
+          "3009882464",
+          "3014498598"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "",
+      "device_name": "Sensor, Glucose, Invasive",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "The device is a glucose-monitoring device indicated for detecting trends and tracking patterns in adults (age 18 and older) with diabetes. The device is indicated for use as an adjunctive device to complement, not replace, information obtained from standard home glucose monitoring devices. The system aids in the detection of episodes of hyperglycemia and hypoglycemia, facilitating both acute and long-term therapy adjustments.",
+      "regulation_number": "",
+      "implant_flag": "N",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QCC",
+      "openfda": {
+        "k_number": [
+          "K191370",
+          "K201476",
+          "K232722",
+          "DEN170043",
+          "K210561"
+        ],
+        "registration_number": [
+          "3013922904"
+        ],
+        "fei_number": [
+          "3013922904"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Insulin Pump Therapy Adjustment Calculator For Healthcare Professionals",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An insulin pump therapy adjustment calculator for healthcare professionals is intended to recommend insulin pump therapy parameter adjustments (e.g., basal rate, insulin to carbohydrate ratios, insulin sensitivity factors) based on data from external devices, including continuous glucose monitors.",
+      "regulation_number": "862.1358",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QCD",
+      "openfda": {
+        "pma_number": [
+          "P160048"
+        ],
+        "registration_number": [
+          "3006371704",
+          "3003335547",
+          "9614698",
+          "2133810",
+          "3004530184",
+          "2135339",
+          "3009810261",
+          "2183744"
+        ],
+        "fei_number": [
+          "3006371704",
+          "3000203066",
+          "3003335547",
+          "3004530184",
+          "3002808382",
+          "3009810261",
+          "2183744",
+          "3007867940"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "",
+      "device_name": "Continuous Glucose Monitor, Implanted, Adjunctive Use",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "The device is a fully implanted continuous glucose monitoring device intended to detect trends and track patterns in interstitial glucose values. The device is indicated for use as an adjunctive device to complement, not replace, information obtained from standard home blood glucose monitoring devices.",
+      "regulation_number": "",
+      "implant_flag": "Y",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "PZI",
+      "openfda": {
+        "k_number": [
+          "K232075",
+          "K182552",
+          "K182549",
+          "K150281",
+          "K163490",
+          "K200788",
+          "K150461",
+          "K220272",
+          "K181043",
+          "K152986",
+          "K221349",
+          "K132121",
+          "K161856"
+        ],
+        "registration_number": [
+          "1219029",
+          "3005360469",
+          "3004193489",
+          "9611444",
+          "9616936",
+          "3011979858",
+          "1832816",
+          "3013472743"
+        ],
+        "fei_number": [
+          "1219029",
+          "3002807423",
+          "3004193489",
+          "3005670738",
+          "3011979858",
+          "3002671736",
+          "1832816",
+          "3013472743"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Prescription Use Blood Glucose Meter For Near-Patient Testing",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "Intended for use in near-patient testing settings for in vitro diagnostic, multiple-patient use for the quantitative determination of glucose throughout all hospital and all professional healthcare settings for use in determining dysglycemia.",
+      "regulation_number": "862.1345",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "OZO",
+      "openfda": {
+        "pma_number": [
+          "P120010",
+          "P150001",
+          "P180008"
+        ],
+        "registration_number": [
+          "3009171251",
+          "3004167884",
+          "3006371704",
+          "3038419886",
+          "3007939342",
+          "3014498598",
+          "3042027705",
+          "1000134386",
+          "3016540876",
+          "1810909",
+          "3010291427",
+          "3013756811",
+          "3012118659",
+          "3014353045",
+          "3011121740",
+          "2134850",
+          "3007981285",
+          "2032227"
+        ],
+        "fei_number": [
+          "3004167884",
+          "3006371704",
+          "3006759904",
+          "3007939342",
+          "3038419886",
+          "3014498598",
+          "3042027705",
+          "1000134386",
+          "3003166194",
+          "1810909",
+          "3003007876",
+          "3010700165",
+          "3010291427",
+          "3013756811",
+          "3012118659",
+          "3014353045",
+          "3016540876",
+          "3007981285"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "",
+      "device_name": "Automated Insulin Dosing , Threshold Suspend",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Unknown",
+      "device_class": "3",
+      "definition": "An automated insulin dosing system that temporarily suspends or reduces insulin infusion from an insulin pump based upon specified thresholds of measured glucose levels.",
+      "regulation_number": "",
+      "implant_flag": "N",
+      "submission_type_id": "2"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QJS",
+      "openfda": {
+        "k_number": [
+          "K193483"
+        ],
+        "registration_number": [
+          "3016540876",
+          "3013756811",
+          "3007981285",
+          "2032227"
+        ],
+        "fei_number": [
+          "3016540876",
+          "3013756811",
+          "3007981285",
+          "3003166194"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Interoperable Automated Glycemic Controller, Insulin Suspend",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An interoperable automated glycemic controller, insulin suspend, is a device that temporarily suspend and resumes  insulin infusion from a connected infusion pump based on specified thresholds and input glucose levels. Interoperable automated glycemic controllers, insulin suspend, are designed to reliably and securely communicate with digitally connected devices to allow insulin delivery suspension and resumption commands to be sent, received, executed, and confirmed. Interoperable automated glycemic controllers, insulin suspend, are intended to be used in conjunction with digitally connected devices for the purpose of maintaining glycemic control.",
+      "regulation_number": "862.1356",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "QDK",
+      "openfda": {
+        "k_number": [
+          "K203089",
+          "K192787",
+          "K193642",
+          "K182041"
+        ],
+        "registration_number": [
+          "3012302888",
+          "2024024",
+          "3008717264",
+          "3004753838",
+          "3012448339",
+          "3013435121",
+          "2032098",
+          "3009901017"
+        ],
+        "fei_number": [
+          "3012302888",
+          "2024024",
+          "3008717264",
+          "3004753838",
+          "3012448339",
+          "3003058448",
+          "3013435121",
+          "3009901017"
+        ]
+      },
+      "review_panel": "CH",
+      "medical_specialty": "CH",
+      "device_name": "Integrated Continuous Glucose Monitoring System For Non-Intensive Diabetes Management",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Clinical Chemistry",
+      "device_class": "2",
+      "definition": "An integrated continuous glucose monitoring system for non-intensive diabetes management is intended to replace finger stick blood glucose testing for diabetes treatment decisions in persons  with diabetes who do not have significant risk of severe hypoglycemia. The device also aids in the detection of episodes of hyperglycemia and hypoglycemia, facilitating long-term therapy adjustments. The device is also intended to autonomously communicate with digitally connected devices. The device can be used alone or in conjunction with these digitally connected devices or services for the purpose of managing diabetes.",
+      "regulation_number": "862.1355",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    }
+  ]
+}

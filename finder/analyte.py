@@ -24,6 +24,7 @@ from .sources.openfda import (
     search_classification_by_term,
     search_510k_by_term,
     search_510k_fulltext,
+    search_pma_fulltext,
 )
 
 # ---------------------------------------------------------------------------
@@ -158,7 +159,10 @@ def resolve_analyte(
     def _search_ft(syn):
         return ("ft", syn, search_510k_fulltext(syn))
 
-    tasks = [_search_cls, _search_5k, _search_ft]
+    def _search_pma(syn):
+        return ("ft", syn, search_pma_fulltext(syn))
+
+    tasks = [_search_cls, _search_5k, _search_ft, _search_pma]
     new_pcs_needing_cls: list[tuple[str, str]] = []  # (product_code, device_name)
 
     def _is_real_match(syn: str, device_name: str) -> bool:
@@ -183,7 +187,8 @@ def resolve_analyte(
                         pc_map[info.product_code] = info
                 else:  # "5k" (device_name exact) or "ft" (full-text — needs boundary filter)
                     pc = rec.get("product_code")
-                    name = rec.get("device_name", "")
+                    # 510(k) records use device_name; PMA records use trade_name/generic_name
+                    name = rec.get("device_name") or rec.get("trade_name") or rec.get("generic_name", "")
                     if kind == "ft" and not _is_real_match(syn, name):
                         continue  # substring noise — skip
                     if pc and pc not in pc_map:

@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 5
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "St. Louis",
+      "advisory_committee_description": "Hematology",
+      "address_1": "545 S. Ewing Ave.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "JBF",
+      "openfda": {
+        "registration_number": [
+          "1827821",
+          "3011240982",
+          "1221359",
+          "9681576",
+          "3017662853",
+          "3024756665"
+        ],
+        "fei_number": [
+          "1827821",
+          "3011240982",
+          "1221359",
+          "3017662853",
+          "3024756665",
+          "3002546385"
+        ],
+        "device_name": "Glucose-6-Phosphate Dehydrogenase (Erythrocytic), Screening",
+        "medical_specialty_description": "Hematology",
+        "regulation_number": "864.7360",
+        "device_class": "2"
+      },
+      "zip_code": "63103",
+      "applicant": "Sigma Diagnostics, Inc.",
+      "decision_date": "1995-06-29",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "GLUCOSE-6-PHOSPHATE DEHYDROGENASE DEFICIENCY SCREENING TEST KIT NO. 202-A",
+      "advisory_committee": "HE",
+      "contact": "LEO  BRESSLER",
+      "expedited_review_flag": "",
+      "k_number": "K933934",
+      "state": "MO",
+      "date_received": "1993-08-11",
+      "review_advisory_committee": "HE",
+      "postal_code": "63103",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Scarborough",
+      "advisory_committee_description": "Hematology",
+      "address_1": "10 Southgate Rd.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "JBF",
+      "openfda": {
+        "registration_number": [
+          "1827821",
+          "3011240982",
+          "1221359",
+          "9681576",
+          "3017662853",
+          "3024756665"
+        ],
+        "fei_number": [
+          "1827821",
+          "3011240982",
+          "1221359",
+          "3017662853",
+          "3024756665",
+          "3002546385"
+        ],
+        "device_name": "Glucose-6-Phosphate Dehydrogenase (Erythrocytic), Screening",
+        "medical_specialty_description": "Hematology",
+        "regulation_number": "864.7360",
+        "device_class": "2"
+      },
+      "zip_code": "04074",
+      "applicant": "Alere Scarborough, Inc.",
+      "decision_date": "2016-06-17",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "BinaxNOW G6PD Test",
+      "advisory_committee": "HE",
+      "contact": "Angela  Drysdale",
+      "expedited_review_flag": "",
+      "k_number": "K161364",
+      "state": "ME",
+      "date_received": "2016-05-17",
+      "review_advisory_committee": "HE",
+      "postal_code": "04074",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Special"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Lincoln Park",
+      "advisory_committee_description": "Hematology",
+      "address_1": "1025 John A. Papalas Dr.",
+      "address_2": "",
+      "statement_or_summary": "Statement",
+      "product_code": "JBF",
+      "openfda": {
+        "registration_number": [
+          "1827821",
+          "3011240982",
+          "1221359",
+          "9681576",
+          "3017662853",
+          "3024756665"
+        ],
+        "fei_number": [
+          "1827821",
+          "3011240982",
+          "1221359",
+          "3017662853",
+          "3024756665",
+          "3002546385"
+        ],
+        "device_name": "Glucose-6-Phosphate Dehydrogenase (Erythrocytic), Screening",
+        "medical_specialty_description": "Hematology",
+        "regulation_number": "864.7360",
+        "device_class": "2"
+      },
+      "zip_code": "48146",
+      "applicant": "Pointe Scientific, Inc.,",
+      "decision_date": "2003-03-31",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "G6PDH, GLUCOSE-6-PHOSHATE DEHYDROGENASE",
+      "advisory_committee": "HE",
+      "contact": "RON  JAMISON",
+      "expedited_review_flag": "",
+      "k_number": "K024006",
+      "state": "MI",
+      "date_received": "2002-12-04",
+      "review_advisory_committee": "CH",
+      "postal_code": "48146",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Scarborough",
+      "advisory_committee_description": "Hematology",
+      "address_1": "10 Southgate Rd.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "JBF",
+      "openfda": {
+        "registration_number": [
+          "1827821",
+          "3011240982",
+          "1221359",
+          "9681576",
+          "3017662853",
+          "3024756665"
+        ],
+        "fei_number": [
+          "1827821",
+          "3011240982",
+          "1221359",
+          "3017662853",
+          "3024756665",
+          "3002546385"
+        ],
+        "device_name": "Glucose-6-Phosphate Dehydrogenase (Erythrocytic), Screening",
+        "medical_specialty_description": "Hematology",
+        "regulation_number": "864.7360",
+        "device_class": "2"
+      },
+      "zip_code": "04074",
+      "applicant": "Binax, Inc.",
+      "decision_date": "2008-10-23",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "BINAXNOW G6PD TEST",
+      "advisory_committee": "HE",
+      "contact": "Anne  Jepson",
+      "expedited_review_flag": "",
+      "k_number": "K080003",
+      "state": "ME",
+      "date_received": "2008-01-02",
+      "review_advisory_committee": "HE",
+      "postal_code": "04074",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Morrisville",
+      "advisory_committee_description": "Hematology",
+      "address_1": "615 Davis Dr., Suite 800",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "JBF",
+      "openfda": {
+        "registration_number": [
+          "1827821",
+          "3011240982",
+          "1221359",
+          "9681576",
+          "3017662853",
+          "3024756665"
+        ],
+        "fei_number": [
+          "1827821",
+          "3011240982",
+          "1221359",
+          "3017662853",
+          "3024756665",
+          "3002546385"
+        ],
+        "device_name": "Glucose-6-Phosphate Dehydrogenase (Erythrocytic), Screening",
+        "medical_specialty_description": "Hematology",
+        "regulation_number": "864.7360",
+        "device_class": "2"
+      },
+      "zip_code": "27560",
+      "applicant": "Baebies, Inc.",
+      "decision_date": "2022-09-14",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "FINDER G6PD",
+      "advisory_committee": "HE",
+      "contact": "Ailen  Gillette",
+      "expedited_review_flag": "",
+      "k_number": "K201049",
+      "state": "NC",
+      "date_received": "2020-04-21",
+      "review_advisory_committee": "HE",
+      "postal_code": "27560",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

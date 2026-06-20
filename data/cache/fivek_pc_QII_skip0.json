@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "San Diego",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "6310 Sequence Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QII",
+      "openfda": {
+        "registration_number": [
+          "2024024",
+          "3004753838",
+          "3026032436",
+          "3026572570",
+          "3013435121",
+          "2032098",
+          "3009901017"
+        ],
+        "fei_number": [
+          "2024024",
+          "3004753838",
+          "3026032436",
+          "3026572570",
+          "3003058448",
+          "3013435121",
+          "3009901017"
+        ],
+        "device_name": "Integrated Continuous Glucose Monitoring System For Professional Directed Retrospective Or Real-Time Use",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1355",
+        "device_class": "2"
+      },
+      "zip_code": "92121",
+      "applicant": "Dexcom, Inc.",
+      "decision_date": "2019-10-07",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "Dexcom G6 Pro Continuous Glucose Monitoring System",
+      "advisory_committee": "CH",
+      "contact": "Jacob  Nardone",
+      "expedited_review_flag": "",
+      "k_number": "K191833",
+      "state": "CA",
+      "date_received": "2019-07-09",
+      "review_advisory_committee": "CH",
+      "postal_code": "92121",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

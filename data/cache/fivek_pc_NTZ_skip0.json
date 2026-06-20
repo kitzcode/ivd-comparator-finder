@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Elkhart",
+      "advisory_committee_description": "Gastroenterology, Urology",
+      "address_1": "23565 Reedy Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "NTZ",
+      "openfda": {
+        "device_name": "Strip, Dialysate, Ph, Bicarbonate, Glucose, Acid, Indicator",
+        "medical_specialty_description": "Gastroenterology, Urology",
+        "regulation_number": "876.5820",
+        "device_class": "2"
+      },
+      "zip_code": "46514",
+      "applicant": "Serim Research Corp.",
+      "decision_date": "2005-06-13",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "SERIM DIALYSATE MONITOR TEST STRIP",
+      "advisory_committee": "GU",
+      "contact": "PATRICIA A RUPCHOCK",
+      "expedited_review_flag": "",
+      "k_number": "K043031",
+      "state": "IN",
+      "date_received": "2004-11-03",
+      "review_advisory_committee": "GU",
+      "postal_code": "46514",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

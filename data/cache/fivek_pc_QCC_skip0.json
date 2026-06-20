@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 5
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Petah Tikva, Pob 3271",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "3 Shimshon St.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "QCC",
+      "openfda": {
+        "registration_number": [
+          "3013922904"
+        ],
+        "fei_number": [
+          "3013922904"
+        ],
+        "device_name": "Insulin Pump Therapy Adjustment Calculator For Healthcare Professionals",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1358",
+        "device_class": "2"
+      },
+      "zip_code": "4952701",
+      "applicant": "DreaMed Diabetes, Ltd.",
+      "decision_date": "2018-06-12",
+      "decision_code": "DENG",
+      "country_code": "IL",
+      "device_name": "DreaMed Advisor Pro",
+      "advisory_committee": "CH",
+      "contact": "Eran  Atlas",
+      "expedited_review_flag": "",
+      "k_number": "DEN170043",
+      "state": "",
+      "date_received": "2017-08-17",
+      "review_advisory_committee": "CH",
+      "postal_code": "4952701",
+      "decision_description": "Unknown",
+      "clearance_type": "Direct"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Petah Tikva",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "14 Kaplan St.",
+      "address_2": "Pob 3271",
+      "statement_or_summary": "Summary",
+      "product_code": "QCC",
+      "openfda": {
+        "registration_number": [
+          "3013922904"
+        ],
+        "fei_number": [
+          "3013922904"
+        ],
+        "device_name": "Insulin Pump Therapy Adjustment Calculator For Healthcare Professionals",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1358",
+        "device_class": "2"
+      },
+      "zip_code": "4952701",
+      "applicant": "DreaMed Diabetes, Ltd.",
+      "decision_date": "2023-10-03",
+      "decision_code": "SESE",
+      "country_code": "IL",
+      "device_name": "endo.digital Platform",
+      "advisory_committee": "CH",
+      "contact": "Eran  Atlas",
+      "expedited_review_flag": "",
+      "k_number": "K232722",
+      "state": "",
+      "date_received": "2023-09-05",
+      "review_advisory_committee": "CH",
+      "postal_code": "4952701",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Special"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Petah Tikva",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "5 Mota Gur St.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QCC",
+      "openfda": {
+        "registration_number": [
+          "3013922904"
+        ],
+        "fei_number": [
+          "3013922904"
+        ],
+        "device_name": "Insulin Pump Therapy Adjustment Calculator For Healthcare Professionals",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1358",
+        "device_class": "2"
+      },
+      "zip_code": "4952701",
+      "applicant": "DreaMed Diabetes, Ltd.",
+      "decision_date": "2021-09-28",
+      "decision_code": "SESE",
+      "country_code": "IL",
+      "device_name": "Advisor Pro Platform",
+      "advisory_committee": "CH",
+      "contact": "Inbal  Beinglass Peled",
+      "expedited_review_flag": "",
+      "k_number": "K210561",
+      "state": "",
+      "date_received": "2021-02-25",
+      "review_advisory_committee": "CH",
+      "postal_code": "4952701",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Petah Tikva",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "5 Mota Gur St.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QCC",
+      "openfda": {
+        "registration_number": [
+          "3013922904"
+        ],
+        "fei_number": [
+          "3013922904"
+        ],
+        "device_name": "Insulin Pump Therapy Adjustment Calculator For Healthcare Professionals",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1358",
+        "device_class": "2"
+      },
+      "zip_code": "4952701",
+      "applicant": "DreaMed Diabetes, Ltd.",
+      "decision_date": "2019-07-18",
+      "decision_code": "SESE",
+      "country_code": "IL",
+      "device_name": "DreaMed Advisor Pro",
+      "advisory_committee": "CH",
+      "contact": "Eran  Atlas",
+      "expedited_review_flag": "",
+      "k_number": "K191370",
+      "state": "",
+      "date_received": "2019-05-22",
+      "review_advisory_committee": "CH",
+      "postal_code": "4952701",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Petah Tikva",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "5 Mota Gur St.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QCC",
+      "openfda": {
+        "registration_number": [
+          "3013922904"
+        ],
+        "fei_number": [
+          "3013922904"
+        ],
+        "device_name": "Insulin Pump Therapy Adjustment Calculator For Healthcare Professionals",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1358",
+        "device_class": "2"
+      },
+      "zip_code": "4952701",
+      "applicant": "DreaMed Diabetes, Ltd.",
+      "decision_date": "2020-08-28",
+      "decision_code": "SESE",
+      "country_code": "IL",
+      "device_name": "DreaMed Advisor Pro",
+      "advisory_committee": "CH",
+      "contact": "Inbal Beinglass Peled",
+      "expedited_review_flag": "",
+      "k_number": "K201476",
+      "state": "",
+      "date_received": "2020-06-03",
+      "review_advisory_committee": "CH",
+      "postal_code": "4952701",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

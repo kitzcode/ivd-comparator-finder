@@ -15,7 +15,7 @@ from typing import Callable, Optional
 
 from .analyte import resolve_analyte
 from .models import AnalyteResolution, Device, SummaryChunk
-from .sources.openfda import get_510k_by_product_code
+from .sources.openfda import get_510k_by_product_code, get_pma_by_product_code
 from .sources.summaries import fetch_summary_pdf, resolve_summary_url
 
 
@@ -32,16 +32,36 @@ def _parse_date(raw: Optional[str]) -> Optional[date]:
 
 
 def _normalize_device(rec: dict, product_code: str, regulation_number: Optional[str]) -> Device:
+    """Normalize a 510(k)/De Novo record from /device/510k.json."""
+    k = rec.get("k_number", "")
+    # De Novo grants live in the 510(k) dataset with DEN-prefixed numbers
+    # (decision_code DENG). Everything else from this endpoint is a 510(k).
+    is_denovo = k.upper().startswith("DEN") or rec.get("decision_code", "").upper().startswith("DEN")
     return Device(
-        k_number=rec.get("k_number", ""),
+        k_number=k,
         device_name=rec.get("device_name", ""),
         applicant_name=rec.get("applicant_name", ""),
         decision_date=_parse_date(rec.get("decision_date_as_string") or rec.get("date_received")),
         product_code=product_code,
+        submission_type="De Novo" if is_denovo else "510(k)",
         regulation_number=regulation_number,
         device_class=rec.get("device_class"),
         predicate_k_number=rec.get("traditional_501k_flag"),
         predicate_device_name=None,
+    )
+
+
+def _normalize_pma(rec: dict, product_code: str, regulation_number: Optional[str]) -> Device:
+    """Normalize a PMA record from /device/pma.json (different field names)."""
+    return Device(
+        k_number=rec.get("pma_number", ""),
+        device_name=rec.get("trade_name") or rec.get("generic_name", ""),
+        applicant_name=rec.get("applicant", ""),
+        decision_date=_parse_date(rec.get("decision_date") or rec.get("date_received")),
+        product_code=product_code,
+        submission_type="PMA",
+        regulation_number=regulation_number,
+        device_class="3",  # PMA == Class III
     )
 
 
@@ -63,29 +83,44 @@ def find_devices(
 
     devices: list[Device] = []
     seen_k: set[str] = set()
+    seen_pma: set[str] = set()
 
-    # Fetch 510(k) device lists for all product codes in parallel to reduce
-    # wall-clock time when the cache is cold (e.g. first search of a new analyte).
-    def _fetch(pc_info):
-        return pc_info, get_510k_by_product_code(pc_info.product_code, max_results=200)
+    # Fetch 510(k) (incl. De Novo) and PMA device lists for every product code
+    # in parallel to keep cold-cache latency low.
+    def _fetch_5k(pc_info):
+        return "5k", pc_info, get_510k_by_product_code(pc_info.product_code, max_results=200)
 
-    max_workers = min(16, len(resolution.product_codes) or 1)
+    def _fetch_pma(pc_info):
+        return "pma", pc_info, get_pma_by_product_code(pc_info.product_code, max_results=200)
+
+    pcs = resolution.product_codes
+    max_workers = min(16, (len(pcs) * 2) or 1)
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
-        futures = {pool.submit(_fetch, pc): pc for pc in resolution.product_codes}
+        futures = []
+        for pc in pcs:
+            futures.append(pool.submit(_fetch_5k, pc))
+            futures.append(pool.submit(_fetch_pma, pc))
         for future in as_completed(futures):
             try:
-                pc_info, records = future.result()
+                kind, pc_info, records = future.result()
             except Exception:
                 continue
             for rec in records:
-                k = rec.get("k_number", "")
-                if k in seen_k:
-                    continue
-                seen_k.add(k)
-                dev = _normalize_device(rec, pc_info.product_code, pc_info.regulation_number)
-                if resolve_urls and dev.k_number:
-                    dev = dev.model_copy(update={"summary_url": resolve_summary_url(dev.k_number)})
-                devices.append(dev)
+                if kind == "5k":
+                    k = rec.get("k_number", "")
+                    if not k or k in seen_k:
+                        continue
+                    seen_k.add(k)
+                    dev = _normalize_device(rec, pc_info.product_code, pc_info.regulation_number)
+                    if resolve_urls and dev.k_number:
+                        dev = dev.model_copy(update={"summary_url": resolve_summary_url(dev.k_number)})
+                    devices.append(dev)
+                else:  # PMA — dedupe supplements down to one row per PMA number
+                    pma = rec.get("pma_number", "")
+                    if not pma or pma in seen_pma:
+                        continue
+                    seen_pma.add(pma)
+                    devices.append(_normalize_pma(rec, pc_info.product_code, pc_info.regulation_number))
 
     devices.sort(key=lambda d: d.decision_date or date.min, reverse=True)
     return resolution, devices

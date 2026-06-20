@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 2
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "San Diego",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "6340 Sequence Dr.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "PJT",
+      "openfda": {
+        "registration_number": [
+          "3028013069",
+          "3009862700",
+          "2954323",
+          "3017181032",
+          "3004753838",
+          "3031700059",
+          "3014700242",
+          "2134850",
+          "3008770957",
+          "3007981285",
+          "2032227"
+        ],
+        "fei_number": [
+          "3028013069",
+          "3002803444",
+          "3009862700",
+          "3017181032",
+          "3004753838",
+          "3031700059",
+          "3014700242",
+          "3003166194",
+          "3003007876",
+          "3008770957",
+          "3007981285"
+        ],
+        "device_name": "Continuous Glucose Monitor Secondary Display",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1350",
+        "device_class": "2"
+      },
+      "zip_code": "92121",
+      "applicant": "Dexcom, Inc.",
+      "decision_date": "2015-01-23",
+      "decision_code": "DENG",
+      "country_code": "US",
+      "device_name": "Dexcom Share Direct Secondary Displays",
+      "advisory_committee": "CH",
+      "contact": "Andrew K Balo",
+      "expedited_review_flag": "",
+      "k_number": "DEN140038",
+      "state": "CA",
+      "date_received": "2014-12-15",
+      "review_advisory_committee": "CH",
+      "postal_code": "92121",
+      "decision_description": "Unknown",
+      "clearance_type": "Direct"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Northridge",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "18000 Devonshire St.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PJT",
+      "openfda": {
+        "registration_number": [
+          "3028013069",
+          "3009862700",
+          "2954323",
+          "3017181032",
+          "3004753838",
+          "3031700059",
+          "3014700242",
+          "2134850",
+          "3008770957",
+          "3007981285",
+          "2032227"
+        ],
+        "fei_number": [
+          "3028013069",
+          "3002803444",
+          "3009862700",
+          "3017181032",
+          "3004753838",
+          "3031700059",
+          "3014700242",
+          "3003166194",
+          "3003007876",
+          "3008770957",
+          "3007981285"
+        ],
+        "device_name": "Continuous Glucose Monitor Secondary Display",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1350",
+        "device_class": "2"
+      },
+      "zip_code": "91325",
+      "applicant": "Medtronic Minimed, Inc.",
+      "decision_date": "2015-05-19",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "MiniMed Connect kit, MiniMed Connect uploader, MiniMed Connect app, CareLink Connect (CareLink Personal)",
+      "advisory_committee": "CH",
+      "contact": "Liane R. Miller",
+      "expedited_review_flag": "",
+      "k_number": "K151236",
+      "state": "CA",
+      "date_received": "2015-05-11",
+      "review_advisory_committee": "CH",
+      "postal_code": "91325",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

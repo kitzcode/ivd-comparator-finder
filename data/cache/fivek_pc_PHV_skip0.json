@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "San Diego",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "6340 Sequence Dr.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "PHV",
+      "openfda": {
+        "registration_number": [
+          "3009137498",
+          "3016525500",
+          "3028170577",
+          "3021611414",
+          "3009862700",
+          "3013922904",
+          "2954323",
+          "3004753838",
+          "3012128418",
+          "3014642500",
+          "3014585508",
+          "3008770957",
+          "3024580094",
+          "3007981285",
+          "2032227"
+        ],
+        "fei_number": [
+          "3009137498",
+          "3016525500",
+          "3002803444",
+          "3028170577",
+          "3009862700",
+          "3013922904",
+          "3021611414",
+          "3004753838",
+          "3012128418",
+          "3003166194",
+          "3014642500",
+          "3014585508",
+          "3008770957",
+          "3024580094",
+          "3007981285"
+        ],
+        "device_name": "Continuous Glucose Monitor Retrospective Data Analysis Software",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.2120",
+        "device_class": "1"
+      },
+      "zip_code": "92121",
+      "applicant": "Dexcom, Inc.",
+      "decision_date": "2014-08-19",
+      "decision_code": "DENG",
+      "country_code": "US",
+      "device_name": "STUDIO ON THE CLOUD DATA MANAGEMENT SOFTWARE",
+      "advisory_committee": "CH",
+      "contact": "ANDREW  BALO",
+      "expedited_review_flag": "",
+      "k_number": "DEN140016",
+      "state": "CA",
+      "date_received": "2014-04-22",
+      "review_advisory_committee": "CH",
+      "postal_code": "92121",
+      "decision_description": "Unknown",
+      "clearance_type": "Direct"
+    }
+  ]
+}

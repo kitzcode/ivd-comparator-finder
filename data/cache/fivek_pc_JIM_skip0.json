@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 2
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Brea",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "231 N. Puente St.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "JIM",
+      "openfda": {
+        "device_name": "Method, Metallic Reduction, Glucose (Urinary, Non-Quantitative)",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1340",
+        "device_class": "2"
+      },
+      "zip_code": "92621",
+      "applicant": "Hichem Diagnostics",
+      "decision_date": "1990-06-12",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "HI CHEM ISE REAGENTS (PRODUCTS #88960 AND #88964)",
+      "advisory_committee": "CH",
+      "contact": "BENTLEY  TAM",
+      "expedited_review_flag": "",
+      "k_number": "K902155",
+      "state": "CA",
+      "date_received": "1990-05-15",
+      "review_advisory_committee": "CH",
+      "postal_code": "92621",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Mchenry",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "803 N. Front St. Suite 3",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "JIM",
+      "openfda": {
+        "device_name": "Method, Metallic Reduction, Glucose (Urinary, Non-Quantitative)",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1340",
+        "device_class": "2"
+      },
+      "zip_code": "60050",
+      "applicant": "Boehringer Mannheim Corp.",
+      "decision_date": "1979-06-15",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "CHEMTAB",
+      "advisory_committee": "CH",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K790772",
+      "state": "IL",
+      "date_received": "1979-04-20",
+      "review_advisory_committee": "CH",
+      "postal_code": "60050",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

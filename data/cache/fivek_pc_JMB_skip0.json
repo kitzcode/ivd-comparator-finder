@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "San Diego",
+      "advisory_committee_description": "Hematology",
+      "address_1": "11095 Torreyana Rd.",
+      "address_2": "P.O. Box 269006",
+      "statement_or_summary": "",
+      "product_code": "JMB",
+      "openfda": {
+        "device_name": "Visual, Semi-Quant. (Colorimetric), Glucose-6-Phosphate Dehydrogenase",
+        "medical_specialty_description": "Hematology",
+        "regulation_number": "864.7360",
+        "device_class": "2"
+      },
+      "zip_code": "92126",
+      "applicant": "Hybritech, Inc.",
+      "decision_date": "1985-03-21",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "ENCORE FERRITIN REAGENT",
+      "advisory_committee": "HE",
+      "contact": "JOHN F BRUNI",
+      "expedited_review_flag": "",
+      "k_number": "K850680",
+      "state": "CA",
+      "date_received": "1985-02-21",
+      "review_advisory_committee": "CH",
+      "postal_code": "92126",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

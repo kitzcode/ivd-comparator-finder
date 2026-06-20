@@ -1,0 +1,395 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 10
+    }
+  },
+  "results": [
+    {
+      "pma_number": "P250012",
+      "supplement_number": "S009",
+      "applicant": "Medtronic Minimed, Inc.",
+      "street_1": "18000 Devonshire St.",
+      "street_2": "",
+      "city": "Northridge",
+      "state": "CA",
+      "zip": "91325",
+      "zip_ext": "",
+      "generic_name": "Sensor, Glucose, Invasive, Component of automated insulin delivery system",
+      "trade_name": "Simplera Sync Sensor",
+      "product_code": "SFI",
+      "advisory_committee": "CH",
+      "advisory_committee_description": "Clinical Chemistry",
+      "supplement_type": "30-Day Notice",
+      "supplement_reason": "Process Change - Manufacturer/Sterilizer/Packager/Supplier",
+      "expedited_review_flag": "N",
+      "date_received": "2026-02-20",
+      "decision_date": "2026-03-19",
+      "docket_number": "",
+      "decision_code": "OK30",
+      "ao_statement": "to add the Medtronic Northridge facility as an additional site for conducting post-sterilization quality testing for the Simplera Sync sensor. The Simplera Sync sensor is a component of the MiniMed 780G System",
+      "openfda": {
+        "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+        "medical_specialty_description": "Unknown",
+        "regulation_number": "",
+        "device_class": "3",
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      }
+    },
+    {
+      "pma_number": "P250012",
+      "supplement_number": "S002",
+      "applicant": "Medtronic Minimed, Inc.",
+      "street_1": "18000 Devonshire St.",
+      "street_2": "",
+      "city": "Northridge",
+      "state": "CA",
+      "zip": "91325",
+      "zip_ext": "",
+      "generic_name": "Sensor, Glucose, Invasive, Component of automated insulin delivery system",
+      "trade_name": "Guardian 4 Sensor",
+      "product_code": "SFI",
+      "advisory_committee": "CH",
+      "advisory_committee_description": "Clinical Chemistry",
+      "supplement_type": "Normal 180 Day Track No User Fee",
+      "supplement_reason": "Location Change - Manufacturer/Sterilizer/Packager/Supplier",
+      "expedited_review_flag": "N",
+      "date_received": "2025-08-15",
+      "decision_date": "2025-10-09",
+      "docket_number": "",
+      "decision_code": "APPR",
+      "ao_statement": "Approval for a manufacturing site located at Minimed Kentucky Distribution Center (aka UPS Supply Chain Solutions), 1860 Outer Loop #326, Louisville, KY 40219, USA, FEI 3006759904, for repacking and labeling.",
+      "openfda": {
+        "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+        "medical_specialty_description": "Unknown",
+        "regulation_number": "",
+        "device_class": "3",
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      }
+    },
+    {
+      "pma_number": "P250012",
+      "supplement_number": "S004",
+      "applicant": "Medtronic Minimed, Inc.",
+      "street_1": "18000 Devonshire St.",
+      "street_2": "",
+      "city": "Northridge",
+      "state": "CA",
+      "zip": "91325",
+      "zip_ext": "",
+      "generic_name": "Sensor, Glucose, Invasive, Component of automated insulin delivery system",
+      "trade_name": "Simplera Sync Sensor, Guardian 4 Sensor",
+      "product_code": "SFI",
+      "advisory_committee": "CH",
+      "advisory_committee_description": "Clinical Chemistry",
+      "supplement_type": "30-Day Notice",
+      "supplement_reason": "Process Change - Manufacturer/Sterilizer/Packager/Supplier",
+      "expedited_review_flag": "N",
+      "date_received": "2025-09-19",
+      "decision_date": "2025-10-16",
+      "docket_number": "",
+      "decision_code": "OK30",
+      "ao_statement": "addition of a new supplier for a critical component of the Guardian Sensor (3) and Guardian 4 Sensor. The Guardian Sensor (3) is a component of the MiniMed 670G, MiniMed 770G, and MiniMed 780G Systems, MiniMed 630G System with Smart Guard, and Guardian Connect Systems. The Guardian 4 Sensor is a component of the MiniMed 780G System",
+      "openfda": {
+        "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+        "medical_specialty_description": "Unknown",
+        "regulation_number": "",
+        "device_class": "3",
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      }
+    },
+    {
+      "pma_number": "P250012",
+      "supplement_number": "S005",
+      "applicant": "Medtronic Minimed, Inc.",
+      "street_1": "18000 Devonshire St.",
+      "street_2": "",
+      "city": "Northridge",
+      "state": "CA",
+      "zip": "91325",
+      "zip_ext": "",
+      "generic_name": "Sensor, Glucose, Invasive, Component of automated insulin delivery system",
+      "trade_name": "Simplera Sync Sensor; Guardian 4 Sensor",
+      "product_code": "SFI",
+      "advisory_committee": "CH",
+      "advisory_committee_description": "Clinical Chemistry",
+      "supplement_type": "30-Day Notice",
+      "supplement_reason": "Process Change - Manufacturer/Sterilizer/Packager/Supplier",
+      "expedited_review_flag": "N",
+      "date_received": "2025-11-14",
+      "decision_date": "2025-12-10",
+      "docket_number": "",
+      "decision_code": "OK30",
+      "ao_statement": "addition of an alternate manufacturing site for the final assembly of the Guardian 4 Sensor. The Guardian 4 sensor is a component of the MiniMed 780G System",
+      "openfda": {
+        "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+        "medical_specialty_description": "Unknown",
+        "regulation_number": "",
+        "device_class": "3",
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      }
+    },
+    {
+      "pma_number": "P250012",
+      "supplement_number": "S006",
+      "applicant": "Medtronic Minimed, Inc.",
+      "street_1": "18000 Devonshire St.",
+      "street_2": "",
+      "city": "Northridge",
+      "state": "CA",
+      "zip": "91325",
+      "zip_ext": "",
+      "generic_name": "Sensor, Glucose, Invasive, Component of automated insulin delivery system",
+      "trade_name": "Simplera Sync Sensor",
+      "product_code": "SFI",
+      "advisory_committee": "CH",
+      "advisory_committee_description": "Clinical Chemistry",
+      "supplement_type": "30-Day Notice",
+      "supplement_reason": "Process Change - Manufacturer/Sterilizer/Packager/Supplier",
+      "expedited_review_flag": "N",
+      "date_received": "2025-11-17",
+      "decision_date": "2025-12-05",
+      "docket_number": "",
+      "decision_code": "OK30",
+      "ao_statement": "addition of an alternate manufacturing site for the sensor fabrication processes for the Simplera and Simplera Sync sensors. The Simplera Sensor is a component of the Simplera system. The Simplera Sync sensor is a component of the MiniMed 780G system",
+      "openfda": {
+        "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+        "medical_specialty_description": "Unknown",
+        "regulation_number": "",
+        "device_class": "3",
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      }
+    },
+    {
+      "pma_number": "P250012",
+      "supplement_number": "",
+      "applicant": "Medtronic Minimed, Inc.",
+      "street_1": "18000 Devonshire St.",
+      "street_2": "",
+      "city": "Northridge",
+      "state": "CA",
+      "zip": "91325",
+      "zip_ext": "",
+      "generic_name": "Sensor, Glucose, Invasive, Component of automated insulin delivery system",
+      "trade_name": "Simplera Sync Sensor, Guardian 4 Sensor",
+      "product_code": "SFI",
+      "advisory_committee": "CH",
+      "advisory_committee_description": "Clinical Chemistry",
+      "supplement_type": "",
+      "supplement_reason": "",
+      "expedited_review_flag": "N",
+      "date_received": "2025-04-18",
+      "decision_date": "2025-08-06",
+      "docket_number": "",
+      "decision_code": "APPR",
+      "ao_statement": "Approval of the Simplera Sync sensor and Guardian 4 sensor, intended to function as components of a Medtronic automated insulin dosing system.",
+      "openfda": {
+        "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+        "medical_specialty_description": "Unknown",
+        "regulation_number": "",
+        "device_class": "3",
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      }
+    },
+    {
+      "pma_number": "P250012",
+      "supplement_number": "S010",
+      "applicant": "Medtronic Minimed, Inc.",
+      "street_1": "18000 Devonshire St.",
+      "street_2": "",
+      "city": "Northridge",
+      "state": "CA",
+      "zip": "91325",
+      "zip_ext": "",
+      "generic_name": "Sensor, Glucose, Invasive, Component of automated insulin delivery system",
+      "trade_name": "Simplera and Simplera Sync",
+      "product_code": "SFI",
+      "advisory_committee": "CH",
+      "advisory_committee_description": "Clinical Chemistry",
+      "supplement_type": "30-Day Notice",
+      "supplement_reason": "Process Change - Manufacturer/Sterilizer/Packager/Supplier",
+      "expedited_review_flag": "N",
+      "date_received": "2026-04-27",
+      "decision_date": "2026-05-26",
+      "docket_number": "",
+      "decision_code": "OK30",
+      "ao_statement": "to increase the capacity for the degassing of Simplera and Simplera Sync sensors by adding an additional degassing aeration room (Degassing Room #3) at a sterilization facility. The Simplera sensor is a component of the Simplera system. The Simplera Sync sensor is a component of the MiniMed 780G system. The Simplera Sync sensor is also approved for use with compatible cleared MiniMed devices",
+      "openfda": {
+        "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+        "medical_specialty_description": "Unknown",
+        "regulation_number": "",
+        "device_class": "3",
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      }
+    },
+    {
+      "pma_number": "P250012",
+      "supplement_number": "S001",
+      "applicant": "Medtronic Minimed, Inc.",
+      "street_1": "18000 Devonshire St.",
+      "street_2": "",
+      "city": "Northridge",
+      "state": "CA",
+      "zip": "91325",
+      "zip_ext": "",
+      "generic_name": "Sensor, Glucose, Invasive, Component of automated insulin delivery system",
+      "trade_name": "Simplera Sync Sensor, Guardian 4 Sensor",
+      "product_code": "SFI",
+      "advisory_committee": "CH",
+      "advisory_committee_description": "Clinical Chemistry",
+      "supplement_type": "30-Day Notice",
+      "supplement_reason": "Process Change - Manufacturer/Sterilizer/Packager/Supplier",
+      "expedited_review_flag": "N",
+      "date_received": "2025-08-15",
+      "decision_date": "2025-08-25",
+      "docket_number": "",
+      "decision_code": "OK30",
+      "ao_statement": "to update the inspection requirements performed by Medtronic Tempe Campus (MTC) on a component used in the glucose sensor Printed Circuit Board Assembly (PCBA).  The PCBA is a component of the Minimed 670G system, Guardian connect system, and Simplera sync sensor, guardian 4 sensor",
+      "openfda": {
+        "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+        "medical_specialty_description": "Unknown",
+        "regulation_number": "",
+        "device_class": "3",
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      }
+    },
+    {
+      "pma_number": "P250012",
+      "supplement_number": "S003",
+      "applicant": "Medtronic Minimed, Inc.",
+      "street_1": "18000 Devonshire St.",
+      "street_2": "",
+      "city": "Northridge",
+      "state": "CA",
+      "zip": "91325",
+      "zip_ext": "",
+      "generic_name": "Sensor, Glucose, Invasive, Component of automated insulin delivery system",
+      "trade_name": "Simplera Sync Sensor, Guardian 4 Sensor",
+      "product_code": "SFI",
+      "advisory_committee": "CH",
+      "advisory_committee_description": "Clinical Chemistry",
+      "supplement_type": "30-Day Notice",
+      "supplement_reason": "Process Change - Manufacturer/Sterilizer/Packager/Supplier",
+      "expedited_review_flag": "N",
+      "date_received": "2025-08-19",
+      "decision_date": "2025-09-12",
+      "docket_number": "",
+      "decision_code": "OK30",
+      "ao_statement": "a change to the patch bonding process of Simplera and Simplera Sync sensors. The Simplera Sensor is a component of the Simplera system. The Simplera Sync sensor is a component of the MiniMed 670G, MiniMed 770G, and MiniMed 780G systems",
+      "openfda": {
+        "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+        "medical_specialty_description": "Unknown",
+        "regulation_number": "",
+        "device_class": "3",
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      }
+    },
+    {
+      "pma_number": "P250012",
+      "supplement_number": "S007",
+      "applicant": "Medtronic Minimed, Inc.",
+      "street_1": "18000 Devonshire St.",
+      "street_2": "",
+      "city": "Northridge",
+      "state": "CA",
+      "zip": "91325",
+      "zip_ext": "",
+      "generic_name": "Sensor, Glucose, Invasive, Component of automated insulin delivery system",
+      "trade_name": "Simplera Sync Sensor",
+      "product_code": "SFI",
+      "advisory_committee": "CH",
+      "advisory_committee_description": "Clinical Chemistry",
+      "supplement_type": "30-Day Notice",
+      "supplement_reason": "Process Change - Manufacturer/Sterilizer/Packager/Supplier",
+      "expedited_review_flag": "N",
+      "date_received": "2025-11-26",
+      "decision_date": "2025-12-08",
+      "docket_number": "",
+      "decision_code": "OK30",
+      "ao_statement": "a change to the patch bonding equipment of Simplera and Simplera Sync sensors. The Simplera Sensor is a component of the Simplera system. The Simplera Sync sensor is a component of the MiniMed 670G, MiniMed 770G, and MiniMed 780G systems",
+      "openfda": {
+        "device_name": "Sensor, Glucose, Invasive, Component Of Automated Insulin Delivery System",
+        "medical_specialty_description": "Unknown",
+        "regulation_number": "",
+        "device_class": "3",
+        "registration_number": [
+          "3042027705",
+          "2032227"
+        ],
+        "fei_number": [
+          "3042027705",
+          "3003166194"
+        ]
+      }
+    }
+  ]
+}

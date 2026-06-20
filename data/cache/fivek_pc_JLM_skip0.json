@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Berkshire, England",
+      "advisory_committee_description": "Hematology",
+      "address_1": "240 Bath Rd.",
+      "address_2": "Slough Sl1 4et",
+      "statement_or_summary": "",
+      "product_code": "JLM",
+      "openfda": {
+        "device_name": "Isoenzymes, Electrophoretic, Glucose-6-Phosphate Dehydrogenase",
+        "medical_specialty_description": "Hematology",
+        "regulation_number": "864.7360",
+        "device_class": "2"
+      },
+      "zip_code": "",
+      "applicant": "Boots-Celltech Diagnostics, Inc.",
+      "decision_date": "1987-10-20",
+      "decision_code": "SESE",
+      "country_code": "GB",
+      "device_name": "CHEMELIA ENZYME IMMUNOASSAY FOR (TSH)",
+      "advisory_committee": "HE",
+      "contact": "JOHN  SIMPSON",
+      "expedited_review_flag": "",
+      "k_number": "K873625",
+      "state": "",
+      "date_received": "1987-09-08",
+      "review_advisory_committee": "CH",
+      "postal_code": "",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

@@ -26,6 +26,7 @@ import httpx
 BASE = "https://api.fda.gov"
 CLASSIFICATION_EP = f"{BASE}/device/classification.json"
 FIVEK_EP = f"{BASE}/device/510k.json"
+PMA_EP = f"{BASE}/device/pma.json"
 
 _DEFAULT_CACHE = Path(__file__).parent.parent.parent / "data" / "cache"
 try:
@@ -201,7 +202,7 @@ def search_510k_fulltext(term: str, limit: int = 100) -> list[dict]:
 
 
 def get_510k_by_knumber(k_number: str) -> Optional[dict]:
-    """Return a single 510(k) record by K-number."""
+    """Return a single 510(k) / De Novo record by its number."""
     cache_key = f"fivek_k_{k_number}"
     data = _get(
         FIVEK_EP,
@@ -210,6 +211,47 @@ def get_510k_by_knumber(k_number: str) -> Optional[dict]:
     )
     results = data.get("results", [])
     return results[0] if results else None
+
+
+# ---------------------------------------------------------------------------
+# PMA endpoint (Class III premarket approvals — a separate dataset)
+# ---------------------------------------------------------------------------
+
+def get_pma_by_product_code(product_code: str, max_results: int = 200) -> list[dict]:
+    """Return all PMA records for a product code (includes supplements)."""
+    cache_key_prefix = f"pma_pc_{product_code}"
+    return _get_all_pages(
+        PMA_EP,
+        {"search": f'product_code:"{product_code}"'},
+        cache_key_prefix,
+        max_results=max_results,
+    )
+
+
+def search_pma_fulltext(term: str, limit: int = 100) -> list[dict]:
+    """Full-text PMA search across all fields (for analyte resolution)."""
+    safe_term = term.replace('"', '\\"')
+    cache_key = f"pma_ft_{term.lower().replace(' ', '_')[:60]}"
+    data = _get(PMA_EP, {"search": f'"{safe_term}"', "limit": limit}, cache_key)
+    return data.get("results", [])
+
+
+def get_pma_by_number(pma_number: str) -> Optional[dict]:
+    """Return the original PMA record (lowest supplement) for a P-number."""
+    cache_key = f"pma_n_{pma_number}"
+    data = _get(
+        PMA_EP,
+        {"search": f'pma_number:"{pma_number}"', "limit": 100},
+        cache_key,
+    )
+    results = data.get("results", [])
+    if not results:
+        return None
+    # Prefer the original approval (no/zero supplement) over later supplements.
+    def _supp_key(r: dict):
+        s = (r.get("supplement_number") or "").strip()
+        return (s not in ("", "000", "S000"), s)
+    return sorted(results, key=_supp_key)[0]
 
 
 def clear_cache_for_term(term: str) -> None:

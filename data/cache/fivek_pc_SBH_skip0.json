@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Alameda",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "1360 S. Loop Rd.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "SBH",
+      "openfda": {
+        "registration_number": [
+          "3011536730"
+        ],
+        "fei_number": [
+          "3011536730"
+        ],
+        "device_name": "Integrated Continuous Glucose Monitor For Non-Intensive Glucose Management, Over-The-Counter",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1355",
+        "device_class": "2"
+      },
+      "zip_code": "94502",
+      "applicant": "Abbott Diabetes Care",
+      "decision_date": "2024-06-07",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "Libre Rio Continuous Glucose Monitoring System",
+      "advisory_committee": "CH",
+      "contact": "Tenzin  Ngadon",
+      "expedited_review_flag": "",
+      "k_number": "K233861",
+      "state": "CA",
+      "date_received": "2023-12-06",
+      "review_advisory_committee": "CH",
+      "postal_code": "94502",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

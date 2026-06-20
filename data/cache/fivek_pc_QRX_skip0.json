@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 5
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Columbia",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "10221 Wincopin Cir., Suite 150",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QRX",
+      "openfda": {
+        "registration_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "fei_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "device_name": "Continuous Glucose Monitor Informed Insulin Dose Calculator",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1358",
+        "device_class": "2"
+      },
+      "zip_code": "21044",
+      "applicant": "Welldoc, Inc.",
+      "decision_date": "2023-08-11",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "BlueStar CGM insulin dose calculator",
+      "advisory_committee": "CH",
+      "contact": "Ian  Cadieux",
+      "expedited_review_flag": "",
+      "k_number": "K222888",
+      "state": "MD",
+      "date_received": "2022-09-23",
+      "review_advisory_committee": "CH",
+      "postal_code": "21044",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Acton",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "100 Nagog Park",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QRX",
+      "openfda": {
+        "registration_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "fei_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "device_name": "Continuous Glucose Monitor Informed Insulin Dose Calculator",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1358",
+        "device_class": "2"
+      },
+      "zip_code": "01720",
+      "applicant": "Insulet Corporation",
+      "decision_date": "2023-10-18",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "SmartBolus Calculator",
+      "advisory_committee": "CH",
+      "contact": "Maria  Brower",
+      "expedited_review_flag": "",
+      "k_number": "K231824",
+      "state": "MA",
+      "date_received": "2023-06-21",
+      "review_advisory_committee": "CH",
+      "postal_code": "01720",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "San Diego",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "6340 Sequence Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QRX",
+      "openfda": {
+        "registration_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "fei_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "device_name": "Continuous Glucose Monitor Informed Insulin Dose Calculator",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1358",
+        "device_class": "2"
+      },
+      "zip_code": "92121",
+      "applicant": "Dexcom, Inc.",
+      "decision_date": "2025-11-18",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "Dexcom Smart Basal",
+      "advisory_committee": "CH",
+      "contact": "Neeta  Sharma",
+      "expedited_review_flag": "",
+      "k_number": "K252818",
+      "state": "CA",
+      "date_received": "2025-09-04",
+      "review_advisory_committee": "CH",
+      "postal_code": "92121",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Acton",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "100 Nagog Park",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QRX",
+      "openfda": {
+        "registration_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "fei_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "device_name": "Continuous Glucose Monitor Informed Insulin Dose Calculator",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1358",
+        "device_class": "2"
+      },
+      "zip_code": "01720",
+      "applicant": "Insulet Corporation",
+      "decision_date": "2022-08-19",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "SmartBolus Calculator",
+      "advisory_committee": "CH",
+      "contact": "Alexander  Hamad",
+      "expedited_review_flag": "",
+      "k_number": "K222239",
+      "state": "MA",
+      "date_received": "2022-07-26",
+      "review_advisory_committee": "CH",
+      "postal_code": "01720",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Acton",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "100 Nagog Park",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QRX",
+      "openfda": {
+        "registration_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "fei_number": [
+          "3014585508",
+          "3004753838"
+        ],
+        "device_name": "Continuous Glucose Monitor Informed Insulin Dose Calculator",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1358",
+        "device_class": "2"
+      },
+      "zip_code": "01720",
+      "applicant": "Insulet Corporation",
+      "decision_date": "2022-01-27",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "Omnipod 5 SmartBolus Calculator",
+      "advisory_committee": "CH",
+      "contact": "Julie  Perkins",
+      "expedited_review_flag": "",
+      "k_number": "K203772",
+      "state": "MA",
+      "date_received": "2020-12-23",
+      "review_advisory_committee": "CH",
+      "postal_code": "01720",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

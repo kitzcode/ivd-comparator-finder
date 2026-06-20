@@ -80,6 +80,7 @@ def api_find(
                 "applicant_name": d.applicant_name,
                 "decision_date": str(d.decision_date) if d.decision_date else None,
                 "product_code": d.product_code,
+                "submission_type": d.submission_type,
                 "regulation_number": d.regulation_number,
                 "device_class": d.device_class,
             }
@@ -91,17 +92,41 @@ def api_find(
 
 @app.get("/api/clearance/{k_number}")
 def api_clearance(k_number: str):
-    from finder.sources.openfda import get_510k_by_knumber
+    from finder.sources.openfda import get_510k_by_knumber, get_pma_by_number
     from finder.sources.summaries import resolve_summary_url
     from finder.index.store import get_index_status, load_chunks
 
-    rec = get_510k_by_knumber(k_number.upper())
+    kid = k_number.upper()
+
+    # P-numbers are PMA approvals — a different dataset with different fields,
+    # and they have SSED documents rather than 510(k) Summary PDFs (no parsing yet).
+    if kid.startswith("P"):
+        rec = get_pma_by_number(kid)
+        if not rec:
+            raise HTTPException(status_code=404, detail=f"{k_number} not found in openFDA PMA")
+        return {
+            "k_number": rec.get("pma_number"),
+            "device_name": rec.get("trade_name") or rec.get("generic_name"),
+            "applicant_name": rec.get("applicant"),
+            "decision_date": rec.get("decision_date"),
+            "product_code": rec.get("product_code"),
+            "device_class": "3",
+            "statement_or_summary": "PMA (SSED)",
+            "decision_code": rec.get("decision_code"),
+            "submission_type": "PMA",
+            "summary_url": None,
+            "index_status": "pma_unsupported",
+            "indexed_chunk_count": 0,
+        }
+
+    rec = get_510k_by_knumber(kid)
     if not rec:
         raise HTTPException(status_code=404, detail=f"{k_number} not found in openFDA")
 
-    status = get_index_status(k_number.upper())
-    chunk_count = len(load_chunks(k_number.upper())) if status == "ok" else 0
-    summary_url = resolve_summary_url(k_number.upper())
+    is_denovo = kid.startswith("DEN") or rec.get("decision_code", "").upper().startswith("DEN")
+    status = get_index_status(kid)
+    chunk_count = len(load_chunks(kid)) if status == "ok" else 0
+    summary_url = resolve_summary_url(kid)
 
     return {
         "k_number": rec.get("k_number"),
@@ -112,6 +137,7 @@ def api_clearance(k_number: str):
         "device_class": rec.get("device_class"),
         "statement_or_summary": rec.get("statement_or_summary"),
         "decision_code": rec.get("decision_code"),
+        "submission_type": "De Novo" if is_denovo else "510(k)",
         "summary_url": summary_url,
         "index_status": status or "not_indexed",
         "indexed_chunk_count": chunk_count,

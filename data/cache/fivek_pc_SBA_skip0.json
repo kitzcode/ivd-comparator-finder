@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 2
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Germantown",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "20451 Seneca Meadows Pkwy.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "SBA",
+      "openfda": {
+        "registration_number": [
+          "3006371704",
+          "2183744",
+          "3009862700",
+          "3004530184"
+        ],
+        "fei_number": [
+          "3006371704",
+          "2183744",
+          "3009862700",
+          "3004530184"
+        ],
+        "device_name": "Integrated Continuous Glucose Monitoring System With Sensor Containing Dexamethasone Acetate",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1357",
+        "device_class": "2"
+      },
+      "zip_code": "20876",
+      "applicant": "Senseonics, Incorporated",
+      "decision_date": "2024-04-29",
+      "decision_code": "DENG",
+      "country_code": "US",
+      "device_name": "Eversense AP CGM System",
+      "advisory_committee": "CH",
+      "contact": "Mukul  Jain",
+      "expedited_review_flag": "",
+      "k_number": "DEN230052",
+      "state": "MD",
+      "date_received": "2023-08-09",
+      "review_advisory_committee": "CH",
+      "postal_code": "20876",
+      "decision_description": "Unknown",
+      "clearance_type": "Direct"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Germantown",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "20451 Seneca Meadows Pkwy.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "SBA",
+      "openfda": {
+        "registration_number": [
+          "3006371704",
+          "2183744",
+          "3009862700",
+          "3004530184"
+        ],
+        "fei_number": [
+          "3006371704",
+          "2183744",
+          "3009862700",
+          "3004530184"
+        ],
+        "device_name": "Integrated Continuous Glucose Monitoring System With Sensor Containing Dexamethasone Acetate",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1357",
+        "device_class": "2"
+      },
+      "zip_code": "20876",
+      "applicant": "Senseonics, Incorporated",
+      "decision_date": "2024-09-16",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "Eversense 365 Continuous Glucose Monitoring (CGM) System",
+      "advisory_committee": "CH",
+      "contact": "Mukul  Jain",
+      "expedited_review_flag": "",
+      "k_number": "K241335",
+      "state": "MD",
+      "date_received": "2024-05-13",
+      "review_advisory_committee": "CH",
+      "postal_code": "20876",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

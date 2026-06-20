@@ -94,6 +94,11 @@
   .badge-amber { background: var(--amber-l); color: var(--amber-dd); }
   .badge-gray  { background: var(--gray-2);  color: var(--gray-7); }
   .badge-idx   { background: #dcfce7; color: #166534; }
+  .type-badge { display: inline-block; padding: 0 6px; border-radius: 4px; font-size: .64rem;
+                font-weight: 700; vertical-align: middle; margin-left: 4px; }
+  .type-510k  { background: var(--gray-2); color: var(--gray-7); }
+  .type-denovo{ background: #ede9fe; color: #6d28d9; }
+  .type-pma   { background: #fee2e2; color: #b91c1c; }
 
   /* ── Right panel / tabs ── */
   .panel-right { display: flex; flex-direction: column; overflow: hidden; }
@@ -289,7 +294,7 @@ function renderDeviceList(devices, resultNote) {
     <div class="device-item" id="dev-${i}">
       <input type="checkbox" id="chk-${i}" onclick="event.stopPropagation();toggleSelect(${i})">
       <div class="device-body" onclick="selectDevice(${i})">
-        <div class="k">${d.k_number}</div>
+        <div class="k">${d.k_number} ${typeBadge(d.submission_type)}</div>
         <div class="name">${esc(d.device_name)}</div>
         <div class="meta">${esc(d.applicant_name)} · ${d.decision_date || '—'}</div>
         <span class="badge badge-amber">${d.product_code}</span>
@@ -371,24 +376,29 @@ async function renderOverview(k) {
     const data = await fetchJSON(`/api/clearance/${k}`);
     if (data.error) { setContent(`<div class="empty" style="color:var(--red)">${data.error}</div>`); return; }
     const indexed = data.index_status === 'ok';
+    const isPMA = data.submission_type === 'PMA' || data.index_status === 'pma_unsupported';
     setContent(`
-      <div class="section-hdr">Clearance</div>
+      <div class="section-hdr">Clearance ${typeBadge(data.submission_type)}</div>
       <div class="kv-grid">
-        <span class="kv-label">K-Number</span>    <span class="kv-val"><strong>${data.k_number}</strong></span>
+        <span class="kv-label">Number</span>      <span class="kv-val"><strong>${data.k_number}</strong></span>
+        <span class="kv-label">Pathway</span>     <span class="kv-val">${esc(data.submission_type || '510(k)')}</span>
         <span class="kv-label">Device</span>       <span class="kv-val">${esc(data.device_name)}</span>
         <span class="kv-label">Applicant</span>    <span class="kv-val">${esc(data.applicant_name)}</span>
         <span class="kv-label">Decision date</span><span class="kv-val">${data.decision_date || '—'}</span>
         <span class="kv-label">Product code</span> <span class="kv-val">${data.product_code || '—'}</span>
         <span class="kv-label">Device class</span> <span class="kv-val">${data.device_class || '—'}</span>
         <span class="kv-label">Decision</span>     <span class="kv-val">${data.decision_code || '—'}</span>
-        <span class="kv-label">Has summary</span>  <span class="kv-val">${data.statement_or_summary || '—'}</span>
       </div>
       ${data.summary_url ? `
       <div class="section-hdr">510(k) Summary PDF</div>
       <a class="link" href="${data.summary_url}" target="_blank">↗ ${data.summary_url}</a>` : ''}
 
       <div class="section-hdr">Index status</div>
-      ${indexed ? `
+      ${isPMA ? `
+        <div class="warn-box" style="margin:0">This is a <strong>PMA (Class III)</strong> approval. PMA devices have an SSED
+        (Summary of Safety &amp; Effectiveness Data) document with a different structure than a 510(k) Summary —
+        automated parsing &amp; performance extraction aren't available for PMAs yet. Clearance metadata above is from openFDA.</div>
+      ` : indexed ? `
         <div style="font-size:.88rem;color:var(--green)">✓ Summary indexed (${data.indexed_chunk_count} chunks)</div>
         <div style="font-size:.8rem;color:var(--gray-5);margin-top:4px">Performance &amp; Ask tabs are ready.</div>
       ` : data.index_status === 'no_summary' ? `
@@ -655,6 +665,12 @@ async function fetchJSON(url, opts) {
     throw new Error('Unexpected response from server — please retry');
   }
   return res.json();
+}
+
+function typeBadge(t) {
+  if (t === 'PMA')     return '<span class="type-badge type-pma">PMA</span>';
+  if (t === 'De Novo') return '<span class="type-badge type-denovo">De Novo</span>';
+  return '<span class="type-badge type-510k">510(k)</span>';
 }
 
 function setContent(html) { document.getElementById('tab-content').innerHTML = html; }

@@ -11,13 +11,21 @@ from pydantic import BaseModel, Field
 
 
 class Device(BaseModel):
-    """A cleared IVD device returned from openFDA 510(k)."""
+    """
+    A cleared/approved IVD device from openFDA.
+
+    `k_number` holds the primary identifier regardless of pathway: a K-number
+    (510(k)), a DEN-number (De Novo), or a P-number (PMA). `submission_type`
+    records which regulatory pathway it came through.
+    """
 
     k_number: str
     device_name: str
     applicant_name: str
     decision_date: Optional[date] = None
     product_code: str
+    # Regulatory pathway: "510(k)" | "De Novo" | "PMA"
+    submission_type: str = "510(k)"
     regulation_number: Optional[str] = None
     device_class: Optional[str] = None
     # Best-effort link to the 510(k) Summary PDF; None if not yet resolved

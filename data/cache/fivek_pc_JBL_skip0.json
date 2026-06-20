@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 2
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Clackamas",
+      "advisory_committee_description": "Hematology",
+      "address_1": "14600 SE 82nd Dr.",
+      "address_2": "P.O. Box 830",
+      "statement_or_summary": "Summary",
+      "product_code": "JBL",
+      "openfda": {
+        "device_name": "Glucose-6-Phosphate Dehydrogenase (Erythrocytic), Quantitative",
+        "medical_specialty_description": "Hematology",
+        "regulation_number": "864.7360",
+        "device_class": "2",
+        "registration_number": [
+          "3011240982",
+          "3050015",
+          "9681576"
+        ],
+        "fei_number": [
+          "3011240982",
+          "3050015",
+          "3002546385"
+        ]
+      },
+      "zip_code": "97015",
+      "applicant": "Astoria-Pacific, Inc.",
+      "decision_date": "1999-05-11",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "ASTORIA-PACIFIC SPOTCHECK G6PD KIT 50 HR, MODEL 80-3000-13K",
+      "advisory_committee": "HE",
+      "contact": "RAYMOND L PAVITT",
+      "expedited_review_flag": "",
+      "k_number": "K990957",
+      "state": "OR",
+      "date_received": "1999-03-22",
+      "review_advisory_committee": "HE",
+      "postal_code": "97015",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Mchenry",
+      "advisory_committee_description": "Hematology",
+      "address_1": "803 N. Front St. Suite 3",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "JBL",
+      "openfda": {
+        "device_name": "Glucose-6-Phosphate Dehydrogenase (Erythrocytic), Quantitative",
+        "medical_specialty_description": "Hematology",
+        "regulation_number": "864.7360",
+        "device_class": "2",
+        "registration_number": [
+          "3011240982",
+          "3050015",
+          "9681576"
+        ],
+        "fei_number": [
+          "3011240982",
+          "3050015",
+          "3002546385"
+        ]
+      },
+      "zip_code": "60050",
+      "applicant": "Sigma Chemical Co.",
+      "decision_date": "1979-03-15",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "DEHYDROGENOSE, GLUCOSE PHOSPHATE",
+      "advisory_committee": "HE",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K790211",
+      "state": "IL",
+      "date_received": "1979-01-31",
+      "review_advisory_committee": "CH",
+      "postal_code": "60050",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

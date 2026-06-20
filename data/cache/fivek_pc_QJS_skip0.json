@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "San Diego",
+      "advisory_committee_description": "Clinical Chemistry",
+      "address_1": "11075 Roselle St.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QJS",
+      "openfda": {
+        "registration_number": [
+          "3016540876",
+          "3013756811",
+          "3007981285",
+          "2032227"
+        ],
+        "fei_number": [
+          "3016540876",
+          "3013756811",
+          "3007981285",
+          "3003166194"
+        ],
+        "device_name": "Interoperable Automated Glycemic Controller, Insulin Suspend",
+        "medical_specialty_description": "Clinical Chemistry",
+        "regulation_number": "862.1356",
+        "device_class": "2"
+      },
+      "zip_code": "92121",
+      "applicant": "Tandem Diabetes Care, Inc.",
+      "decision_date": "2020-02-28",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "Basal-IQ Technology",
+      "advisory_committee": "CH",
+      "contact": "Trevor J Dendo",
+      "expedited_review_flag": "",
+      "k_number": "K193483",
+      "state": "CA",
+      "date_received": "2019-12-17",
+      "review_advisory_committee": "CH",
+      "postal_code": "92121",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}
