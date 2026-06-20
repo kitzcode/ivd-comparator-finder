@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 4
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Athens",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1055 E. State St., Suite 100",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OMG",
+      "openfda": {
+        "device_name": "Antisera, Fluorescent, Human Metapneumovirus",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3980",
+        "device_class": "2",
+        "registration_number": [
+          "1528450",
+          "2030538"
+        ],
+        "fei_number": [
+          "1000122536",
+          "1000520007"
+        ]
+      },
+      "zip_code": "45701",
+      "applicant": "Diagnostic Hybrids, Inc.",
+      "decision_date": "2009-03-06",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "D3 DFA METAPNEUMOVIRUS IDENTIFICATION KIT",
+      "advisory_committee": "MI",
+      "contact": "GAIL R GOODRUM",
+      "expedited_review_flag": "",
+      "k_number": "K090073",
+      "state": "OH",
+      "date_received": "2009-01-12",
+      "review_advisory_committee": "MI",
+      "postal_code": "45701",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Athens",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1055 E. State St., Suite 100",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OMG",
+      "openfda": {
+        "device_name": "Antisera, Fluorescent, Human Metapneumovirus",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3980",
+        "device_class": "2",
+        "registration_number": [
+          "1528450",
+          "2030538"
+        ],
+        "fei_number": [
+          "1000122536",
+          "1000520007"
+        ]
+      },
+      "zip_code": "45701",
+      "applicant": "Diagnostic Hybrids, Inc.",
+      "decision_date": "2009-12-04",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "D3 FASTPOINT L-DFA RSV/MVP IDENTIFICATION KIT",
+      "advisory_committee": "MI",
+      "contact": "Ronald H Lollar",
+      "expedited_review_flag": "",
+      "k_number": "K093233",
+      "state": "OH",
+      "date_received": "2009-10-14",
+      "review_advisory_committee": "MI",
+      "postal_code": "45701",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Athens",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1055 E. State St., Suite 100",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OMG",
+      "openfda": {
+        "device_name": "Antisera, Fluorescent, Human Metapneumovirus",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3980",
+        "device_class": "2",
+        "registration_number": [
+          "1528450",
+          "2030538"
+        ],
+        "fei_number": [
+          "1000122536",
+          "1000520007"
+        ]
+      },
+      "zip_code": "45701",
+      "applicant": "Diagnostic Hybrids, Inc.",
+      "decision_date": "2009-09-11",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "D3 ULTRA DUET DFA RESPIRATORY VIRUS IDENTIFICATION KIT",
+      "advisory_committee": "MI",
+      "contact": "Ronald H Lollar",
+      "expedited_review_flag": "",
+      "k_number": "K091171",
+      "state": "OH",
+      "date_received": "2009-04-22",
+      "review_advisory_committee": "MI",
+      "postal_code": "45701",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Temecula",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "28820 Single Oak Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OMG",
+      "openfda": {
+        "device_name": "Antisera, Fluorescent, Human Metapneumovirus",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3980",
+        "device_class": "2",
+        "registration_number": [
+          "1528450",
+          "2030538"
+        ],
+        "fei_number": [
+          "1000122536",
+          "1000520007"
+        ]
+      },
+      "zip_code": "92590",
+      "applicant": "Millipore Corporation",
+      "decision_date": "2010-03-12",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "LIGHT DIAGNOSTICS HUMAN METAPNEUMOVIRUS DFA KIT, MODEL CATALOG NUMBER 3124",
+      "advisory_committee": "MI",
+      "contact": "CATHERINE  KARAMAN",
+      "expedited_review_flag": "",
+      "k_number": "K093815",
+      "state": "CA",
+      "date_received": "2009-12-14",
+      "review_advisory_committee": "MI",
+      "postal_code": "92590",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

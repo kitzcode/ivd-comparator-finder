@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 5
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Mchenry",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "803 N. Front St. Suite 3",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "GNT",
+      "openfda": {
+        "device_name": "Antigens, Ha (Including Ha Control), Influenza Virus A, B, C",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3330",
+        "device_class": "1",
+        "registration_number": [
+          "3013530901"
+        ],
+        "fei_number": [
+          "3013530901"
+        ]
+      },
+      "zip_code": "60050",
+      "applicant": "Flow Laboratories, Inc.",
+      "decision_date": "1978-02-28",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "INFLUENZA HA ANTIGEN",
+      "advisory_committee": "MI",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K780272",
+      "state": "IL",
+      "date_received": "1978-02-17",
+      "review_advisory_committee": "MI",
+      "postal_code": "60050",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Franklin Lakes",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1 Becton Dr.",
+      "address_2": "",
+      "statement_or_summary": "Statement",
+      "product_code": "GNT",
+      "openfda": {
+        "device_name": "Antigens, Ha (Including Ha Control), Influenza Virus A, B, C",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3330",
+        "device_class": "1",
+        "registration_number": [
+          "3013530901"
+        ],
+        "fei_number": [
+          "3013530901"
+        ]
+      },
+      "zip_code": "07417",
+      "applicant": "Bd Becton Dickinson Vacutainer Systems Preanalytic",
+      "decision_date": "1991-09-23",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "QTEST INFLUENZA A",
+      "advisory_committee": "MI",
+      "contact": "J  ARNSBERGER",
+      "expedited_review_flag": "",
+      "k_number": "K913828",
+      "state": "NJ",
+      "date_received": "1991-08-26",
+      "review_advisory_committee": "MI",
+      "postal_code": "07417",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Mchenry",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "803 N. Front St. Suite 3",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "GNT",
+      "openfda": {
+        "device_name": "Antigens, Ha (Including Ha Control), Influenza Virus A, B, C",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3330",
+        "device_class": "1",
+        "registration_number": [
+          "3013530901"
+        ],
+        "fei_number": [
+          "3013530901"
+        ]
+      },
+      "zip_code": "60050",
+      "applicant": "Flow Laboratories, Inc.",
+      "decision_date": "1978-02-28",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "INFLUENZA HA ANTIGEN A/USSR",
+      "advisory_committee": "MI",
+      "contact": "",
+      "expedited_review_flag": "",
+      "k_number": "K780275",
+      "state": "IL",
+      "date_received": "1978-02-17",
+      "review_advisory_committee": "MI",
+      "postal_code": "60050",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Franklin Lakes",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1 Becton Dr.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "GNT",
+      "openfda": {
+        "device_name": "Antigens, Ha (Including Ha Control), Influenza Virus A, B, C",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3330",
+        "device_class": "1",
+        "registration_number": [
+          "3013530901"
+        ],
+        "fei_number": [
+          "3013530901"
+        ]
+      },
+      "zip_code": "07417",
+      "applicant": "Bd Becton Dickinson Vacutainer Systems Preanalytic",
+      "decision_date": "1990-09-10",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "DIRECTIGEN FLU A",
+      "advisory_committee": "MI",
+      "contact": "RUSSELL  ARNSBERGER",
+      "expedited_review_flag": "",
+      "k_number": "K902609",
+      "state": "NJ",
+      "date_received": "1990-06-12",
+      "review_advisory_committee": "MI",
+      "postal_code": "07417",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Oklahoma City",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "25 Northwest 4th St.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "GNT",
+      "openfda": {
+        "device_name": "Antigens, Ha (Including Ha Control), Influenza Virus A, B, C",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3330",
+        "device_class": "1",
+        "registration_number": [
+          "3013530901"
+        ],
+        "fei_number": [
+          "3013530901"
+        ]
+      },
+      "zip_code": "73102",
+      "applicant": "Zymetx, Inc.",
+      "decision_date": "1996-06-17",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "VIRAZYME CULTURE CONFIRMATION SCREEN FOR INFLUENZA AND PARAINFLUENZA VIRUSES",
+      "advisory_committee": "MI",
+      "contact": "CRAIG D SHIMASAKI",
+      "expedited_review_flag": "",
+      "k_number": "K950838",
+      "state": "OK",
+      "date_received": "1995-02-24",
+      "review_advisory_committee": "MI",
+      "postal_code": "73102",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

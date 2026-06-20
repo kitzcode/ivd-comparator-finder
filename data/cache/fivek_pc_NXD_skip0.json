@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 3
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Atlanta",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1600 Clifton Rd. NE (Ms C-12)",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "NXD",
+      "openfda": {
+        "device_name": "Nucleic Acid Amplification, Novel Influenza A Virus, A/H5 (Asian Lineage) Rna",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2",
+        "registration_number": [
+          "3002777243"
+        ],
+        "fei_number": [
+          "3002777243"
+        ]
+      },
+      "zip_code": "30333",
+      "applicant": "Centers for Disease Control and Prevention",
+      "decision_date": "2006-02-03",
+      "decision_code": "DENG",
+      "country_code": "US",
+      "device_name": "INFLUENZA A/H5 (ASIAN LINEAGE) VIRUS REAL-TIME RT-PCR PRIMER AND PROBE SET",
+      "advisory_committee": "MI",
+      "contact": "HYE-JOO  KIM",
+      "expedited_review_flag": "",
+      "k_number": "DEN060008",
+      "state": "GA",
+      "date_received": "2006-01-27",
+      "review_advisory_committee": "MI",
+      "postal_code": "30333",
+      "decision_description": "Unknown",
+      "clearance_type": "Post-NSE"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Fort Detrick",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1430 Veterans Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "NXD",
+      "openfda": {
+        "device_name": "Nucleic Acid Amplification, Novel Influenza A Virus, A/H5 (Asian Lineage) Rna",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2",
+        "registration_number": [
+          "3002777243"
+        ],
+        "fei_number": [
+          "3002777243"
+        ]
+      },
+      "zip_code": "",
+      "applicant": "U.S. Army Medical Material Development Command",
+      "decision_date": "2010-07-06",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "JBAIDS INFLUENZA A/H5 DETECTION KIT, MODEL JRPD-ASY-0136",
+      "advisory_committee": "MI",
+      "contact": "ROBERT E MILLER",
+      "expedited_review_flag": "",
+      "k_number": "K100287",
+      "state": "MD",
+      "date_received": "2010-01-29",
+      "review_advisory_committee": "MI",
+      "postal_code": "",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Atlanta",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1600 Clifton Rd. Ms-C12",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "NXD",
+      "openfda": {
+        "device_name": "Nucleic Acid Amplification, Novel Influenza A Virus, A/H5 (Asian Lineage) Rna",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2",
+        "registration_number": [
+          "3002777243"
+        ],
+        "fei_number": [
+          "3002777243"
+        ]
+      },
+      "zip_code": "30333",
+      "applicant": "Centers for Disease Control and Prevention",
+      "decision_date": "2008-09-30",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "CDC HUMAN INFLUENZA VIRUS REAL-TIME RT- PCR DETECTION AND CHARACTERIZATION PANEL",
+      "advisory_committee": "MI",
+      "contact": "STEPHEN  LINDSTROM",
+      "expedited_review_flag": "",
+      "k_number": "K080570",
+      "state": "GA",
+      "date_received": "2008-02-29",
+      "review_advisory_committee": "MI",
+      "postal_code": "30333",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

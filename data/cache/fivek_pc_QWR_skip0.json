@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 3
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Pleasanton",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "4300 Hacienda Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QWR",
+      "openfda": {
+        "registration_number": [
+          "2243471",
+          "3004141078",
+          "3019946577",
+          "3023372670",
+          "1221359"
+        ],
+        "fei_number": [
+          "2243471",
+          "3004141078",
+          "3019946577",
+          "3023372670",
+          "1221359"
+        ],
+        "device_name": "Simple Point-Of-Care Device To Detect Sar-Cov-2 Nucleic Acid Targets From Clinical Specimens In Near-Patient Settings",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3982",
+        "device_class": "2"
+      },
+      "zip_code": "94588",
+      "applicant": "Roche Molecular Systems, Inc.",
+      "decision_date": "2025-04-11",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "cobas liat SARS-CoV-2 v2 nucleic acid test",
+      "advisory_committee": "MI",
+      "contact": "Deborah  Leu",
+      "expedited_review_flag": "",
+      "k_number": "K243346",
+      "state": "CA",
+      "date_received": "2024-10-28",
+      "review_advisory_committee": "MI",
+      "postal_code": "94588",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Dual Track"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Pleasanton",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "4300 Hacienda Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QWR",
+      "openfda": {
+        "registration_number": [
+          "2243471",
+          "3004141078",
+          "3019946577",
+          "3023372670",
+          "1221359"
+        ],
+        "fei_number": [
+          "2243471",
+          "3004141078",
+          "3019946577",
+          "3023372670",
+          "1221359"
+        ],
+        "device_name": "Simple Point-Of-Care Device To Detect Sar-Cov-2 Nucleic Acid Targets From Clinical Specimens In Near-Patient Settings",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3982",
+        "device_class": "2"
+      },
+      "zip_code": "94588",
+      "applicant": "Roche Molecular Systems, Inc.",
+      "decision_date": "2023-12-04",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "cobas SARS-CoV-2 Nucleic acid test for use on the cobas Liat System",
+      "advisory_committee": "MI",
+      "contact": "Aradhana  Karthikeyan",
+      "expedited_review_flag": "",
+      "k_number": "K223783",
+      "state": "CA",
+      "date_received": "2022-12-16",
+      "review_advisory_committee": "MI",
+      "postal_code": "94588",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Dual Track"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Scarborough",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "10 Southgate Rd.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "QWR",
+      "openfda": {
+        "registration_number": [
+          "2243471",
+          "3004141078",
+          "3019946577",
+          "3023372670",
+          "1221359"
+        ],
+        "fei_number": [
+          "2243471",
+          "3004141078",
+          "3019946577",
+          "3023372670",
+          "1221359"
+        ],
+        "device_name": "Simple Point-Of-Care Device To Detect Sar-Cov-2 Nucleic Acid Targets From Clinical Specimens In Near-Patient Settings",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3982",
+        "device_class": "2"
+      },
+      "zip_code": "04074",
+      "applicant": "Abbott Diagnostics Scarborough, Inc.",
+      "decision_date": "2023-08-10",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "ID NOW COVID-19 2.0",
+      "advisory_committee": "MI",
+      "contact": "Jessica E. Stahle",
+      "expedited_review_flag": "",
+      "k_number": "K221925",
+      "state": "ME",
+      "date_received": "2022-07-01",
+      "review_advisory_committee": "MI",
+      "postal_code": "04074",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Dual Track"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Oklahoma City",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "800 Research Pkwy., Suite 100",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "GNR",
+      "openfda": {
+        "device_name": "Antisera, Neutralization, Influenza Virus A, B, C",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3330",
+        "device_class": "1"
+      },
+      "zip_code": "73104",
+      "applicant": "Zymetx, Inc.",
+      "decision_date": "1999-03-04",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "VIRASTAT FITC-LABELED ANTI-INFLUENZA A AND B MONOCLONAL ANTIBODIES",
+      "advisory_committee": "MI",
+      "contact": "CRAIG D SHIMASAKI",
+      "expedited_review_flag": "",
+      "k_number": "K984596",
+      "state": "OK",
+      "date_received": "1998-12-28",
+      "review_advisory_committee": "MI",
+      "postal_code": "73104",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

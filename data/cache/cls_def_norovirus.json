@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 2
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Eligible",
+      "product_code": "PIQ",
+      "openfda": {
+        "k_number": [
+          "K171511"
+        ],
+        "registration_number": [
+          "3016548670",
+          "2029372",
+          "3004061467"
+        ],
+        "fei_number": [
+          "1000306617",
+          "3016548670",
+          "3004061467"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Reagents For Detection Of Norovirus Nucleic Acid",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "2",
+      "definition": "Qualitative in vitro diagnostic test for the rapid detection and differentiation of norovirus genogroup I and genogroup II from specimens e.g., stool collected from individuals with symptoms of acute gastroenteritis.",
+      "regulation_number": "866.3990",
+      "implant_flag": "N",
+      "submission_type_id": "1"
+    },
+    {
+      "third_party_flag": "N",
+      "life_sustain_support_flag": "N",
+      "gmp_exempt_flag": "N",
+      "summary_malfunction_reporting": "Ineligible",
+      "product_code": "OUC",
+      "openfda": {
+        "registration_number": [
+          "3014150341",
+          "3005360469",
+          "3024463179",
+          "3016548670",
+          "2029372"
+        ],
+        "fei_number": [
+          "3014150341",
+          "1000306617",
+          "3024463179",
+          "3005670738",
+          "3016548670"
+        ],
+        "k_number": [
+          "DEN110001"
+        ]
+      },
+      "review_panel": "MI",
+      "medical_specialty": "MI",
+      "device_name": "Norovirus Serological Reagent",
+      "review_code": "",
+      "unclassified_reason": "",
+      "medical_specialty_description": "Microbiology",
+      "device_class": "2",
+      "definition": "Norovirus serological reagents are devices that consist of antigens and antisera for the detection of anti-norovirus antibodies or norovirus antigens. The detection aids in the clinical laboratory diagnosis of norovirus infection in individuals with signs and/or symptoms of acute gastroenteritis, or in the determining the etiology of acute gastroenteritis outbreaks.",
+      "regulation_number": "866.3395",
+      "implant_flag": "N",
+      "submission_type_id": "4"
+    }
+  ]
+}

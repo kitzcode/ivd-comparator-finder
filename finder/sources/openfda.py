@@ -185,6 +185,21 @@ def search_510k_by_term(term: str, limit: int = 100) -> list[dict]:
     return data.get("results", [])
 
 
+def search_510k_fulltext(term: str, limit: int = 100) -> list[dict]:
+    """
+    Full-text 510(k) search across all fields (not just device_name).
+
+    Catches devices whose product code the classification path missed — e.g. a
+    panel whose classification name doesn't mention the analyte. Callers should
+    word-boundary filter the device_name to drop substring noise (the classic
+    case: 'HIV' matching 'arcHIVe' in PACS device names).
+    """
+    safe_term = term.replace('"', '\\"')
+    cache_key = f"fivek_ft_{term.lower().replace(' ', '_')[:60]}"
+    data = _get(FIVEK_EP, {"search": f'"{safe_term}"', "limit": limit}, cache_key)
+    return data.get("results", [])
+
+
 def get_510k_by_knumber(k_number: str) -> Optional[dict]:
     """Return a single 510(k) record by K-number."""
     cache_key = f"fivek_k_{k_number}"

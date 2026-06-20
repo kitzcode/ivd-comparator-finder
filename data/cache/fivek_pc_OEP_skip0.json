@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Atlanta",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1600 Clifton Rd., Mailstop D-30",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OEP",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3003030793",
+          "1650733",
+          "3005360469",
+          "3038610665",
+          "3002773840",
+          "3006028115",
+          "3007799234",
+          "3002777243",
+          "3013019728",
+          "3006198300"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3003030793",
+          "3038610665",
+          "3002524000",
+          "3005670738",
+          "3002773840",
+          "3006028115",
+          "3007799234",
+          "3002777243",
+          "3013019728",
+          "3006198300"
+        ],
+        "device_name": "Influenza A Virus Subtype Differentiation Nucleic Acid Assay",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3980",
+        "device_class": "2"
+      },
+      "zip_code": "30333",
+      "applicant": "Centers for Disease Control and Prevention",
+      "decision_date": "2014-04-25",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "INFLUENZA A SUBTYPING KIT, CDC HUMAN INFLUENZA VIRUS REAL-TIME RT-PCR DIAGNOSTIC PANEL",
+      "advisory_committee": "MI",
+      "contact": "CDR YON  YU, PHARM.D.",
+      "expedited_review_flag": "",
+      "k_number": "K140851",
+      "state": "GA",
+      "date_received": "2014-04-03",
+      "review_advisory_committee": "MI",
+      "postal_code": "30333",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Special"
+    }
+  ]
+}

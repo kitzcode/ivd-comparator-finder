@@ -195,7 +195,7 @@
 
 <div class="search-wrap">
   <input id="analyte-input" type="text" placeholder="Enter analyte or assay (e.g. Group A Strep, RSV, SARS-CoV-2)"
-         value="Group A Strep" />
+         value="Group A Strep" onkeydown="if(event.key==='Enter'){event.preventDefault();search();}" />
   <button class="btn-primary" onclick="search()">Search</button>
 </div>
 
@@ -268,22 +268,24 @@ async function search() {
   try {
     const data = await fetchJSON(`/api/find?analyte=${encodeURIComponent(analyte)}`);
     devices = data.devices || [];
-    renderDeviceList(devices);
+    renderDeviceList(devices, data.result_note);
   } catch (e) {
     document.getElementById('device-list').innerHTML =
       `<div class="empty" style="color:var(--red)">Error: ${e.message}</div>`;
   }
 }
 
-function renderDeviceList(devices) {
+function renderDeviceList(devices, resultNote) {
   const count = devices.length;
   document.getElementById('device-count').textContent = `(${count})`;
   document.getElementById('select-all-wrap').style.display = count ? 'flex' : 'none';
+  const noteHtml = resultNote ? `<div class="warn-box" style="margin:10px">${esc(resultNote)}</div>` : '';
   if (!count) {
-    document.getElementById('device-list').innerHTML = '<div class="empty"><p>No devices found</p></div>';
+    document.getElementById('device-list').innerHTML =
+      noteHtml || '<div class="empty"><p>No devices found</p></div>';
     return;
   }
-  document.getElementById('device-list').innerHTML = devices.map((d, i) => `
+  document.getElementById('device-list').innerHTML = noteHtml + devices.map((d, i) => `
     <div class="device-item" id="dev-${i}">
       <input type="checkbox" id="chk-${i}" onclick="event.stopPropagation();toggleSelect(${i})">
       <div class="device-body" onclick="selectDevice(${i})">

@@ -13,6 +13,7 @@ the user what synonyms were used.
 
 from __future__ import annotations
 
+import re
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Optional
@@ -22,6 +23,7 @@ from .sources.openfda import (
     get_classification_by_product_code,
     search_classification_by_term,
     search_510k_by_term,
+    search_510k_fulltext,
 )
 
 # ---------------------------------------------------------------------------
@@ -153,10 +155,19 @@ def resolve_analyte(
     def _search_5k(syn):
         return ("5k", syn, search_510k_by_term(syn))
 
-    tasks = [_search_cls, _search_5k]
+    def _search_ft(syn):
+        return ("ft", syn, search_510k_fulltext(syn))
+
+    tasks = [_search_cls, _search_5k, _search_ft]
     new_pcs_needing_cls: list[tuple[str, str]] = []  # (product_code, device_name)
 
-    with ThreadPoolExecutor(max_workers=min(16, len(active_syns) * 2 or 1)) as pool:
+    def _is_real_match(syn: str, device_name: str) -> bool:
+        """Word-boundary check to drop substring noise (e.g. 'HIV' in 'arcHIVe')."""
+        if not device_name:
+            return False
+        return re.search(r"\b" + re.escape(syn) + r"\b", device_name, re.I) is not None
+
+    with ThreadPoolExecutor(max_workers=min(16, len(active_syns) * 3 or 1)) as pool:
         futures = [pool.submit(fn, syn) for syn in active_syns for fn in tasks]
         for future in as_completed(futures):
             try:
@@ -170,10 +181,13 @@ def resolve_analyte(
                     info = _extract_product_code_info(rec)
                     if info and info.product_code not in pc_map:
                         pc_map[info.product_code] = info
-                else:  # "5k"
+                else:  # "5k" (device_name exact) or "ft" (full-text — needs boundary filter)
                     pc = rec.get("product_code")
+                    name = rec.get("device_name", "")
+                    if kind == "ft" and not _is_real_match(syn, name):
+                        continue  # substring noise — skip
                     if pc and pc not in pc_map:
-                        new_pcs_needing_cls.append((pc, rec.get("device_name", "")))
+                        new_pcs_needing_cls.append((pc, name))
 
     # Fetch classification metadata for product codes found only via 510k search.
     unique_new = {pc: name for pc, name in new_pcs_needing_cls if pc not in pc_map}

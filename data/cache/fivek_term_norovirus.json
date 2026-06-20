@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 3
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Sunnyvale",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "904 Caribbean Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PCH",
+      "openfda": {
+        "registration_number": [
+          "3014553740",
+          "1650733",
+          "3010749841",
+          "2024800",
+          "3005360469",
+          "3007420875",
+          "3002773840",
+          "3009613136",
+          "3007799234",
+          "3006028115",
+          "3002777243",
+          "3011781554",
+          "1119779",
+          "3016838963",
+          "3004013603",
+          "3004530258"
+        ],
+        "fei_number": [
+          "3014553740",
+          "3010749841",
+          "2024800",
+          "3007420875",
+          "3002524000",
+          "3005670738",
+          "3002773840",
+          "3009613136",
+          "3007799234",
+          "3006028115",
+          "3002777243",
+          "3011781554",
+          "1119779",
+          "3016838963",
+          "3004013603",
+          "3004530258"
+        ],
+        "device_name": "Gastrointestinal Pathogen Panel Multiplex Nucleic Acid-Based Assay System",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3990",
+        "device_class": "2"
+      },
+      "zip_code": "94089",
+      "applicant": "Cepheid",
+      "decision_date": "2014-11-26",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "Xpert Norovirus, GeneXpert Dx Systems (GX-I, GX-11, GX-IV, GX-XVI), GeneXpert Infinity-48 System, GeneXpert Infinity-48s System, GeneXpert Infinity-80 System",
+      "advisory_committee": "MI",
+      "contact": "KERRY J. FLOM",
+      "expedited_review_flag": "",
+      "k_number": "K142501",
+      "state": "CA",
+      "date_received": "2014-09-05",
+      "review_advisory_committee": "MI",
+      "postal_code": "94089",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Darmstadt",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "An Der Neuen Bergstrabe 17",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PIQ",
+      "openfda": {
+        "device_name": "Reagents For Detection Of Norovirus Nucleic Acid",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3990",
+        "device_class": "2",
+        "registration_number": [
+          "3016548670",
+          "2029372",
+          "3004061467"
+        ],
+        "fei_number": [
+          "1000306617",
+          "3016548670",
+          "3004061467"
+        ]
+      },
+      "zip_code": "64297",
+      "applicant": "R-Biopharm AG",
+      "decision_date": "2017-08-21",
+      "decision_code": "SESE",
+      "country_code": "DE",
+      "device_name": "RIDA GENE Norovirus GI/GII",
+      "advisory_committee": "MI",
+      "contact": "Andreas  Simons",
+      "expedited_review_flag": "",
+      "k_number": "K171511",
+      "state": "",
+      "date_received": "2017-05-24",
+      "review_advisory_committee": "MI",
+      "postal_code": "64297",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "East Stroudsburg",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "150 Cherry Ln. Rd.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "OUC",
+      "openfda": {
+        "registration_number": [
+          "3014150341",
+          "3005360469",
+          "3024463179",
+          "3016548670",
+          "2029372"
+        ],
+        "fei_number": [
+          "3014150341",
+          "1000306617",
+          "3024463179",
+          "3005670738",
+          "3016548670"
+        ],
+        "device_name": "Norovirus Serological Reagent",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3395",
+        "device_class": "2"
+      },
+      "zip_code": "18301",
+      "applicant": "R-Biopharm AG",
+      "decision_date": "2011-02-23",
+      "decision_code": "DENG",
+      "country_code": "US",
+      "device_name": "RIDASCREEN NOROVIRUS 3RD GENERATION EIA",
+      "advisory_committee": "MI",
+      "contact": "Gary  Lehnus",
+      "expedited_review_flag": "",
+      "k_number": "DEN110001",
+      "state": "PA",
+      "date_received": "2011-02-16",
+      "review_advisory_committee": "MI",
+      "postal_code": "18301",
+      "decision_description": "Unknown",
+      "clearance_type": "Post-NSE"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 2
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Murrieta",
+      "advisory_committee_description": "General Hospital",
+      "address_1": "29266 Via Frontera",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "NZJ",
+      "openfda": {
+        "registration_number": [
+          "",
+          "3015997711",
+          "3016678387",
+          "3006942307",
+          "3005236311",
+          "3010141571",
+          "3012104670",
+          "2110898",
+          "3011310668",
+          "3008770708",
+          "3008048818",
+          "2427500"
+        ],
+        "fei_number": [
+          "",
+          "3015997711",
+          "3016678387",
+          "3006942307",
+          "3005236311",
+          "3010141571",
+          "3012104670",
+          "2110898",
+          "3011310668",
+          "3008770708",
+          "3008048818",
+          "2427500"
+        ],
+        "device_name": "Respirator, N95, For Use By The General Public In Public Health Medical Emergencies",
+        "medical_specialty_description": "General Hospital",
+        "regulation_number": "880.6260",
+        "device_class": "2"
+      },
+      "zip_code": "92563",
+      "applicant": "Pasture Pharma Pte, Ltd.",
+      "decision_date": "2009-01-23",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "PASTURE, MODELS: F550, A520",
+      "advisory_committee": "HO",
+      "contact": "SARAH  HASSAN",
+      "expedited_review_flag": "",
+      "k_number": "K083176",
+      "state": "CA",
+      "date_received": "2008-10-28",
+      "review_advisory_committee": "HO",
+      "postal_code": "92563",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "St. Paul",
+      "advisory_committee_description": "General Hospital",
+      "address_1": "3m Center, Bldg. 275-5w-06",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "NZJ",
+      "openfda": {
+        "registration_number": [
+          "",
+          "3015997711",
+          "3016678387",
+          "3006942307",
+          "3005236311",
+          "3010141571",
+          "3012104670",
+          "2110898",
+          "3011310668",
+          "3008770708",
+          "3008048818",
+          "2427500"
+        ],
+        "fei_number": [
+          "",
+          "3015997711",
+          "3016678387",
+          "3006942307",
+          "3005236311",
+          "3010141571",
+          "3012104670",
+          "2110898",
+          "3011310668",
+          "3008770708",
+          "3008048818",
+          "2427500"
+        ],
+        "device_name": "Respirator, N95, For Use By The General Public In Public Health Medical Emergencies",
+        "medical_specialty_description": "General Hospital",
+        "regulation_number": "880.6260",
+        "device_class": "2"
+      },
+      "zip_code": "55144",
+      "applicant": "3M Company",
+      "decision_date": "2007-05-08",
+      "decision_code": "DENG",
+      "country_code": "US",
+      "device_name": "3M N95 HOME RESPIRATOR WITH FLUID RESISTANCE; 3M N95 HOME RESPIRATOR",
+      "advisory_committee": "HO",
+      "contact": "DIANNE  GIBBS",
+      "expedited_review_flag": "",
+      "k_number": "DEN060009",
+      "state": "MN",
+      "date_received": "2006-10-03",
+      "review_advisory_committee": "HO",
+      "postal_code": "55144",
+      "decision_description": "Unknown",
+      "clearance_type": "Post-NSE"
+    }
+  ]
+}

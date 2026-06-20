@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "East Stroudsburg",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "150 Cherry Ln. Rd.",
+      "address_2": "",
+      "statement_or_summary": "",
+      "product_code": "OUC",
+      "openfda": {
+        "registration_number": [
+          "3014150341",
+          "3005360469",
+          "3024463179",
+          "3016548670",
+          "2029372"
+        ],
+        "fei_number": [
+          "3014150341",
+          "1000306617",
+          "3024463179",
+          "3005670738",
+          "3016548670"
+        ],
+        "device_name": "Norovirus Serological Reagent",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3395",
+        "device_class": "2"
+      },
+      "zip_code": "18301",
+      "applicant": "R-Biopharm AG",
+      "decision_date": "2011-02-23",
+      "decision_code": "DENG",
+      "country_code": "US",
+      "device_name": "RIDASCREEN NOROVIRUS 3RD GENERATION EIA",
+      "advisory_committee": "MI",
+      "contact": "Gary  Lehnus",
+      "expedited_review_flag": "",
+      "k_number": "DEN110001",
+      "state": "PA",
+      "date_received": "2011-02-16",
+      "review_advisory_committee": "MI",
+      "postal_code": "18301",
+      "decision_description": "Unknown",
+      "clearance_type": "Post-NSE"
+    }
+  ]
+}

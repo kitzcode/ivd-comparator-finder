@@ -1,0 +1,425 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 10
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Sunnyvale",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "904 Caribbean Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OQW",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "device_name": "2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2"
+      },
+      "zip_code": "94089",
+      "applicant": "Cepheid",
+      "decision_date": "2011-04-21",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "XPERT FLU, GENEXPERT DX SYSTEMS, GENEXPERT INFINITY SYSTEM, GENEXPERT SYSTEM SOFTWARE VERISIONS 2.1 AND 4.0",
+      "advisory_committee": "MI",
+      "contact": "KERRY J FLOM",
+      "expedited_review_flag": "",
+      "k_number": "K103766",
+      "state": "CA",
+      "date_received": "2010-12-23",
+      "review_advisory_committee": "MI",
+      "postal_code": "94089",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Atlanta",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1600 Clifton Rd., NE",
+      "address_2": "Mailstop C-18",
+      "statement_or_summary": "Summary",
+      "product_code": "OQW",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "device_name": "2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2"
+      },
+      "zip_code": "30333",
+      "applicant": "Centers for Disease Control and Prevention",
+      "decision_date": "2013-05-22",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "CDC HUMAN INFLUENZA VIRUS REAL-TIME RT-PCR DIAGNOSTIC PANEL",
+      "advisory_committee": "MI",
+      "contact": "HYE-JOO  KIM, PHARM. D.",
+      "expedited_review_flag": "",
+      "k_number": "K130551",
+      "state": "GA",
+      "date_received": "2013-03-04",
+      "review_advisory_committee": "MI",
+      "postal_code": "30333",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Cypress",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "11331 Valley View St.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OQW",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "device_name": "2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2"
+      },
+      "zip_code": "90630",
+      "applicant": "Focus Diagnostics, Inc.",
+      "decision_date": "2010-05-24",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "SIMPLEXA INFLUENZA A H1N1 (2009) MODEL MOL2500",
+      "advisory_committee": "MI",
+      "contact": "TARA  VIVIANI",
+      "expedited_review_flag": "",
+      "k_number": "K100148",
+      "state": "CA",
+      "date_received": "2010-01-19",
+      "review_advisory_committee": "MI",
+      "postal_code": "90630",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Sunnyvale",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "904 Caribbean Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OQW",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "device_name": "2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2"
+      },
+      "zip_code": "94089",
+      "applicant": "Cepheid",
+      "decision_date": "2012-05-18",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "XPERT FLU  GENEXPERT DX SYSTEMS (GX-I, GX-IV)",
+      "advisory_committee": "MI",
+      "contact": "KERRY J FLOM",
+      "expedited_review_flag": "",
+      "k_number": "K120911",
+      "state": "CA",
+      "date_received": "2012-03-26",
+      "review_advisory_committee": "MI",
+      "postal_code": "94089",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Atlanta",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1600 Clifton Rd., NE",
+      "address_2": "Mailstop C-12",
+      "statement_or_summary": "Summary",
+      "product_code": "OQW",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "device_name": "2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2"
+      },
+      "zip_code": "30333",
+      "applicant": "Centers for Disease Control and Prevention",
+      "decision_date": "2010-06-22",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "CDC INFLUENZA 2009 A(H1N1)PDM REAL-TIME RT-PCR PANEL",
+      "advisory_committee": "MI",
+      "contact": "HYE-JOO  KIM",
+      "expedited_review_flag": "",
+      "k_number": "K101564",
+      "state": "GA",
+      "date_received": "2010-06-04",
+      "review_advisory_committee": "MI",
+      "postal_code": "30333",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Waukesha",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "20925 Crossroads Cir.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OQW",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "device_name": "2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2"
+      },
+      "zip_code": "53186",
+      "applicant": "Gen-Probe Prodesse, Inc.",
+      "decision_date": "2013-08-26",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "PRODESSE PROFAST+ ASSAY",
+      "advisory_committee": "MI",
+      "contact": "EMILY  ZIEGLER",
+      "expedited_review_flag": "",
+      "k_number": "K132237",
+      "state": "WI",
+      "date_received": "2013-07-18",
+      "review_advisory_committee": "MI",
+      "postal_code": "53186",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Special"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Atlanta",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1600 Clifton Rd. Ms-C12",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OQW",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "device_name": "2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2"
+      },
+      "zip_code": "30333",
+      "applicant": "Centers for Disease Control and Prevention",
+      "decision_date": "2011-08-23",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "CDC HUMAN INFLUENZA VIRUS REAL-TIME RT-PCR DIAGNOSTIC PANEL",
+      "advisory_committee": "MI",
+      "contact": "CAPT HYE-JOO  KIM, PHARM.D.",
+      "expedited_review_flag": "",
+      "k_number": "K111507",
+      "state": "GA",
+      "date_received": "2011-06-01",
+      "review_advisory_committee": "MI",
+      "postal_code": "30333",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Waukesha",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "W229n1870 Westwood Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OQW",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "device_name": "2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2"
+      },
+      "zip_code": "53186",
+      "applicant": "Gen-Probe Prodesse, Inc.",
+      "decision_date": "2010-07-23",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "PROFAST+ ASSAY",
+      "advisory_committee": "MI",
+      "contact": "KAREN  HARRINGTON",
+      "expedited_review_flag": "",
+      "k_number": "K101855",
+      "state": "WI",
+      "date_received": "2010-07-01",
+      "review_advisory_committee": "MI",
+      "postal_code": "53186",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Atlanta",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1600 Clifton Rd. NE (Ms C-18)",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OQW",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "device_name": "2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2"
+      },
+      "zip_code": "30333",
+      "applicant": "Centers for Disease Control and Prevention",
+      "decision_date": "2013-01-14",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "CDC HUMAN INFLUENZA VIRUS REAL-TIME RT-PCR DIAGNOSTIC PANEL",
+      "advisory_committee": "MI",
+      "contact": "HYE-JOO  KIM, PHARM. D",
+      "expedited_review_flag": "",
+      "k_number": "K123905",
+      "state": "GA",
+      "date_received": "2012-12-19",
+      "review_advisory_committee": "MI",
+      "postal_code": "30333",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Special"
+    },
+    {
+      "third_party_flag": "N",
+      "city": "Fort Detrick",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "1430 Veterans Dr.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "OQW",
+      "openfda": {
+        "registration_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "fei_number": [
+          "3008632402",
+          "3038610665",
+          "3013019728"
+        ],
+        "device_name": "2009 H1n1 Influenza Virus (Swine Origin), Nucleic Acid Or Antigen, Detection And Identification",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3332",
+        "device_class": "2"
+      },
+      "zip_code": "21702",
+      "applicant": "U.S Army Medical Materiel Development Activity",
+      "decision_date": "2011-09-13",
+      "decision_code": "SESE",
+      "country_code": "US",
+      "device_name": "JBAIDS INFLUENZA A SUBTYPING KIT",
+      "advisory_committee": "MI",
+      "contact": "PATRICIA M BEVERLY",
+      "expedited_review_flag": "",
+      "k_number": "K111778",
+      "state": "MD",
+      "date_received": "2011-06-23",
+      "review_advisory_committee": "MI",
+      "postal_code": "21702",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

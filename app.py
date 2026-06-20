@@ -41,10 +41,28 @@ def api_find(
     from finder.pipeline import find_devices
     extra = [s.strip() for s in synonyms.split(",") if s.strip()] or None
     resolution, devices = find_devices(analyte, extra_synonyms=extra, resolve_urls=False)
+
+    # Honest note when results are sparse: openFDA's 510(k) endpoint does not
+    # cover PMA (Class III) devices, which is why high-risk analytes (HIV, HCV,
+    # blood screening, many oncology markers) return few or no 510(k) clearances.
+    result_note = None
+    if len(devices) == 0:
+        result_note = (
+            f"No 510(k) clearances found for '{resolution.analyte_term}'. This usually means the "
+            "analyte is regulated via PMA (Class III) or BLA, which openFDA's 510(k) endpoint "
+            "does not include — not that the search missed them. Try a synonym or a related analyte."
+        )
+    elif len(devices) < 3:
+        result_note = (
+            f"Only {len(devices)} 510(k) clearance(s) found. Many tests for this analyte may be "
+            "PMA/BLA-regulated (e.g. HIV, HCV, blood screening), which the 510(k) endpoint does not cover."
+        )
+
     return {
         "analyte": resolution.analyte_term,
         "synonyms_used": resolution.synonyms_used,
         "heuristic_note": resolution.note,
+        "result_note": result_note,
         "product_codes": [
             {
                 "product_code": p.product_code,

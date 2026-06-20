@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "Y",
+      "city": "Colorado Springs",
+      "advisory_committee_description": "Gastroenterology, Urology",
+      "address_1": "15975 Winding Trl. Rd.",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "NWO",
+      "openfda": {
+        "device_name": "Kit, Catheter, Urinary (Exludes Hiv Testing)",
+        "medical_specialty_description": "Gastroenterology, Urology",
+        "regulation_number": "876.5130",
+        "device_class": "2"
+      },
+      "zip_code": "80908",
+      "applicant": "Colorado Catheter Company, Inc.",
+      "decision_date": "2007-08-15",
+      "decision_code": "SESK",
+      "country_code": "US",
+      "device_name": "ICATH, STERILESURE",
+      "advisory_committee": "GU",
+      "contact": "DOUG  WILSON",
+      "expedited_review_flag": "",
+      "k_number": "K071496",
+      "state": "CO",
+      "date_received": "2007-05-31",
+      "review_advisory_committee": "GU",
+      "postal_code": "80908",
+      "decision_description": "Unknown",
+      "clearance_type": "Traditional"
+    }
+  ]
+}

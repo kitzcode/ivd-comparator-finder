@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-06-08",
+    "results": {
+      "skip": 0,
+      "limit": 100,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "third_party_flag": "N",
+      "city": "Darmstadt",
+      "advisory_committee_description": "Microbiology",
+      "address_1": "An Der Neuen Bergstrabe 17",
+      "address_2": "",
+      "statement_or_summary": "Summary",
+      "product_code": "PIQ",
+      "openfda": {
+        "device_name": "Reagents For Detection Of Norovirus Nucleic Acid",
+        "medical_specialty_description": "Microbiology",
+        "regulation_number": "866.3990",
+        "device_class": "2",
+        "registration_number": [
+          "3016548670",
+          "2029372",
+          "3004061467"
+        ],
+        "fei_number": [
+          "1000306617",
+          "3016548670",
+          "3004061467"
+        ]
+      },
+      "zip_code": "64297",
+      "applicant": "R-Biopharm AG",
+      "decision_date": "2017-08-21",
+      "decision_code": "SESE",
+      "country_code": "DE",
+      "device_name": "RIDA GENE Norovirus GI/GII",
+      "advisory_committee": "MI",
+      "contact": "Andreas  Simons",
+      "expedited_review_flag": "",
+      "k_number": "K171511",
+      "state": "",
+      "date_received": "2017-05-24",
+      "review_advisory_committee": "MI",
+      "postal_code": "64297",
+      "decision_description": "Substantially Equivalent",
+      "clearance_type": "Traditional"
+    }
+  ]
+}
