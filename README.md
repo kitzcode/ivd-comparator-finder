@@ -6,6 +6,27 @@ Everything it touches is public FDA data — clean from an IP standpoint and ful
 
 ---
 
+## Architecture: one engine, two corpora
+
+The build is split into three reusable layers so the reasoning is independent of any single data source:
+
+```
+grounded_rag/      Reasoning layer — corpus-agnostic grounded RAG.
+                   Scores chunks, answers from them, refuses on no-match.
+                   The model never writes a citation; citations are
+                   reconstructed from the chunks it referenced.
+      ▲  depends only on the Corpus protocol
+corpora/
+  fda_510k/        510(k) Summary chunks  ┐  two corpora,
+  fda_guidance/    FDA guidance documents ┘  one engine
+      ▲  adapts a data source to the protocol (scope + scoring + grounding contract)
+finder/            Substrate — openFDA fetch, PDF parse, chunk store/index
+```
+
+The grounding contract (refuse on no-match, never show a figure without its source snippet, predicate ≠ comparator) lives once in `grounded_rag`. Each corpus supplies only its data, its scoring weights, and its citation style. The same engine grounds answers over 510(k) Summaries and FDA guidance documents alike.
+
+---
+
 ## What it does
 
 | Command | Description |
@@ -61,18 +82,20 @@ Citations:
   https://www.accessdata.fda.gov/cdrh_docs/pdf17/K173653.pdf
 ```
 
-## MCP server
+## MCP servers
 
-Five read-only tools for use with Claude or any MCP client:
+Two layered, read-only MCP servers map to the architecture:
 
 ```
-python -m ivd_mcp          # stdio transport
-mcp dev ivd_mcp/ivd_server.py  # interactive inspector
+python -m mcp_servers.openfda_device   # DATA layer  — stdio transport
+python -m mcp_servers.grounded_rag      # REASONING layer — stdio transport
+python -m ivd_mcp                        # deprecated alias for the device server
 ```
 
-Tools: `find_devices`, `get_clearance`, `ask_summary`, `compare_performance`.
+- **openfda_device** (data): `find_devices`, `get_clearance`
+- **grounded_rag** (reasoning): `list_corpora`, `ask`, `compare_performance`
 
-All tools are annotated `readOnlyHint=True, destructiveHint=False`.
+`ask` is corpus-parameterized — `corpus="fda_510k"` (scope by `k_numbers` / `product_codes`, cited by K-number) or `corpus="fda_guidance"` (scope by `doc_ids`, cited by guidance tag). All tools are annotated `readOnlyHint=True, destructiveHint=False`.
 
 ## Grounding contract
 
@@ -100,26 +123,32 @@ The synonym set and product code mapping are always surfaced so the user can ver
 ## Project structure
 
 ```
-finder/
-  models.py          pydantic models
+grounded_rag/        Reasoning layer (corpus-agnostic)
+  models.py          generic Chunk / Citation / Answer
+  retrieve.py        structural scorer + per-corpus RetrievalConfig
+  contract.py        GroundingContract (system prompt, refusal sentinel, citation pattern)
+  qa.py              refusal gate, keyword fallback, citation reconstruction
+  corpus.py          the Corpus protocol
+corpora/
+  registry.py        name → Corpus
+  fda_510k/          510(k) corpus adapter (grounding + scope→Chunk)
+  fda_guidance/      guidance corpus adapter (fetch, section split, ingest)
+finder/              Substrate
+  models.py          FDA pydantic models
   analyte.py         analyte → product codes (synonym search)
   pipeline.py        v1 find_devices, v2 ingest_summaries
-  qa.py              grounded Q&A (M3)
-  extract.py         structured performance extraction (M4)
-  sources/
-    openfda.py       openFDA client + on-disk cache
-    summaries.py     510(k) Summary PDF fetch + URL resolution
-  parse/
-    pdf.py           pdfplumber extraction
-    sections.py      section splitter → SummaryChunk list
-  index/
-    store.py         chunk store + manifest
-    retrieve.py      keyword retrieval with section scoring
-ivd_mcp/
-  ivd_server.py      FastMCP server (M6)
+  qa.py              FDA Q&A shim over grounded_rag
+  extract.py         structured performance extraction
+  sources/           openFDA client + Summary PDF fetch
+  parse/             pdfplumber extraction + 510(k) section splitter
+  index/             chunk store + keyword retrieval
+mcp_servers/
+  openfda_device/    data-layer MCP server
+  grounded_rag/      reasoning-layer MCP server
+ivd_mcp/             deprecated alias for the device server
 cli.py
 data/cache/          openFDA JSON cache (committed); PDF/chunk cache (gitignored)
-tests/               84 tests across M0–M6
+tests/               99 tests, incl. a cross-corpus contract test (one engine, two corpora)
 ```
 
 ## Tests
@@ -139,3 +168,4 @@ pytest tests/test_m5.py --run-live
 - ✅ M4 — structured performance extraction table
 - ✅ M5 — reference-lab directory lookup
 - ✅ M6 — read-only MCP server
+- ✅ M7 — refactor into three layers: corpus-agnostic `grounded_rag` engine, pluggable `corpora/` (510(k) + FDA guidance), and two layered MCP servers

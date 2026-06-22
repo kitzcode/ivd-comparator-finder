@@ -11,6 +11,9 @@ build/
 data/cache/pdf/*.pdf
 data/cache/pdf/*.pdf.part
 
+# Guidance PDF binaries — ignore; the parsed chunk JSON snapshot IS committed.
+data/cache/guidance_pdf/*.pdf
+
 # Chunk JSON files — commit pre-indexed devices so Vercel can serve them
 # without needing a writable filesystem.
 data/cache/labs/

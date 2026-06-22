@@ -4,6 +4,26 @@
 
 A tool that maps an IVD assay / analyte to FDA-cleared devices via openFDA, fetches 510(k) Summary PDFs, and answers grounded performance questions with citations. All output is traceable to public FDA data.
 
+## Architecture (three layers, M7)
+
+The build is refactored into three reusable layers; dependencies point one way only.
+
+- **`grounded_rag/`** — corpus-agnostic reasoning engine. Generic `Chunk`/`Citation`/`Answer`,
+  a structural scorer + per-corpus `RetrievalConfig`, a `GroundingContract` (system prompt +
+  refusal sentinel + citation id pattern, all injectable), and the answer machinery (refusal
+  gate, keyword fallback, citation reconstruction). Depends only on the `Corpus` protocol.
+  **The model never writes a citation** — citations are reconstructed from the chunks the model
+  referenced (`cited_id_pattern`, else literal `doc_id` match).
+- **`corpora/`** — adapters implementing `grounded_rag.Corpus` (`candidates` + `retrieval_config`
+  + `grounding`). `fda_510k` (over the finder substrate) and `fda_guidance` (new). `registry.py`
+  maps name → Corpus; adding a third corpus is a one-line change.
+- **`finder/`** — FDA substrate: openFDA fetch, PDF parse, chunk store/index. `finder/qa.py` is now
+  a thin shim that routes through `grounded_rag.qa.ask_corpus(FDA510kCorpus(), ...)` and maps the
+  generic Answer back to the K-number-keyed FDA `Answer`.
+- **`mcp_servers/`** — two layered servers: `openfda_device` (data: `find_devices`, `get_clearance`)
+  and `grounded_rag` (reasoning: `list_corpora`, `ask` over any corpus, `compare_performance`).
+  `ivd_mcp/` is a deprecated alias for the device server.
+
 ## Build status
 
 - `finder/models.py` — pydantic v2 models (Device, ProductCodeInfo, AnalyteResolution, SummaryChunk, Citation, Answer). Done.
@@ -17,9 +37,11 @@ A tool that maps an IVD assay / analyte to FDA-cleared devices via openFDA, fetc
 - `finder/qa.py` — grounded Q&A: keyword-only mode (no LLM) or LLM-backed with Anthropic SDK. Done.
 - `finder/extract.py` — M4 structured performance extraction (PPA, NPA, LoD, reactivity, comparator, predicate) via regex + optional LLM fill. Every value carries a Citation. Done.
 - `finder/pipeline.py` — v1 find_devices() + v2 ingest_summaries(). Done.
-- `ivd_mcp/ivd_server.py` — M6 FastMCP server: 5 read-only tools, `readOnlyHint=True`. Note: the package is `ivd_mcp/` (not `mcp/`) to avoid shadowing the installed `mcp` package. Done.
+- `mcp_servers/openfda_device/` + `mcp_servers/grounded_rag/` — two layered FastMCP servers, all tools `readOnlyHint=True`. Note: server packages avoid the name `mcp/` so as not to shadow the installed `mcp` package. Done.
+- `grounded_rag/` — corpus-agnostic engine (models, retrieve, contract, qa, corpus protocol). Done.
+- `corpora/fda_510k/` + `corpora/fda_guidance/` + `corpora/registry.py` — corpus adapters + registry. Done.
 - `cli.py` — `find`, `ingest`, `ask`, `compare`, `status` commands. Done.
-- `tests/` — 71 tests (M0–M6), all passing. Done.
+- `tests/` — 99 tests, all passing. Includes `test_grounded_rag.py` (engine on a synthetic non-FDA corpus), `test_fda_guidance.py`, and `test_cross_corpus_contract.py` (the contract holds on both corpora). Done.
 
 ## Invariants
 
