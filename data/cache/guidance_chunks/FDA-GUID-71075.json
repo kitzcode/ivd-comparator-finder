@@ -1,0 +1,1047 @@
+[
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Preamble",
+    "text": "Guidance for Industry and FDA\nStaff\nIn Vitro Diagnostic (IVD) Device\nStudies -Frequently Asked\nQuestions\nDocument issued on: June 25, 2010\nThe draft of this document was issued on October 25, 2007.\nThis document supersedes \"Guidance for FDA Staff: Regulating In Vitro\nDiagnostic Device (IVD) Studies,\" issued December 17, 1999.\nFor questions regarding this document, contact Sally Hojvat, Ph.D. in CDRH at 301-796-5455 or\nthe Office of Communication, Outreach and Development in CBER at 1-800-835-4709 or 301-\n827-1800.\nU.S. Department of Health and Human Services\nFood and Drug Administration\nCenter for Devices and Radiological Health\nCenter for Biologics Evaluation and Research",
+    "page": 1,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Preface",
+    "text": "Preface\nAdditional Copies\nAdditional copies are available from the Internet at:\nhttp://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocu\nments/ucm071230.pdf,\nOr, contact:\nOffice of Communication, Outreach and Development, HFM-40\nCenter for Biologics Evaluation and Research\nFood and Drug Administration\n1401 Rockville Pike, Suite 200N, Rockville, MD 20852-1448\nInternet:\nhttp://www.fda.gov/BiologicsBloodVaccines/GuidanceComplianceRegulatoryInformation/defaul\nt.htm\nTel: 800-835-4709 or 301-827-1800",
+    "page": 2,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR PART 812) for IVD",
+    "text": "Appendix 1: REGULATORY DECISION TREE (21 CFR PART 812) for IVD\nAppendix 2: Regulatory Framework for IVD Products.............................................................\nGuidance for Industry and FDA Staff\nIn Vitro Diagnostic (IVD) Device Studies\nFrequently Asked Questions\nThis guidance represents the Food and Drug Administration's (FDA's) current\nthinking on this topic. It does not create or confer any rights for or on any person and\ndoes not operate to bind FDA or the public. You can use an alternative approach if the\napproach satisfies the requirements of the applicable statutes and regulations. If you\nwant to discuss an alternative approach, contact the FDA staff responsible for\nimplementing this guidance. If you cannot identify the appropriate FDA staff, call the\nappropriate number listed on the title page of this guidance.",
+    "page": 3,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "I. Background",
+    "text": "I. Background\nThe Investigational Device Exemptions (IDE) regulation, Title 21, Code of Federal\nRegulations (21 CFR) Part 812, sets forth regulatory requirements for studies of\ninvestigational devices. Certain investigational IVD device studies (see the Glossary),\nhowever, are exempt from most of the provisions of 21 CFR Part 812 (21 CFR\n812.2(c)(3)).1 This guidance document, written in question and answer format, is\nintended to assist you2(the manufacturer, sponsor, applicant, investigator and the IVD\ndevice industry in general) in the development of IVD studies, particularly those exempt\nfrom most of the requirements of the IDE regulation and to provide you with a broad\nview of the regulatory framework pertaining to the development phase of IVD devices.\nThe information in this guidance document is also pertinent to investigators who\nparticipate in IVD studies and to institutional review boards (IRB) that review and\napprove such studies. The document is intended to facilitate the movement of new IVD\ntechnology from the investigational stage to the marketing stage.\nAs explained below, even if a particular IVD study is exempt from most requirements of 21 CFR Part\n812, studies that will support applications to FDA are subject to 21 CFR 812.119 (Disqualification of a\nClinical Investigator), 21 CFR Part 50 (Informed Consent), and 21 CFR Part 56 (Institutional Review\nBoards).",
+    "page": 4,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "I. Background",
+    "text": "For the purpose of this document, \u201cyou\u201d refers to the manufacturer, sponsor, applicant, investigator and\nthe IVD device industry in general. If the text refers only to one or some of these entities, the appropriate\nentity is referenced\nby its name.\nThis guidance document outlines FDA regulations applicable to studies for\ninvestigational IVD devices, including those regulations related to human subject\nprotection. The guidance also explains data considerations that ultimately will affect the\nquality of the premarket submission. This document includes a glossary, a reference list\nwith related web addresses, and a quick-reference table.\nThe Center for Devices and Radiological Health (CDRH) and the Center for Biologics\nEvaluation and Research (CBER) each have regulatory responsibilities for IVD devices;\ninformation included in this document applies to Class I, II, and III IVD devices\nregulated by either Center.\nNote: Some devices used to test blood donor suitability, and blood donor and\nrecipient compatibility are licensed as biological products under Section 351 of\nthe Public Health Service Act and are subject to the applicable regulations in 21\nCFR Parts 600-680 . Examples of licensed biologics devices include blood donor\nscreening tests for human immunodeficiency virus (HIV) and hepatitis B and C\ntests intended for blood screening and reagents used in blood grouping, antibody",
+    "page": 4,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "I. Background",
+    "text": "detection and identification, and crossmatching for pre-transfusion compatibility\ntesting. This guidance is written to address only IVD devices that are approved or\ncleared under the Federal Food, Drug, and Cosmetic Act (the Act) and Part 800 of\nthe device regulations, regardless of which Center reviews the submission. If you\nhave questions about a device licensed by CBER, you may go to the CBER\nwebsite for published guidance\n(http://www.fda.gov/BiologicsBloodVaccines/GuidanceComplianceRegulatoryInf\normation/default.htm) or contact CBER for further information on applicable\nguidance and regulations. (See Introduction, Section II, question # 4, of this\nguidance for a listing of CBER contact numbers).\nFDA's guidance documents, including this guidance, do not establish legally enforceable\nresponsibilities. Instead, guidances describe the Agency's current thinking on a topic and\nshould be viewed only as recommendations, unless specific regulatory or statutory\nrequirements are cited. The use of the word should in Agency guidances means that\nsomething is suggested or recommended, but not required.",
+    "page": 5,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "II. Introduction",
+    "text": "II. Introduction\n1. What is the purpose of this guidance document and how does it differ from other\nguidance documents related to IVD products?\nFDA prepared this comprehensive document as a resource for you and for its own\nstaff to address issues concerning IVD studies. This guidance document contains\ninformation relevant to studies conducted during the development of a new IVD\nproduct, as well as other general considerations about applicable requirements and\nmarketing of the new device. It addresses particularly those investigational studies\nthat are exempt from the majority of requirements under 21 CFR Part 812. IVD\nstudy investigators and members of IRBs who review and approve such studies\nmay also find it helpful. There are also device-specific guidance documents\navailable for specific IVD products that can be found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfggp/search.cfm. The use of\ninvestigational IVD devices in clinical studies designed to evaluate new drug\nproducts falls outside the scope of this guidance.\n2. Why are in vitro diagnostics considered devices?\nIn vitro diagnostics (IVDs) meet the definition of a device under the Act. Section\n201(h) of the Act defines a device as:\n\u201can instrument, apparatus, implement, machine, contrivance, implant, in\nvitro reagent, or other similar or related article, including any component,\npart, or accessory, which is\u2014",
+    "page": 5,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "II. Introduction",
+    "text": "(1) recognized in the official National Formulary, or the United\nStates Pharmacopeia, or any supplement to them,\n(2) intended for use in the diagnosis of disease or other conditions,\nor in the cure, mitigation, treatment, or prevention of disease, in\nman or other animals, or\n(3) intended to affect the structure or any function of the body of\nman or other animals, and\nwhich does not achieve its primary intended purposes through chemical\naction within or on the body of man or other animals and which is not\ndependent upon being metabolized for the achievement of its primary\nintended purposes.\u201d 21 U.S.C. 321(h) (emphasis added).\n3. How do IVD devices differ from other devices?\nMost other devices function on or in a patient. In contrast, IVDs include products\nused to collect specimens, or to prepare or examine specimens (e.g., blood, serum,\nurine, spinal fluid, tissue samples) after they are removed from the human body.\n4. Which Divisions at FDA are responsible for review of IVD products?\nCenter for Devices and Radiological Health (CDRH)\n\u2022 Office of In Vitro Diagnostic Device Evaluation and Safety (OIVD)\n\u2022 Division of Chemistry and Toxicology Devices \u2013 Phone: (301) 796-\n\u2022 Division of Immunology and Hematology Devices \u2013 Phone: (301) 796-\n\u2022 Division of Microbiology Devices \u2013 Phone: (301) 796-5461\nCenter for Biologics Evaluation and Research (CBER)",
+    "page": 6,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "II. Introduction",
+    "text": "\u2022 Office of Cell, Tissues, and Gene Therapy (OCTGT) \u2013 Phone: (301) 827-5102\n\u2022 Office of Blood Research and Review (OBRR)\n\u2022 Division of Blood Applications (DBA) \u2013 Phone: (301) 827-3524\nDBA schedules all review-related meetings for OBRR\n\u2022 Division of Emerging and Transfusion Transmitted Diseases\n(DETTD) \u2013 Phone: (301) 827-3008\n\u2022 Division of Hematology (DH) \u2013 Phone: (301) 496-4396\n5. Whom should I consult when I have questions about the manufacturing\nregulations or the conduct of a study (e.g., human subject protection issues)?\nCenter for Devices and Radiological Health (CDRH)\nFor questions regarding manufacturing regulations and IVD-specific conduct of\nstudies, contact:\nOffice of In Vitro Diagnostic Device Evaluation and Safety (OIVD)\nRegulatory Staff, Patient Safety and Product Quality \u2013 Phone: (301) 796-5450\nFor questions regarding the conduct of studies, contact:\nOffice of Compliance (OC)\nDivision of Bioresearch Monitoring (DBM)\nPhone: (301) 796-5490\nor\nInvestigational Device Exemptions (IDE) Staff\nOffice of Device Evaluation\nPhone: (301) 796-5640\nCenter for Biologics Evaluation and Research (CBER)\nFor questions regarding manufacturing regulations and IVD-specific conduct of\nstudies, contact the appropriate reviewing division identified in the previous\nanswer.\nFor questions regarding the conduct of studies, contact:\nOffice of Compliance and Biologics Quality (OCBQ)",
+    "page": 6,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "II. Introduction",
+    "text": "Division of Inspections and Surveillance (DIS)\nBioresearch Monitoring Branch \u2013 Phone: (301) 827-6221",
+    "page": 7,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "III. General Regulatory Issues\n1. Which regulations contain provisions relevant to the IVD industry?\nListed below are some of the regulations that implement the Act and that are\nrelevant to IVDs covered by this guidance. See Table 1 (Appendix 1) for\nadditional information. This is not an all-inclusive list.\nTitle 21, Code of Federal Regulations (21 CFR)\nPart 11, Electronic Records; Electronic Signatures\nPart 50, Protection of Human Subjects\nPart 54, Financial Disclosure by Clinical Investigators\nPart 56, Institutional Review Boards\nPart 801, Labeling\nPart 803, Medical Device Reporting\nPart 807, Establishment Registration and Device Listing for\nManufacturers and Initial Importers of Devices\nPart 809, In Vitro Diagnostic Products for Human Use\nPart 810, Medical Device Recall Authority\nPart 812, Investigational Device Exemptions\nPart 814, Premarket Approval of Medical Devices\nPart 820, Quality System Regulation\nPart 860, Medical Device Classification Procedures\nPart 862, Clinical Chemistry and Clinical Toxicology Devices\nPart 864, Hematology and Pathology Devices\nPart 866, Immunology and Microbiology Devices\nIn addition, certain sections of Part 610 apply to devices that employ\nhuman blood components. For example:\n610.40, Test Requirements (Testing Requirements for Communicable\nDisease Agents)\n610.42, Restrictions on Use for Further Manufacture of Medical Devices",
+    "page": 7,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "2. How do I determine the applicability of the IDE regulation to my IVD study?\nWe recommend that you begin with the exemptions in 21 CFR 812.2(c). Your\nproposed IVD study is exempt from most provisions of the IDE regulation if it fits\nany one of the following three categories:\na. The IVD is a pre-amendments device (i.e., a device that was in\ncommercial distribution prior to the enactment of the 1976 Medical\nDevice Amendments to the Act), other than a transitional device (see the\nGlossary for definition), and is used or investigated according to the\nindications in the labeling at that time.\nb. The IVD is a device, other than a transitional device, that has been\nfound to be substantially equivalent to a pre-amendments device and is\nused or investigated according to the indications in the labeling reviewed\nby FDA in determining substantial equivalence.\nc. The IVD\n\u2022 is properly labeled in accordance with 21 CFR 809.10(c);\n\u2022 is noninvasive (see question #5 below);\n\u2022 does not require an invasive sampling procedure that presents\nsignificant risk (see question #4 below);\n\u2022 does not by design or intention introduce energy into a subject;\nand\n\u2022 is not used as a diagnostic procedure without confirmation of the\ndiagnosis by another, medically established diagnostic product or\nprocedure (see question # 6 below).\nFor your study to be exempt from most of the requirements of the IDE",
+    "page": 8,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "regulation under this third category, it must meet all of the conditions\nlisted in \u201cc\u201d above. (See also the decision tree in Appendix 1.) You should\nrefer to 21 CFR Parts 50 and 56 for applicable requirements relating to\nIRBs and informed consent, including for device studies that meet the\ncriteria described in 21 CFR 812.2(c). Additionally, investigators for those\nstudies are still subject to 21 CFR 812.119 (the provision entitled\n\u201cDisqualification of a clinical investigator.\u201d)\nIf your proposed study does not fit into one of the three categories listed\nabove, you, the sponsor, must have an approved IDE (21 CFR 812.2)\nbefore you may begin your investigation, including any shipment of your\ninvestigational IVD. (Note: A device that is approved under a premarket\napproval application (PMA) or cleared under a 510(k) and then used in a\nstudy in accordance with the approved or cleared labeling is not\ninvestigational and, therefore, is not subject to the IDE regulation.)\nThe requirements for an IDE depend on the level of risk that the study\npresents to subjects.\nFor a significant risk device (see the Glossary for definition), the sponsor\nmust apply to FDA for an IDE approval (see 21 CFR 812.1, 812.20). For a\nnon-significant risk device (see the Glossary for definition), the sponsor\nmust meet the abbreviated requirements of 21 CFR 812.2(b), including",
+    "page": 9,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "review and approval of the investigation by an institutional review board\n(IRB) and compliance with informed consent requirements. A non-\nsignificant risk study is considered to have an approved IDE when the\nabbreviated requirements are met.\nNote: The requirements of the \u201cProtection of Human Subjects\u201d and\n\u201cInstitutional Review Boards\u201d regulations (21 CFR Parts 50 and 56) apply\nto all clinical investigations regulated by FDA under section 520(g) of the\nAct, as well as other clinical investigations that support applications for\nresearch or marketing permits. (21 CFR 50.1, 56.101; see also Section V,\nHuman Subject Protection, of this guidance.) Therefore, all studies of\ninvestigational IVDs that will support applications to FDA are subject to\n21 CFR Parts 50 and 56, even if they are not subject to most requirements\nof 21 CFR Part 812.\n3. How do I determine if the study is a significant or non-significant risk study\nunder 21 CFR 812.2(b)?\nA significant risk IVD device is generally one that is for a use of substantial\nimportance in diagnosing, curing, mitigating, or treating disease, or otherwise\npreventing impairment of human health and presents a potential for serious risk to\nthe health, safety, or welfare of a subject or otherwise presents a potential for\nserious risk to health, safety, or welfare of a subject. 21 CFR 812.3(m).",
+    "page": 9,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "For IVDs, we interpret \"potential for serious risk\" in relation to the nature of the\nharm that may result to the subject. Misdiagnosis and/or error in treatment caused\nby inaccurate test results would be considered a significant risk if the potential\nharm to the subject could be life-threatening, or could result in permanent\nimpairment of a body function or permanent damage to the body structure.\nFalse positive results can lead to unnecessary confirmatory testing, unnecessary\ntreatment that can be invasive or have harmful side effects, and/or unnecessary\npsychological trauma when serious or life-threatening diseases or conditions are\ninvolved. False negative results can lead to a delay in establishing the correct\ndiagnosis, failure to start or continue needed treatment, false security that may\nprevent timely follow-up and retesting, and contribute to the potential spread of\ninfectious agents to others. If the potential risk does not rise to the level described\nabove, the study is not considered to pose a significant risk. FDA recommends the\nsponsor consider all these factors when determining the risk associated with your\ninvestigational IVD. (See 21 CFR 812.3(m) and also \"Information Sheet\nGuidance for IRBs, Clinical Investigators, and Sponsors,\" available at\nhttp://www.fda.gov/ScienceResearch/SpecialTopics/RunningClinicalTrials/Guida",
+    "page": 10,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "ncesInformationSheetsandNotices/ucm113709.htm, particularly the one on\n\u201cSignificant Risk and Nonsignificant Risk Medical Devices\u201d at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm126622.htm.)\n4. How do I determine if an invasive sampling technique presents a significant risk\nunder 21 CFR 812.2(c)(3)?\nTo determine whether an invasive sampling technique presents a serious risk, we\nrecommend that you base your risk determination on the nature of the harm that\nmay result from sampling. For example, FDA considers sampling techniques that\nrequire biopsy of a major organ, use of general anesthesia, or placement of a\nblood access line into an artery or large vein (subclavian, femoral, or iliac) to\npresent a significant risk.\n5. What does noninvasive mean?\nA noninvasive device is one that does not, by design or intention:\na. penetrate or pierce the skin or mucous membranes of the body, the\nocular cavity, or the urethra; or\nb. enter the ear beyond the external auditory canal, the nose beyond the\nnares, the mouth beyond the pharynx, the anal canal beyond the rectum, or\nthe vagina beyond the cervical os.\n(21 CFR 812.3(k)).\nBlood sampling that involves simple venipuncture is considered noninvasive, and\nthe use of surplus samples of body fluids or tissues that are left over from samples",
+    "page": 10,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "taken for noninvestigational purposes is also considered noninvasive (21 CFR\n812.3(k)).\n6. What does it mean to have \u201cconfirmation of the diagnosis by another, medically\nestablished diagnostic product or procedure?\u201d\nFor an investigational study to be exempt under 21 CFR 812.2(c)(3), clinical\ninvestigators must use a medically established means of diagnosis (e.g., another\ncleared or approved IVD or culture) of the disease or condition as the basis for\ndecisions regarding treatment of all subjects participating in the study. 21 CFR\n812.2(c)(3)(iv). Additionally, test results from the exempt IVD investigation\nshould not influence patient treatment or clinical management decisions before\nthe diagnosis is established by a medically established product or procedure.\nIf an investigational test uses a new technology or represents a significant\ntechnological advance, established diagnostic products or procedures may not be\nadequate to confirm the diagnosis provided by the investigational IVD. For\nexample, if an investigational test is designed to identify an infection at the\nearliest stages of viral infection (before formation of antibodies), established\ndiagnostic products or procedures that rely on the detection of antibodies to the\nvirus would be inadequate to confirm diagnoses. Under these conditions the\nstudy would not meet the criteria for exemption under 812.2(c)(3) since the",
+    "page": 11,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "testing could not be confirmed with a medically established diagnostic product or\nprocedure. You may consider whether the device is a non-significant risk device\nsubject to abbreviated IDE requirements (21 CFR 812.2(b)).\n7. What if no medically established means for diagnosing the disease or condition\nexists?\nIf there is no medically established diagnostic product or procedure and clinical\ninvestigators use the results from the investigational study to decide on treatment,\nFDA would not consider the study exempt from IDE requirements under 21 CFR\n812.2. The sponsor would need to obtain FDA approval of an IDE if the results\nare used in diagnosis without confirmation (e.g., to assist in determining\ntreatment) (21 CFR 812.1, 812.2) and if a significant risk device is involved.\n8. Can an investigational IVD device be used outside of the study protocol, in an\nemergency situation?\nYes. (See also Chapter III, \u201cExpanded Access to Unapproved Devices,\u201d of the\nguidance document \u201cIDE Policies and Procedures.\u201d)3 A physician may use an\ninvestigational IVD device in an emergency situation if:\na. the patient has a serious disease or condition;\nb. no generally accepted alternative diagnostic device or treatment for the\ncondition is available; and\nc. there is no time to use existing procedures to get FDA approval for the\nemergency use.",
+    "page": 11,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "FDA recommends that the physician make the determination that the patient's\ncircumstances meet the above criteria, to assess the potential for benefit from the\nuse of the unapproved device, and to have substantial reason to believe that\nbenefits will exist. In the event that a device is used in circumstances meeting the\ncriteria listed above, the physician should follow as many of the patient protection\nprocedures listed below as possible. These include obtaining:\n\u2022 Informed consent from the patient or a legally authorized representative;\n\u2022 Clearance from the institution as specified by their policies;\n\u2022 Concurrence of the IRB chairperson;\n\u2022 An assessment from a physician who is not participating in the study;\nand\n\u2022 Authorization from the IDE sponsor, if an approved IDE exists for the\ndevice;\n\u2022 Authorization from the device company, if no IDE exists.\nAlthough prior FDA approval for emergency use of the investigational device is\nnot required, 21 U.S.C. \u00a7 360bbb(a), if an IDE exists, the use shall be reported to\nFDA in a supplemental IDE by the IDE sponsor within 5 working days from the\ntime the sponsor learns of the use (21 CFR 812.35(a)(2)). The IDE supplement\nshould contain a summary of the conditions constituting the emergency, patient\noutcome information, and the patient protection measures that were followed. If",
+    "page": 12,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "no IDE exists, the physician should follow the above procedures and report the\nemergency use to the sponsor and to CDRH or CBER, as appropriate.\n3 This reference can be found at:\nhttp://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm0\n80203.pdf.\nFor additional information on the procedures physicians and IRBs should follow\nin an emergency use situation, please see Chapter III, \"Expanded Access to\nUnapproved Devices\" of the guidance entitled, IDE Policies and Procedures.\n9. Can an unapproved or uncleared investigational IVD device ever be used for\nnonemergency treatment of patients who do not meet the inclusion criteria of an\ninvestigational study?\nYes, in exceptional situations. FDA recognizes that there are circumstances when\nan unapproved or uncleared IVD is the only available option for a patient or small\ngroup of patients who do not meet the inclusion criteria and \"compassionate\nuse\"/single patient use of the device may be appropriate. Section 561 of the Act.\nCBER refers to such situations as \u201csingle patient exemptions.\u201d Appropriate\npatient protection measures are needed for these studies.\nUse of an investigational IVD device for one or a small group of patients who do\nnot meet the study inclusion criteria would require a change to the investigational\nplan. 21 CFR 812.35(a). If the study is being conducted under an approved IDE,",
+    "page": 12,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "the sponsor should submit a supplement to the IDE requesting a change to the\ninvestigational plan for \u201ccompassionate use.\u201d 21 CFR 812.35(a). The review of\nthis supplement can be facilitated by a phone call to the reviewing division and by\nthe submission by facsimile of an advanced copy of the supplement. If the\ninvestigational IVD device would require an FDA-approved IDE, but one has not\nyet been submitted or approved, FDA intends to exercise enforcement discretion\nwhere the sponsor submits a compassionate use request to CDRH or CBER, as\nappropriate, and follows the patient protection measures listed above for\nemergency use.4\nIf a study is being conducted according to an exemption under 21 CFR\n812.2(c)(3), or as a non-significant risk IDE under 21 CFR 812.2(b), the sponsor\nshould obtain prior approval for the specific compassionate use/single patient use\nfor the individual(s) in question from the FDA and the reviewing IRB at the site\nwhere the physician proposes to use the device. For CDRH regulated products,\nthe required information can be submitted to the Director of the IDE Program:\nAttn: Director, IDE Program\nU.S. Food and Drug Administration\nCenter for Devices and Radiological Health\nWO66 Room G609\n10903 New Hampshire Avenue\nSilver Spring, MD 20993-0002\n4 See Chapter III, \"Expanded Access to Unapproved Devices,\" of the guidance document \"IDE Policies and\nProcedures,\"",
+    "page": 13,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "http://www.fda.gov/downloads/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/ucm0\n80203.pdf.\nCompassionate use information is available on FDA\u2019s web site at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/HowtoMarke\ntYourDevice/InvestigationalDeviceExemptionIDE/ucm051345.htm#compassiona\nteuse\nFor CBER regulated products, the required information should be submitted to the\nappropriate reviewing division (see section II above):\nDocument Control Center (HFM-99)\nCenter for Biologics Evaluation and Research\nFood and Drug Administration\n1401 Rockville Pike, Suite 200N\nRockville, MD 20852-1448\n10. Are treatment IDEs and continued access available for investigational IVDs\nunder an IDE?\nYes, both are available. See 21 CFR 812.36 and the Glossary for definitions of\ntreatment IDE and continued access.\n11. Can my IVD device be considered a humanitarian use device (HUD) and can I\napply for marketing approval through a humanitarian device exemption (HDE)?\nYes, it is possible for an IVD device to be approved for marketing under the\nHDE. See the Glossary for definitions, 21 CFR Part 814, Subpart H, and\nAppendix 1 for more information.\n12. Can an IVD device qualify for HUD designation if the affected patient\npopulation is fewer than 4,000 per year but each patient may need to be tested\nmultiple times?",
+    "page": 13,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "IVD devices qualify for an HUD designation when the number of persons tested\nwith the device is fewer than 4,000 per year. FDA recognizes that the number of\ntests with the device may exceed one per patient. A device that involves multiple\npatient uses may still qualify for HUD designation as long as the IVD device is\ndesigned for diagnosis or treatment of a total of fewer than 4,000 patients per year\nin the US.\n.\nIf a device is being developed to diagnose or to help diagnose a disease or\ncondition with an incidence of fewer than 4,000 patients per year, but there are\nmore than 4,000 patients a year \u201cat risk\u201d who would be subject to testing using the\ndevice, then the device may not qualify as a HUD. 21 CFR 814.102(a)(5).\n13. Is there a regulation that specifically addresses labeling of IVD products?\nYes. The regulation, \u201cLabeling for in vitro diagnostic products,\u201d (21 CFR\n809.10), specifies the information required on labeling and in package inserts of\nmarketed products as well as products in development that are distributed for use\nin studies. We recommend that you design IVD studies so that the results will\nsupport the proposed indications for use in the package insert and labeling.\n14. Are there different goals for IVD studies compared to other device studies?\nNo. The goals for IVD studies are the same as the goals for other device studies,",
+    "page": 14,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "even if the IVD study is exempt from most IDE requirements under 21 CFR\n812.2(c)(3). We recommend that the sponsor and the investigators conduct an\nIVD device study with the goals of\n\u2022 producing valid scientific evidence (for a definition, see 21 CFR\n860.7(c)(2) and answer #1 of section IV) demonstrating reasonable\nassurance of the safety and effectiveness of the product, as described\nbelow, and\n\u2022 protecting the rights and welfare of study subjects. (See Human Subject\nProtection, Section V of this guidance).\n15. What regulations describe the content requirements for IVD premarket\nsubmissions?\nRegulations that describe the basic content requirements by submission type\ninclude:\n\u2022 Investigational Device Exemption (IDE) \u2013 21 CFR 812.20\n\u2022 Premarket Notification (510(k)) \u2013 21 CFR 807.87\n\u2022 Premarket Approval (PMA) \u2013 21 CFR 814.20\n\u2022 Humanitarian Device Exemption (HDE) \u2013 21 CFR 814.104\nCurrently, there is no regulation describing the contents for a Product\nDevelopment Protocol (PDP). However, section 515(f)(1) of the Act and the\nCDRH website at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/HowtoMarke\ntYourDevice/PremarketSubmissions/PremarketApprovalPMA/ucm048168.htm#p\ndp describe PDP requirements.\nIn addition, the FDA 510(k) substantial equivalence determination summaries and\nFDA PMA summaries of safety and effectiveness are currently available on the",
+    "page": 15,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "CDRH OIVD web page at\nhttp://www.fda.gov/MedicalDevices/ProductsandMedicalProcedures/InVitroDiag\nnostics/LabTest/ucm126189.htm or for CBER products at\nhttp://www.fda.gov/BiologicsBloodVaccines/BloodBloodProducts/ApprovedProd\nucts/PremarketApprovalsPMAs/ucm089793.htm and\nhttp://www.fda.gov/BiologicsBloodVaccines/DevelopmentApprovalProcess/510k\nProcess/ucm133429.htm. We recommend that the sponsor structure submissions\naccording to the relevant regulations and provide sufficient detail to give the\nreader an understanding of the scientific data and information supplied. OIVD has\nissued many device specific guidances that describe FDA\u2019s recommendations for\npremarket submissions for particular types of IVDs.\n16. Can published literature be used to support an IVD premarket submission?\nFDA has developed a guidance document entitled \u201cSupplements to Approved\nApplications for Class III Medical Devices: Use of Published Literature, Use of\nPreviously Submitted Materials, and Priority Review,\u201d which can be found on the\nCDRH website at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm080183.htm. CDRH and CBER believe that the principles outlined\nin this guidance are applicable to other submissions, specifically those for a\n510(k), PMA, and HDE. (See the Glossary for definitions of these submission\ntypes.)",
+    "page": 15,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "17. Can data from studies performed outside of the United States (U.S.) be used to\nsupport an IVD premarket submission?\nYes. FDA recognizes that clinical investigations may be conducted outside of the\nU.S., for example, in order to find adequate numbers of subjects for certain\ndisease states, conditions, or pathogens. The PMA regulation contains information\nregarding research conducted outside of the U.S. (21 CFR 814.15). FDA can also\naccept data from foreign studies in support of 510(k)s .\n18. Can foreign/international data be used as the sole support of a marketing\napplication?\nYes, but only if warranted. The PMA regulation, 21 CFR Part 814, allows foreign\ndata to be used as the sole support of a marketing application but only if (1) the\ndata are applicable to the U.S. population and to U.S. medical practices, including\nlaboratory practices, (2) the studies have been performed by clinical investigators\nof recognized competence, and (3) the data may be considered valid without the\nneed for an on-site FDA inspection or, if necessary, FDA can validate the data\nthrough an on-site inspection or other appropriate means (21 CFR 814.15(d)).\nFor IVD devices, FDA would consider differences in population demographics,\ndisease prevalence, disease presentation, laboratory practices, and medical\nstandards of care. If the sponsor plans to submit an application based solely on",
+    "page": 16,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "foreign data, FDA recommends that the sponsor consult with the reviewing\ndivision prior to submission of the application.\nSee Introduction, Section II, question # 4 of this guidance for a list of reviewing\ndivisions in both CDRH and CBER.\n19. What is a master file and how is one submitted?\nA device master file (MAF) is a reference source that a person submits to FDA. In\ngeneral, it is a file of trade secret or confidential commercial/financial information\nsubmitted by a third party (i.e., someone other than the applicant) for use as a\nreference source in support of at least one application. FDA will accept MAFs\nfrom organizations or persons who have not submitted or will not directly submit\nthe information in a PMA, IDE, 510(k), or other device-related submission to\nFDA. MAFs may include information on the following:\n\u2022 facilities and manufacturing procedures and controls;\n\u2022 synthesis, formulation, purification and specifications for chemicals,\nmaterials (an alloy, plastic, etc.) or subassemblies for a device;\n\u2022 packaging materials;\n\u2022 contract packaging and other manufacturing (such as sterilization);\n\u2022 nonclinical study data; and\n\u2022 clinical study data.\nWe recommend that a MAF include a cover letter, preferably on company\nletterhead, signed by a responsible company official that identifies the submission\nas a MAF and provides the name of a contact person at the company or a",
+    "page": 16,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "III. General Regulatory Issues",
+    "text": "designated agent. For more information concerning MAFs see the CDRH website\nat\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/HowtoMarke\ntYourDevice/PremarketSubmissions/PremarketApprovalPMA/ucm142714.htm\n20. How do I arrange to reference a MAF?\nYou, the sponsor, should contact the company that owns the information you\nwould like to incorporate by reference in your premarket submission to FDA, and\nfind out if this information is currently in a master file. If it is, you should obtain a\nwritten authorization from the master file holder (or an authorized designated\nagent/representative) on company letterhead. You should include the original\nauthorization letter in the original copy of the premarket submission to FDA, and\na copy of the authorization letter in each subsequent copy of the premarket\nsubmission. The master file holder should not send the authorization letter directly\nto FDA for inclusion in the master file or for inclusion in your premarket\nsubmission.\nIf the information you, the sponsor, would like to incorporate by reference in your\npremarket submission to FDA is not already in a master file, you should request\nthat the company that owns this information submit a master file to FDA.\nFor more information on referencing MAFs see the CDRH website at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/HowtoMarke",
+    "page": 17,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "IV. Investigational Studies",
+    "text": "IV. Investigational Studies\n1. What does FDA consider to be valid scientific evidence?\nValid scientific evidence is defined in the \u201cMedical Device Classification\nProcedures\u201d regulation, 21 CFR Part 860, as:\nEvidence from well-controlled investigations, partially controlled studies, studies\nand objective trials without matched controls, well-documented case histories\nconducted by qualified experts, and reports of significant human experience with\na marketed device, from which it can fairly and responsibly be concluded by\nqualified experts that there is reasonable assurance of the safety and effectiveness\nof a device under its conditions of use (21 CFR 860.7(c)(2)).\nThe intended use of the IVD, the level and quality of information in the literature\nrelevant to the device use, and FDA knowledge of the technology obtained from\nreviewing other premarket applications determine the type of study and the level\nof evidence you may need to demonstrate reasonable assurance of its safety and\neffectiveness. For example, if you are studying an IVD device that uses a well-\ncharacterized technology and has an intended use that falls within a type of device\nthat has been classified into Class I or Class II, the study may consist of a\ncomparison of analytic performance to that of a legally marketed (i.e., predicate)\ndevice. On the other hand, if your IVD uses novel or unproven technology or has",
+    "page": 18,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "IV. Investigational Studies",
+    "text": "a new intended use, you may need to conduct a well-planned clinical study of the\ndevice in the target population defined by your intended use. You may contact the\nDivision in the appropriate Center if you have questions regarding the type of\nstudy you need to conduct for your device.\nWe recommend that sponsors and investigators of all studies, including exempt\nstudies under 21 CFR 812.2(c)(3), conduct the studies with the following goals in\nmind: producing valid scientific evidence of the product\u2019s safety and effectiveness\nand protecting the rights and welfare of study subjects. Sponsors and investigators\nof significant and non-significant risk studies must comply with the regulation\nrequirements in 21 CFR Part 812. FDA recommends that sponsors and\ninvestigators of studies exempt from the majority of requirements under 21 CFR\nPart 812 use the relevant sections of 21 CFR Part 812 regarding the general\nconduct of device studies as guidance. (General Regulatory Issues, Section III\nof this guidance, discusses how 21 CFR Part 812 may apply to a particular IVD\nstudy.)\n2. Why should I review the information regarding the conduct of device studies\nfound in the IDE regulation even if, after considering the exemption criteria in the\nregulation, I determine that my proposed studies are exempt from most IDE\nrequirements?",
+    "page": 18,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "IV. Investigational Studies",
+    "text": "Some studies are exempt from most of 21 CFR Part 812 because of the low risk\nthey pose to study subjects. However, studies that will support a PMA or other\npremarket submission should have the same goals as all other device studies: 1) to\nproduce valid scientific evidence to support reasonable assurance of a product\u2019s\nsafety and effectiveness, and 2) to protect study subjects. Therefore, the\ninformation in 21 CFR Part 812 will also be useful to sponsors and investigators\nof device studies exempt under 21 CFR 812.2(c). In addition, all studies that will\nsupport applications to FDA are subject to 21 CFR 812.119(c) as well as to 21\nCFR Parts 50 and 56.\n3. Should I review the \u201cInternational Conference on Harmonization; Good Clinical\nPractice: Consolidated Guideline\u201d (\"ICHGCP\") published in the Federal Register\nVol. 62, No. 90, May 9, 1997, pp. 25691-25709 or the draft ISO 14155, \u201cClinical\nInvestigation of Medical Devices for Human Subjects,\u201d when developing studies for\ndevices that fall within the exemption at 21 CFR 812.2(c)?\nAlthough the ICH document was written for studies of pharmaceuticals, sections\nof the guidance address study issues common to all investigational products.\nThus, these sections of the ICH GCP provide a useful reference regarding the\nproper conduct of studies.\nThe draft ISO document specifically states that it does not apply to IVD devices.",
+    "page": 19,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "IV. Investigational Studies",
+    "text": "The draft ISO document is an international document intended to reflect basic\npractices appropriate to clinical trials worldwide. It does not include all of FDA\u2019s\nspecific requirements for clinical studies and is not presently a standard that FDA\nhas officially recognized; therefore, we do not recommend that you rely on it.\n4. Is FDA willing to review and discuss a study protocol even if the study is exempt\nfrom most of the 21 CFR Part 812 requirements?\nYes. Both CDRH and CBER have developed processes that allow sponsors to\nobtain early FDA input and review of proposed studies by submission of the\nprotocol and other study materials in the form of a \u201cpre-IDE\u201d document and/or a\ndiscussion in the form of a \u201cpre-IDE\u201d meeting. While we refer to this early input\nas a \"pre-IDE\" process, it is also available for studies that are exempt from most\nIDE requirements under 21 CFR 812.2(c)(3) or that will be conducted under the\nabbreviated IDE regulations for NSR studies (21 CFR 812.2). FDA encourages\nuse of the pre-IDE submission and/or meeting whenever the sponsor desires early\nfeedback for clinical studies, particularly those for novel or high risk (Class III)\ndevices. If you (the sponsor) are interested in submitting a pre-IDE, we\nrecommend that you contact the Division that will review your device before you",
+    "page": 19,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "IV. Investigational Studies",
+    "text": "initiate your studies (See Introduction, Section II, question # 4 of this guidance).\nUse of the pre-IDE process does not obligate you in any way to future submission\nof an IDE. FDA also encourages continued communication throughout the course\nof the study. This communication can be in the form of an informational\nmeeting/telephone call or status reports to the pre-IDE file.\n5. Can I obtain a more formal evaluation of my study design or investigational plan\nthrough a determination and/or agreement meeting?\nYes, for Class III IVDs. (See the Glossary for definition of terms.) A guidance\ndocument regarding these meetings, \u201cEarly Collaboration Meetings Under the\nFDA Modernization Act (FDAMA); Final Guidance for Industry and for CDRH\nStaff,\u201d is available at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm073604.htm. CBER also follows this meeting guidance document\nwhen determination and/or agreement meetings are requested.\n6. Under 21 CFR Part 812, what are the sponsor\u2019s and investigator\u2019s responsibilities\nfor studies of a non-significant risk device conducted under the abbreviated\nrequirements in 21 CFR Part 812?\nThe majority of the sponsor\u2019s and investigator\u2019s responsibilities in a study of a\nnonsignificant risk device are found in 21 CFR 812.2(b)(1) of the IDE regulation\nand are summarized below:",
+    "page": 20,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "IV. Investigational Studies",
+    "text": "a. Label the device in accordance with 21 CFR 812.5;\nb. Obtain IRB approval of the investigation after presenting the reviewing IRB\nwith a brief explanation of why the device is not a significant risk device, and\nmaintain such approval.\nc. Ensure that each investigator participating in an investigation of the device\nobtains from each subject under the investigator\u2019s care, informed consent under\npart 50 and documents it, unless documentation is waived by an IRB under 21\nCFR 56.109(c).\nd. Comply with the requirements of 21 CFR 812.46 with respect to monitoring\ninvestigations;\ne. Maintain the records required under 21 CFR 812.140(b)(4) and (5) and make\nthe reports required under 21 CFR 812.150 (b)(1) through (3) and (5) through\n(10);\nf. Ensure that participating investigators maintain the records required by\n21 CFR 812.140(a)(3)(i) and make the reports required under 21 CFR\n812.150(a)(1), (2), (5), and (7);\ng. Comply with the prohibitions in 21 CFR 812.7 against promotion and other\npractices.\nAll studies should have a written protocol as described in 21 CFR 812.25(b) and a\nrisk analysis as described in 21 CFR 812.25(c), regardless of the status of the\nstudy under 21 CFR Part 812.\nAll sites participating in the study should use identical copies of the protocol and\nreceive protocol amendments simultaneously so that data is collected in a",
+    "page": 20,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "IV. Investigational Studies",
+    "text": "consistent manner. Data collected from different sites otherwise may not be able\nto be pooled in the final analysis due to inconsistencies in how it was collected.\nWe recommend that protocols describe the study objectives, design, methodology,\nsubject populations, types of specimens, data to be collected and planned data\nanalysis. (See also Data Considerations, Section VI, of this guidance). For\ninformation on how to monitor the study, you may refer to the FDA guidance\ndocument entitled \u201cGuideline for the Monitoring of Clinical Investigations,\u201d\nwhich is available at\nhttp://www.fda.gov/downloads/ICECI/EnforcementActions/BioresearchMonitorin\ng/UCM133752.pdf\n7. What are my responsibilities as the sponsor or the investigator of a study of a\nsignificant risk device subject to 21 CFR Part 812?\nThe sponsor\u2019s responsibilities for significant risk device investigations are\ndescribed in Appendix 3 of this guidance. This information is also included as an\nenclosure in all IDE approval letters.\nThe investigator\u2019s responsibilities for significant risk device investigations are\ndescribed in Appendix 4 of this guidance. This information is also included as an\nenclosure in all IDE approval letters.\n8. Is it appropriate to use a quality systems approach in the conduct of IVD studies?\nYes, we recommend that sponsors and investigators follow quality systems",
+    "page": 21,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "IV. Investigational Studies",
+    "text": "methodologies, including accountability and traceability of the investigational device,\nauditing of data collected and monitoring to make sure the protocol was followed,\ndocumentation of training of staff in the use of the device [21 CFR 812.43(a)],\nand notifying FDA of unanticipated adverse device effects [21 CFR\n812.150(b)(1)] in the conduct of IVD studies. Also, 21 CFR 812.20(b)(3) requires\n\u201c[a] description of the methods, facilities, and controls used for the manufacture,\nprocessing, packing, storage, and, where appropriate, installation of the device, in\nsufficient detail so that a person generally familiar with good manufacturing\npractices can make a knowledgeable judgment about the quality control used in\nthe manufacture of the device.\u201d This suggestion is consistent with both the need to\nprovide scientifically valid information in support of premarket submissions and\nthe design control requirements. Manufacturers of Class II and Class III IVD\ndevices, and some Class I devices, are required to follow design controls, as\ndescribed in 21 CFR 820.30 of the \u201cQuality System Regulation,\u201d during the\ndevelopment of investigational devices. 21 CFR 812.1(a). See the Glossary for\nthe definition of device classes.\n9. If a sponsor\u2019s \u2018in-house\u2019 laboratory participates in the study of an IVD is the\nlaboratory considered to be a study site?",
+    "page": 21,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "IV. Investigational Studies",
+    "text": "Yes. All locations involved in an IVD study are considered study sites whether\nthey are located at a sponsor-owned facility or at an independently-owned\nlaboratory. The sponsor should list the laboratory as a study site, and the study\nshould be conducted under the same investigational plan. As a study site, this\nlaboratory can be inspected as part of the FDA\u2019s bioresearch monitoring (BIMO)\ninspection program.",
+    "page": 22,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "V. Human Subject Protection",
+    "text": "V. Human Subject Protection\n1. When does an IVD study involve human subjects?\nUnder FDA\u2019s regulations governing the conduct of IVD device studies, the\ndefinition of \"subject\" includes individuals on whose specimens an investigational\ndevice is used [see 21 CFR 812.3(p)]. As a result, an IVD study using human\nspecimens involves human subjects.\n2. Am I required to follow the \u201cGood Laboratory Practice for Nonclinical Studies\u201d\nregulation (21 CFR Part 58) in my IVD study?\nPart 58 applies only to nonclinical laboratory studies, which are defined as\nin vivo or in vitro experiments in which test articles are studied prospectively in\ntest systems under laboratory conditions to determine their safety. The term does\nnot include studies utilizing human subjects or clinical studies or field trials in\nanimals. The term does not include basic exploratory studies carried out to\ndetermine whether a test article has any potential utility or to determine physical\nor chemical characteristics of a test article (21 CFR 58.3(d)).\nMoreover, because the safety of IVDs is related to the accuracy of the result, most\nIVD studies that are intended to establish safety would necessarily use human\nspecimens. As noted above, an IVD study using human specimens involves\nhuman subjects and thus is excluded from the definition of nonclinical laboratory",
+    "page": 22,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "V. Human Subject Protection",
+    "text": "studies. Such studies to establish safety are subject to 21 CFR Parts 50 and 56 and\n21 CFR Part 812 as applicable, dealing with human subject research, rather than\nto 21 CFR Part 58.\n3. What regulations apply regarding human subject protection in investigational\nIVD studies?\nFDA regulations on \u201cProtection of Human Subjects\u201d and \u201cInstitutional Review\nBoards\u201d (21 CFR Parts 50 and 56) apply to all clinical investigations\n(investigations involving human subjects) regulated by FDA under section 520(g)\nof the Federal Food, Drug and Cosmetic Act, as well as other clinical\ninvestigations that support applications for research or marketing permits for\nproducts regulated by FDA. (21 CFR 50.1, 56.101). As described above, any\nstudy using human specimens involves human subjects. FDA has expressed an\nintent to exercise enforcement discretion regarding informed consent for certain\nIVD studies, in the guidance entitled, \"Guidance on Informed Consent for In\nVitro Diagnostic Device Studies using Leftover Human Specimens that are not\nIndividually Identifiable.\"\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm078384.htm\nSome research studies involving human subjects that are conducted or supported\nby a federal department or agency will be required to follow the Federal Policy\nfor the Protection of Human Subjects (the \u201cCommon Rule\u201d). The Department of",
+    "page": 22,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "V. Human Subject Protection",
+    "text": "Health and Human Services (HHS) has codified the Common Rule at 45 CFR\nPart 46, subpart A. Research involving human subjects that is conducted or\nsupported by HHS and that is not otherwise exempt must comply with 45 CFR\nPart 46, which contains additional protections for specific populations. For further\ninformation about the applicability of 45 CFR Part 46 to your study, refer to\nhttp://www.hhs.gov/ohrp/.\nFDA regulation and the Common Rule contain some differing requirements.\nAlthough FDA and HHS seek to harmonize requirements related to informed\nconsent where possible, certain requirements of the FDA regulation and the\nCommon Rule are different. The same study may be subject to both sets of\nrequirements, either one, or neither. It is the responsibility of sponsors and\ninvestigators to comply with all applicable requirements.\n4. How do FDA regulations for protection of human subjects, 21 CFR Parts 50 and\n56, differ from HHS regulations in 45 CFR Part 46 subpart A?\nA general comparison appears in the FDA\u2019s Good Clinical Practice program\nwebsite, Comparison of FDA and HHS Human Subject Protection Regulations\nfound at\nhttp://www.fda.gov/ScienceResearch/SpecialTopics/RunningClinicalTrials/Educa\ntionalMaterials/ucm112910.htm. For additional information on 45 CFR Part 46\nsubpart A refer to the Office for Human Research Protections at",
+    "page": 23,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "V. Human Subject Protection",
+    "text": "http://www.hhs.gov/ohrp/humansubjects/guidance/45cfr46.htm.\n5. Can investigational IVD studies receive expedited review (see Glossary for\ndefinition) by an IRB?\nYes, in many cases an investigational IVD study is eligible for IRB expedited\nreview (see 21 CFR 56.110), for both initial approval and continuing review. The\ncategories of research that may be reviewed by the IRB through an expedited\nreview procedure are described in the Federal Register notice on expedited\nreview, found at\nhttp://www.fda.gov/ScienceResearch/SpecialTopics/RunningClinicalTrials/Guida\nncesInformationSheetsandNotices/ucm118099.htm. As stated in a Federal\nRegister notice, however, sponsors and investigators may not use the expedited\nreview procedure where identification of the subjects and/or their responses\nwould reasonably place the subjects at risk of criminal or civil liability or be\ndamaging to the subjects\u2019 financial standing, employability, insurability,\nreputation, or be stigmatizing, unless reasonable and appropriate protections will\nbe implemented so that risks related to invasion of privacy and breach of\nconfidentiality are no greater than minimal. (63 FR 60353, November 9, 1998).\n6. Can leftover specimens be used in IVD studies without informed consent?\nThe document entitled, \"Guidance for Industry, Institutional Review Boards,",
+    "page": 23,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "V. Human Subject Protection",
+    "text": "Clinical Investigators, and Food and Drug Administration: Guidance on Informed\nConsent for In Vitro Diagnostic Device Studies using Leftover Human Specimens\nthat are not Individually Identifiable,\"\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm078384.htm, describes the limited circumstances in which FDA\nintends to exercise enforcement discretion regarding requirements for informed\nconsent. (See Glossary for definition of \"leftover specimens\".)\n7. Can those who routinely conduct studies with IVDs (e.g., research hospitals) use a\ngeneral informed consent to address future studies using samples collected in their\nown facility?\nTo fulfill FDA informed consent requirements for studies of IVDs, a site may\ndevelop an informed consent process to address the use of samples collected at\nthe facility (see the Glossary for definition) in a specific study or for a broader\ncategory of future studies. This general informed consent process may be used for\nsubjects seen at and/or admitted to a specific facility. The informed consent\ndocument must contain all of the required elements found in 21 CFR 50.25.\n8. Can a human specimen that was initially collected in a study with the informed\nconsent of the subject be used in a later study without a new consent process?\nIf the original informed consent document contains a statement that excess",
+    "page": 24,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "V. Human Subject Protection",
+    "text": "specimen(s) will be stored for future use in specified types of studies and the new\nstudy meets the criteria stated in that consent document, it is possible that no\nfurther consent is necessary. This assumes that the original informed consent\ndocument contains all of the other essential elements, including notice to the\nsubject that FDA may review their files and an explanation of the purposes and\nbenefits of the research. (See 21 CFR 50.25.) We recommend sponsors and\ninvestigators consult with the IRB regarding the need for a new informed consent\nprocess in such a case. The IRB decision should include consideration of any state\nand/or local requirements regarding informed consent and patient rights. If new\ntesting could expose the subject to previously unanticipated risks (e.g., privacy\nconcerns for the subject and/or his family related to testing for a genetic marker),\na new consent may be needed. In addition, if the original informed consent did not\naddress future research use at all, or did not cover the type of study now under\nconsideration, it is likely a new consent will be needed.\nUnder certain circumstances, for human specimens leftover from specimens\noriginally collected for a previous study, FDA intends to exercise enforcement\ndiscretion regarding informed consent requirements. See \"Guidance for Industry,",
+    "page": 24,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "V. Human Subject Protection",
+    "text": "Institutional Review Boards, Clinical Investigators, and Food and Drug\nAdministration: Guidance on Informed Consent for In Vitro Diagnostic Device\nStudies using Leftover Human Specimens that are not Individually Identifiable,\"\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm078384.htm,",
+    "page": 25,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VI. Data Considerations",
+    "text": "VI. Data Considerations\n1. What information should the protocol include to ensure that the investigational\nIVD study will be scientifically sound?\nWe recommend that the protocol include a clear description of study design;\nobjectives, estimation of performance goals (e.g., desired confidence interval\nwidths) that are directly related to the intended claims for the IVD device, or\nhypotheses; and a statistical plan to be applied to the data. (See the Glossary for\ndefinitions of protocol, statistical hypothesis, and confidence interval.)\n2. Is it acceptable to develop new or to revise existing study hypotheses as the study\nprogresses?\nWe generally believe it would be inappropriate to draw conclusions from after-\nthe-fact hypotheses. We recommend that changes in study protocols be carefully\ndocumented and explained. FDA encourages sponsors to contact the appropriate\nreview division to discuss studies before they are initiated and to consult FDA\nbefore changes in protocols are made mid-study. (For the FDA divisions\nresponsible for review of IVD products, see Introduction, Section II, of this\nguidance.)\n3. How should I determine appropriate sample size for a study?\nThe sponsor should formulate sample size based on standard statistical techniques\nand the sample size should account for any unique issues related to intended",
+    "page": 25,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VI. Data Considerations",
+    "text": "use(s), device technologies, and/or the biology of the condition being studied.\n4. What guidance is available for sponsors to determine how to estimate IVD\nperformance in terms of sensitivity and specificity, how to handle discrepant results,\nand what to do when a study is performed without a truth standard (\u201cgold\nstandard\u201d) (see the Glossary for definitions)?\nFDA has recognized a number of Clinical and Laboratory Standards Institute\n[(CLSI), formerly National Committee on Clinical Laboratory Standards\n(NCCLS)] standards related to these issues. A list of these standards, but not the\nstandards themselves, can be found through the database on the CDRH web page\nhttp://www.accessdata.fda.gov/scrIpts/cdrh/cfdocs/cfStandards/search.cfm\nNational Committee on Clinical Laboratory Standards\nThe agency\u2019s guidance entitled \u201cStatistical Guidance on Reporting Results from\nStudies Evaluating Diagnostic Tests\u201d can be viewed at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm071148.htm\n5. How much leeway is there in deciding on the populations from which human\nspecimens are collected and under what conditions are data on simulated specimens\n(see the Glossary for definition) acceptable?\nStudies should be performed in a representative sample of the intended use\npopulation (i.e., representation of both diseased and non-diseased cases, and",
+    "page": 25,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VI. Data Considerations",
+    "text": "controlling for subject demographics and morbidity factors that may affect the\nlevel of device performance). When a disease is rare or samples are needed\nspecifically to challenge cut-off points, sponsors may use enriched samples,\npanels of credentialed samples (e.g., Center for Disease Control and Prevention\n(CDC) panels), and/or spiked or contrived samples. The acceptance of simulated\nspecimens depends on how well they represent specimens from the intended-use\npopulation and whether their performance accurately reflects what the IVD device\nuser can expect.\n6. Is it acceptable to eliminate data that appear to be out of line with the main body\nof the dataset (i.e., \u201coutliers\u201d)?\nAn outlier, an observation that lies an unexpected distance from other values, does\nnot in itself prove that an error or violation has occurred. Therefore, the primary\ndata analysis should include all such observations, including \u201coutliers\u201d. A sponsor\nmay perform some specific supplemental analyses on subsets of the data, if\nclinically and scientifically justified, that may exclude outlying data points.\nExcluding large amounts of data, regardless of the reasons for exclusion, will\nseriously bias the results.\n7. Can I add additional testing on the same subject to the dataset, particularly when\nit is hard to find study subjects?",
+    "page": 26,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VI. Data Considerations",
+    "text": "In most studies the sponsor should avoid multiple testings of the same subject\nbecause it may skew performance statistics and under-estimate standard\ndeviations. When multiple testing is done, the sponsor should explain why it is\nnecessary and choose methods of statistical analysis that allow adjustment for\nwithin-subject correlation.\nIt is appropriate to conduct repeated testing of the same sample to evaluate test\nreproducibility \u2013 i.e., the ability of the test to yield the same or similar readings\nwhen expected.\n8. How much precision (see the Glossary for definition) is needed for measurement\ndata, e.g., in terms of decimal places?\nStudy data should contain no more decimal places than the precision of the\ninstrument allows, i.e., if the instrument is only precise to the second decimal\nplace the sponsor should not analyze the data using three decimal places.\n9. What records should help to ensure scientific soundness of an IVD investigational\nstudy?\nUnless a study falls within the exemption at 21 CFR 812.2(c), specific record\nrequirements are listed in 21 CFR 812.140. In general, the records that are needed\nare those that provide the data for testing the study hypotheses. Records should\ncontain sufficient detail to allow the study to be reproduced when the same\nprotocol is followed. We recommend that investigators maintain detailed records",
+    "page": 27,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VI. Data Considerations",
+    "text": "because a review of the study may indicate the need for other analyses of the\ncollected data.\nWe also recommend that investigators:\na. Maintain records of all data elements captured in the study, including\nraw measurements and subject co-variables in the form of demographic\nand morbidity factors;\nb. Link every observation recorded to the subject and that person\u2019s co-\nvariable data;\nc. Preserve information obtained for all subjects enrolled and for all\nspecimens collected.\nAdditionally, electronic spreadsheets of study data are useful. Given the possible\nneed to review or analyze study data at the most detailed level, electronic\nspreadsheets may help to minimize review time. For information on electronic\nrecords, see the guidance document, \"Part 11, Electronic Records; Electronic\nSignatures -- Scope and Application,\" at\nhttp://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformatio\nn/Guidances/ucm072322.pdf. There is also a more general guidance document\navailable on electronic records for clinical studies that is entitled \u201cComputerized\nSystems Used in Clinical Trials,\u201d which can be found at\nhttp://www.fda.gov/RegulatoryInformation/Guidances/ucm126402.htm.\n10. What does FDA recommend be included in the final report of the investigation\nfrom the sponsor to all reviewing IRBs (and to FDA for significant risk studies) (21\nCFR 812.150(b)(7))?",
+    "page": 27,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VI. Data Considerations",
+    "text": "A final report should be a basic scientific report of the studies conducted, including the\nresults of testing the study hypotheses. This report can be a useful means of providing a\nsimple account of the data collection and study outcome. Such a report can facilitate\npreparation of the eventual submission for regulatory action, particularly when\naccompanied by the information included in the investigational plan (see the Glossary\nfor definition).\nThe suggested format for the IDE final report, which FDA includes as an enclosure in all\nIDE approval letters, is found in Appendix 5 of this guidance.\nIt should be noted that FDA will consider submission of a marketing application (510(k),\nPMA, or HDE) to serve as the final report for the IDE. When a study sponsor submits a\nmarketing application in lieu of the final report, the sponsor should still submit a\nsupplement to the IDE stating that the marketing application should be considered the\nfinal report for the study.\nThe final report for significant risk device investigations must be submitted to the IRBs\nand/or FDA within six months after termination or completion of the study. 21 CFR\n812.150(b)(7).",
+    "page": 28,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "VII. Glossary\nNote: this glossary is written in plain language and is for use exclusively with this\nguidance document.\nDefinitions that have been taken from the Act, other pertinent laws, or in Federal\nregulations include the relevant citation.\n510(k) \u2013 See Premarket Notification.\nAgreement meeting \u2013 a meeting, under section 520(g)(7) of the Act (21 U.S.C. \u00a7\n360j(g)(7)), that is available to anyone planning to investigate the safety or effectiveness\nof a class III device (see definition below) or any implant. The purpose of the meeting is\nto reach agreement on the key parameters of the investigational plan, including the study\nprotocol. The meeting is to be held within 30 days of the receipt of a written request.\nFDA will document in writing any agreement reached and make it a part of the\nadministrative record. The agreement is binding on FDA and can only be changed with\nthe written agreement of the applicant or when there is a substantial scientific issue\nessential to determining the safety or effectiveness of the device. See 21 U.S.C. \u00a7\n360j(g)(7). A guidance document regarding these meetings, \u201cEarly Collaboration\nMeetings Under the FDA Modernization Act (FDAMA); Final Guidance for Industry and\nfor CDRH Staff,\u201d is available at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocument\ns/ucm073604.htm.",
+    "page": 28,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "Analyte specific reagent (ASR) - ASRs are defined as \u201cantibodies, both polyclonal and\nmonoclonal, specific receptor proteins, ligands, nucleic acid sequences, and similar\nreagents which, through specific binding or chemical reactions with substances in a\nspecimen, are intended for use in a diagnostic application for identification and\nquantification of an individual chemical substance or ligand in biological specimens.\" 21\nCFR 864.4020(a). ASRs are medical devices that are regulated by FDA. They are subject\nto general controls, including current Good Manufacturing Practices (cGMPs), 21 CFR\nPart 820, as well as the specific provisions of the ASR regulations (21 CFR 809.10(e),\n809.30, 864.4020).\nClass I devices \u2013 devices for which the general controls of the Act are sufficient to\nprovide reasonable assurance of their safety and effectiveness. They typically present\nminimal potential for harm to the user and the person being tested. They are subject to\ngeneral controls, which include registration and listing, labeling, and adverse event\nreporting requirements (section 513(a)(1)(A) of the Act). Most Class I devices are\nexempt from premarket notification (see definition below), subject to certain limitations\nfound in section 510(l) of the Act and in 21 CFR 862.9, 864.9, and 866.9. Some are also\nexempt from the \u201cQuality Systems Regulation\u201d found in 21 CFR Part 820. IVD examples",
+    "page": 29,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "of Class I devices include complement reagent, phosphorus (inorganic) test systems (21\nCFR 862.1580), and E. coli serological reagents (21 CFR 866.3255).\nClass II devices \u2013 devices for which general controls alone are insufficient to provide\nreasonable assurance of their safety and effectiveness and for which establishment of\nspecial controls can provide such assurances. Special controls may include special\nlabeling, mandatory performance standards, risk mitigation measures identified in\nguidance, and postmarket surveillance (section 513(a)(1)(B) of the Act). Some Class II\ndevices are exempt from premarket notification (see definition below), subject to\nlimitation in 21 CFR 862.9, 864.9, and 866.9. IVD examples of Class II devices include\nglucose test systems (21 CFR 862.1345), antinuclear antibody immunological test\nsystems (21 CFR 866.5100), and coagulation instruments (21 CFR 864.5400).\nClass III devices \u2013 devices for which insufficient information exists to provide\nreasonable assurance of safety and effectiveness through general or special controls.\nClass III devices are usually those that support or sustain human life, are of substantial\nimportance in preventing impairment of human health, or which present a potential,\nunreasonable risk of illness or injury (section 513(a)(1)(C) of the Act). Most Class III",
+    "page": 29,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "devices require premarket approval (PMA, see definition below). IVD examples of these\ninclude automated PAP smear readers, nucleic acid amplification devices for\ntuberculosis, and total prostate specific antigen (PSA) for the detection of cancer. A\nlimited number of Class III devices that are equivalent to devices legally marketed before\nenactment of the Medical Device Amendments of 1976 may be marketed through the\npremarket notification (510(k)) process (see definition below), until FDA has published a\nrequirement for manufacturers of that generic type of device to submit PMA data.\nCompassionate use \u2013 The compassionate use provision allows access for patients with a\nserious disease or condition who do not meet the requirements for inclusion in the clinical\ninvestigation but for whom the treating physician believes the device may provide a\nbenefit in treating and/or diagnosing their disease or condition. There must be no feasible\nalternative therapies/diagnostics available. Compassionate use is typically available only\nfor individual patients but also may be used to treat a small group. Prior FDA approval is\nneeded before compassionate use occurs.\nFurther information can be found at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/HowtoMarketYour\nDevice/InvestigationalDeviceExemptionIDE/ucm051345.htm.",
+    "page": 29,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "Confidence interval \u2013 the range of plausible values for a statistical parameter, consistent\nwith the observed data, which is computed with a sample estimate parameter (e.g., mean)\nand its standard deviation. For example, a \u201c95% Confidence Interval\u201d is computed such\nthat, if the parameter was determined for repeated experiments, the resulting values\nwould include the true parameter value 95% of the time.\nContinued access to investigational devices \u2013 FDA may allow sponsors to continue to\nenroll subjects under an IDE, after the trial has been completed, while a marketing\napplication is prepared by the sponsor and/or reviewed by FDA. To continue enrolling\nsubjects, a sponsor should show that there is a public health need for the device, that\npreliminary evidence indicates that the device is likely to be effective for the indications\nproposed, and that no significant safety concerns have been identified for the proposed\nindication. A guidance document, entitled \u201cContinued Access to Investigational Devices\nDuring PMA Preparation and Review,\u201d can be found at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocument\ns/ucm080260.htm .\nCo-variables \u2013 data elements relating to a subject that might affect how well a diagnostic\ntest works, such as demographic status (age, gender, etc.), morbidity, or concurrent\ntherapy.",
+    "page": 30,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "Determination Meeting \u2013 A Determination meeting under section 513(a)(3)(D) of the\nAct is available to anyone anticipating submitting a PMA or PDP and is intended to\nprovide the applicant with the FDA\u2019s determination of the type of valid scientific\nevidence that will be necessary to demonstrate that the device is effective for its intended\nuse. As a result of this meeting, FDA will determine whether clinical studies are needed\nto establish effectiveness and, in consultation with the applicant, determine the least\nburdensome way of evaluating device effectiveness that has a reasonable likelihood of\nsuccess. The applicant can expect that FDA will determine if concurrent randomized\ncontrols, concurrent non-randomized controls, historical controls, or other types of\nevidence will be acceptable. FDA\u2019s determination is to be written, shared with the\napplicant within 30 days following the meeting, and is binding upon the FDA, unless it\ncould be contrary to public health. 21 U.S.C. \u00a7 360c(a)(3)(D). A guidance document\nregarding these meetings, \u201cEarly Collaboration Meetings Under the FDA Modernization\nAct (FDAMA); Final Guidance for Industry and for CDRH Staff,\u201d is available at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocument\ns/ucm073604.htm.\nDevice \u2013 as defined in the Act, section 201(h): an instrument, apparatus, implement,",
+    "page": 30,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "machine, contrivance, implant, in vitro reagent, or other similar or related article,\nincluding any component, part, or accessory, which is a) recognized in the official\nNational Formulary, or the United States Pharmacopeia, or any supplement to them; b)\nintended for use in the diagnosis of disease or other conditions, or in the cure, mitigation,\ntreatment, or prevention of disease, in man or other animals; or c) intended to affect the\nstructure or any function of the body of man or other animals, and which does not\nachieve its primary intended purposes through chemical action within or on the body of\nman or other animals and which is not dependent upon being metabolized for the\nachievement of its primary intended purposes.\nExcess samples \u2013 remnants of human specimens collected for routine clinical care or\nanalysis that would otherwise have been discarded, as well as specimens leftover from\nspecimens previously collected for other unrelated research or investigations. Excess\nsamples are also referred to as \u201csurplus samples,\u201d \u201cresidual\u201d, \u201creserved samples,\u201d \"library\nsamples,\" and \"leftover specimens.\"\nExpedited review \u2013 review by an institutional review board (IRB) that does not require\nfull board review or a convened meeting. Such a review may be carried out by the IRB\nchairperson or one or more experienced reviewers assigned by the IRB chairperson from",
+    "page": 31,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "among the members of the IRB. Reviewers may exercise all of the authorities of the IRB\nexcept they may not disapprove the study. Disapproval may only result through the IRB\u2019s\nnon-expedited review process. Expedited review is reserved for minimal risk studies.\n(See 21 CFR 56.110.)\nGeneral purpose reagents \u2013 chemical reagents that have general laboratory application\nand that are not labeled or otherwise intended for a specific diagnostic application. They\nare used to collect, prepare, and/or examine specimens from the human body for\ndiagnostic purposes. (Example: reagents used for general staining in microscopic\nprocedures.) General purpose reagents do not include laboratory machinery, automated or\npowered systems (21 CFR 864.4010(a)).\nGold standard \u2013 see truth standard.\nHumanitarian use devices (HUDs) \u2013HUDs are devices intended to diagnose a disease\nor condition in fewer than 4,000 patients in the U.S. per year. Such devices are regulated\nunder 21 CFR Part 814, Subpart H. If a device receives a designation as an HUD, a\nHumanitarian Device Exemption request (HDE) can be submitted. HUDs that are\napproved for marketing under an HDE have specific labeling requirements. IRB approval\nis required for use of a HUD (21 CFR 814.124).\nInvestigation \u2013 a clinical investigation or research involving one or more subjects to",
+    "page": 31,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "determine the safety or effectiveness of a device (21 CFR 812.3(h)). It is often referred to\nas a clinical trial and is sometimes referred to as a field trial.\nInvestigational Device Exemption (IDE) \u2013 application which, when approved, allows\nthe device to be used lawfully for the purpose of conducting studies regarding the safety\nand effectiveness of the device, without complying with certain requirements of the Act.\n(See 21 CFR 812.1 for specific exemptions.) For significant risk (SR) device studies (see\ndefinition below), a sponsor must apply to FDA to obtain approval for an IDE. (See 21\nCFR 812.20.) For non-significant risk (NSR) device studies (see definition below), an\nIDE is considered approved when a sponsor meets the abbreviated requirements found in\n21 CFR 812.2(b), which include approval from the reviewing Institutional Review\nBoard(s) (IRB(s)).\nInvestigational plan \u2013 sponsor\u2019s overall plan regarding the conduct of an investigational\nstudy. It includes, but is not limited to, the purpose of the study, a written protocol, a risk\nanalysis, device description, labeling, written monitoring procedures, informed consent\nmaterials, and Institutional Review Board (IRB) information. (21 CFR 812.25.) For IVD\nstudies, protocols should describe the study objectives, design, methodology, subject\npopulations, types of specimens, data to be collected and planned data analysis.",
+    "page": 32,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "Investigational Use in vitro diagnostic (IVD) product \u2013 an IVD product being used for\nproduct testing prior to full commercial marketing (e.g., for use on specimens derived\nfrom humans to compare the usefulness of the product with other products or procedures\nin current use or recognized as useful). These products must be labeled according to 21\nCFR 812.5 for non-significant risk or significant risk devices and according to 21 CFR\n809.10(c)(2)(ii) for devices that are exempt under 21 CFR 812.2(c).\nInvestigator \u2013 an individual who actually conducts a clinical investigation, i.e., a person\nunder whose immediate direction the investigational product is administered, dispensed,\nor used, provided that the investigation involves a subject. In the event of an investigation\nconducted by a team of individuals, the investigator is the responsible leader of that team\n(21 CFR 812.3(i)).\nIn vitro diagnostic (IVD) products \u2013 those reagents, instruments, and systems intended\nfor use in the diagnosis of disease or other conditions, including a determination of the\nstate of health, in order to cure, mitigate, treat, or prevent disease or its sequelae. Such\nproducts are intended for use in the collection, preparation, and examination of specimens\ntaken from the human body. IVD products are devices as defined in section 201(h) of the",
+    "page": 32,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "Act and may also be biological products subject to section 351 of the Public Health\nService Act. The regulatory definition of in vitro diagnostic products is found in 21 CFR\n809.3(a).\nLeftover specimens -- remnants of specimens collected for routine clinical care or\nanalysis that would otherwise have been discarded, or remnants of specimens previously\ncollected for other unrelated research. These specimens may be obtained from a specimen\nrepository -- a common site for storage of collections of human biological specimens\navailable for study. See also Excess samples.\nNon-significant risk (NSR) device \u2013 a device that does not meet the definition of\nsignificant risk (SR) device (see definition below). An IDE is considered approved for a\nNSR investigational device study once sponsors meet the abbreviated requirements found\nin the \u201cInvestigational Device Exemptions\u201d regulation at 21 CFR 812.2(b). The risk\ndetermination for an investigational device study should be based on the proposed use of\nthe device in the investigation in addition to the characteristics of the device.\nOutlier \u2013 a data observation whose value appears to be out of line with the main body of\ndata that has been collected.\nPre-amendment in vitro diagnostic (IVD) tests \u2013 IVD tests that were in commercial\ndistribution before May 28, 1976.",
+    "page": 32,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "Precision \u2013 the closeness of agreement between independent diagnostic test results\nobtained under stipulated conditions. For additional information refer to the Harmonized\nTechnology Database, Clinical and Laboratory Standards Institute, available at\nhttp://www.clsi.org.\nPremarket Approval Application (PMA) \u2013 the application for approval required prior\nto the marketing of most Class III medical devices (section 515 of the Act, 21 U.S.C.\n360e). (See definitions of Class I, II, and III devices above.) PMA approval is based on a\ndetermination by FDA that the applicant\u2019s submission provides sufficient valid scientific\nevidence to provide reasonable assurance that the device is safe and effective for its\nintended use(s). The PMA regulation is 21 CFR Part 814. PMA information is available\nat\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/HowtoMarketYour\nDevice/PremarketSubmissions/PremarketApprovalPMA/default.htm.\nPremarket Notification \u2013 also referred to as a 510(k), is a submission to FDA that\ncontains information to demonstrate that a device is substantially equivalent (SE) to a\nlegally marketed (predicate) device. Governing regulations regarding premarket\nnotification procedures are found in Subpart E of the \u201cEstablishment Registration and\nDevice Listing for Manufacturers and Initial Importers of Devices\u201d regulation (21 CFR",
+    "page": 33,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "Part 807). The 510(k) device advice page is available at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/HowtoMarketYour\nDevice/PremarketSubmissions/PremarketNotification510k/default.htm.\nProduct Development Protocol (PDP) \u2013 FDA process of approval for marketing of\nmedical devices, usually reserved for Class III devices (see definitions of device classes\nabove), by which the sponsor and FDA agree on the product design and testing early in\nthe concept and planning stages of a product (section 515(f) of the Act).\nProtocol \u2013 a document that contains a description of the objectives and design of an\ninvestigational study, methodology(s) to be used, and data to be collected. It may also\ncontain information regarding the planned data analysis and study monitoring. For most\nstudies in the development of an IVD product, it also contains information regarding\ntypes of specimens and subject populations.\nReserved samples \u2013 see excess samples.\nSensitivity \u2013 the probability that a diagnostic test will yield a positive result when the\ndisease or the target analyte is present.\nSignificant risk (SR) device \u2013 an investigational device that presents a potential for\nserious risk to the health, safety, or welfare of a subject and:\n1. is intended as an implant;\n2. is purported or represented to be for use in supporting or sustaining human life;",
+    "page": 33,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "3. is for a use of substantial importance in diagnosing, curing, mitigating, or\ntreating disease, or otherwise preventing impairment of human health; or\n4. otherwise presents a potential for serious risk to the health, safety, or welfare of\na subject.\nThe risk determination for an investigational device study should be based on the\nproposed use of the device in the investigation in addition to the device characteristics.\nSponsors of significant risk device studies must apply to FDA for an Investigational\nDevice Exemption (IDE) (see definition above). (21 CFR 812.3(a), 812.3(m); 812.20.)\nSimulated specimens \u2013 specimens made in the laboratory by adding the analyte of\ninterest in known concentrations to a medium that simulates the natural matrix.\nSpecificity \u2013 the probability that a diagnostic test will yield a negative result when the\ndisease or target analyte is absent.\nSponsor \u2013 a person who initiates, but who does not actually conduct, the investigation,\ni.e., the investigational device is administered, dispensed, or used under the immediate\ndirection of another individual. A person other than an individual that uses one or more of\nits own employees to conduct an investigation that it has initiated is a sponsor, not a\nsponsor-investigator (see next definition), and the employees are investigators (see\ndefinition above) (21 CFR 812.3(n)).",
+    "page": 34,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "Sponsor-investigator \u2013 an individual who both initiates and actually conducts, alone or\nwith others, an investigation, i.e., under whose immediate direction the investigational\ndevice is administered, dispensed, or used. The term does not include any person other\nthan an individual. The obligations of a sponsor-investigator include both those of an\ninvestigator and those of a sponsor (21 CFR 812.3(o)).\nStatistical hypothesis \u2013 a statement about some state of nature that a proposed study or\nset of studies will either accept or reject on the basis of the experimental data. The\nhypothesis is usually broken down into a null hypothesis (a statement of what the testing\nresults will hopefully reject) and an alternative hypothesis (a statement of what the testing\nresults will hopefully accept).\nStudy \u2013 as used in this document, covers the systematic evaluations conducted in the\ndevelopment of an IVD product, including the feasibility, analytical assessments, method\ncomparison, and evaluations to determine clinical utility of a product.\nSubject \u2013 a human who participates in an investigation, either as an individual on whom\nor on whose specimen an investigational device is used or as a control. A subject may be\nin normal health or may have a medical condition or disease (21 CFR 812.3(p)).\nSurplus samples \u2013 see excess samples.",
+    "page": 34,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "Transitional device \u2013 a product defined as a device as of May 28, 1976, but previously\nconsidered by FDA to be a new drug or an antibiotic drug (21 CFR 812.3(r)).\nTreatment IDE \u2013 use of an unapproved investigational device for the treatment or\ndiagnosis of patients during the clinical trial or prior to final FDA action on the marketing\napplication, if during the course of the clinical trial the data suggest that the device is\neffective. A treatment IDE may cover a large number of patients that exceeds the number\nof clinical sites and patients stipulated in the original IDE. The device must be for\ntreatment or diagnosis of a serious or immediately life-threatening disease or condition;\nthere must be no comparable or satisfactory alternative device or therapy available; the\ndevice must be under investigation in a controlled clinical study for the same use under\nan approved IDE, or such clinical studies have been completed; and the sponsor must be\nactively pursuing marketing approval or clearance of the device. Requirements for an\napplication for a treatment IDE are found in the Investigational Device Exemptions\nregulation at 21 CFR 812.36.\nTruth Standard (\u201cGold\u201d Standard) \u2212 any medical procedure or laboratory method or\ncombination of procedures and methods that the clinical community relies upon for",
+    "page": 35,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VII. Glossary",
+    "text": "diagnosis, that is accepted by FDA, and that is regarded as having negligible risk of either\na false positive or a false negative result. The truth standard result should be definitive\n(positive/negative, present/absent, or diseased/non-diseased), and should not give an\nindeterminate result. As science and technology improve, newer, more reliable standards\nmay replace previous standards, particularly in the case of new disease markers.",
+    "page": 35,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VIII. References",
+    "text": "VIII. References\nNote: this listing is presented in the order that the documents are first referred to in this\nguidance document.\n1. 21 CFR Part 812, Investigational Device Exemptions, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/ShowCFR.cfm?CFRPar\nt=812.\n2. 21 CFR Part 312, Investigational New Drug Application, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/ShowCFR.cfm?CFRPar\nt=312.\n3. 21 CFR Part 809, In Vitro Diagnostic Products for Human Use, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/CFRSearch.cfm?CFRP\nart=809\n4. 21 CFR 820.30, Subpart C of the Quality System Regulation, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?fr=820.3\n5. 21 CFR 860.7, Determination of safety and effectiveness, in Medical Device\nClassification Procedures, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/ShowCFR.cfm?FR=86\n0.7.\n6. 21 CFR Part 54, Financial Disclosure by Clinical Investigators, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/ShowCFR.cfm?CFRPar\nt=54\n7. \u201cExpanded Access to Unapproved Devices,\u201d Chapter III, of the guidance\ndocument IDE Policies and Procedures. Guidance document found at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm080202.htm.\n8. \u201cTest Requirements,\u201d (21 CFR 610.40), found at",
+    "page": 35,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VIII. References",
+    "text": "http://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?FR=610.\n40 and the \u201cRestrictions on Use for Further Manufacture of Medical Devices, \u201c\n(21 CFR 610.42), found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?FR=610.\n9. Information concerning Master Files for Devices (MAFs) is found on the\nCDRH website at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/HowtoMarke\ntYourDevice/PremarketSubmissions/PremarketApprovalPMA/ucm142714.htm\n10. \u201cSupplements to Approved Applications for Class III Medical Devices: Use of\nPublished Literature, Use of Previously Submitted Materials, and Priority\nReview,\u201d which can be found on the CDRH website at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm080183.htm.\n11. Guidance regarding Product Development Protocol (PDP) applications, found\nat\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/HowtoMarke\ntYourDevice/PremarketSubmissions/PremarketApprovalPMA/ucm048168.htm\n12. FDA premarket final review summaries and FDA PMA summaries of safety\nand effectiveness, found at\nhttp://www.fda.gov/MedicalDevices/ProductsandMedicalProcedures/InVitroDiag\nnostics/LabTest/ucm126189.htm\nand\nhttp://www.fda.gov/BiologicsBloodVaccines/BloodBloodProducts/ApprovedProd\nucts/PremarketApprovalsPMAs/ucm089793.htm.",
+    "page": 36,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VIII. References",
+    "text": "13. Guideline for the Monitoring of Clinical Investigations, found at\nhttp://www.fda.gov/ICECI/EnforcementActions/BioresearchMonitoring/ucm1350\n75.htm\n14. \u201cPreparing Notices of Availability of Investigational Medical Devices and for\nRecruiting Study Subjects\u201d found at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm073568.htm.\n15. International Conference on Harmonization: \u201cGood Clinical Practice\u201d\nGuideline published in the Federal Register Vol.62, No.90, May 9, 1997, pp.\n25691-25709, found at\nhttp://www.fda.gov/downloads/RegulatoryInformation/Guidances/UCM129515.p\ndf.\n16. \u201cEarly Collaboration Meetings Under the FDA Modernization Act (FDMA);\nFinal Guidance for Industry and for CDRH Staff,\u201d is available at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm073604.htm\n17. 21 CFR 814.15, Research conducted outside of the United States, in\nPremarket Approval of Medical Devices, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/ShowCFR.cfm?FR=81\n4.15\n18.FDA\u2019s Good Clinical Practice program website, Comparison of FDA and HHS\nHuman Subject Protection Regulations found at\nhttp://www.fda.gov/ScienceResearch/SpecialTopics/RunningClinicalTrials/Educa\ntionalMaterials/ucm112910.htm.\n19. \u201cExpedited Review of Premarket Submissions for Devices,\u201d found at",
+    "page": 37,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VIII. References",
+    "text": "http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm089643.htm\n20. 21 CFR Part 50, Protection of Human Subjects, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/CFRSearch.cfm?CFRP\nart=50\n21. 21 CFR Part 56, Institutional Review Boards, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/CFRSearch.cfm?CFRP\nart=56\n22. 21 CFR 50.25, Elements of informed consent, in Protection of Human\nSubjects, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/ShowCFR.cfm?FR=50.\n23. \u201cStatistical Guidance on Reporting Results from Studies Evaluating\nDiagnostic Test\u201d found at\nhttp://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDo\ncuments/ucm071148.htm\n24. 21 CFR Part 11, Electronic Records; Electronic Signatures, found at\nhttp://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfCFR/ShowCFR.cfm?CFRPar\nt=11.\n25. Guidance for Industry: Part 11, Electronic Records; Electronic Signatures \u2013\nScope and Application, guidance document found at\nhttp://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformatio\nn/Guidances/ucm072322.pdf.\n26. Draft Guidance for Institutional Review Boards, Clinical Investigators, and\nSponsors: Exception from Informed Consent Requirements for Emergency\nResearch at http://edocket.access.gpo.gov/2006/E6-14262.htm.\n27. The PMA information, found at",
+    "page": 38,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "VIII. References",
+    "text": "http://www.fda.gov/MedicalDevices/ProductsandMedicalProcedures/DeviceAppr\novalsandClearances/PMAApprovals/default.htm\n28. Food and Drug Administration Modernization Act of 1997; List of Documents\nIssued by the Food and Drug Administration That Apply to Medical Devices\nRegulated by the Center for Biologics Evaluation and Research (4/26/99; 64\nFR20312) found at http://www.fda.gov/ohrms/dockets/98fr/042699d.pdf.",
+    "page": 38,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "Appendix 1: REGULATORY DECISION TREE (21 CFR\nPART 812) for IVD INVESTIGATIONAL STUDIES\nIs it a Pre-amendments device (other than transitional) used according to the labeling in\neffect at the time, or is it a device, determined by FDA as substantially equivalent (SE) to\na preamendments device, used according to the labeling reviewed as part of the SE\ndetermination?\nYes\nStudy is exempt from 21 CFR Part 812, except for 21 CFR\n812.119\nNo\nNo Yes\nIs it a noninvasive device? Significant risk? Apply to FDA for IDE\nYes No\nFollow 21 CFR 812.2(b) \u2013 abbreviated IDE\nrequirements\nYes Yes\nDoes the study involve invasive sampling? Significant risk? Apply to FDA for\nIDE\nNo No\nWill it be used as a diagnostic procedure without confirmation by a medically established\nproduct or procedure?\nYes\nYes\nNo Significant risk? Apply to FDA for IDE\nNo\nFollow 21 CFR 812.2(b) \u2013 abbreviated IDE\nrequirements\nIf the sponsor complies with the applicable requirements of 21 CFR 809.10(c), the\nstudy is exempt from 21 CFR Part 812, with the exception of 21 CFR 812.119.\nAppendix 2. Table 1. Regulatory Framework for IVD Products Regulated as Devices+\nApplicable IRB & Adverse\nRegistration Application Labeling Limitations QSRs Informed Event\n& Listing\n801-Subpart A & Consent Reporting\n801.119 to all\nGeneral Purpose No No \u2018For Laboratory Use\u2019 Only 820.180 and 820.198 Yes\n809.10(d) (if not sterile) N/A",
+    "page": 39,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "Reagents (Class I) 807.65(c) 864.4010(b) 809.10(d)(1)(iv) Part 803\n864.4010(b)\nASR's Yes No\nClass I\n807.20(a) 864.4020(b)(1)\nRestrictions on sale, use,\nYes 510(k) 809.10(e) distribution, & Yes Yes\nN/A\nClass II 807.20(a) 807.81 809.30(c) reporting 809.20(b) Part 803\n864.4020(b)(2) 809.30\nYes PMA, 814.1\nClass III 807.20(a)\n864.4020(b)(3)\nInvestigational Use: No\n(except for\nNo IDE 812.5 Prohibition on promotion Yes For SR and NSR:\n\uf0b7 Significant Risk (SR) 812.1 812.20 [exempt from and commercialization 820.30)\n812.1\n809.10(a)&(b)] 812.7 Parts 50 & 56 Investigators report\nNo No But see 812.20(b)(3)\n\uf0b7 Non-Significant Risk (NSR) to IRB\n812.1 812.2(b)\n812.150(a)(1)\n\u2018For investigational Use\n\uf0b7 Exempt from most No Only. The performance Sponsors may need\nrequirements of Part 812 807.20(a) No characteristics of this Yes to report to FDA\n809.10(c)(2)(ii) No*\n(investigational devices are not in 812.2(c)(3) product have not been Parts 50 & 56 812.150(b)(1)\nNote: 21 CFR 812.119 applies to all commercial distribution) established\u2019\ninvestigational devices 809.10(c)(2)(ii)\nSee Parts\n50.1 & 56.101 for\nResearch Use\nNo\nNo 809.10(c)(2)(i)\n\u2018Research Use Only\u2019\nNo* applicable\nNo\n807.65(f) 809.10(c)(2)(i) 803.19(a)(2)\nrequirements for\nclinical research\nNo\nFor non investigational [unless 807.81(a)(3)\nYes Yes\ncommercially marketed in and unless rule requires\n807.20(a) 809.20(b)\nPMA, 21 U.S.C.",
+    "page": 41,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "vitro diagnostic devices:\n360e(b)]\n809.10\n\uf0b7 Pre-Amendment device 510(k)\n\u201cFor In Vitro Yes\n807.81 Yes. N/A\nYes Diagnostic Use\u201d See \"labeling\" 803.1\n\uf0b7 Premarket Notification* 807.20(a) (Exemptions subject to 809.10(a)(4) 809.20(b)\n(Class I, II, or III) limitations in 862.9,\n864.9 & 866.9)\n\uf0b7 PMA/PDP (Class III) Yes PMA Yes\n807.20(a) 814.20 809.20(b)\n*See 21CFR 862-866 (generic device class\nregulations) for specific-device\nexemptions\nLabeling & Cost\nHUD IRB approval Yes\n809.10\n\uf0b7 HDE Yes 814.102 Yes 814.124 814.126(a)\n807 .20(a) HDE\n814.104(b)(4)(ii) 814.104(b)(4)(ii)\n809.20(b) [no informed 803.1\n814.104(b)(5)\n814.104 consent]",
+    "page": 41,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "\n[TABLE]\n |  |  |  | 41\nApplicable |  |  | IRB & | Adverse\n |  | Registration | Application | Labeling | Limitations | QSRs | Informed | Event\n |  | & Listing |  | 801-Subpart A & |  |  | Consent | Reporting\n |  |  |  | 801.119 to all |  |  |  | \n |  | No\n807.65(c) | No\n864.4010(b) | 809.10(d) | \u2018For Laboratory Use\u2019\n809.10(d)(1)(iv) | Only 820.180 and 820.198\n(if not sterile)\n864.4010(b) | N/A | Yes\nPart 803\nGeneral Purpose |  |  |  |  |  |  |  | \nReagents (Class I) |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \n |  | Yes\n807.20(a) | No\n864.4020(b)(1) | 809.10(e)\n809.30(c) | Restrictions on sale, use,\ndistribution, &\nreporting\n809.30 | Yes\n809.20(b) | N/A | Yes\nPart 803\nASR's\nClass I |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \n |  | Yes\n807.20(a) | 510(k)\n807.81\n864.4020(b)(2) |  |  |  |  | \n | Class II |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \n |  | Yes\n807.20(a) | PMA, 814.1\n864.4020(b)(3) |  |  |  |  | \n | Class III |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \nInvestigational Use: |  | No\n812.1 | IDE\n812.20 | 812.5\n[exempt from\n809.10(a)&(b)] | Prohibition on promotion\nand commercialization\n812.7 | No\n(except for\n820.30)\n812.1\nBut see 812.20(b)(3) | Yes\nParts 50 & 56\nYes\nParts 50 & 56 | For SR and NSR:\nInvestigators report\nto IRB\n812.150(a)(1)\nSponsors may need\nto report to FDA\n812.150(b)(1)\n |  |  |  |  |  |  |  ",
+    "page": 41,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "| \n\uf0b7 Significant Risk (SR) |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \n |  | No\n812.1 | No\n812.2(b) |  |  |  |  | \n\uf0b7 Non-Significant Risk (NSR) |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \n |  | No\n807.20(a)\n(investigational devices are not in\ncommercial distribution) | No\n812.2(c)(3) | 809.10(c)(2)(ii) | \u2018For investigational Use\nOnly. The performance\ncharacteristics of this\nproduct have not been\nestablished\u2019\n809.10(c)(2)(ii) | No* |  | \n\uf0b7 Exempt from most |  |  |  |  |  |  |  | \nrequirements of Part 812 |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \nNote: 21 CFR 812.119 applies to all |  |  |  |  |  |  |  | \ninvestigational devices |  |  |  |  |  |  |  | \n |  | No\n807.65(f) | No | 809.10(c)(2)(i) | \u2018Research Use Only\u2019\n809.10(c)(2)(i) | No* | See Parts\n50.1 & 56.101 for\napplicable\nrequirements for\nclinical research | No\n803.19(a)(2)\nResearch Use |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \nFor non investigational |  | Yes\n807.20(a) | No\n[unless 807.81(a)(3)\nand unless rule requires\nPMA, 21 U.S.C.\n360e(b)] | 809.10\n\u201cFor In Vitro\nDiagnostic Use\u201d\n809.10(a)(4) | See \"labeling\" | Yes\n809.20(b) | N/A | Yes\n803.1\ncommercially marketed in |  |  |  |  |  |  |  | \nvitro diagnostic devices: |  |  |  |  |  |  |  | \n\uf0b7 Pre-Amendment device |  | Yes\n807.20(a) | 510(k)\n807.81\n(Exemptions subject to\nlimitations in 862.9,\n864.9 & 866.9) |  |  | Yes.\n809.20(b) |  | \n |  |  |  |  | ",
+    "page": 41,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "|  |  | \n\uf0b7 Premarket Notification* |  |  |  |  |  |  |  | \n(Class I, II, or III) |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \n |  | Yes\n807.20(a) | PMA\n814.20 |  |  | Yes\n809.20(b) |  | \n\uf0b7 PMA/PDP (Class III) |  |  |  |  |  |  |  | \n*See 21CFR 862-866 (generic device class |  |  |  |  |  |  |  | \nregulations) for specific-device |  |  |  |  |  |  |  | \nexemptions |  | Yes\n807.20(a) | HUD\n814.102\nHDE\n814.104 | 809.10\n814.104(b)(4)(ii) | Labeling & Cost\n814.104(b)(4)(ii)\n814.104(b)(5) | Yes\n809.20(b) | IRB approval\n814.124\n[no informed\nconsent] | Yes\n814.126(a)\n803.1\n |  |  |  |  |  |  |  | \n\uf0b7 HDE |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \n |  |  |  |  |  |  |  | \n[/TABLE]\n+ All references in table are to Title 21 of the Code of Federal Regulations.\n* While investigational IVDs exempt from most of the provisions of 21 CFR Part 812 are not exempt from the QSR requirements, we generally do not intend\nto enforce such requirements for investigational IVDs that are exempt from most 21 CFR Part 812 requirements; except for design controls.\nAppendix 3: Sponsor\u2019s Responsibilities for Significant Risk Device\nInvestigations\nSponsors are required to comply with all applicable duties under the regulations. We summarize them below.\n1. General Duties (21 CFR 812.40)\na. Submitting the IDE application to FDA\nb. Obtaining both FDA and IRB approval for the investigation",
+    "page": 41,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "c. Selecting qualified investigators and providing them with the information they need to conduct the investigation\nproperly\nd. Ensuring proper monitoring of the investigation\ne. Ensuring that any reviewing IRB and FDA are promptly informed of significant new information about an\ninvestigation\n2. Selection of Investigators (21 CFR 812.43)\na. Assuring selection of investigators qualified by training and experience\nb. Permitting only participating investigators to use the investigational device\nc. Obtaining a signed investigator's agreement from each investigator containing:\n(1) investigator's curriculum vitae\n(2) statement of investigator's relevant experience, including dates, location, extent, and type of experience\n(3) if an investigator was involved in an investigation or other research that was terminated, an explanation of\nthe circumstances that led to the termination\n(4) statement of the investigator's commitment to:\n\u2022 conduct the investigation in accordance with the agreement, the investigational plan, 21 CFR Part 812\nand other applicable regulations, and any conditions of approval imposed by the IRB or FDA\n\u2022 supervise all testing of the device involving human subjects\n\u2022 ensure that the requirements for obtaining informed consent are met (21 CFR Part 50)",
+    "page": 42,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "d. Selecting monitor(s) qualified by training and experience to monitor the progress of the investigation in accordance\nwith FDA regulations.\ne. Providing investigators with the investigational plan and report of prior\ninvestigations of the device. (21 CFR 812.45)\n3. Monitoring (21 CFR 812.46)\na. Securing compliance of all investigators in accordance with the signed\ninvestigator's agreement, the investigational plan, the requirements of 21 CFR Part 812 or\nother applicable FDA regulations, or any condition of approval imposed by the\nreviewing IRB or FDA. If compliance cannot be secured, use of the device\nby the investigator and the investigator's participation in the investigation must be\ndiscontinued.\nb. Evaluating all unanticipated adverse device effects and terminating the\ninvestigation, or portions of it, as soon as possible if that effect presents an\nunreasonable risk to subjects (Reporting requirements are listed below.)\nc. Resuming terminated investigations only after IRB and/or FDA approvals are\nobtained, as required by this regulation.\n4. Controlling Distribution and Disposition of Devices that are Shipped\nAlthough investigators are responsible for ensuring that investigational devices are made available only to persons who are\nlegally authorized to receive them (see 21 CFR 812.110(c)), sponsors also bear responsibility for taking proper measures to",
+    "page": 42,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "ensure that devices are not diverted outside of legally authorized channels. Sponsors may ship investigational devices only to\nqualified investigators participating in the clinical investigation (21 CFR 812.43(b)). Sponsors must also maintain complete,\ncurrent, and accurate records pertaining to the shipment and disposition of the investigational device (21 CFR 812.140(b)(2)).\nRecords of shipment shall include the name and address of the consignee, type and quantity of device, date of shipment, and\nbatch number or code mark. Records of disposition shall describe the batch number or code marks of any devices returned to\nthe sponsor, repaired, or disposed of in other ways by the investigator or another person, and the reasons for and method of\ndisposal.\nTo further ensure compliance with these requirements, sponsors should take appropriate measures to instruct investigators\nregarding their responsibilities with respect to recordkeeping and device disposition. The specific recordkeeping requirements\nfor investigators are set forth at 21 CFR 812.140(a). Upon completion or termination of a clinical investigation (or the\ninvestigator's part of an investigation), or at the sponsor's request, an investigator is required to return to the sponsor any\nremaining supply of the device or otherwise to dispose of the device as the sponsor directs (21 CFR 812.110(e)).",
+    "page": 43,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "5. Prohibition of Promotion and Other Practices (21 CFR 812.7)\nThe IDE regulation prohibits the promotion and commercialization of a device that has not been first cleared or approved for\nmarketing by FDA. This prohibition is applicable to sponsors and investigators (or any person acting on behalf of a sponsor or\ninvestigator), and encompasses the following activities:\na. Promotion or test marketing of the investigational device\nb. Charging subjects or investigators for the device a price larger than is necessary to recover the costs of manufacture,\nresearch, development, and handling\nc. Unduly prolonging an investigation beyond the point needed to collect data required to determine whether the device\nis safe and effective, and\nd. Representing that the device is safe or effective for the purposes for which it is being investigated.\n6. Supplemental Applications (21 CFR 812.35(a) and (b))\nSupplemental applications are required to be submitted to, and approved by, FDA in the following situations:\na. Changes in the investigational plan: FDA approval is required for any change that may affect the scientific\nsoundness of the investigation or the rights, safety or welfare of the subjects. IRB approval is also required for changes\nthat may affect the rights, safety or welfare of the subjects. The change in the investigational plan may not be",
+    "page": 44,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "implemented until FDA approval (and IRB approval, if required) is obtained.\nb. Addition of new institutions: IRB approval is also required for new institutions.\nThe investigation at the new institution(s) may not begin until both FDA and IRB\napproval(s) are obtained, and certification of IRB approval is submitted to FDA.\n7. Maintaining Records (21 CFR 812.140(b))\nA sponsor shall maintain the following accurate, complete, and current records relating to an investigation (also See Table I,\nnext page):\na. Correspondence (including reports) with another sponsor, monitor, investigators, an IRB or FDA\nb. Records of any shipment, including:\n(1) name and address of consignee\n(2) type and quantity of device\n(3) date of shipment\n(4) batch numbers or code marks\nc. Records of disposition, describing:\n(1) Batch number or code mark of devices returned, repaired, or disposed of by the investigator or other persons\n(2) Reasons for and method of disposal\nd. Signed investigator agreements\ne. Adverse device effects (whether anticipated or unanticipated) and complaints\nf. Any other records that FDA requires by regulation or by specific requirement for a category of investigation or a\nparticular investigation\nTABLE I\nRESPONSIBILITIES FOR MAINTAINING RECORDS\nFOR A SIGNIFICANT RISK DEVICE STUDY\nRecords Maintained by Maintained by\nInvestigator Sponsor",
+    "page": 44,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "All Correspondence Pertaining to the Investigation X X\nShipment, Receipt, Disposition X X\nDevice Administration and Use X -\nSubject Case Histories X -\nInformed Consent X -\nProtocols and Reasons for Deviations from Protocol X -\nAdverse Device Effects and Complaints X X\nSigned Investigator Agreements - X\nMembership/Employment/Conflicts of Interest - X\nMinutes of Meetings - -\n8. Submitting Reports (21 CFR 812.150(b))\nA sponsor shall prepare and submit the following complete, accurate, and timely reports (also see Table II, next page):\na. Unanticipated adverse device effects (with evaluation) to FDA, all IRBs, and investigators within 10 working days\nafter notification by the investigator.\nSubsequent reports on the effect may be required by FDA\nb. Withdrawal of IRB approval\n\n[TABLE]\nRecords | Maintained by\nInvestigator | Maintained by\nSponsor\nAll Correspondence Pertaining to the Investigation | X | X\nShipment, Receipt, Disposition | X | X\nDevice Administration and Use | X | -\nSubject Case Histories | X | -\nInformed Consent | X | -\nProtocols and Reasons for Deviations from Protocol | X | -\nAdverse Device Effects and Complaints | X | X\nSigned Investigator Agreements | - | X\nMembership/Employment/Conflicts of Interest | - | X\nMinutes of Meetings | - | -\n[/TABLE]\nc. Withdrawal of FDA approval\nd. Current 6-month investigator list",
+    "page": 46,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "e. Progress reports (at least annual) - see attached suggested format for IDE progress report\nf. Recall and device disposition (within 30 working days after the request was made)\ng. Final report - see attached suggested format for progress reports\nh. Use of device without obtaining patient informed consent within 5 working days of receipt of notice of such use\ni. Significant risk determinations by the IRB when sponsor had proposed nonsignificant risk within 5 working days of\nreceipt of such IRB determination\nj. Other reports requested by the IRB or FDA about any aspect of the investigation\nTABLE II\nRESPONSIBILITIES FOR PREPARING AND SUBMITTING REPORTS\nFOR SIGNIFICANT RISK DEVICE STUDIES\nType of Report Prepared by Investigators for Prepared by Sponsors\nfor\nUnanticipated Adverse Effect Evaluation Sponsors and IRBs FDA, IRBs and\nInvestigators\nWithdrawal of IDE Approval Sponsors FDA, IRBs, and\nInvestigators\nProgress Report Sponsors, Monitors and IRBs FDA and IRBs\nFinal Report Sponsors and IRBs FDA, IRBs, and\nInvestigators\nEmergencies (Protocol Deviations) Sponsors and IRBs FDA\nInability to Obtain Informed Consent Sponsors and IRBs FDA\nWithdrawal of FDA Approval N/A IRBs and Investigators\nCurrent Investigator List N/A FDA",
+    "page": 47,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "[TABLE]\nType of Report | Prepared by Investigators for | Prepared by Sponsors\nfor\nUnanticipated Adverse Effect Evaluation | Sponsors and IRBs | FDA, IRBs and\nInvestigators\nWithdrawal of IDE Approval | Sponsors | FDA, IRBs, and\nInvestigators\nProgress Report | Sponsors, Monitors and IRBs | FDA and IRBs\nFinal Report | Sponsors and IRBs | FDA, IRBs, and\nInvestigators\nEmergencies (Protocol Deviations) | Sponsors and IRBs | FDA\nInability to Obtain Informed Consent | Sponsors and IRBs | FDA\nWithdrawal of FDA Approval | N/A | IRBs and Investigators\n[/TABLE]\nType of Report Prepared by Investigators for Prepared by Sponsors\nfor\nRecall and Device Disposition N/A FDA and IRBs\nRecords Maintenance Transfer Sponsors FDA\nSignificant Risk Determinations N/A FDA\n9. Inspections (21 CFR 812.145)\nSponsors are required to permit FDA to enter and inspect (at reasonable times and in a reasonable manner) any establishment\nwhere devices are held (including any establishment where devices are manufactured, processed, packed, installed, used, or\nimplanted or where records or results from use of devices are kept). FDA may also inspect and copy all records relating to an\ninvestigation including, in certain situations, records which identify subjects.",
+    "page": 47,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "[TABLE]\nType of Report | Prepared by Investigators for | Prepared by Sponsors\nfor\nRecall and Device Disposition | N/A | FDA and IRBs\nRecords Maintenance Transfer | Sponsors | FDA\nSignificant Risk Determinations | N/A | FDA\n[/TABLE]\nAppendix 4: Investigator\u2019s Responsibilities for Significant Risk Device\nInvestigations\nInvestigators are required to comply with all applicable duties under the regulations. We summarize them below.\n1. General Responsibilities of Investigators (21 CFR 812.100)\na. Ensuring that the investigation is conducted according to the signed agreement, the investigational plan and\napplicable FDA regulations\nb. Protecting the rights, safety, and welfare of subjects under the investigator's care\nc. Controlling devices under investigation\nd. Ensuring that informed consent is obtained from each subject in accordance with 21 CFR Part 50\n2. Specific Responsibilities of Investigators (21 CFR 812.110)\na. Awaiting IRB approval and any necessary FDA approval before requesting written informed consent or permitting\nsubject participation\nb. Conducting the investigation in accordance with:\n(1) the signed agreement with the sponsor\n(2) the investigational plan\n(3) the regulations set forth in 21 CFR Part 812 and all other applicable FDA regulations, and\n(4) any conditions of approval imposed by an IRB or FDA",
+    "page": 48,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "c. Supervising the use of the investigational device. An investigator shall permit an investigational device to be used\nonly with subjects under the investigator's supervision. An investigator shall not supply an investigational device to any\nperson not authorized under 21 CFR Part 812 to receive it.\nd. Financial disclosure. A clinical investigator shall disclose to the sponsor sufficient accurate financial information to\nallow the applicant to submit complete and accurate certification or disclosure statements under Part 54.\ne. Disposing of the device properly. Upon completion or termination of a clinical investigation or the investigator's part\nof an investigation, or at the sponsor's request, an investigator shall return to the sponsor any remaining supply of the\ndevice or otherwise dispose of the device as the sponsor directs.\n3. Maintaining Records (21 CFR 812.140)\nAn investigator shall maintain the following accurate, complete, and current records relating to the investigator's\nparticipation in an investigation:\na. Correspondence with another investigator, an IRB, the sponsor, a monitor, or FDA\nb. Records of receipt, use or disposition of a device that relate to:\n(1) the type and quantity of the device, dates of receipt, and batch numbers or code marks\n(2) names of all persons who received, used, or disposed of each device",
+    "page": 49,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "(3) the number of units of the device returned to the sponsor, repaired, or otherwise disposed of, and the\nreason(s) therefore\nc. Records of each subject's case history and exposure to the device, including:\n(1) documents evidencing informed consent and, for any use of a device by the investigator without\ninformed consent, any written concurrence of a licensed physician and a brief description of the\ncircumstances\n(2) justifying the failure to obtain informed consent\n(3) document all relevant observations, including records concerning adverse device effects (whether\nanticipated or not), information and data on the condition of each subject upon entering, and during the\ncourse of, the investigation, including information about relevant previous medical history and the\nresults of all diagnostic tests\n(4) a record of the exposure of each subject to the investigational device, including the date and time of\neach use, and any other therapy\nd. The protocol, with documents showing the dates of and reasons for each deviation from the protocol\ne. Any other records that FDA requires to be maintained by regulation or by specific requirement for a category\nof investigations or a particular investigation.\n4. Inspections (21 CFR 812.145)\nInvestigators are required to permit FDA to inspect and copy any records pertaining to the investigation including, in certain",
+    "page": 50,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "situations, those which identify subjects.\n5. Submitting Reports (21 CFR 812.150)\nAn investigator shall prepare and submit the following complete, accurate, and timely reports:\na. To the sponsor and the IRB:\n(1) Any unanticipated adverse device effect occurring during an\ninvestigation. (Due no later than 10 working days after the investigator first learns of the effect.)\n(2) Progress reports on the investigation. (These reports must be provided at regular intervals, but in no event\nless often than yearly. If there is a study monitor, a copy of the report should also be sent to the monitor.)\n(3) Any deviation from the investigational plan made to protect the life or physical well-being of a subject in an\nemergency. (Report is due as soon as possible but no later than 5 working days after the emergency occurs.\nExcept in emergency situations, a protocol deviation requires prior sponsor approval; and if the deviation may\naffect the scientific soundness of the plan or the rights, safety, or welfare of subjects, prior FDA and IRB\napproval are required.)\n(4) Any use of the device without obtaining informed consent. (Due within 5 working days after such use.)\n(5) A final report. (Due within 3 months following termination or completion of the investigation or the\ninvestigator's part of the investigation. For additional guidance, see the discussion under the section entitled",
+    "page": 50,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "\"Annual Progress Reports and Final Reports.\")\n(6) Any further information requested by FDA or the IRB about any aspect of the investigation.\nb. To the Sponsor:\n(1) Withdrawal of IRB approval of the investigator's part of an investigation. (Due within 5 working days of\nsuch action).\n6. Investigational Device Distribution and Tracking\nThe IDE regulations prohibit an investigator from providing an investigational device to any person not authorized to\nreceive it (21 CFR 812.110(c)). The best strategy for reducing the risk that an investigational device could be\nimproperly dispensed (whether purposely or inadvertently) is for the sponsor and the investigators to closely monitor\nthe shipping, use, and final disposal of the device(s). Upon completion or termination of a clinical investigation (or the\ninvestigator's part of an investigation), or at the sponsor's request, an investigator is required to return to the sponsor\nany remaining supply of the device or otherwise to dispose of the device as the sponsor directs (21 CFR 812.110(e)).\nInvestigators must also maintain complete, current and accurate records of the receipt, use, or disposition of\ninvestigational devices (21 CFR 812.140(a)(2)). Specific investigator recordkeeping requirements are set forth at 21\nCFR 812.140(a).\n7. Prohibition of Promotion and Other Practices (21 CFR 812.7)",
+    "page": 51,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "The IDE regulations prohibit the promotion and commercialization of a device that has not been first cleared or\napproved for marketing by FDA. This prohibition is applicable to sponsors and investigators (or any person acting on\nbehalf of a sponsor or investigator), and encompasses the following activities:\na. Promotion or test marketing of the investigational device\nb. Charging subjects or investigators for the device a price larger than is necessary to recover the costs of\nmanufacture, research, development, and handling\nc. Unduly prolonging an investigation beyond the point needed to collect data required to determine whether the\ndevice is safe and effective, and\nd. Representing that the device is safe or effective for the purposes for which it is being investigated.\n8. Annual Progress Reports and Final Reports\nThe IDE regulations do not specify the content of the annual progress or final reports. With respect to reports to the\nIRB, the IRB itself may specify what information it wishes to be included in these reports. Because FDA does require\nthe information listed below, it is suggested that, at a minimum, the annual progress and final reports to the sponsor and\nthe IRB also include the following items:\na. IDE number\nb. Device name\nc. Indications for use\nd. Brief summary of study progress in relation to investigational plan",
+    "page": 51,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 1: REGULATORY DECISION TREE (21 CFR",
+    "text": "e. Number of investigators and investigational sites\nf. Number of subjects enrolled\ng. Number of devices received, used, and the final disposition of unused devices\nh. Brief summary of results and conclusions\ni. Summary of anticipated and unanticipated adverse device effects\nj. Description of any deviations from investigational plan\nk. Reprints of any articles published by the investigator in relation to the study",
+    "page": 52,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 5: Suggested Format for IDE Final Report",
+    "text": "Appendix 5: Suggested Format for IDE Final Report\n1. The Basics\na. IDE Number\nb. Device name and indication for use\nc. Sponsor's name, address and phone number\nd. Contact person\n2. Study Progress\n(Data from beginning of the study should be reported, unless otherwise indicated.)\na. Brief summary of study progress in relation to investigational plan\nb. Number of investigators/investigational sites (attach list of investigators)\nc. Number of subjects enrolled (by indication or model)\nd. Number of devices shipped\ne. Disposition of all devices shipped\nf. Brief summary of results\ng. Summary of anticipated and unanticipated adverse effects\nh. Description of any deviations from the investigational plan by investigators (since last progress report)\n3. Risk Analysis\na. Summary of any new adverse information (since last progress report) that may affect the risk analysis; this includes\npreclinical data, animal studies, foreign data, clinical studies, etc.\nb. Reprints of any articles published from data collected from this study\n4. Other Changes\na. Summary of any changes in manufacturing practices and quality control\n(including changes not reported in a supplemental application)\nb. Summary of all changes in investigational plan not required to be submitted in a supplemental application\n5. Marketing Application or Future Plans",
+    "page": 53,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  },
+  {
+    "doc_id": "FDA-GUID-71075",
+    "source_url": "https://www.fda.gov/media/71075/download",
+    "section": "Appendix 5: Suggested Format for IDE Final Report",
+    "text": "a. Progress toward product approval, with date (or projected date) of PMA or 510(k) submission; or indication that\nmarketing of device is not planned.\nb. Any plans to submit another IDE application for this device or a modification of this device.",
+    "page": 53,
+    "label": "In Vitro Diagnostic (IVD) Device Studies - Frequently Asked Questions",
+    "metadata": {
+      "corpus": "fda_guidance"
+    }
+  }
+]

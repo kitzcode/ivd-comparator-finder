@@ -1,25 +1,24 @@
 """
-Retrieval: find the most relevant SummaryChunks for a query.
+FDA 510(k) retrieval adapter.
 
-v2 strategy: section-targeted keyword search (no embeddings).
-- Pre-filter: scope to the requested K-number(s) or product code(s).
-- Score: count query term hits in each chunk, weight by section relevance.
-- Return the top-k chunks, ranked by score.
+The scoring engine now lives in the corpus-agnostic core (grounded_rag.retrieve).
+This module keeps the FDA-specific pieces:
+  - scope gathering (load chunks by K-number / product code, or full corpus),
+  - the FDA RetrievalConfig (performance-section boosts, IVD domain-term weights,
+    and IVD stopwords like "device"/"510"/"k").
 
-Embeddings are deferred until keyword retrieval proves insufficient.
+It returns SummaryChunk objects unchanged, so the rest of the finder is untouched.
 """
 
 from __future__ import annotations
 
-import math
-import re
-from collections import Counter
 from typing import Optional
 
 from ..models import SummaryChunk
 from .store import load_chunks, load_chunks_for_product_code
+from grounded_rag.retrieve import DEFAULT_STOPWORDS, RetrievalConfig, rank
 
-# Sections that contain performance data get a score boost
+# Sections that contain performance data get a score boost.
 _SECTION_BOOST = {
     "Performance Testing": 2.0,
     "Conclusions / Limitations": 1.5,
@@ -27,17 +26,7 @@ _SECTION_BOOST = {
     "Substantial Equivalence": 1.1,
 }
 
-# Common English words that carry no retrieval signal. Filtered from the query
-# so a chunk can't win just by containing "what / is / the".
-_STOPWORDS = {
-    "a", "an", "and", "are", "as", "at", "be", "by", "do", "does", "for",
-    "from", "has", "have", "how", "in", "is", "it", "its", "of", "on", "or",
-    "that", "the", "their", "this", "to", "was", "were", "what", "when",
-    "which", "who", "with", "your", "you", "i", "me", "my", "we", "us",
-    "device", "test", "tests", "summary", "510", "k",
-}
-
-# Domain terms that are strong signals when they match — weighted higher.
+# IVD domain terms: strong signals when matched, kept even when short.
 _DOMAIN_TERMS = {
     "lod": 3.0, "ppa": 3.0, "npa": 3.0, "loq": 3.0,
     "sensitivity": 2.0, "specificity": 2.0, "reactivity": 2.0,
@@ -47,56 +36,51 @@ _DOMAIN_TERMS = {
     "limit": 1.3, "accuracy": 1.5, "cfu": 2.0, "copies": 1.5,
 }
 
+# Generic stopwords plus FDA-form noise that carries no retrieval signal.
+_STOPWORDS = frozenset(DEFAULT_STOPWORDS | {
+    "device", "test", "tests", "summary", "510", "k",
+})
 
-def _tokenize(text: str) -> list[str]:
-    return re.findall(r"[a-z0-9]+", text.lower())
-
-
-def _query_terms(query: str) -> list[str]:
-    """Tokenize a query, dropping stopwords but keeping short domain terms."""
-    terms = []
-    for t in _tokenize(query):
-        if t in _DOMAIN_TERMS:
-            terms.append(t)
-        elif t not in _STOPWORDS and len(t) > 1:
-            terms.append(t)
-    return terms
+FDA_510K_RETRIEVAL = RetrievalConfig(
+    section_boost=_SECTION_BOOST,
+    domain_terms=_DOMAIN_TERMS,
+    stopwords=_STOPWORDS,
+)
 
 
-def _score_chunk(chunk: SummaryChunk, query_terms: list[str]) -> float:
+def gather_candidates(
+    k_numbers: Optional[list[str]] = None,
+    product_codes: Optional[list[str]] = None,
+) -> list[SummaryChunk]:
     """
-    Score a chunk against the query terms.
+    Gather the in-scope SummaryChunks (unranked) for a K-number / product-code
+    scope. If neither is given, walks the whole index (slow on large corpora).
 
-    - Term frequency with diminishing returns: 1 + ln(count) per matched term,
-      so a term appearing 10x doesn't swamp coverage of distinct terms.
-    - Domain terms (lod, ppa, ...) are weighted higher.
-    - Normalized by sqrt(length) so long boilerplate chunks don't win by size.
-    - Section boost favours performance-bearing sections.
+    Shared by retrieve() and the FDA-510(k) Corpus adapter so scoping logic lives
+    in exactly one place.
     """
-    counts = Counter(_tokenize(chunk.text))
-    if not counts:
-        return 0.0
+    candidates: list[SummaryChunk] = []
+    seen_k: set[str] = set()
 
-    raw = 0.0
-    matched_terms = 0
-    for term in query_terms:
-        c = counts.get(term, 0)
-        if c:
-            matched_terms += 1
-            weight = _DOMAIN_TERMS.get(term, 1.0)
-            raw += weight * (1.0 + math.log(c))
+    if k_numbers:
+        for k in k_numbers:
+            if k not in seen_k:
+                candidates.extend(load_chunks(k))
+                seen_k.add(k)
 
-    if matched_terms == 0:
-        return 0.0
+    if product_codes:
+        for pc in product_codes:
+            for chunk in load_chunks_for_product_code(pc):
+                if chunk.k_number not in seen_k:
+                    candidates.append(chunk)
 
-    # Coverage bonus: reward chunks that hit more distinct query terms.
-    coverage = matched_terms / max(len(query_terms), 1)
-    raw *= (0.5 + coverage)
+    if not k_numbers and not product_codes:
+        # Full corpus scan — walk all chunk files.
+        from ..index import store as _store
+        for k in _store.list_indexed():
+            candidates.extend(load_chunks(k))
 
-    # Length normalization (sqrt damping keeps it gentle).
-    length_norm = math.sqrt(max(len(counts), 1))
-    score = (raw / length_norm) * _SECTION_BOOST.get(chunk.section, 1.0)
-    return score
+    return candidates
 
 
 def retrieve(
@@ -113,47 +97,5 @@ def retrieve(
     if neither is given, searches all indexed chunks — slow on large corpora).
     Pass sections to restrict to specific section types.
     """
-    # Gather candidate chunks
-    candidates: list[SummaryChunk] = []
-    seen_k: set[str] = set()
-
-    if k_numbers:
-        for k in k_numbers:
-            if k not in seen_k:
-                candidates.extend(load_chunks(k))
-                seen_k.add(k)
-
-    if product_codes:
-        for pc in product_codes:
-            for chunk in load_chunks_for_product_code(pc):
-                if chunk.k_number not in seen_k:
-                    candidates.append(chunk)
-            # Track by product code scope instead of individual K-numbers here
-            # (k_numbers set above may not cover all PCs)
-
-    if not k_numbers and not product_codes:
-        # Full corpus scan — walk all chunk files
-        from pathlib import Path
-        from ..index import store as _store
-        for k in _store.list_indexed():
-            candidates.extend(load_chunks(k))
-
-    # Section filter
-    if sections:
-        section_set = {s.lower() for s in sections}
-        candidates = [c for c in candidates if c.section.lower() in section_set]
-
-    if not candidates:
-        return []
-
-    query_terms = _query_terms(query)
-    if not query_terms:
-        return candidates[:top_k]
-
-    scored = [(c, _score_chunk(c, query_terms)) for c in candidates]
-    scored.sort(key=lambda x: x[1], reverse=True)
-
-    # Filter out zero-score chunks unless there's nothing better
-    nonzero = [(c, s) for c, s in scored if s > 0]
-    result_pairs = nonzero if nonzero else scored
-    return [c for c, _ in result_pairs[:top_k]]
+    candidates = gather_candidates(k_numbers=k_numbers, product_codes=product_codes)
+    return rank(query, candidates, FDA_510K_RETRIEVAL, top_k=top_k, sections=sections)

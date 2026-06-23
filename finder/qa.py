@@ -1,206 +1,46 @@
 """
-M3: Grounded Q&A over indexed 510(k) Summary chunks.
+FDA 510(k) grounded Q&A — now a thin shim over the engine + corpus.
 
-Contract:
-  - Every claim in the answer must trace to a retrieved chunk.
-  - If retrieved chunks don't answer the question, say so explicitly.
-  - Performance figures are extracted from chunks and cited by K-number + page.
-  - Predicate device and reference/comparator method are always kept distinct.
-  - Model memory is never used to fill a gap.
+finder.qa.ask() routes through grounded_rag.qa.ask_corpus() against the
+FDA510kCorpus, then maps the engine's generic Answer back to the FDA Answer type
+(citations keyed by K-number) so the public surface is unchanged.
 
-This module is intentionally model-agnostic. Pass any callable that takes
-(system_prompt: str, user_prompt: str) -> str as the `llm` argument.
-The caller is responsible for supplying and paying for the LLM.
+All grounding behaviour (refusal gate, keyword fallback, "the model never writes
+a citation") lives in grounded_rag; the FDA framing lives in corpora.fda_510k.
 
-If no LLM is supplied, the module falls back to a keyword-extraction mode
-that returns the most relevant chunk text verbatim with a citation — no
-generation, fully grounded.
+Pass any callable (system_prompt, user_prompt) -> str as `llm`. Omit it for
+keyword-only mode (top chunk verbatim with a citation, fully grounded).
 """
 
 from __future__ import annotations
 
-import re
 from typing import Callable, Optional
 
-from .models import Answer, Citation, SummaryChunk
-from .index.retrieve import retrieve
+from .models import Answer, Citation
 
-# ---------------------------------------------------------------------------
-# Grounding contract prompts
-# ---------------------------------------------------------------------------
+from grounded_rag.qa import ask_corpus
+from corpora.fda_510k import FDA510kCorpus, FDA_510K_CONTRACT  # noqa: F401 (re-export)
 
-_SYSTEM_PROMPT = """\
-You are a precise scientific assistant answering questions about FDA 510(k) \
-clearance summaries for in vitro diagnostic (IVD) devices.
-
-RULES — violating any rule is a failure:
-1. Answer ONLY from the provided context chunks. Do not use your training knowledge.
-2. Every performance figure (PPA, NPA, sensitivity, specificity, LoD, \
-   reactivity, etc.) must be cited with the K-number and page number from the \
-   chunk it came from.
-3. If the answer is not in the chunks, respond: \
-   "The provided summaries do not contain sufficient information to answer this question."
-4. Distinguish clearly between:
-   - The PREDICATE device (the legally marketed device cited for substantial equivalence)
-   - The REFERENCE / COMPARATOR method (what performance was measured against)
-   Conflating these two roles is an error.
-5. Do not invent K-numbers, product codes, device names, or numeric values.
-6. If a figure is ambiguous or the chunk is unclear, flag it rather than reporting a clean number.
-"""
-
-_CONTEXT_TEMPLATE = """\
---- CHUNK {i} | K-number: {k} | Section: {section} | Page: {page} ---
-{text}
-"""
-
-_USER_TEMPLATE = """\
-Context chunks from 510(k) Summaries:
-
-{context}
-
-Question: {question}
-
-Answer (cite K-number and page for every figure):
-"""
+_CORPUS = FDA510kCorpus()
 
 
-# ---------------------------------------------------------------------------
-# Keyword-only fallback (no LLM)
-# ---------------------------------------------------------------------------
-
-def _best_snippet(question: str, text: str, window: int = 600) -> str:
-    """
-    Extract the most relevant passage from a chunk for a keyword query.
-
-    Splits the chunk into sentences/lines, scores each by how many query terms
-    it contains, and returns a window centered on the best-scoring line — so the
-    user sees the relevant fragment, not a wall of text.
-    """
-    from .index.retrieve import _query_terms, _tokenize
-
-    terms = set(_query_terms(question))
-    if not terms:
-        return text[:window].strip()
-
-    # Split on sentence boundaries and newlines, keeping non-trivial fragments.
-    fragments = [f.strip() for f in re.split(r"(?<=[.;:])\s+|\n+", text) if f.strip()]
-    if not fragments:
-        return text[:window].strip()
-
-    best_idx, best_score = 0, -1
-    for i, frag in enumerate(fragments):
-        ftokens = set(_tokenize(frag))
-        score = len(terms & ftokens)
-        if score > best_score:
-            best_idx, best_score = i, score
-
-    if best_score <= 0:
-        return text[:window].strip()
-
-    # Grow a window around the best fragment until we hit the char budget.
-    chosen = [fragments[best_idx]]
-    lo, hi = best_idx - 1, best_idx + 1
-    total = len(fragments[best_idx])
-    while total < window and (lo >= 0 or hi < len(fragments)):
-        if lo >= 0:
-            chosen.insert(0, fragments[lo]); total += len(fragments[lo]); lo -= 1
-        if hi < len(fragments) and total < window:
-            chosen.append(fragments[hi]); total += len(fragments[hi]); hi += 1
-    snippet = " ".join(chosen).strip()
-    return (snippet[:window] + "…") if len(snippet) > window else snippet
-
-
-def _keyword_answer(question: str, chunks: list[SummaryChunk]) -> Answer:
-    """
-    Return the most relevant passage from the top chunk with a citation.
-    No generation — fully grounded, no hallucination risk.
-    """
-    if not chunks:
-        return Answer(
-            question=question,
-            answer="",
-            not_found_reason="No indexed summaries were found for this query scope.",
-        )
-
-    top = chunks[0]
+def _to_answer(generic) -> Answer:
+    """Map a grounded_rag.Answer back to the FDA Answer (Citation keyed by K-number)."""
     return Answer(
-        question=question,
-        answer=_best_snippet(question, top.text),
-        citations=[Citation(
-            k_number=top.k_number,
-            source_url=top.source_url,
-            page=top.page,
-            section=top.section,
-        )],
+        question=generic.question,
+        answer=generic.answer,
+        citations=[
+            Citation(
+                k_number=c.doc_id,
+                source_url=c.source_url,
+                page=c.page,
+                section=c.section,
+            )
+            for c in generic.citations
+        ],
+        not_found_reason=generic.not_found_reason,
     )
 
-
-# ---------------------------------------------------------------------------
-# LLM-backed answer
-# ---------------------------------------------------------------------------
-
-def _llm_answer(
-    question: str,
-    chunks: list[SummaryChunk],
-    llm: Callable[[str, str], str],
-) -> Answer:
-    if not chunks:
-        return Answer(
-            question=question,
-            answer="",
-            not_found_reason="No indexed summaries were found for this query scope.",
-        )
-
-    context_parts = []
-    for i, chunk in enumerate(chunks, 1):
-        context_parts.append(_CONTEXT_TEMPLATE.format(
-            i=i,
-            k=chunk.k_number,
-            section=chunk.section,
-            page=chunk.page or "?",
-            text=chunk.text,
-        ))
-    context = "\n".join(context_parts)
-    user_prompt = _USER_TEMPLATE.format(context=context, question=question)
-
-    raw_answer = llm(_SYSTEM_PROMPT, user_prompt)
-
-    # Extract citations from the answer text (K-numbers mentioned)
-    cited_k = set(re.findall(r"K\d{6}", raw_answer))
-    citations = [
-        Citation(
-            k_number=c.k_number,
-            source_url=c.source_url,
-            page=c.page,
-            section=c.section,
-        )
-        for c in chunks
-        if c.k_number in cited_k
-    ]
-    # Deduplicate citations by k_number+page
-    seen = set()
-    unique_citations: list[Citation] = []
-    for cit in citations:
-        key = (cit.k_number, cit.page)
-        if key not in seen:
-            seen.add(key)
-            unique_citations.append(cit)
-
-    not_found = None
-    if "do not contain sufficient information" in raw_answer.lower():
-        not_found = raw_answer
-
-    return Answer(
-        question=question,
-        answer=raw_answer if not not_found else "",
-        citations=unique_citations,
-        not_found_reason=not_found,
-    )
-
-
-# ---------------------------------------------------------------------------
-# Public API
-# ---------------------------------------------------------------------------
 
 def ask(
     question: str,
@@ -221,17 +61,15 @@ def ask(
 
     The llm callable signature: (system_prompt: str, user_prompt: str) -> str
     """
-    chunks = retrieve(
+    generic = ask_corpus(
+        _CORPUS,
         question,
-        k_numbers=k_numbers,
-        product_codes=product_codes,
+        scope={"k_numbers": k_numbers, "product_codes": product_codes},
         top_k=top_k,
         sections=sections,
+        llm=llm,
     )
-
-    if llm is None:
-        return _keyword_answer(question, chunks)
-    return _llm_answer(question, chunks, llm)
+    return _to_answer(generic)
 
 
 def format_answer(answer: Answer) -> str:
