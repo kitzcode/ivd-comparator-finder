@@ -17,6 +17,7 @@ from typing import Any, Optional
 from grounded_rag.models import Chunk
 from grounded_rag.retrieve import RetrievalConfig
 from grounded_rag.contract import GroundingContract
+from grounded_rag.corpus import RetrieveMixin
 
 from . import store
 
@@ -28,38 +29,24 @@ _SYSTEM_PROMPT = """\
 You are a precise regulatory assistant answering questions strictly from FDA \
 guidance documents.
 
-RULES — violating any rule is a failure:
-1. Answer ONLY from the provided context chunks. Do not use your training knowledge.
-2. Every statement of FDA recommendation or policy must be cited with the guidance \
-   document tag (e.g. FDA-GUID-71075) and page number from the chunk it came from.
-3. Guidance is nonbinding; describe it as FDA's current thinking / recommendations, \
-   not as binding requirements, unless the text itself cites a regulation (e.g. 21 CFR).
-4. If the answer is not in the chunks, respond: \
+You are given NUMBERED context candidates. RULES, violating any rule is a failure:
+1. Answer ONLY from the numbered candidates. Do not use your training knowledge.
+2. Cite every statement of FDA recommendation or policy with a bracketed candidate \
+   index like [2].
+3. NEVER write a guidance document tag, accession, citation, or URL. The system \
+   attaches the real identifiers from the candidate you cite.
+4. Guidance is nonbinding; describe it as FDA's current thinking / recommendations, \
+   not as binding requirements, unless the candidate text itself cites a regulation \
+   (e.g. 21 CFR).
+5. If the candidates do not support an answer, respond exactly: \
    "The provided guidance documents do not contain sufficient information to answer this question."
-5. Do not invent document tags, citations, dates, or regulatory section numbers.
-"""
-
-_CONTEXT_TEMPLATE = """\
---- CHUNK {i} | Guidance: {doc_id} | Section: {section} | Page: {page} ---
-{text}
-"""
-
-_USER_TEMPLATE = """\
-Context chunks from FDA guidance documents:
-
-{context}
-
-Question: {question}
-
-Answer (cite the guidance tag and page for every statement):
+6. After your answer, output a final line: SUPPORTING: [the indices you relied on].
 """
 
 FDA_GUIDANCE_CONTRACT = GroundingContract(
     system_prompt=_SYSTEM_PROMPT,
     not_found_sentinel="do not contain sufficient information",
-    cited_id_pattern=r"FDA-GUID-\d+",
-    context_template=_CONTEXT_TEMPLATE,
-    user_template=_USER_TEMPLATE,
+    id_leak_pattern=r"FDA-GUID-\d+",
 )
 
 # Generic retrieval config: default English stopwords, no domain-term boosts.
@@ -70,7 +57,7 @@ FDA_GUIDANCE_RETRIEVAL = RetrievalConfig()
 # Corpus
 # ---------------------------------------------------------------------------
 
-class FDAGuidanceCorpus:
+class FDAGuidanceCorpus(RetrieveMixin):
     """grounded_rag.Corpus over FDA guidance documents.
 
     Scope key: ``doc_ids`` (list of "FDA-GUID-NNNNN"). Empty scope = whole corpus.

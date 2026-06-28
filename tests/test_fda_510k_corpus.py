@@ -36,7 +36,7 @@ def test_corpus_satisfies_protocol():
     c = FDA510kCorpus()
     assert isinstance(c, Corpus)
     assert c.name == "fda_510k"
-    assert c.grounding.cited_id_pattern == r"K\d{6}"
+    assert c.grounding.id_leak_pattern == r"(K\d{6}|DEN\d{6}|P\d{6})"
 
 
 def test_candidates_return_generic_chunks(isolated_store):

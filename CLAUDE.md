@@ -11,9 +11,14 @@ The build is refactored into three reusable layers; dependencies point one way o
 - **`grounded_rag/`** — corpus-agnostic reasoning engine. Generic `Chunk`/`Citation`/`Answer`,
   a structural scorer + per-corpus `RetrievalConfig`, a `GroundingContract` (system prompt +
   refusal sentinel + citation id pattern, all injectable), and the answer machinery (refusal
-  gate, keyword fallback, citation reconstruction). Depends only on the `Corpus` protocol.
-  **The model never writes a citation** — citations are reconstructed from the chunks the model
-  referenced (`cited_id_pattern`, else literal `doc_id` match).
+  gate, keyword fallback, index-based selection). Depends only on the `Corpus` protocol.
+  **The model never writes a citation or an identifier.** In LLM mode it sees candidates
+  numbered `[1..N]` with ids/URLs withheld, returns `[n]` markers plus a `SUPPORTING:` index
+  line, and code attaches the real SourceRef (id, permalink, snippet). Guards: a leakage guard
+  (`id_leak_pattern`, case-insensitive, scans the full raw output) blanks-and-refuses on any
+  emitted id or URL; ASCII range-checked indices enforce source-existence; the refusal gate
+  handles no-match. `CONTRACTS.md` records the accepted limitation (provenance is guaranteed,
+  not claim faithfulness).
 - **`corpora/`** — adapters implementing `grounded_rag.Corpus` (`candidates` + `retrieval_config`
   + `grounding`). `fda_510k` (over the finder substrate) and `fda_guidance` (new). `registry.py`
   maps name → Corpus; adding a third corpus is a one-line change.

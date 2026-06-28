@@ -100,7 +100,9 @@ python -m ivd_mcp                        # deprecated alias for the device serve
 ## Grounding contract
 
 - Every K-number, product code, and regulation comes from a retrieved openFDA record.
-- Every performance figure is extracted from an indexed 510(k) Summary PDF, cited by K-number and page.
+- Every performance figure is extracted from an indexed 510(k) Summary PDF, cited by K-number and page, and carried with the source snippet it rests on.
+- **The model never writes an identifier or a citation.** In LLM-backed mode the model sees the retrieved candidates numbered `[1]..[N]` with their ids and URLs withheld; it answers using `[n]` markers and returns the indices it relied on; code then attaches the real K-number, permalink, and snippet. Three guards enforce this: a leakage guard blanks and refuses if the model emits any identifier or URL, a source-existence guard drops any index outside the retrieved set, and the refusal gate returns "the source does not support an answer" when nothing qualifies.
+- Keyword mode (the default, and what the MCP `ask` tool runs) never invokes a model: it returns the top chunk verbatim with a code-attached citation, so it is leakage-free by construction.
 - Missing data is reported as absent, not invented.
 - **Predicate ≠ comparator**: the predicate device (substantial equivalence) and the reference/comparator method (performance study) are always kept distinct.
 - Reference-lab results are labeled as directory lookups, not FDA determinations.
@@ -148,7 +150,7 @@ mcp_servers/
 ivd_mcp/             deprecated alias for the device server
 cli.py
 data/cache/          openFDA JSON cache (committed); PDF/chunk cache (gitignored)
-tests/               99 tests, incl. a cross-corpus contract test (one engine, two corpora)
+tests/               121 tests, incl. cross-corpus + adversarial contract suites (one engine, two corpora)
 ```
 
 ## Tests

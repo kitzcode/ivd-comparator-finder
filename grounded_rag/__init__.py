@@ -23,8 +23,8 @@ from __future__ import annotations
 from .models import Chunk, Citation, Answer
 from .retrieve import RetrievalConfig, rank, best_snippet, query_terms
 from .contract import GroundingContract
-from .qa import answer
-from .corpus import Corpus
+from .qa import answer, ask_corpus
+from .corpus import Corpus, RetrieveMixin
 
 __all__ = [
     "Chunk",
@@ -36,5 +36,7 @@ __all__ = [
     "query_terms",
     "GroundingContract",
     "answer",
+    "ask_corpus",
     "Corpus",
+    "RetrieveMixin",
 ]

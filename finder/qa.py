@@ -35,6 +35,7 @@ def _to_answer(generic) -> Answer:
                 source_url=c.source_url,
                 page=c.page,
                 section=c.section,
+                snippet=c.snippet,
             )
             for c in generic.citations
         ],

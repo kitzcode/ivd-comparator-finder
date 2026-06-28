@@ -48,7 +48,7 @@ def test_guidance_corpus_satisfies_protocol():
     c = FDAGuidanceCorpus()
     assert isinstance(c, Corpus)
     assert c.name == "fda_guidance"
-    assert c.grounding.cited_id_pattern == r"FDA-GUID-\d+"
+    assert c.grounding.id_leak_pattern == r"FDA-GUID-\d+"
 
 
 def test_keyword_answer_grounded(isolated_guidance_store):
@@ -63,13 +63,15 @@ def test_keyword_answer_grounded(isolated_guidance_store):
     assert result.citations[0].label == "Test Guidance"
 
 
-def test_llm_citation_uses_guidance_tag(isolated_guidance_store):
+def test_llm_index_citation_attaches_guidance_tag(isolated_guidance_store):
     s = isolated_guidance_store
     _seed(s, "FDA-GUID-99002", "III. General Regulatory Issues",
           "RUO products are not intended for clinical diagnostic use.", 7)
-    llm = lambda sys, usr: "Per FDA-GUID-99002 (page 7), RUO products are not for diagnostic use."
+    # Model cites by index only; code attaches the real guidance tag.
+    llm = lambda sys, usr: "RUO products are not for diagnostic use [1].\nSUPPORTING: [1]"
     result = ask_corpus(FDAGuidanceCorpus(), "What are RUO products?", llm=llm)
     assert [c.doc_id for c in result.citations] == ["FDA-GUID-99002"]
+    assert result.citations[0].snippet
 
 
 def test_llm_refusal(isolated_guidance_store):

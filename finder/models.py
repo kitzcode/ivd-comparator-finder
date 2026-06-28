@@ -77,6 +77,8 @@ class Citation(BaseModel):
     source_url: str
     page: Optional[int] = None
     section: Optional[str] = None
+    # Supporting source text the citation rests on (attached by code, not the model).
+    snippet: Optional[str] = None
 
 
 class Answer(BaseModel):

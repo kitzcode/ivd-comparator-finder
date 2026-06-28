@@ -107,6 +107,7 @@ def ask(
                 "page": cit.page,
                 "section": cit.section,
                 "source_url": cit.source_url,
+                "snippet": cit.snippet,
             }
             for cit in answer.citations
         ],
