@@ -59,17 +59,22 @@ def _year2(k_number: str) -> str:
     return digits[:2] if len(digits) >= 2 else "00"
 
 
+def _safe(k_number: str) -> str:
+    from ..security import safe_component
+    return safe_component(k_number)
+
+
 def _cache_pdf_path(k_number: str) -> Path:
-    return CACHE_DIR / f"{k_number}.pdf"
+    return CACHE_DIR / f"{_safe(k_number)}.pdf"
 
 
 def _cache_url_path(k_number: str) -> Path:
-    return CACHE_DIR / f"{k_number}.url"
+    return CACHE_DIR / f"{_safe(k_number)}.url"
 
 
 def _committed_url_path(k_number: str) -> Path:
     """Sidecar committed to git — readable on Vercel even when CACHE_DIR is /tmp."""
-    return _COMMITTED_URL_DIR / f"{k_number}.url"
+    return _COMMITTED_URL_DIR / f"{_safe(k_number)}.url"
 
 
 def resolve_summary_url(k_number: str) -> Optional[str]:
@@ -133,6 +138,10 @@ def resolve_summary_url(k_number: str) -> Optional[str]:
 _TMP_PDF_DIR = Path("/tmp") / "ivd_pdf_cache"
 
 
+# Cap PDF downloads so a huge/malicious document can't exhaust memory.
+_MAX_PDF_BYTES = 40 * 1024 * 1024  # 40 MB — far above any real 510(k)/SSED
+
+
 def _writable_pdf_path(k_number: str) -> Path:
     """Return a writable path for the PDF, falling back to /tmp on read-only FS."""
     primary = _cache_pdf_path(k_number)
@@ -143,16 +152,17 @@ def _writable_pdf_path(k_number: str) -> Path:
         return primary
     except OSError:
         _TMP_PDF_DIR.mkdir(parents=True, exist_ok=True)
-        return _TMP_PDF_DIR / f"{k_number}.pdf"
+        return _TMP_PDF_DIR / f"{_safe(k_number)}.pdf"
 
 
 def fetch_summary_pdf(k_number: str) -> Optional[Path]:
     """
-    Download the 510(k) Summary PDF for k_number to a writable cache dir.
-    Returns the local path, or None if no public Summary exists.
+    Download the Summary/SSED PDF for k_number to a writable cache dir.
+    Returns the local path, or None if no public document exists.
+    Streams with a hard size cap so an oversized PDF can't exhaust memory.
     """
     # Check both primary and tmp paths for an existing download
-    for candidate in [_cache_pdf_path(k_number), _TMP_PDF_DIR / f"{k_number}.pdf"]:
+    for candidate in [_cache_pdf_path(k_number), _TMP_PDF_DIR / f"{_safe(k_number)}.pdf"]:
         if candidate.exists() and candidate.stat().st_size > 0:
             return candidate
 
@@ -161,15 +171,26 @@ def fetch_summary_pdf(k_number: str) -> Optional[Path]:
         return None
 
     local = _writable_pdf_path(k_number)
-    with httpx.Client(timeout=60, follow_redirects=True) as client:
-        try:
-            resp = client.get(url, headers=_HEADERS)
-            if resp.status_code != 200:
-                return None
-            local.write_bytes(resp.content)
-            return local
-        except httpx.RequestError:
-            return None
+    try:
+        with httpx.Client(timeout=60, follow_redirects=True) as client:
+            with client.stream("GET", url, headers=_HEADERS) as resp:
+                if resp.status_code != 200:
+                    return None
+                # Reject if the server advertises an oversized body.
+                clen = resp.headers.get("content-length")
+                if clen and clen.isdigit() and int(clen) > _MAX_PDF_BYTES:
+                    return None
+                total = 0
+                chunks: list[bytes] = []
+                for block in resp.iter_bytes():
+                    total += len(block)
+                    if total > _MAX_PDF_BYTES:
+                        return None  # stop downloading an oversized PDF
+                    chunks.append(block)
+        local.write_bytes(b"".join(chunks))
+        return local
+    except httpx.RequestError:
+        return None
 
 
 def is_image_only_pdf(pdf_path: Path, sample_pages: int = 3) -> bool:

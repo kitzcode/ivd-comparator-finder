@@ -58,7 +58,8 @@ def _save_manifest(m: dict) -> None:
 
 
 def _chunk_path(k_number: str) -> Path:
-    return CHUNK_DIR / f"{k_number}.json"
+    from ..security import safe_component
+    return CHUNK_DIR / f"{safe_component(k_number)}.json"
 
 
 def is_indexed(k_number: str) -> bool:
@@ -85,8 +86,10 @@ def store_chunks(k_number: str, chunks: list[SummaryChunk], status: str = "ok") 
 
 def load_chunks(k_number: str) -> list[SummaryChunk]:
     """Load stored chunks for a K-number, checking all read dirs. Returns [] if not indexed."""
+    from ..security import safe_component
+    fname = f"{safe_component(k_number)}.json"
     for d in _READ_DIRS:
-        p = d / f"{k_number}.json"
+        p = d / fname
         if p.exists():
             raw = json.loads(p.read_text())
             return [SummaryChunk(**r) for r in raw]

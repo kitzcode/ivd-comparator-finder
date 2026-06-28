@@ -693,6 +693,14 @@ function esc(s) {
   if (s == null) return '';
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
+// Only allow http(s) URLs in hrefs — blocks javascript:/data: injection.
+function safeUrl(u) {
+  if (!u) return '';
+  try {
+    const parsed = new URL(u, window.location.origin);
+    return (parsed.protocol === 'https:' || parsed.protocol === 'http:') ? esc(parsed.href) : '';
+  } catch (e) { return ''; }
+}
 
 // ── Init ──
 // Clean slate: load capability flags only; wait for the user to search.

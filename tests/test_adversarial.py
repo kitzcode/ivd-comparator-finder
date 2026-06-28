@@ -175,6 +175,31 @@ def test_keyword_mode_citation_has_snippet(corpus_name, both_stores):
 # One engine, two corpora: the generalization proof in a single test
 # ---------------------------------------------------------------------------
 
+def test_guidance_store_doc_id_path_traversal_is_contained(tmp_path, monkeypatch):
+    """A hostile doc_id must not let the guidance store read or write outside its
+    directory (the sink sanitizes, matching the 510(k) store)."""
+    from corpora.fda_guidance import store as s
+    from grounded_rag.models import Chunk
+
+    inside = tmp_path / "store"
+    inside.mkdir()
+    monkeypatch.setattr(s, "CHUNK_DIR", inside)
+    monkeypatch.setattr(s, "_READ_DIRS", [inside])
+    monkeypatch.setattr(s, "MANIFEST_PATH", inside / "_manifest.json")
+    monkeypatch.setattr(s, "_COMMITTED_MANIFEST", inside / "_manifest.json")
+
+    evil = "../" * 6 + "tmp/pwned"
+    s.store_chunks(evil, [Chunk(doc_id="x", source_url="u", section="s", text="t")])
+
+    # Nothing escaped the store directory.
+    assert not (tmp_path / "tmp").exists()
+    assert not (tmp_path.parent / "tmp" / "pwned.json").exists()
+    # The write landed inside, under a sanitized name.
+    assert list(inside.glob("*.json"))
+    # A traversal read returns nothing rather than reaching outside.
+    assert s.load_chunks("../../../../etc/hosts") == []
+
+
 def test_one_engine_two_corpora(both_stores):
     _seed_one("fda_510k", both_stores, "K900001")
     _seed_one("fda_guidance", both_stores, "FDA-GUID-90001")
