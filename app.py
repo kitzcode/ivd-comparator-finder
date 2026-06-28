@@ -18,15 +18,54 @@ import asyncio
 import json
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException, BackgroundTasks, Query
+from fastapi import FastAPI, HTTPException, BackgroundTasks, Query, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, StreamingResponse
+
+from finder.security import (
+    is_valid_device_id,
+    MAX_IDS_PER_REQUEST,
+    MAX_ANALYTE_LEN,
+)
 
 app = FastAPI(
     title="IVD Comparator Finder",
     description="FDA 510(k) device lookup, PDF parsing, and grounded performance Q&A",
     version="1.0.0",
 )
+
+
+@app.middleware("http")
+async def security_headers(request: Request, call_next):
+    """Add conservative security headers to every response."""
+    resp = await call_next(request)
+    resp.headers["X-Content-Type-Options"] = "nosniff"
+    resp.headers["X-Frame-Options"] = "DENY"
+    resp.headers["Referrer-Policy"] = "no-referrer"
+    resp.headers["Content-Security-Policy"] = (
+        "default-src 'self'; "
+        "style-src 'self' 'unsafe-inline'; "       # inline <style> block in the SPA
+        "script-src 'self' 'unsafe-inline'; "      # inline <script> block in the SPA
+        "connect-src 'self'; "
+        "img-src 'self' data:; "
+        "base-uri 'none'; "
+        "frame-ancestors 'none'; "
+        "form-action 'self'"
+    )
+    return resp
+
+
+def _parse_ids(k_numbers: str) -> list[str]:
+    """Split, validate, and cap a comma-separated device-id list from a query."""
+    ids = [k.strip().upper() for k in k_numbers.split(",") if k.strip()]
+    if len(ids) > MAX_IDS_PER_REQUEST:
+        raise HTTPException(status_code=400,
+                            detail=f"Too many ids (max {MAX_IDS_PER_REQUEST}).")
+    bad = [k for k in ids if not is_valid_device_id(k)]
+    if bad:
+        raise HTTPException(status_code=400,
+                            detail=f"Invalid device id(s): {', '.join(bad[:5])}")
+    return ids
 
 
 # ---------------------------------------------------------------------------
@@ -39,7 +78,9 @@ def api_find(
     synonyms: str = Query("", description="Comma-separated extra synonyms"),
 ):
     from finder.pipeline import find_devices
-    extra = [s.strip() for s in synonyms.split(",") if s.strip()] or None
+    if len(analyte) > MAX_ANALYTE_LEN:
+        raise HTTPException(status_code=400, detail="Analyte term too long.")
+    extra = [s.strip() for s in synonyms.split(",") if s.strip()][:10] or None
     resolution, devices = find_devices(analyte, extra_synonyms=extra, resolve_urls=False)
 
     # Honest note when results are sparse: openFDA's 510(k) endpoint does not
@@ -98,6 +139,8 @@ def api_clearance(k_number: str):
     from finder.index.store import get_index_status, load_chunks
 
     kid = k_number.upper()
+    if not is_valid_device_id(kid):
+        raise HTTPException(status_code=400, detail="Invalid device id.")
 
     # P-numbers are PMA approvals — a different dataset, with SSED documents
     # instead of 510(k) Summary PDFs. The SSED parses through the same pipeline.
@@ -161,7 +204,7 @@ def api_ingest_stream(k_numbers: str = Query(..., description="Comma-separated K
     from finder.sources.openfda import get_510k_by_knumber, get_pma_by_number
     from finder.pipeline import ingest_summaries
 
-    ks = [k.strip().upper() for k in k_numbers.split(",") if k.strip()]
+    ks = _parse_ids(k_numbers)
     q: queue.Queue = queue.Queue()
     _DONE = object()
 
@@ -219,8 +262,9 @@ def api_ingest_stream(k_numbers: str = Query(..., description="Comma-separated K
                 q.put(_sse("done", {"k": r.k_number, "status": r.status,
                                     "chunk_count": r.chunk_count, "note": r.note}))
             q.put(_sse("complete", {"ks": ks}))
-        except Exception as exc:
-            q.put(_sse("error", {"msg": str(exc)}))
+        except Exception:
+            # Don't leak internal exception detail to clients.
+            q.put(_sse("error", {"msg": "Ingestion failed — please try again."}))
         finally:
             q.put(_DONE)
 
@@ -245,7 +289,7 @@ _ingest_progress: dict[str, str] = {}
 
 @app.post("/api/ingest")
 def api_ingest(k_numbers: list[str], background_tasks: BackgroundTasks):
-    k_numbers = [k.upper() for k in k_numbers]
+    k_numbers = _parse_ids(",".join(k_numbers or []))
     for k in k_numbers:
         _ingest_progress[k] = "queued"
 
@@ -276,7 +320,9 @@ def api_ask(
     from finder.qa import ask
     from finder.llm import make_llm
 
-    kn = [k.strip().upper() for k in k_numbers.split(",") if k.strip()] or None
+    if len(q) > 500:
+        raise HTTPException(status_code=400, detail="Question too long.")
+    kn = _parse_ids(k_numbers) or None
     answer = ask(q, k_numbers=kn, top_k=top_k, llm=make_llm())
     return {
         "question": answer.question,
@@ -302,7 +348,7 @@ def api_compare(
     from finder.sources.openfda import get_510k_by_knumber
     from finder.llm import make_llm
 
-    kn = [k.strip().upper() for k in k_numbers.split(",") if k.strip()]
+    kn = _parse_ids(k_numbers)
     if not kn:
         raise HTTPException(status_code=400, detail="Provide at least one K-number")
 

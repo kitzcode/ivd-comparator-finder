@@ -44,8 +44,17 @@ REQUEST_DELAY = 0.3  # seconds between requests when not using an API key
 # Low-level HTTP helpers
 # ---------------------------------------------------------------------------
 
+def _q(value: str) -> str:
+    """Escape a value for safe interpolation inside an openFDA search string."""
+    from ..security import escape_query
+    return escape_query(value)
+
+
 def _cache_path(name: str) -> Path:
-    return CACHE_DIR / f"{name}.json"
+    # Sanitize the cache-key component so a hostile analyte/term/id can't
+    # traverse out of the cache directory (defense in depth).
+    from ..security import safe_component
+    return CACHE_DIR / f"{safe_component(name, max_len=80)}.json"
 
 
 def _load_cache(name: str) -> Optional[dict]:
@@ -127,7 +136,7 @@ def get_classification_by_product_code(product_code: str) -> list[dict]:
     cache_key = f"cls_pc_{product_code}"
     data = _get(
         CLASSIFICATION_EP,
-        {"search": f'product_code:"{product_code}"', "limit": 10},
+        {"search": f'product_code:"{_q(product_code)}"', "limit": 10},
         cache_key,
     )
     return data.get("results", [])
@@ -165,7 +174,7 @@ def get_510k_by_product_code(product_code: str, max_results: int = 500) -> list[
     cache_key_prefix = f"fivek_pc_{product_code}"
     return _get_all_pages(
         FIVEK_EP,
-        {"search": f'product_code:"{product_code}"'},
+        {"search": f'product_code:"{_q(product_code)}"'},
         cache_key_prefix,
         max_results=max_results,
     )
@@ -206,7 +215,7 @@ def get_510k_by_knumber(k_number: str) -> Optional[dict]:
     cache_key = f"fivek_k_{k_number}"
     data = _get(
         FIVEK_EP,
-        {"search": f'k_number:"{k_number}"', "limit": 1},
+        {"search": f'k_number:"{_q(k_number)}"', "limit": 1},
         cache_key,
     )
     results = data.get("results", [])
@@ -222,7 +231,7 @@ def get_pma_by_product_code(product_code: str, max_results: int = 200) -> list[d
     cache_key_prefix = f"pma_pc_{product_code}"
     return _get_all_pages(
         PMA_EP,
-        {"search": f'product_code:"{product_code}"'},
+        {"search": f'product_code:"{_q(product_code)}"'},
         cache_key_prefix,
         max_results=max_results,
     )
@@ -241,7 +250,7 @@ def get_pma_by_number(pma_number: str) -> Optional[dict]:
     cache_key = f"pma_n_{pma_number}"
     data = _get(
         PMA_EP,
-        {"search": f'pma_number:"{pma_number}"', "limit": 100},
+        {"search": f'pma_number:"{_q(pma_number)}"', "limit": 100},
         cache_key,
     )
     results = data.get("results", [])
