@@ -309,11 +309,11 @@ function renderDeviceList(devices, resultNote) {
     <div class="device-item" id="dev-${i}">
       <input type="checkbox" id="chk-${i}" onclick="event.stopPropagation();toggleSelect(${i})">
       <div class="device-body" onclick="selectDevice(${i})">
-        <div class="k">${d.k_number} ${typeBadge(d.submission_type)}</div>
+        <div class="k">${esc(d.k_number)} ${typeBadge(d.submission_type)}</div>
         <div class="name">${esc(d.device_name)}</div>
-        <div class="meta">${esc(d.applicant_name)} · ${d.decision_date || '—'}</div>
-        <span class="badge badge-amber">${d.product_code}</span>
-        <span class="badge badge-gray">${d.regulation_number || '—'}</span>
+        <div class="meta">${esc(d.applicant_name)} · ${esc(d.decision_date || '—')}</div>
+        <span class="badge badge-amber">${esc(d.product_code)}</span>
+        <span class="badge badge-gray">${esc(d.regulation_number || '—')}</span>
       </div>
     </div>
   `).join('') + cberNote;
@@ -407,7 +407,7 @@ async function renderOverview(k) {
       </div>
       ${data.summary_url ? `
       <div class="section-hdr">${docLabel} PDF</div>
-      <a class="link" href="${data.summary_url}" target="_blank">↗ ${data.summary_url}</a>` : ''}
+      <a class="link" href="${safeUrl(data.summary_url)}" target="_blank" rel="noopener noreferrer">↗ ${esc(data.summary_url)}</a>` : ''}
       ${isPMA ? `<div class="note-box" style="margin-top:10px">PMA (Class III) — parsing the <strong>SSED</strong>
         (Summary of Safety &amp; Effectiveness Data). SSEDs are longer and less standardized than 510(k) Summaries,
         so extraction is best-effort.</div>` : ''}
@@ -509,7 +509,7 @@ async function renderPerformance(kNumbers) {
           if (!pv) return `<td><span class="not-found">Not found</span></td>`;
           const cit = pv.citation;
           const pageStr = cit.page ? ` p.${cit.page}` : '';
-          const url = cit.source_url ? `<a class="link" href="${cit.source_url}" target="_blank">${cit.k_number}${pageStr}</a>` : `${cit.k_number}${pageStr}`;
+          const url = cit.source_url ? `<a class="link" href="${safeUrl(cit.source_url)}" target="_blank" rel="noopener noreferrer">${esc(cit.k_number)}${pageStr}</a>` : `${cit.k_number}${pageStr}`;
           return `<td>${esc(pv.value)}<div class="citation">↳ ${url} [${esc(cit.section)}]</div></td>`;
         }).join('')}
       </tr>`).join('');
@@ -642,7 +642,7 @@ async function askQuestion(k) {
     }
     const cites = (data.citations || []).map(c => {
       const page = c.page ? ` p.${c.page}` : '';
-      const url  = c.source_url ? `<a class="link" href="${c.source_url}" target="_blank">${c.k_number}${page}</a>` : `${c.k_number}${page}`;
+      const url  = c.source_url ? `<a class="link" href="${safeUrl(c.source_url)}" target="_blank" rel="noopener noreferrer">${esc(c.k_number)}${page}</a>` : `${c.k_number}${page}`;
       return `<span class="cite-chip">${url} [${esc(c.section)}]</span>`;
     }).join('');
     document.getElementById('qa-result').innerHTML = `

@@ -14,6 +14,9 @@ import re
 # Covers K173653 (510(k)), DEN140005 (De Novo), P160030 (PMA), BK251286 (CBER).
 _DEVICE_ID = re.compile(r"^[A-Z]{1,3}[0-9]{6}$")
 
+# Guidance document ids in this corpus: FDA-GUID-<media id digits>.
+_GUIDANCE_ID = re.compile(r"^FDA-GUID-[0-9]+$")
+
 # Characters allowed in a cache filename component. Anything else (including
 # '/', '\\', '.', whitespace) is replaced — kills path traversal at the sink.
 _UNSAFE = re.compile(r"[^A-Za-z0-9_-]")
@@ -26,6 +29,11 @@ MAX_ANALYTE_LEN = 120
 def is_valid_device_id(value: str) -> bool:
     """True if value is a well-formed FDA submission number."""
     return bool(_DEVICE_ID.match(value or ""))
+
+
+def is_valid_guidance_id(value: str) -> bool:
+    """True if value is a well-formed guidance doc id (FDA-GUID-NNNNN)."""
+    return bool(_GUIDANCE_ID.match(value or ""))
 
 
 def safe_component(value: str, max_len: int = 80) -> str:

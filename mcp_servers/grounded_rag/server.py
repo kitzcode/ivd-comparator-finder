@@ -82,12 +82,29 @@ def ask(
     """
     from corpora.registry import get_corpus
     from grounded_rag.qa import ask_corpus
+    from finder.security import is_valid_device_id, is_valid_guidance_id, MAX_IDS_PER_REQUEST
 
     try:
         c = get_corpus(corpus)
     except KeyError as e:
         return {"error": str(e)}
 
+    def _validate(ids, validator, label):
+        cleaned = [i.strip().upper() for i in (ids or []) if i and i.strip()]
+        if len(cleaned) > MAX_IDS_PER_REQUEST:
+            raise ValueError(f"Too many {label} (max {MAX_IDS_PER_REQUEST}).")
+        bad = [i for i in cleaned if not validator(i)]
+        if bad:
+            raise ValueError(f"Invalid {label}: {', '.join(bad[:5])}")
+        return cleaned or None
+
+    try:
+        k_numbers = _validate(k_numbers, is_valid_device_id, "k_numbers")
+        doc_ids = _validate(doc_ids, is_valid_guidance_id, "doc_ids")
+    except ValueError as e:
+        return {"error": str(e)}
+
+    top_k = max(1, min(int(top_k), 20))
     scope = {
         "k_numbers": k_numbers,
         "product_codes": product_codes,
@@ -133,6 +150,16 @@ def compare_performance(k_numbers: list[str]) -> dict:
     """
     from finder.extract import extract_performance
     from finder.sources.openfda import get_510k_by_knumber
+    from finder.security import is_valid_device_id, MAX_IDS_PER_REQUEST
+
+    k_numbers = [k.strip().upper() for k in (k_numbers or []) if k and k.strip()]
+    if not k_numbers:
+        return {"error": "Provide at least one K-number."}
+    if len(k_numbers) > MAX_IDS_PER_REQUEST:
+        return {"error": f"Too many ids (max {MAX_IDS_PER_REQUEST})."}
+    bad = [k for k in k_numbers if not is_valid_device_id(k)]
+    if bad:
+        return {"error": f"Invalid device id(s): {', '.join(bad[:5])}"}
 
     device_names: dict[str, str] = {}
     product_codes_map: dict[str, str] = {}

@@ -58,6 +58,10 @@ def find_devices(
     resolve_summary_urls: if True, probe accessdata.fda.gov for each Summary PDF URL (slow)
     """
     from finder.pipeline import find_devices as _find
+    from finder.security import MAX_ANALYTE_LEN
+
+    if not analyte or len(analyte) > MAX_ANALYTE_LEN:
+        return {"error": f"analyte must be 1 to {MAX_ANALYTE_LEN} characters."}
 
     resolution, devices = _find(
         analyte,
@@ -111,14 +115,19 @@ def get_clearance(k_number: str) -> dict:
     from finder.sources.openfda import get_510k_by_knumber
     from finder.sources.summaries import resolve_summary_url
     from finder.index.store import get_index_status, load_chunks
+    from finder.security import is_valid_device_id
 
-    rec = get_510k_by_knumber(k_number)
+    kid = (k_number or "").upper()
+    if not is_valid_device_id(kid):
+        return {"error": f"Invalid device id {k_number!r}; expected like K173653, DEN140005, or P160030."}
+
+    rec = get_510k_by_knumber(kid)
     if rec is None:
-        return {"error": f"{k_number} not found in openFDA 510(k) database"}
+        return {"error": f"{kid} not found in openFDA 510(k) database"}
 
-    status = get_index_status(k_number)
-    chunk_count = len(load_chunks(k_number)) if status == "ok" else 0
-    summary_url = resolve_summary_url(k_number)
+    status = get_index_status(kid)
+    chunk_count = len(load_chunks(kid)) if status == "ok" else 0
+    summary_url = resolve_summary_url(kid)
 
     return {
         "k_number": rec.get("k_number"),
