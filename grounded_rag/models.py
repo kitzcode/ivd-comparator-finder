@@ -31,13 +31,18 @@ class Chunk(BaseModel):
 
 
 class Citation(BaseModel):
-    """A grounded source citation produced by the core, never by the model."""
+    """A grounded source citation produced by the core, never by the model.
+
+    `snippet` is the supporting source text the citation rests on, so a figure is
+    never shown without the text that backs it. All fields are attached by code
+    from a retrieved Chunk; the model only ever selects which chunk by index."""
 
     doc_id: str
     source_url: str
     page: Optional[int] = None
     section: Optional[str] = None
     label: Optional[str] = None
+    snippet: Optional[str] = None
 
 
 class Answer(BaseModel):

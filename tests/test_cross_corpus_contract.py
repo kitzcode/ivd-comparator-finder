@@ -120,15 +120,32 @@ def test_grounds_with_citation_keyword_mode(corpus_name, both_stores):
 
 
 @pytest.mark.parametrize("corpus_name", list(CASES))
-def test_model_never_writes_uncited_document(corpus_name, both_stores):
-    """The model references only id0; id1 must never be cited."""
+def test_model_selects_by_index_code_attaches_id(corpus_name, both_stores):
+    """The model cites the first candidate by index; code attaches the real id.
+    id0 (the PPA chunk) ranks first, so index 1 maps to it. id1 is never cited."""
     case = CASES[corpus_name]
     id0, id1 = case["ids"]
     _seed_case(corpus_name, both_stores, id0, id1)
     corpus = _make_corpus(corpus_name)
 
-    llm = lambda sysp, usr: f"According to {id0}, the PPA was 99.0%."
+    llm = lambda sysp, usr: "The PPA was 99.0% [1].\nSUPPORTING: [1]"
     result = ask_corpus(corpus, "PPA?", scope=case["scope"], llm=llm)
     cited = [c.doc_id for c in result.citations]
     assert cited == [id0]
     assert id1 not in cited
+    assert result.citations[0].snippet  # code-attached supporting text
+
+
+@pytest.mark.parametrize("corpus_name", list(CASES))
+def test_leak_guard_holds_on_both_corpora(corpus_name, both_stores):
+    """If the model emits a real identifier, both corpora blank-and-refuse."""
+    case = CASES[corpus_name]
+    id0, id1 = case["ids"]
+    _seed_case(corpus_name, both_stores, id0, id1)
+    corpus = _make_corpus(corpus_name)
+
+    llm = lambda sysp, usr: f"The PPA was 99.0% per {id0} [1].\nSUPPORTING: [1]"
+    result = ask_corpus(corpus, "PPA?", scope=case["scope"], llm=llm)
+    assert result.answer == ""
+    assert result.citations == []
+    assert result.not_found_reason is not None

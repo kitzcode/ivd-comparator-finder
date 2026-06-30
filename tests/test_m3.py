@@ -98,7 +98,9 @@ def _stub_llm_returning(text: str):
     return _llm
 
 
-def test_llm_mode_extracts_cited_k_numbers(isolated_store):
+def test_llm_mode_index_based_attaches_k_number(isolated_store):
+    """Index-based contract: the model cites [1]; code attaches the real K-number.
+    A model that wrote the K-number itself would be a leak and would refuse."""
     s = isolated_store
     from finder.models import SummaryChunk
     chunk = SummaryChunk(
@@ -111,11 +113,28 @@ def test_llm_mode_extracts_cited_k_numbers(isolated_store):
     )
     s.store_chunks("K555555", [chunk])
 
-    # LLM cites K555555 in its response
-    llm = _stub_llm_returning("According to K555555 (page 2), the PPA was 96%.")
+    # Model selects by index; it never writes the K-number.
+    llm = _stub_llm_returning("The PPA was 96% [1].\nSUPPORTING: [1]")
     from finder.qa import ask
     result = ask("PPA?", k_numbers=["K555555"], llm=llm)
     assert any(c.k_number == "K555555" for c in result.citations)
+    assert result.citations[0].snippet
+
+
+def test_llm_mode_refuses_on_citation_leak(isolated_store):
+    """If the model emits a raw K-number, the finder blanks and refuses."""
+    s = isolated_store
+    from finder.models import SummaryChunk
+    s.store_chunks("K555555", [SummaryChunk(
+        k_number="K555555", product_code="BBB", section="Performance Testing",
+        text="PPA was 96%.", source_url="https://example.com", page=2,
+    )])
+    llm = _stub_llm_returning("According to K555555 (page 2), the PPA was 96% [1].\nSUPPORTING: [1]")
+    from finder.qa import ask
+    result = ask("PPA?", k_numbers=["K555555"], llm=llm)
+    assert result.answer == ""
+    assert result.not_found_reason is not None
+    assert result.citations == []
 
 
 def test_llm_mode_not_found_when_llm_says_so(isolated_store):

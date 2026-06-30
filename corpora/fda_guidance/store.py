@@ -54,9 +54,17 @@ def _save_manifest(m: dict) -> None:
         pass
 
 
+def _safe_name(doc_id: str) -> str:
+    """Sanitize a doc_id into a single filename component so a hostile value
+    (e.g. '../../etc/x') can never traverse out of the store directory. Mirrors
+    the 510(k) chunk store; matches the invariant documented in finder/security.py."""
+    from finder.security import safe_component
+    return safe_component(doc_id)
+
+
 def store_chunks(doc_id: str, chunks: list[Chunk], status: str = "ok") -> None:
     try:
-        (CHUNK_DIR / f"{doc_id}.json").write_text(
+        (CHUNK_DIR / f"{_safe_name(doc_id)}.json").write_text(
             json.dumps([c.model_dump(mode="json") for c in chunks], indent=2)
         )
     except OSError:
@@ -67,8 +75,9 @@ def store_chunks(doc_id: str, chunks: list[Chunk], status: str = "ok") -> None:
 
 
 def load_chunks(doc_id: str) -> list[Chunk]:
+    fname = f"{_safe_name(doc_id)}.json"
     for d in _READ_DIRS:
-        p = d / f"{doc_id}.json"
+        p = d / fname
         if p.exists():
             return [Chunk(**r) for r in json.loads(p.read_text())]
     return []

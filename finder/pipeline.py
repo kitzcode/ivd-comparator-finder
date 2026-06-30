@@ -37,16 +37,22 @@ def _normalize_device(rec: dict, product_code: str, regulation_number: Optional[
     # De Novo grants live in the 510(k) dataset with DEN-prefixed numbers
     # (decision_code DENG). Everything else from this endpoint is a 510(k).
     is_denovo = k.upper().startswith("DEN") or rec.get("decision_code", "").upper().startswith("DEN")
+    # openFDA /device/510k.json field names (verified against cached responses,
+    # see RECON.md): the applicant field is `applicant` (not `applicant_name`),
+    # and the decision date is `decision_date` (not `decision_date_as_string`).
+    # `date_received` is the submission date and is only a last-resort fallback.
+    # `traditional_501k_flag` is a Y/N flag, NOT a predicate K-number, so it is not
+    # mapped to predicate_k_number; this endpoint does not carry the predicate id.
     return Device(
         k_number=k,
         device_name=rec.get("device_name", ""),
-        applicant_name=rec.get("applicant_name", ""),
-        decision_date=_parse_date(rec.get("decision_date_as_string") or rec.get("date_received")),
+        applicant_name=rec.get("applicant", ""),
+        decision_date=_parse_date(rec.get("decision_date") or rec.get("date_received")),
         product_code=product_code,
         submission_type="De Novo" if is_denovo else "510(k)",
         regulation_number=regulation_number,
         device_class=rec.get("device_class"),
-        predicate_k_number=rec.get("traditional_501k_flag"),
+        predicate_k_number=None,
         predicate_device_name=None,
     )
 

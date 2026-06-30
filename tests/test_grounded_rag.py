@@ -52,7 +52,7 @@ CONFIG = RetrievalConfig(
 CONTRACT = GroundingContract(
     system_prompt="Answer only from the field-guide context. If unknown, say NOT IN GUIDE.",
     not_found_sentinel="NOT IN GUIDE",
-    cited_id_pattern=r"DOC-[A-Z]+",
+    id_leak_pattern=r"DOC-[A-Z]+",
 )
 
 
@@ -77,11 +77,14 @@ def test_keyword_mode_returns_verbatim_snippet_with_citation():
     assert result.not_found_reason is None
 
 
-def test_llm_mode_reconstructs_citation_from_pattern():
-    ranked = rank("acorns", DOCS, CONFIG, top_k=3)
-    llm = lambda sys, usr: "Per DOC-OAK, the northern oak produces acorns."
+def test_llm_mode_index_based_citation():
+    """Model cites by index; code attaches the real doc_id and a snippet."""
+    ranked = rank("acorns", DOCS, CONFIG, top_k=3)  # DOC-OAK ranks first
+    llm = lambda sys, usr: "The northern oak produces acorns [1].\nSUPPORTING: [1]"
     result = answer("oak?", ranked, contract=CONTRACT, config=CONFIG, llm=llm)
     assert [c.doc_id for c in result.citations] == ["DOC-OAK"]
+    assert result.citations[0].snippet  # supporting text attached by code
+    assert "[1]" in result.answer  # index marker preserved, no raw id in prose
 
 
 def test_llm_mode_refusal_sets_not_found():
@@ -93,24 +96,31 @@ def test_llm_mode_refusal_sets_not_found():
     assert result.citations == []
 
 
-def test_model_never_writes_citation_uncited_doc_is_dropped():
-    """A doc the model did not reference must not appear as a citation."""
+def test_only_selected_indices_are_cited():
+    """A candidate the model did not select must not appear as a citation."""
     ranked = rank("acorns needles", DOCS, CONFIG, top_k=3)
-    # Model only mentions OAK, never PINE — PINE must not be cited.
-    llm = lambda sys, usr: "Only DOC-OAK is relevant here."
+    llm = lambda sys, usr: "Acorns come from one species [1].\nSUPPORTING: [1]"
     result = answer("compare", ranked, contract=CONTRACT, config=CONFIG, llm=llm)
-    assert [c.doc_id for c in result.citations] == ["DOC-OAK"]
+    assert [c.doc_id for c in result.citations] == [ranked[0].doc_id]
 
 
-def test_default_citation_matches_doc_id_literally():
-    """With no cited_id_pattern, a chunk is cited iff its doc_id appears verbatim."""
-    contract = GroundingContract(
-        system_prompt="x", not_found_sentinel="NONE", cited_id_pattern=None
-    )
+def test_leak_guard_refuses_when_model_emits_identifier():
+    """If the model writes a raw identifier, the answer is blanked and refused."""
     ranked = rank("acorns", DOCS, CONFIG, top_k=3)
-    llm = lambda sys, usr: "See DOC-OAK for details."
-    result = answer("oak?", ranked, contract=contract, config=CONFIG, llm=llm)
-    assert [c.doc_id for c in result.citations] == ["DOC-OAK"]
+    llm = lambda sys, usr: "See DOC-OAK [1].\nSUPPORTING: [1]"  # DOC-OAK is a leak
+    result = answer("oak?", ranked, contract=CONTRACT, config=CONFIG, llm=llm)
+    assert result.answer == ""
+    assert result.citations == []
+    assert result.not_found_reason is not None
+
+
+def test_out_of_range_index_is_dropped():
+    """The model cannot cite a candidate that was not retrieved."""
+    ranked = rank("acorns", DOCS, CONFIG, top_k=3)  # 3 candidates exist
+    llm = lambda sys, usr: "Answer [9].\nSUPPORTING: [9]"
+    result = answer("oak?", ranked, contract=CONTRACT, config=CONFIG, llm=llm)
+    assert result.citations == []
+    assert result.not_found_reason is not None
 
 
 def test_empty_scope_refuses():
